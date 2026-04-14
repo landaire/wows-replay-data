@@ -1,0 +1,129 @@
+_RENAME'"/>
+					<bind name="name" value="'menu_item_' + _titleIds"/>
+				</block>
+			</block>
+			<bind name="dispatch" value="'click'; 'chatChannelRenameStart'"/>
+		</block>
+		<block>
+			<bind name="visible" value="(channel.typeIdent != 'common') &amp;&amp; !(_isDivision) &amp;&amp; !(isMyChannel)"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItem">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="!isFavorite ? 'IDS_ADD_TO_FAVORITES' : 'IDS_REMOVE_FROM_FAVORITES'"/>
+					<bind name="name" value="'menu_item_' + _titleIds"/>
+				</block>
+			</block>
+			<bind name="action" value="'click'; 'setChannelFavorite'; {channelId: channel.channelId, favorite: !(isFavorite)}"/>
+		</block>
+		<block>
+			<bind name="visible" value="channelOpened &amp;&amp; !(_isDivision) "/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItemWithAction">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_CHANNEL_CLOSE'"/>
+				</block>
+				<bind name="action" value="'click'; 'leaveChannel'; {channelId: channel.channelId}"/>
+			</block>
+		</block>
+		<block>
+			<params>
+				<param name="name" value="menuDismissDivision"/>
+			</params>
+			<bind name="visible" value="_isDivision &amp;&amp; isSelfPlayerCommander"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItemWithRequest">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_DISMISS_DIVISION'"/>
+				</block>
+				<bind name="request" value="'click'; 'dismissDivision'; {subtitle : 'IDS_DISMISS_DIVISION_QUESTION'}"/>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="_isDivision"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItemWithRequest">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_LEAVE_DIVISION'"/>
+				</block>
+				<bind name="request" value="'click'; 'leaveDivision'; {subtitle : 'IDS_LEAVE_DIVISION_QUESTION'}"/>
+			</block>
+		</block>
+		<block>
+			<bind name="watch" value="'canSelectRating'; isIn(role, SC.Clan.CLAN_ROLE.CAN_SELECT_RATING)"/>
+			<bind name="visible" value="hasClanSquadModifier &amp;&amp; _isClanDivision &amp;&amp; isSelfPlayerCommander &amp;&amp; canSelectRating &amp;&amp; !isInBalancer"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<bind name="tooltip" value="'SwitchClanSquadContextMenu'; { _currentSquad: squadId, _leadingSquadId: leadingSquadId }; 13; null; 'switchClanSquadContextMenu'"/>
+			<block className="dock_submenu_item" type="native">
+				<styleClass value="$Fullsize"/>
+				<bind name="selected" value="switchClanSquadContextMenu"/>
+				<block>
+					<style>
+						<width value="100%"/>
+						<height value="100%"/>
+						<hitTest value="false"/>
+					</style>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<block type="text">
+						<styleClass value="$TextDefault"/>
+						<styleClass value="$MiddleVAligned"/>
+						<bind name="text" value="'IDS_SWITCH_CLAN_SQUAD'"/>
+					</block>
+					<block className="button_expand_h" type="native">
+						<style>
+							<position value="absolute"/>
+							<right value="3px"/>
+						</style>
+						<styleClass value="$MouseDisable"/>
+						<styleClass value="$MiddleVAligned"/>
+					</block>
+					<style>
+						<flow value="horizontal"/>
+					</style>
+				</block>
+			</block>
+		</block>
+		<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+		<bind name="watchDH" value="'isSelfPlayerCommander'; ['selfPlayerEntity.preBattlePlayerSimple.evIsCommanderChanged']; selfPlayerEntity.preBattlePlayerSimple.isCommander"/>
+		<bind name="watchDH" value="'selfPreBattleId'; ['selfPlayerEntity.preBattlePlayerSimple.evPreBattleIdChanged']; selfPlayerEntity.preBattlePlayerSimple.preBattleId"/>
+		<bind name="collectionDH" value="CC.preBattlePlayerSimple; 'preBattlePlayers'; 'byPreBattle.' + selfPreBattleId + '.preBattleMembers'"/>
+		<bind name="watch" value="'currentPlayersNumberInDivision'; preBattlePlayers.length ? preBattlePlayers.length : 0"/>
+		<bind name="watch" value="'freePlaces'; (shipRestrictions.maxPlayers - currentPlayersNumberInDivision)"/>
+		<block>
+			<bind name="visible" value="(channel.typeIdent == 'private') &amp;&amp;
+						accountOnline &amp;&amp;
+						!isInDivision &amp;&amp;
+						((isSelfPlayerCommander &amp;&amp; freePlaces &gt; 0) || !divisionDataEntity) &amp;&amp;
+						!isInBalancer &amp;&amp;
+						!isSelfInParty"/>
+			<bind name="style" value="'alpha'; (!entityAccount.hasComponent(CC.playerInvitedToPrebattleInfo) &amp;&amp; !entityAccount.hasComponent(CC.invitationToDivision)) ? 1 : 0.5 "/>
+			<bind name="style" value="'hitTest'; (!entityAccount.hasComponent(CC.playerInvitedToPrebattleInfo) &amp;&amp; !entityAccount.hasComponent(CC.invitationToDivision))"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className

@@ -1,0 +1,42 @@
+nd name="watchDH" value="'isFavorite'; ['channel.evIsFavoriteChanged']; channel.isFavorite"/>
+		<bind name="watchDH" value="'channelOpened'; ['channel.evOpenChanged']; channel.opened"/>
+		<bind name="dataRefDH" value="'entityAccount'; 'channelEntity.channel.user.ref'"/>
+		<bind name="watchDH" value="'nickName'; ['entityAccount.accountName.evChanged']; entityAccount.accountName.nickName"/>
+		<bind name="watchDH" value="'pureName'; ['entityAccount.accountName.evChanged']; entityAccount.accountName.name"/>
+		<bind name="watch" value="'isInDivision'; entityAccount.hasComponent(CC.preBattlePlayerSimple)"/>
+		<bind name="watchDH" value="'accountOnline'; ['entityAccount.accountStatus.evOnlineChanged']; entityAccount.accountStatus.online"/>
+		<bind name="watchDH" value="'groupIds'; ['channelEntity.elementInGroups.evGroupsChanged']; channelEntity.elementInGroups.groupIds"/>
+		<bind name="watch" value="'isMyChannel'; isIn(ChannelGroup.MYCHANNELS, groupIds)"/>
+		<bind name="firstEntityDH" value="'chatRestrictionsEntity'; CC.chatRestrictions"/>
+		<bind name="watchDH" value="'isXmppChatBlocked';		['chatRestrictionsEntity.chatRestrictions.evBlockDockAndClanChatChanged'];
+												chatRestrictionsEntity.chatRestrictions.isBlockDockAndClanChat"/>
+		<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+		<bind name="watchDH" value="'isSelfPlayerCommander'; ['selfPlayerEntity.preBattlePlayerSimple.evIsCommanderChanged']; selfPlayerEntity.preBattlePlayerSimple.isCommander"/>
+		<bind name="watchDH" value="'selfPreBattleId'; ['selfPlayerEntity.preBattlePlayerSimple.evPreBattleIdChanged']; selfPlayerEntity.preBattlePlayerSimple.preBattleId"/>
+		<bind name="watchDH" value="'hasClanSquadModifier'; ['selfPlayerEntity.clanmanSupplyInfo.evHasClanSquadModifierChanged']; selfPlayerEntity.clanmanSupplyInfo.hasClanSquadModifier"/>
+		<bind name="watchDH" value="'role'; ['selfPlayerEntity.clanman.evRoleChanged']; selfPlayerEntity.clanman.role"/>
+		<bind name="watchDH" value="'clanId'; ['selfPlayerEntity.clanman.evClanIdChanged']; selfPlayerEntity.clanman.clanId"/>
+		<bind name="primaryEntityDH" value="'clanLadderInfoEntity'; CC.clanLadderInfo; clanId"/>
+		<bind name="watchDH" value="'leadingSquadId'; []; clanLadderInfoEntity.clanLadderInfo.leadingSquadId"/>
+		<bind name="primaryEntityDH" value="'clanTeamEntity'; CC.clanTeam; selfPreBattleId"/>
+		<bind name="watchDH" value="'squadId'; ['clanTeamEntity.clanTeam.evSquadIdChanged'];	clanTeamEntity.clanTeam.squadId"/>
+		<styleClass value="$DefaultMenuBehaviour"/>
+		<styleClass value="$ContextMenuDimentions"/>
+		<block className="MenuBg">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="instance" value="'InfotipBg'; _dropDown ? {} : null"/>
+			<bind name="instance" value="'ContextMenuBg'; !(_dropDown) ? {} : null"/>
+		</block>
+		<block>
+			<bind name="visible" value="_dropDown &amp;&amp; isMyChannel &amp;&amp; currentRegion != 'CN' &amp;&amp; !isXmppChatBlocked"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItem">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" val

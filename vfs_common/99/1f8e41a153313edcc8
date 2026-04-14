@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SSE_STATE">
+		<const name="LOCKED"	value="0"	type="Integer"/>
+		<const name="ACTIVE"	value="1"	type="Integer"/>
+	</enum>
+
+	<enum name="PREDEFINED_SSE_TAGS">
+		<const name="REFRESHABLE"	value="refreshable"		type="String"/>
+		<const name="COMMON"		value="common"			type="String"/>
+	</enum>
+
+	<enum name="SSE_REWARD_CATEGORY">
+		<const name="NONE"				value="none"			type="String"/>
+		<const name="SHIP"				value="ship"			type="String"/>
+		<const name="CREW"				value="crew"			type="String"/>
+		<const name="PREMIUM"			value="premium"			type="String"/>
+		<const name="XP"				value="exp"				type="String"/>
+		<const name="CREDITS"			value="credits"			type="String"/>
+		<const name="GOLD"				value="gold"			type="String"/>
+		<const name="COAL"				value="coal"			type="String"/>
+		<const name="STEEL"				value="steel"			type="String"/>
+		<const name="META_CURRENCY"		value="metacurrencies"	type="String"/>
+		<const name="LOOTBOX"			value="containers"		type="String"/>
+		<const name="DOGTAG"			value="dogtags"			type="String"/>
+		<const name="CAMO"				value="camos"			type="String"/>
+		<const name="SIGNAL"			value="signals"			type="String"/>
+		<const name="MODERNIZATION"		value="modernizations"	type="String"/>
+		<const name="PARAGON_XP"		value="paragonexp"		type="String"/>
+		<const name="OTHER"				value="other"			type="String"/>
+	</enum>
+
+	<enum name="SSE_CONDITION_CATEGORY">
+		<const name="NONE"					value="none"				type="String"/>
+		<const name="DAMAGE"				value="damage"				type="String"/>
+		<const name="HIT"					value="hit"					type="String"/>
+		<const name="SPOT"					value="spot"				type="String"/>
+		<const name="TOP"					value="top"					type="String"/>
+		<const name="RIBBONS"				value="ribbons"				type="String"/>
+		<const name="CONTROL_POINTS"		value="control_points"		type="String"/>
+		<const name="GAIN_EXP"				value="gain_exp"			type="String"/>
+		<const name="GAIN_CREDITS"			value="gain_credits"		type="String"/>
+		<const name="GAIN_STARS"			value="gain_stars"			type="String"/>
+		<const name="KILL_PLANE"			value="kill_planes"			type="String"/>
+		<const name="KILL_SHIP"				value="kill_ships"			type="String"/>
+		<const name="POTENTIAL_DAMAGE"		value="potential_damage"	type="String"/>
+		<const name="GAIN_ACHIEVEMENT"		value="gain_achievement"	type="String"/>
+		<const name="COMPLETE_TASK"			value="complete_task"		type="String"/>
+		<const name="BATTLE_PRECONDITION"	value="battle_precondition"	type="String"/>
+	</enum>
+</constants>

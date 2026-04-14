@@ -1,0 +1,35 @@
+les.UNIFIED_STATUS.ATTENTION}
+												: { _text: toUpperCase(tooltipPrefix + 'HINT_CHECKBOX_FILTER_NATION_' + field),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.DEFAULT}"/>
+		<bind name="watch" value="'eventPostfix'; value ? '_unselected' : '_selected'"/>
+		<style>
+			<marginBottom value="8px"/>
+			<width value="80px"/>
+		</style>
+		<bind name="instance" value="'CheckBox'; {	_isChecked: value,
+											_customLabelInstance: 'CheckBoxNationLabel',
+											_customLabelInstanceParams: {shipCountry: field},
+											_statusTooltipData: statusTooltipData,
+											_disabled: _disabled,
+											_action: 'setFilterValue',
+											_directEvent: SC.Common.STATISTICS_EVENTS.LOG,
+											_statusTooltipData: statusTooltipData,
+											_actionParams: {type: _filterType, field: field, value: !value, ident: _ident},
+											_directEventParams: {event: SC.Common.SHIP_FILTER_STATISTICS[toUpperCase(field)] + '_' + eventPostfix}}"/>
+	</block>
+	<block className="ShipSpecialCheckBox">
+		<bind name="visible" value="isVisible"/>
+		<bind name="collectionDH" value="CC.ownShip; 'shipsWithSnowflakes'+'ROOT'"/>
+		<bind name="collectionDesign" value="'DES_'+'shipsWithSnowflakes'+'ROOT'; 'shipsWithSnowflakes'; {'filter':$entity.ownShip.bonusTags.length &gt; 0}; []"/>
+		<bind name="name" value="'CarouselCheckBox_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType] + '_' + field"/>
+		<bind name="primaryEntityDH" value="'featureEntity_13'; CC.accountFeature; SC.Common.ACCOUNT_FEATURE.BIT_MASKS[13]"/>
+		<bind name="watchDH" value="'feature_13'; ['featureEntity_13.accountFeature.evStateChanged']; featureEntity_13.accountFeature.state"/>
+		<bind name="watch" value="'featureState'; feature_13"/>
+		<bind name="action" value="''; 'featureSeen'; {featureIndex: 13}"/>
+		<bind name="primaryEntityDH" value="'featureEntity_16'; CC.accountFeature; SC.Common.ACCOUNT_FEATURE.BIT_MASKS[16]"/>
+		<bind name="watchDH" value="'feature_16'; ['featureEntity_16.accountFeature.evStateChanged']; featureEntity_16.accountFeature.state"/>
+		<bind name="watch" value="'featureState'; feature_16"/>
+		<bind name="action" value="''; 'featureSeen'; {featureIndex: 16}"/>
+		<bind name="primaryEntityDH" value="'featureEntity_19'; CC.accountFeature; SC.Common.ACCOUNT_FEATURE.BIT_MASKS[19]"/>
+		<bind name="watchDH" value="'feature_19'; ['featureEntity_19.accountFeature.evStateChanged']; featureEntity_19.accountFeature.state"/>
+		<bind name="watch" 

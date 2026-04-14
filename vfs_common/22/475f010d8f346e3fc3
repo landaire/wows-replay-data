@@ -1,0 +1,225 @@
+s'
+																					: '';
+									(isActionEnabled == false)						? {} :
+									(_playerContext.type == 'inviteToChannel')		? {channelId: _playerContext.channelId, inviteDbId: entityAccount.accountSimple.dbId} :
+									(_playerContext.type == 'inviteToDivision')		? {playerId: entityAccount.accountSimple.dbId, playerName: entityAccount.accountName.name, inviteType: SC.Pre_battle.PRE_BATTLE_INVITE_TYPE.COMMON} :
+									(_playerContext.type == 'inviteToTrainingRoom')	? {newAccDBID: entityAccount.accountSimple.dbId, teamId: _teamId} :
+									(isTextSettingsBlocked)							? {} :
+									(_playerContext.type == 'startPrivateChat')		? {dbId: entityAccount.accountSimple.dbId} :
+									(_playerContext.type == 'channelParticipants')	? {dbId: entityAccount.accountSimple.dbId}
+																					: {}"/>
+			<block>
+				<bind name="visible" value="isRefSysParticipant"/>
+				<style>
+					<position value="absolute"/>
+					<top value="3px"/>
+					<left value="2px"/>
+					<hitTest value="false"/>
+				</style>
+				<bind name="instance" value="'IconReferralSystem'; isRefSysParticipant ? { _referralType: referralType} : null"/>
+			</block>
+			<block>
+				<bind name="visible" value="isInPatrolBlockVisible"/>
+				<style>
+					<position value="absolute"/>
+					<top value="3px"/>
+					<left value="2px"/>
+				</style>
+				<bind name="instance" value="'IconClanPatrol'; isInPatrolBlockVisible ? { _patrolName: patrolName } : null"/>
+			</block>
+			<block>
+				<bind name="transition" value="(mouseDown &amp;&amp; !isSelf); 0.03; {alpha: 1}; {alpha: 0.7}"/>
+				<styleClass value="$Fullsize"/>
+				<bind name="style" value="'marginLeft';	_isShort	? '17px'
+													: '24px'"/>
+				<block>
+					<styleClass value="$Fullsize"/>
+					<bind name="instance" value="'PlayerContactItem'; {_entityAccountId: _entityAccountId, _playerContext: _playerContext, _isShort: _isShort, _nickNameWidth: _nickNameWidth }"/>
+				</block>
+				<block>
+					<styleClass value="$AlignRight"/>
+					<block>
+						<bind name="visible" value="!(isSelf)"/>
+						<style>
+							<marginTop value="4px"/>
+						</style>
+						<bind name="style" value="'marginRight'; _isShort ? '6px' : '10px'"/>
+						<bind name="transition" value="rollOver; 0.3; {alpha: 0}; {alpha: 1.0}; {alpha: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD; 0.07"/>
+						<bind name="watch" value="'isAddToContactsBtnVisible';	(groupIdsOfAccount==null) &amp;&amp;
+																!isIgnored &amp;&amp;
+																!isSuspended &amp;&amp;
+																isChatServerAvailable"/>
+						<block>
+							<style>
+								<marginTop value="1px"/>
+								<marginRight value="3px"/>
+							</style>
+							<bind name="instance" value="'BusyIndicator'; showBusyIndicator ? { _showBusyIndicator: showBusyIndicator } : null"/>
+						</block>
+						<block>
+							<bind name="visible" value="isAddToContactsBtnVisible"/>
+							<style>
+								<marginRight value="4px"/>
+							</style>
+							<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 'IDS_ADD_TO_CONTACTS'}"/>
+							<bind name="instance" value="'ImageButton'; {_width: '23px',
+														_height: '23px',
+														_enabled: true,
+														_action: 'addContact',
+														_actionParams: {dbId: entityAccount.accountSimple.dbId},
+														_backgroundImage: 'url:../service_kit/buttons/context/add_contact.png'}"/>
+						</block>
+						<bind name="watch" value="'isInviteToDivisionBtnVisible';	((isSelfPlayerCommander &amp;&amp; (freePlaces &gt; 0)) || !isInDivision) &amp;&amp;
+																	accountOnline &amp;&amp;
+																	!_isShort &amp;&amp;
+																	!isInBalancer &amp;&amp;
+																	(_playerContext.type != 'inviteToTrainingRoom') &amp;&amp;
+																	!isInTrainingRoom &amp;&amp;
+																	!isSuspended"/>
+						<block>
+							<bind name="visible" value="isInviteToDivisionBtnVisible"/>
+							<bind name="watch" value="'inviteToDivisionBtnEnabled'; 	!entityAccount.hasComponent(CC.playerInvitedToPrebattleInfo) &amp;&amp;
+																	!entityAccount.hasComponent(CC.invitationToDivision) &amp;&amp;
+																	!isInvitedToDivision &amp;&amp;
+																	!isInDivision &amp;&amp;
+																	isInviteSlotAvailable"/>
+							<bind name="tooltip" value="'SimpleStatusTooltip'; {	_unifiedStatus: isInviteSlotAvailable	? SC.Ui_styles.UNIFIED_STATUS.DEFAULT
+																										: SC.Ui_styles.UNIFIED_STATUS.WARNING,
+																_text: isInvitedToDivision				? 'IDS_INVITED_IN_DIVISION_ALREADY'
+																										: isInviteSlotAvailable	? 'IDS_INVITE_IN_DIVISION'
+																																: 'IDS_ALL_SLOTS_ON_DIVISION_ARE_TAKEN'}"/>
+							<style>
+								<marginRight value="4px"/>
+							</style>
+							<bind name="instance" value="'ImageButton'; {_width: '23px',
+														_height: '23px',
+														_enabled: inviteToDivisionBtnEnabled,
+														_action: 'inviteToDivision',
+														_actionParams: {playerId: entityAccount.accountSimple.dbId,
+																		playerName: entityAccount.accountName.name,
+																		inviteType: SC.Pre_battle.PRE_BATTLE_INVITE_TYPE.COMMON},
+														_backgroundImage: 'url:../service_kit/buttons/context/division_invite.png'}"/>
+						</block>
+						<block>
+							<bind name="visible" value="!isSuspended &amp;&amp; isChatServerAvailable &amp;&amp; !isTextSettingsBlocked"/>
+							<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 'IDS_SEND_MESSAGE'}"/>
+							<bind name="instance" value="'ImageButton'; {_width: '23px',
+														_height: '23px',
+														_enabled: true,
+														_action: 'openChannelForPrivateMessages',
+														_actionParams: {dbId: entityAccount.accountSimple.dbId},
+														_backgroundImage: 'url:../service_kit/buttons/context/start_chat.png'}"/>
+						</block>
+						<style>
+							<flow value="horizontal"/>
+						</style>
+					</block>
+					<style>
+						<flow value="horizontal"/>
+					</style>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+		</block>
+	</block>
+	<block className="ContactInfoTooltipAccountHeader">
+		<bind name="entityDH" value="'playerEntity'; _entityAccountId"/>
+		<bind name="watchDH" value="'playerEntityDbId'; [];  playerEntity.accountSimple.dbId"/>
+		<style>
+			<width value="100%"/>
+		</style>
+		<block className="dock_submenu_item" type="native">
+			<params>
+				<param name="soundSet" value="dropdown"/>
+			</params>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block>
+				<style>
+					<width value="100%"/>
+					<margin value="8px"/>
+				</style>
+				<bind name="instance" value="'PlayerStereotypeDogTag';	!_isBot ? {_playerDbId: playerEntityDbId, _hitTest: false} : null"/>
+				<bind name="instance" value="'BotStereotype';			 _isBot ? {_entityAccountId: _entityAccountId} : null"/>
+			</block>
+		</block>
+	</block>
+	<block className="BotStereotype">
+		<bind name="firstEntityDH" value="'trainingRoomEntity'; CC.trainingRoomWindowState"/>
+		<bind name="watchDH" value="'windowState'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.state"/>
+		<bind name="watchDH" value="'notReadyWindowState'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.notReadyWindowState"/>
+		<bind name="watchDH" value="'windowInset'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.inset"/>
+		<bind name="watchDH" value="'windowInsetLabel'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.insetLabel"/>
+		<bind name="watchDH" value="'isBotsAIEnabled'; ['trainingRoomEntity.trainingRoom.evUpdate']; trainingRoomEntity.trainingRoom.isBotsAIEnabled"/>
+		<bind name="entityDH" value="'entityAccount'; _entityAccountId"/>
+		<bind name="watchDH" value="'nickName'; ['entityAccount.accountName.evChanged']; entityAccount.accountName.nickName"/>
+		<bind name="watchDH" value="'AILevel'; ['entityAccount.bot.evUpdate']; entityAccount.bot.AILevel"/>
+		<bind name="watchDH" value="'canShoot'; ['entityAccount.bot.evUpdate']; entityAccount.bot.canShoot"/>
+		<bind name="watchDH" value="'canMove'; ['entityAccount.bot.evUpdate']; entityAccount.bot.canMove"/>
+		<bind name="watch" value="'canShootStr'; canShoot	? 'IDS_BOT_CAN_SHOOT_STATUS'
+											: 'IDS_BOT_CAN_NOT_SHOOT_STATUS'"/>
+		<bind name="watch" value="'canMoveStr';	canMove		? 'IDS_BOT_CAN_MOVE_STATUS'
+											: 'IDS_BOT_CAN_NOT_MOVE_STATUS'"/>
+		<style>
+			<width value="100%"/>
+		</style>
+		<block>
+			<style>
+				<width value="100%"/>
+				<marginRight value="8px"/>
+				<marginTop value="10px"/>
+				<marginBottom value="6px"/>
+			</style>
+			<block type="text">
+				<style>
+					<width value="100%"/>
+				</style>
+				<styleClass value="$TextHeaderWhite"/>
+				<bind name="text" value="nickName"/>
+				<bind name="class" value="'$Bold'"/>
+			</block>
+			<block type="text">
+				<style>
+					<width value="100%"/>
+					<marginTop value="-3px"/>
+				</style>
+				<styleClass value="$TextDefault"/>
+				<bind name="text" value="!isBotsAIEnabled 	? 'IDS_DISABLED_AI_BOT_STATUS' :
+						AILevel &gt; 9 		? 'IDS_HARD_LEVEL_BOT_STATUS' :
+						AILevel &gt; 5 		? 'IDS_MEDIUM_LEVEL_BOT_STATUS'
+											: 'IDS_LOW_LEVEL_BOT_STATUS'"/>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="isBotsAIEnabled"/>
+			<style>
+				<width value="100%"/>
+				<marginRight value="8px"/>
+				<marginBottom value="6px"/>
+			</style>
+			<block type="text">
+				<style>
+					<width value="100%"/>
+				</style>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="'$FontColorBlueish'"/>
+				<bind name="text" value="tr(canShootStr) + ' ' + tr(canMoveStr)"/>
+			</block>
+		</block>
+	</block>
+	<block className="PlayerContactItem">
+		<bind name="firstEntityDH" value="'trainingRoomEntity'; CC.trainingRoomWindowState"/>
+		<bind name="watch" value="'isInTrainingRoom'; trainingRoomEntity != null"/>
+		<bind name="entityDH" value="'entityAccount'; _entityAccountId"/>
+		<bind name="watchDH" value="'isSelf'; 			[]; entityAccount.accountSimple.isSelfPlayer"/>
+		<bind name="watchDH" value="'nickName';			['entityAccount.accountName.evChanged']; entityAccount.accountName.nickName"/>
+		<bind name="watchDH" value="'pureName';			['entityAccount.accountName.evChanged']; entityAccount.accountName.name"/>
+		<bind name="watchDH" value="'accountOnlineDH';		['entityAccount.accountStatus.evOnlineChanged']; entityAccount.accountStatus.online"/>
+		<bind name="watch" value="'accountOnline'; accountOnlineDH || isSelf"/>
+		<bind name="watchDH" value="'inBattle'; 			['entityAccount.accountStatus.evInBattleChanged']; entityAccount.accountStatus.inBattle"/>
+		<bind name="watchDH" value="'rank'; 				['entityAccount.accountRank.evRankChanged']; entityAccount.accountRank.rank"/>
+		<bind name="watchDH" value="'rankLeague'; 				['entityAccount.accountRank.evRankChanged']; entityAccount.accountRank.league"/>
+		<bind name="watchDH" value="'rankSeasonId'; 		['entityAccount.accountRank.evRankChang

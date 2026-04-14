@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SYS_MESSAGE_TYPE_UI" type="Integer">
+		<const name="SHIP_BUY" value="0"/>
+		<const name="SHIP_SELL" value="1"/>
+		<const name="USER_COMPONENT_BUY" value="2"/>
+		<const name="USER_COMPONENT_SELL" value="3"/>
+		<const name="SHIP_SERVE" value="4"/>
+		<const name="BATTLE_RESULTS" value="5"/>
+		<const name="SHIP_EXPLORE" value="6"/>
+		<const name="USER_COMPONENT_EXPLORE" value="7"/>
+		<const name="USER_COMPONENT_SET" value="8"/>
+		<const name="INVOICE_RECEIVED" value="9"/>
+		<const name="SERVER_REBOOT" value="10"/>
+		<const name="ADMIN_TEXT_MESSAGE" value="11"/>
+		<const name="CHANGE_NAME" value="12"/>
+		<const name="NOTIFICATION_MESSAGE" value="13"/>
+		<const name="ACCOUNT_LEVEL_REACHED" value="14"/>
+		<const name="TRANSFER_XP" value="15"/>
+		<const name="BUY_SLOTS" value="16"/>
+		<const name="BUY_PREM" value="17"/>
+		<const name="BUY_MONEY" value="18"/>
+		<const name="SET_MODERNIZATION" value="19"/>
+		<const name="UNSET_MODERNIZATION" value="20"/>
+		<const name="BUY_MODERNIZATION" value="21"/>
+		<const name="DESTROY_MODERNIZATION" value="22"/>
+		<const name="SELL_MODERNIZATION" value="23"/>
+		<const name="BARRACKS_CAPACITY" value="24"/>
+		<const name="CREW_FIRE" value="25"/>
+		<const name="CREW_HIRE" value="26"/>
+		<const name="CREW_ASSIGN" value="27"/>
+		<const name="CREW_DISEMBARK" value="28"/>
+		<const name="CREW_LEVEL_UP" value="29"/>
+		<const name="CREW_LEARN_SKILL" value="30"/>
+		<const name="CREW_RESET_SKILLS" value="31"/>
+		<const name="CREW_START_ADAPTATION" value="32"/>
+		<const name="CREW_FINISH_ADAPTATION" value="33"/>
+		<const name="PREM_OFF" value="34"/>
+		<const name="CHAT_BAN_ADDED" value="35"/>
+		<const name="CHAT_BAN_DROPPED" value="36"/>
+		<const name="BUY_EXTERIOR" value="37"/>
+		<const name="SET_EXTERIOR_ACTIVITY" value="38"/>
+		<const name="BUY_ACTIVATE_EXTERIOR" value="39"/>
+		<const name="EXTERIOR_REMOVED" value="40"/>
+		<const name="EXTERIOR_AUTORECHARGE_CHANGED" value="41"/>
+		<const name="EXTERIOR_AUTORECHARGE_RESULT" value="42"/>
+		<const name="GET_SLOTS" value="43"/>
+		<const name="GET_GOLD" value="44"/>
+		<const name="GET_PREM" value="45"/>
+		<const name="ABUSE_STATUS_CHANGED" value="46"/>
+		<const name="SHIP_XP_MOVE" value="47"/>
+		<const name="USER_COMPONENT_DISMOUNT" value="49"/>
+		<const name="EVALUATION_ACCEPTED" value="50"/>
+		<const name="BUY_ABILITY" value="51"/>
+		<const name="SET_CURRENCY_ABILITY" value="53"/>
+		<const name="ABILITY_AUTORECHARGE_RESULT" value="55"/>
+		<const name="DENUNCIATIONS_RECEIVED" value="56"/>
+		<const name="PRAISES_RECEIVED" value="57"/>
+		<const name="EARN_ACHIEVEMENT" value="60"/>
+		<const name="VS_EVENT_PRIME_STARTED" value="61"/>
+		<const name="VS_EVENT_PRIME_FINISHED" value="62"/>
+		<const name="ARC_RECRUITER" value="63"/>
+		<const name="ARC_CHANGE_SIDE" value="64"/>
+		<const name="MILESTONE_STAGE_PRE_PAUSED" value="65"/>
+		<const name="MILESTONE_STAGE_PAUSED" value="66"/>
+		<const name="INVOICE_RENT" value="91"/>
+		<const name="RENT" value="92"/>
+		<const name="CAMPAIGNS_CAMPAIGN_COMPLETED" value="93"/>
+		<const name="CAMPAIGNS_MISSION_UPDATED" value="94"/>
+		<const name="CAMPAIGNS_TASK_UNLOCKED" value="95"/>
+		<const name="CAMPAIGNS_TASK_REWARDED" value="98"/>
+		<const name="CAMPAIGNS_TASK_BOSS_ENABLED" value="99"/>
+		<const name="BUY_LOOTBOX" value="100"/>
+		<const name="AUTO_BUY_LOOTBOX" value="101"/>
+		<const name="OPEN_LOOTBOX" value="102"/>
+		<const name="AUTO_OPEN_LOOTBOX" value="103"/>
+		<const name="SELL_EXTERIOR" value="104"/>
+		<const name="SELL_ABILITY" value="105"/>
+		<const name="TRANSACTION_ERROR" value="106"/>
+		<const name="COMPLETE_ALBUM" value="107"/>
+		<const name="REMOVE_COLLECTION_CARD" value="108"/>
+		<const name="COMPENSATE_DUPLICATES" value="109"/>
+		<const name="CLAN_EVENT_MESSAGE" value="110"/>
+		<const name="REMOVE_COLLECTION_ALBUM" value="111"/>
+		<const name="SET_VANITY" value="112"/>
+		<const name="UNSET_VANITY" value="113"/>
+		<const name="SUBSCRIBE_ALBUM" value="114"/>
+		<const name="UNSUBSCRIBE_ALBUM" value="115"/>
+		<const name="CLAN_RESOURCE_RECEIVED" value="116"/>
+		<const name="CLAN_BONUS_ACTIVATED" value="117"/>
+		<const name="CLAN_BATTLE_PRIMETIME_CHANGED" value="118"/>
+		<const name="CLAN_INVITE_SENT" value="119"/>
+		<const name="CLAN_INVITE_FAILED" value="120"/>
+		<const name="NAVAL_FLAG_CHANGED" value="121"/>
+		<const name="CAMPAIGNS_CAMPAIGN_DURATION_CHANGED" value="122"/>
+		<const name="REWARD_ALMANAC" value="123"/>
+		<const name="PREMUIM_DAY_LEFT" value="125"/>
+		<const name="SHIP_BECAME_ELITE" value="126"/>
+		<const name="OPEN_SEVERAL_LOOTBOXES" value="127"/>
+		<const name="COMPENSATION" value="128"/>
+		<const name="DROP_SHIP_BRANCH" value="129"/>
+		<const name="DOCK_CHAT_MISBEHAVIOUR_REPORT_ACCEPTED" value="130"/>
+		<const name="LINK" value="131"/>
+		<const name="UNLINK" value="132"/>
+		<const name="BIP_SESSION_EVENT" value="133"/>
+		<const name="CLAN_RULES_HAVE_CHANGED" value="134"/>
+		<const name="RANK_BATTLE_STATE_CHANGED" value="135"/>
+		<const name="BRAWL_BATTLES_STATE_CHANGED" value="136"/>
+		<const name="BUY_AND_INSTALL_ECOBOOST" value="138"/>
+		<const name="SELL_ECOBOOST" value="139"/>
+		<const name="INVOICE_ECOBOOST" value="140"/>
+		<const name="SET_ECOBOOST_ACTIVITY" value="141"/>
+		<const name="MISSING_EXPENDABLE_ITEMS_IN_SHIP_BUILD" value="142"/>
+		<const name="BATTLEPASS_REWARDS_CLAIM" value="143"/>
+		<const name="BATTLEPASS_TYPE_CHANGED" value="144"/>
+		<const name="BATTLEPASS_LEVEL_UP" value="145"/>
+		<const name="NEWBIE_QUEST_INFORMER" value="146"/>
+		<const name="SNOWFLAKES_REWARDS_CLAIM" value="147"/>
+		<const name="FAST_QUALIFICATION_REWARDS" value="148"/>
+	</enum>
+
+	<enum name="SYS_MESSAGE_OPERATION" type="String">
+		<const name="BOUGHT"					value="bought"						/>
+		<const name="RECEIVED"					value="received"					/>
+		<const name="SOLD"						value="sold"						/>
+		<const name="WRITTEN_OFF"				value="written_off"					/>
+		<const name="RENTED"					value="rented"						/>
+		<const name="BET_MADE"					value="bet_made"					/>
+		<const name="BET_RETURNED"				value="bet_returned"				/>
+		<const name="BET_WON"					value="bet_won"						/>
+		<const name="BET_CANCELED"				value="bet_canceled"				/>
+		<const name="REWARDED"					value="rewarded"					/>
+		<const name="NEWBIE_QUEST_REWARDED" 	value="newbie_quest_rewarded"		/>
+		<const name="SUBALBUM_REWARDED"			value="subalbum_rewarded"			/>
+		<const name="ALBUM_REWARDED"			value="album_rewarded"				/>
+		<const name="INVITATION_SENT"			value="invitation_sent"				/>
+		<const name="INVITATION_NOT_SENT"		value="invitation_not_sent"			/>
+		<const name="INVITATION_ACCEPTED"		value="invitation_accepted"			/>
+		<const name="SHIPYARD_LEVEL_REWARDED"	value="shipyard_level_rewarded"		/>
+		<const name="PLAYER_LEFT_GROUP" 		value="player_left_group"			/>
+		<const name="CASHBACK_RECEIVED"			value="cashback_received"			/>
+		<const name="STORAGE_CHANGED"			value="storage_changed"				/>
+		<const name="CLAN_CREATED"				value="clan_created"				/>
+		<const name="CLAN_CHANGED"				value="clan_changed"				/>
+		<const name="CLAN_TREASURY_REWARDED"	value="clan_treasury_rewarded"		/>
+		<const name="CLAN_TREASURY_DISTRIBUTED" value="clan_treasury_distributed"	/>
+		<const name="BATTLE_REWARDS"			value="battle_rewards"				/>
+		<const name="VERSION_UPDATERS"			value="version_updaters"			/>
+		<const name="CUSTOM"					value="custom"						/>
+		<const name="COMPENSATION_RECEIVED"		value="compensation_received"		/>
+		<const name="BATTLEPASS_REWARD_CLAIM"	value="battlepass_reward_claim"		/>
+		<const name="SSE_REWARD_CLAIM"			value="sse_reward_claim"			/>
+	</enum>
+
+	<enum name="SYS_MESSAGE_SOURCE" type="String">
+		<const name="GAME_SERVER"	value="game_server"	/>
+		<const name="METASHOP"		value="metashop"	/>
+		<const name="SHIPYARD"		value="shipyard"	/>
+		<const name="CLANS"			value="clans"		/>
+		<const name="AUCTIONS"		value="auctions"	/>
+		<const name="WAREHOUSE"		value="warehouse"	/>
+		<const name="REFERRAL"		value="referral"	/>
+		<const name="SEABATTLE"		value="seabattle"	/>
+		<const name="PREMSHOP"		value="premiumshop"	/>
+		<const name="WGNC"			value="wgnc"		/>
+		<const name="CLANSTARS"		value="clanstars"	/>
+	</enum>
+</constants>

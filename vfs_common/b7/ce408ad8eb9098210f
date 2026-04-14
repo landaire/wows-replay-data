@@ -1,0 +1,66 @@
+tate'; feature_19"/>
+		<bind name="action" value="''; 'featureSeen'; {featureIndex: 19}"/>
+		<bind name="watch" value="'isEnabled'; _disabled != true"/>
+		<bind name="watch" value="'isVisible';	(	(field == SC.Common.SHIP_SPECIAL_FILTER_TYPE.WITH_COMMANDER || 
+									field == SC.Common.SHIP_SPECIAL_FILTER_TYPE.WITHOUT_COMMANDER) 
+									&amp;&amp; feature_13 == 'locked') 													? false :
+									((field == SC.Common.SHIP_SPECIAL_FILTER_TYPE.SNOWFLAKES ||	
+									field == SC.Common.SHIP_SPECIAL_FILTER_TYPE.PARAGON_BONUS || 
+									field == SC.Common.SHIP_SPECIAL_FILTER_TYPE.RENTED ||
+									field == SC.Common.SHIP_SPECIAL_FILTER_TYPE.TEMPORARY_BRANCH) &amp;&amp; _disabled)	? false
+																												: true"/>
+		<bind name="watch" value="'imagePath'; 'url:../service_kit/filters/'+ field +'.png'"/>
+		<bind name="watch" value="'statusTooltipData'; _disabled	? {	_text: toUpperCase('IDS_HINT_CHECKBOX_FILTER_NOT_AVAILABLE_' + field),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.ATTENTION}
+												: { _text: toUpperCase('IDS_HINT_CHECKBOX_FILTER_' + field),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.DEFAULT}"/>
+		<bind name="watch" value="'eventPostfix'; value ? '_unselected' : '_selected'"/>
+		<style>
+			<marginBottom value="8px"/>
+			<width value="80px"/>
+		</style>
+		<bind name="instance" value="'CheckBox'; {	_isChecked: value,
+											_customLabelInstance: 'CheckBoxImageLabel',
+											_customLabelInstanceParams: {	_height: 39, _width: 39, _marginTop: -10,
+																			_marginLeft: '2px', _imagePath: imagePath},
+											_statusTooltipData: statusTooltipData,
+											_disabled: _disabled,
+											_action: 'setFilterValue',
+											_directEvent: SC.Common.STATISTICS_EVENTS.LOG,
+											_statusTooltipData: statusTooltipData,
+											_actionParams: {type: _filterType, field: field, value: !value, ident: _ident},
+											_directEventParams: {event: SC.Common.SHIP_FILTER_STATISTICS[toUpperCase(field)] + '_' + eventPostfix}}"/>
+	</block>
+	<block className="ShipRarityCheckBox">
+		<bind name="name" value="'CarouselCheckBox_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType] + '_' + toUpperCase(field)"/>
+		<bind name="watch" value="'imagePath'; 'url:../service_kit/filters/' + toLowerCase(field) + '.png'"/>
+		<bind name="watch" value="'statusTooltipData'; _disabled	? {	_text: toUpperCase('IDS_HINT_CHECKBOX_FILTER_RARITY_NOT_AVAILABLE_' + field),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.ATTENTION}
+												: {	_text: toUpperCase('IDS_HINT_CHECKBOX_FILTER_RARITY_' + field),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.DEFAULT}"/>
+		<bind name="watch" value="'eventName'; toUpperCase(field) + '_' + (!value ? 'SELECTED' : 'UNSELECTED')"/>
+		<style>
+			<marginBottom value="8px"/>
+			<width value="80px"/>
+		</style>
+		<bind name="instance" value="'CheckBox'; {	_isChecked: value,
+									_customLabelInstance: 'CheckBoxImageLabel',
+									_customLabelInstanceParams: {	_height: 39, _width: 39, _marginTop: -10,
+																	_marginLeft: '2px', _imagePath: imagePath},
+									_statusTooltipData: statusTooltipData,
+									_disabled: _disabled,
+									_action: 'setFilterValue',
+									_directEvent: SC.Common.STATISTICS_EVENTS.LOG,
+									_statusTooltipData: statusTooltipData,
+									_actionParams: {type: _filterType, field: field, value: !value, ident: _ident},
+									_directEventParams: {event: SC.Common.SHIP_FILTERS_RARITY_STATISTICS[eventName]}}"/>
+	</block>
+	<block className="AppliedHardSystemFilter">
+		<bind name="collectionDH" value="CC.battleType; 'selectedBattleTypes'; 'selected'"/>
+		<bind name="entityDH" value="'battleTypeEntity'; selectedBattleTypes[0].id"/>
+		<bind name="watch" value="'selectedBattleType'; battleTypeEntity.battleType.type"/>
+		<bind name="watch" value="'isEventBattle'; selectedBattleType == SC.Common.BATTLE_TYPES.EVENT_BATTLE"/>
+		<bind name="watchDH" value="'restrictionsEntityId'; ['battleTypeEntity.battleType.evRestrictionEntityIdChanged']; battleTypeEntity.battleType.restrictionEntityId"/>
+		<bind name="watch" value="'battleTypeGameParamId'; battleTypeEntity.battleType.battleTypeGameParamId"/>
+		<bind name="primaryEntityDH" value="'operationEntity'; CC.operation; battleTypeGameParamId"/>
+		<bind name="watchDH" value="'operationCustomIconName'; ['operationEntity.operation.evStatusChanged']; operationEntity.oper

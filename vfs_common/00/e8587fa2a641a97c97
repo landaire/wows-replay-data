@@ -1,0 +1,132 @@
+BSCOPE_EVENT_DIRECTIONS.DOWN"/>
+					<bind name="instance" value="'InfotipBlurmap'; isBlurOptionEnabled ? {} : null"/>
+				</block>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<style>
+						<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_panel.png"/>
+						<background9Slice value="[3]"/>
+					</style>
+					<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+				</block>
+			</block>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<margin value="-2px"/>
+				</style>
+				<block className="InfotipPins">
+					<styleClass value="$FullsizeAbsolute"/>
+					<block>
+						<params>
+							<param name="name" value="pinTop"/>
+						</params>
+						<style>
+							<position value="absolute"/>
+							<top value="-10px"/>
+						</style>
+						<block>
+							<style>
+								<position value="absolute"/>
+							</style>
+							<block className="mc_blurmap_infotip_arrow_vert" type="native">
+								<style>
+									<position value="absolute"/>
+									<width value="22px"/>
+									<height value="12px"/>
+								</style>
+								<bind name="visible" value="false"/>
+							</block>
+							<bind name="instance" value="'InfotipPinBlurmapVert'; isBlurOptionEnabled ? {} : null"/>
+						</block>
+						<block>
+							<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+							<style>
+								<width value="22px"/>
+								<height value="12px"/>
+								<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_vert.png"/>
+							</style>
+						</block>
+					</block>
+					<block>
+						<params>
+							<param name="name" value="pinBottom"/>
+						</params>
+						<style>
+							<position value="absolute"/>
+							<bottom value="-22px"/>
+						</style>
+						<bind name="scaleY" value="-1"/>
+						<block>
+							<style>
+								<position value="absolute"/>
+							</style>
+							<block className="mc_blurmap_infotip_arrow_vert" type="native">
+								<style>
+									<position value="absolute"/>
+									<width value="22px"/>
+									<height value="12px"/>
+								</style>
+								<bind name="visible" value="false"/>
+							</block>
+							<bind name="instance" value="'InfotipPinBlurmapVert'; isBlurOptionEnabled ? {} : null"/>
+						</block>
+						<block>
+							<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+							<style>
+								<width value="22px"/>
+								<height value="12px"/>
+								<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_vert.png"/>
+							</style>
+						</block>
+					</block>
+					<block>
+						<params>
+							<param name="name" value="pinLeft"/>
+						</params>
+						<style>
+							<position value="absolute"/>
+							<left value="-10px"/>
+						</style>
+						<block>
+							<style>
+								<position value="absolute"/>
+							</style>
+							<block className="mc_blurmap_infotip_arrow_hor" type="native">
+								<style>
+									<position value="absolute"/>
+									<width value="12px"/>
+									<height value="22px"/>
+								</style>
+								<bind name="visible" value="false"/>
+							</block>
+							<bind name="instance" value="'InfotipPinBlurmapHor'; isBlurOptionEnabled ? {} : null"/>
+						</block>
+						<block>
+							<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+							<style>
+								<position value="absolute"/>
+								<width value="12px"/>
+								<height value="22px"/>
+								<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_hor.png"/>
+							</style>
+						</block>
+					</block>
+					<block>
+						<params>
+							<param name="name" value="pinRight"/>
+						</params>
+						<style>
+							<position value="absolute"/>
+							<right value="-10px"/>
+						</style>
+						<bind name="scaleX" value="-1"/>
+						<block>
+							<style>
+								<position value="absolute"/>
+							</style>
+							<block className="mc_blurmap_infotip_arrow_hor" type="native">
+								<style>
+									<position value="absolute"/>
+									<width value="12px"/>
+									<height v

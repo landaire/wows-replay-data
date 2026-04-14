@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SERVICE_COLORS" type="Hex">
+		<const name="YELLOW"	value="0xFFFFCC66"/>
+		<const name="DARK_BLUE" value="0xFF051523"/>
+		<const name="ORANGE"	value="0xFFFF9933"/>
+		<const name="RED"		value="0xFFFF6600"/>
+		<const name="WHITE"		value="0xFFFFFFFF"/>
+		<const name="GREEN"		value="0xFF4CE8AA"/>
+	</enum>
+
+	<enum name="UNIFIED_STATUS" type="String">
+		<const name="DEFAULT"				value="default" />
+		<const name="CHECK"					value="check" />
+		<const name="DATE"					value="date" />
+		<const name="DATE_ATTENTION"		value="date_attention" />
+		<const name="ATTENTION"				value="attention" />
+		<const name="NEGATIVE"				value="negative" />
+		<const name="WARNING"				value="warning" />
+		<const name="LOCK"					value="lock" />
+		<const name="MOUSE_LEFT"			value="mouse_left_click" />
+		<const name="MOUSE_DOUBLE_LEFT"		value="mouse_left_double_click" />
+		<const name="MOUSE_RIGHT"			value="mouse_right_click" />
+		<const name="MOUSE_SCROLL"			value="mouse_scroll" />
+		<const name="HIDDEN"				value="hidden" />
+		<const name="DEFAULT_REWARD"		value="default_reward" />
+		<const name="CAMPAIGN_REWARD"		value="campaign_reward" />
+		<const name="CONTAINER_REWARD"		value="container_reward" />
+		<const name="BROTHERHOOD_REWARD"	value="brotherhood_reward" />
+		<const name="SALE_AVAILABLE"		value="sale" />
+		<const name="INFO"					value="info" />
+		<const name="LINKED"				value="linked" />
+		<const name="REPAINTED"				value="repainted" />
+		<const name="UPDATE"				value="update" />
+		<const name="EPIC_SKILL"			value="epic_skill" type="String" />
+		<const name="UNIQUE_CREW"			value="unique_crew" type="String" />
+		<const name="ADVANCED_CREW"			value="advanced_crew" type="String" />
+		<const name="IN_BATTLE"				value="in_battle" type="String" />
+		<const name="RECOMMENDED"			value="recommended" type="String" />
+		<const name="RETRAINING"			value="retraining" type="String" />
+		<const name="EARLY_ACCESS"			value="early_access" type="String" />
+	</enum>
+</constants>

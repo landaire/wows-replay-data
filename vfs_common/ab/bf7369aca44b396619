@@ -1,0 +1,42 @@
+nd name="primaryEntityDH" value="'clanEntity'; CC.clan; clanId"/>
+		<bind name="watchDH" value="'clanTag'; ['clanEntity.clan.evTagChanged']; clanEntity.clan.tag"/>
+		<bind name="watchDH" value="'clanName'; ['clanEntity.clanExtended.evNameChanged']; clanEntity.clanExtended.name"/>
+		<bind name="watchDH" value="'clanId'; ['selfPlayerEntity.clanman.evClanIdChanged']; selfPlayerEntity.clanman.clanId"/>
+		<bind name="watchDH" value="'role'; ['selfPlayerEntity.clanman.evRoleChanged']; selfPlayerEntity.clanman.role"/>
+		<bind name="watchDH" value="'messageOfTheDay'; ['clanEntity.clanExtended.evMessageOfTheDayChanged']; clanEntity.clanExtended.messageOfTheDay"/>
+		<bind name="watchDH" value="'messageOfTheDayState'; ['clanEntity.clanExtended.evMessageOfTheDayStateChanged']; clanEntity.clanExtended.messageOfTheDayState"/>
+		<bind name="firstEntityDH" value="'chatRestrictionsEntity'; CC.chatRestrictions"/>
+		<bind name="watchDH" value="'isXmppChatBlocked';	['chatRestrictionsEntity.chatRestrictions.evBlockDockAndClanChatChanged'];
+										chatRestrictionsEntity.chatRestrictions.isBlockDockAndClanChat"/>
+		<bind name="watch" value="'isMessageExists'; messageOfTheDay.length &gt; 0"/>
+		<bind name="watch" value="'isEditingRole'; role == 'commander' || role == 'executive_officer'"/>
+		<bind name="watch" value="'isAttentionMessageState'; messageOfTheDayState != SC.Clan.CLAN_MESSAGE_OF_THE_DAY_STATE.DEFAULT"/>
+		<bind name="watch" value="'attentionMessage'; 'IDS_CLAN_CHAT_EDIT_MOTD_REASON_' + SC.Clan.CLAN_MESSAGE_OF_THE_DAY_STATE.VALUE_TO_NAME[messageOfTheDayState]"/>
+		<bind name="var" value="{InputFieldVisibility: false}"/>
+		<bind name="catch" value="'changeFieldVisibility'"/>
+		<bind name="firstEntityDH" value="'divisionEntranceInfoEntity'; CC.divisionEntranceInfo"/>
+		<bind name="watchDH" value="'commentStatus'; ['divisionEntranceInfoEntity.divisionEntranceInfo.evCommentStatusChanged']; divisionEntranceInfoEntity.divisionEntranceInfo.commentStatus"/>
+		<bind name="watchDH" value="'isBanned'; ['divisionEntranceInfoEntity.divisionEntranceInfo.evIsBannedChanged']; divisionEntranceInfoEntity.divisionEntranceInfo.isBanned"/>
+		<block>
+			<bind name="visible" value="!InputFieldVisibility &amp;&amp; (messageOfTheDay || (isEditingRole &amp;&amp; !isAttentionMessageState))"/>
+			<style>
+				<width value="100%"/>
+				<marginTop value="4px"/>
+				<marginBottom value="4px"/>
+				<marginLeft value="4px"/>
+			</style>
+			<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; null"/>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="transition" value="rollOver &amp;&amp; isEditingRole &amp;&amp; !isAttentionMessageState; 0.15; {alpha: 1}; {alpha: 1.3}"/>
+				<bind name="dispatch" value="'click'; isEditingRole &amp;&amp; !isAttentionMessageState ? 'changeFieldVisibility' : null;
+			 																		{InputFieldVisibility: true}"/>
+				<block type="text">
+					<style>
+						<width value="100%"/>
+						<leading value="-3"/>
+					</style>
+					<bind name="style" value="'noTranslate'; messageOfTheDay.length &gt; 0"/>
+					

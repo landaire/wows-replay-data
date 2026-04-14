@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="WINDOWS">
+		<const name="LOGIN"					value="Login" type="String" />
+		<const name="DOCK"					value="Dock" type="String" />
+		<const name="FAKE_DOCK" 			value="FakeDock" type="String" />
+		<const name="BATTLE_LOADING" 		value="LoadingBattle" type="String" />
+		<const name="FAKE_BATTLE_LOADING" 	value="FakeLoadingBattle" type="String" />
+		<const name="OPTIONS" 				value="Options" type="String" />
+	</enum>
+
+	<enum name="MODAL">
+		<const name="LOBBY"					value="LobbyMenu" type="String" />
+		<const name="GAME_MENU"				value="GameMenu" type="String" />
+		<const name="WAITING"				value="Waiting" type="String" />
+		<const name="HELP"					value="Help" type="String" />
+		<const name="LOGIN_QUEUE"			value="LoginQueue" type="String" />
+		<const name="CONVERT_EXP"			value="ModalWindowConvertExp" type="String" />
+		<const name="CREW_FILE"				value="CrewFile" type="String" />
+		<const name="CREW_HIRE"				value="ModalWindowHireCrew" type="String" />
+		<const name="CREW_ASSIGN"			value="ModalWindowAssignCrew" type="String" />
+		<const name="CREW_RETRAIN"			value="ModalWindowRetrainCrew" type="String" />
+		<const name="CREW_FAST_RETRAIN"		value="ModalWindowCrewFastTraining" type="String" />
+		<const name="CREW_PENALTY_COMPENSATION"	value="ModalWindowCrewPenaltyCompensation" type="String" />
+		<const name="TUTORIAL"				value="ModalWindowTutorial" type="String" />
+		<const name="EXTERIOR_PURCHASE"		value="ModalWindowBuyExterior" type="String" />
+		<const name="EXTERIOR_UNINSTALL"	value="ModalWindowUninstallExterior" type="String" />
+		<const name="BATTLE_TYPE_CHOOSER"	value="ModalWindowBattleTypeChooser" type="String" />
+		<const name="PVE_OPERATION_CHOOSER"	value="ModalWindowPVEOperationChooser" type="String" />
+		<const name="RESULT_SCREEN"			value="ResultsScreen" type="String" />
+		<const name="RESULT_SCREEN_PORT"	value="ExtendedSystemLogWindow" type="String" />
+		<const name="RESULT_SCREEN_PORT_UNAVAILABLE"	value="UnavailableExtendedSystemLogWindow" type="String" />
+
+	</enum>
+
+	<enum name="PANEL">
+		<const name="SHIP_CAROUSEL" 	value="ShipsCarouselPanel" type="String" />
+		<const name="CHAT_NOTIFICATION" value="ChatNotificationsPanel" type="String" />
+		<const name="SHIP_TTH_DOCK" 	value="ShipTTXPanelDock" type="String" />
+	</enum>
+
+	<enum name="BROWSER">
+		<const name="GUIDE_WINDOW"	value="GuideBrowserWindow" type="String" />
+	</enum>
+
+</constants>

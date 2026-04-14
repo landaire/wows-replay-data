@@ -1,0 +1,94 @@
+ value="'setDefaultValue'; {textInput: _initialInputValue}"/>
+		<block>
+			<styleClass value="$MiddleVAligned"/>
+			<block className="text_input_caps_enter" type="native">
+				<bind name="tooltip" value="'SimpleStatusTooltip'; _tooltipText ? { _text: _tooltipText } : null"/>
+				<bind name="style" value="'width'; _tfWidth ? _tfWidth : '270px'"/>
+				<params>
+					<param name="actAsButton" value="true"/>
+					<param name="noTranslate" value="true"/>
+				</params>
+				<bind name="maxChars" value="_maxChars ? _maxChars : 32"/>
+				<bind name="defaultText" value="_defaultText"/>
+				<bind name="ubFocus" value="0; !_initialInputValue; true; true"/>
+				<bind name="restrict" value="restrict"/>
+				<bind name="text" value="textInput"/>
+				<bind name="name" value="'ShipNameField'"/>
+				<bind name="sync" value="'text'; 'change'; 'textInput'"/>
+				<bind name="dispatch" value="'change'; 'TextInputWithCancel.'+ onInputStrChangedEvent; {inputStr: textInput}"/>
+				<block className="button_dock" type="native">
+					<bind name="tooltip" value="'SimpleStatusTooltip'; _onEnterTooltipText ? { _text: _onEnterTooltipText } : null"/>
+					<styleClass value="$TextInputEnterButton"/>
+					<bind name="enabled" value="textInput"/>
+				</block>
+			</block>
+			<block>
+				<style>
+					<marginLeft value="8px"/>
+					<marginTop value="9px"/>
+				</style>
+				<bind name="instance" value="'CloseButton'; {
+				_event: 'TextInputWithCancel.' + onCancelEvent,
+				_tooltipText: _closeButtonTooltipText,
+				_name: 'ClearTextButton'
+			}"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="CarouselRowsChooser">
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+		<bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="watch" value="'_curItemIndex';	(userPrefs.curRowCountIndex == null) ? 0 : userPrefs.curRowCountIndex"/>
+		<bind name="action" value="'carouselRowsCountChanged'; 'setUserPref' ; {value : _curItemIndex, name: 'curRowCountIndex'}"/>
+		<style>
+			<flow value="horizontal"/>
+		</style>
+		<block>
+			<style>
+				<marginLeft value="2px"/>
+				<marginRight value="6px"/>
+				<marginTop value="3px"/>
+			</style>
+			<bind name="catch" value="'ItemChooser.carouselRowsSelected'"/>
+			<bind name="instance" value="'ItemChooser'; {	_items: ['2', '3', '4'], curIndex: _curItemIndex, _dropDownWidth: '50px',
+											_choosedItemRenderer: 'BluishTextChoosedItemRenderer', _listItemRenderer: 'CarouselShipRowsListItemRenderer',
+											onItemSelectedEvent: 'carouselRowsSelected', _itemChooserTooltipText: 'IDS_HINT_ROWS_IN_CAROUSEL', _name: 'CarouselRows'}"/>
+			<bind name="changeDispatch" value="_curItemIndex; 'carouselRowsCountChanged'"/>
+		</block>
+	</block>
+	<block className="CarouselAppliedFilterInfotip">
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<bind name="class" value="(_arrow == 'top') ? '$ReplaysInfotipFilter' : '$VerticalInfotipBehaviourCenterUpper'"/>
+		<bind name="name" value="'CarouselAppliedFilterInfotip'"/>
+		<bind name="firstEntityDH" value="'panelEntity'; CC.filterPanel"/>
+		<block className="InfotipBg">
+			<styleClass value="$FullsizeAbsolute"/>
+			<block className="InfotipPanelBg">
+				<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+				<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+				<block className="DeclareBlurLayer">
+					<bind name="primaryEntityDH" value="'isBlurEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+					<bind name="watchDH" value="'isBlurEnabled'; ['isBlurEnabledEntity.preference.evValueChanged']; isBlurEnabledEntity.preference.value"/>
+					<bind name="visible" value="isBlurEnabled"/>
+					<block className="transparentPixel" type="native">
+						<bind name="blurLayer" value="0"/>
+					</block>
+					<style>
+						<position value="absolute"/>
+					</style>
+				</block>
+				<style>
+					<margin value="-2px"/>
+				</style>
+				<styleClass value="$FullsizeAbsolute"/>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<bind name="dispatch" value="'Tooltip.selfOpened'; 'startShow'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+					<bind name="dispatch" value="'Tooltip.selfClosed'; 'startHide';

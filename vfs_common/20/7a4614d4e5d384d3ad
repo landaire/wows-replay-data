@@ -1,0 +1,20 @@
+<root>
+	<BaseMethods>
+	</BaseMethods>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<Properties>
+	</Properties>
+
+	<TempProperties>
+		<weatherParams/>
+	</TempProperties>
+
+	<CellMethods>
+		<onWeatherChanged>
+			<Arg>WEATHER_LOGIC_PARAMS</Arg> <!-- weather params -->
+		</onWeatherChanged>
+	</CellMethods>
+</root>

@@ -1,0 +1,132 @@
+ock>
+						</block>
+						<block type="text">
+							<styleClass value="$TextDefaultBold"/>
+							<style>
+								<marginLeft value="1px"/>
+							</style>
+							<bind name="class" value="'$FontColorBlueish'"/>
+							<bind name="text" value="'IDS_INVITE_PLAYER'"/>
+						</block>
+						<style>
+							<flow value="horizontal"/>
+						</style>
+					</block>
+					<bind name="changeDispatch" value="contactsInfotipIsVIsible; 'sendClearSearch'; {}; 2; false"/>
+					<bind name="action" value="'sendClearSearch'; 'clearSearchResult'"/>
+					<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 'IDS_HINT_INVITE_PLAYERS'}"/>
+					<bind name="tooltip" value="'ContactsAndChannelsInfotip'; {_playerContext: {	type:	'inviteToChannel',
+																				channelId: 	channelEntity.channel.channelId}}; 9; null; 'contactsInfotipIsVIsible'"/>
+					<bind name="selected" value="contactsInfotipIsVIsible"/>
+				</block>
+			</block>
+			<block>
+				<styleClass value="$DefaultScrollBar"/>
+				<style>
+					<height value="100%f"/>
+					<width value="100%"/>
+				</style>
+				<bind name="repeat" value="participants; 'ChatParticipantItem';  {	_playerContext: {type: 'channelParticipants', channelTypeIdent: channelTypeIdent, clubEntityId: clubEntityId, clubLeaderDbId: leaderDbId},
+																	_channelId: channelEntity.channel.channelId	}"/>
+			</block>
+		</block>
+	</block>
+	<block className="MessageBoxPanel">
+		<styleClass value="$Fullsize"/>
+		<block className="inner_panel" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<style>
+				<scrollbar value="ModernScrollBar"/>
+				<scrollbarAlign value="right"/>
+				<scrollbarController value="lesta.unbound.style.UbScrollingControllerChat"/>
+				<scrollArea value="ModernScrollArea"/>
+				<scrollbarTrackMode value="scrollToCursor"/>
+				<wheelScrollSpeed value="30"/>
+				<overflow value="scroll"/>
+				<layout value="lesta.unbound.layout.measure.CarouselVariableItemSizeLayout"/>
+				<itemWidth value="260px"/>
+				<itemHeight value="22px"/>
+			</style>
+			<bind name="controller" value="'lesta.unbound.controls.ControllerAutoScroll'"/>
+			<bind name="event" value="'addedToStage'; instantScrollToLastItem"/>
+			<bind name="generatorDH" value="CC.channelMessage; 'ChannelMessageRenderer'; 'byChannel.' + _channelEntityId; {_currentChannelEntityId: _channelEntityId}"/>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+				<marginLeft value="2px"/>
+				<marginRight value="2px"/>
+				<marginBottom value="2px"/>
+			</style>
+			<bind name="instance" value="'InputTextPanel'; { _channelEntityId: _channelEntityId,	_isInputEnabled: _isInputEnabled }"/>
+		</block>
+	</block>
+	<block className="InputTextPanel">
+		<bind name="entityDH" value="'channelEntity'; _channelEntityId"/>
+		<style>
+			<width value="100%"/>
+		</style>
+		<block>
+			<style>
+				<width value="100%"/>
+				<height value="37px"/>
+				<marginRight value="4px"/>
+				<marginLeft value="4px"/>
+			</style>
+			<block className="text_input_caps_enter" type="native">
+				<styleClass value="$MiddleVAligned"/>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="visible" value="_isInputEnabled"/>
+				<params>
+					<param name="restrict" value="^&lt;&gt;"/>
+					<param name="actAsButton" value="true"/>
+					<param name="maxChars" value="512"/>
+					<param name="noTranslate" value="true"/>
+				</params>
+				<bind name="enabled" value="_isInputEnabled"/>
+				<bind name="ubFocus" value="0; true; true"/>
+				<bind name="sync" value="'text'; 'change'; 'inputText'"/>
+				<bind name="action" value="'textInputEnter'; (inputText.length &gt; 0) ? 'sendMessage' : null; {channelId: channelEntity.channel.channelId, message:inputText}"/>
+				<bind name="catch" value="'textInputEnter'; {inputText : ''}"/>
+				<bind name="catch" value="'sendButtonEnter'; {inputText : ''}"/>
+			</block>
+			<block className="text_input_caps" type="native">
+				<styleClass value="$MiddleVAligned"/>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="visible" value="!_isInputEnabled"/>
+				<params>
+					<param name="enabled" value="false"/>
+				</params>
+				<bind name="defaultText" value="tr('IDS_CHAT_BLOCKED')"/>
+				<bind name="ubFocus" value="1; false; false; false"/>
+			</block>
+			<block className="button_dock" type="native">
+				<bind name="visible" value="_isInputEnabled"/>
+				<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 'IDS_SEND_MESSAGE'}"/>
+				<styleClass value="$TextInputEnterButton"/>
+				<bind name="enabled" value="inputText.length &gt; 0 &amp;&amp; _isInputEnabled"/>
+				<bind name="action" value="'buttonClick'; 'sendMessage'; {channelId: channelEntity.channel.channelId, message:inputText}"/>
+				<bind name="dispatch" value="'buttonClick'; 'sendButtonEnter'"/>
+			</block>
+		</block>
+	</block>
+	<block className="ClanChatDailyMessage">
+		<style>
+			<width value="100%"/>
+			<marginTop value="8px"/>
+			<marginLeft value="8px"/>
+			<marginRight value="8px"/>
+		</style>
+		<bind name="visible" value="(messageOfTheDay || isEditingRole) &amp;&amp; !isXmppChatBlocked"/>
+		<bind name="dataRefDH" value="'messageEntity'; '$dataRef.ref'"/>
+		<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+		<bind name="watchDH" value="'selfPlayerDbId'; 		[]; selfPlayerEntity.accountSimple.dbId"/>
+		<bind name="watchDH" value="'selfPlayerName'; 		['selfPlayerEntity.accountName.evChanged']; selfPlayerEntity.accountName.name"/>
+		<bind name="watchDH" value="'selfPlayerNickName'; 	['selfPlayerEntity.accountName.evChanged']; selfPlayerEntity.accountName.ni

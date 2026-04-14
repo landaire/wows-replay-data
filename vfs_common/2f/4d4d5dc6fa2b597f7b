@@ -1,0 +1,120 @@
+p; !(isInBattle)"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="instance" value="'TooltipSystemBlur'; isBlurEnabled ? {} : null"/>
+		</block>
+		<block className="contrast_panel" type="native">
+			<bind name="visible" value="isHighContrast"/>
+			<style>
+				<alpha value="1.4"/>
+			</style>
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<bind name="visible" value="!(isHighContrast)"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<backgroundImage value="url:../service_kit/panel_backgrounds/hint_panel.png"/>
+				<background9Slice value="[3]"/>
+			</style>
+		</block>
+		<bind name="collectionDH" value="CC.peculiarityEye; 'peculiaritiesEyeCategoryTypes'+'ROOT'"/>
+		<bind name="collectionDesign" value="'DES_'+'peculiaritiesEyeCategoryTypes'+'ROOT'; 'peculiaritiesEyeCategoryTypes'; {'filter': $entity.peculiarityEye.category == _category}; []"/>
+		<bind name="repeat" value="peculiaritiesEyeCategoryTypes; 'PeculiarityFilterItem'; {}"/>
+	</block>
+	<block className="PeculiarityFilterItem">
+		<bind name="entityDH" value="'peculiarityEyeEntity'; id"/>
+		<bind name="watchDH" value="'ids'; []; peculiarityEyeEntity.peculiarityEye.ids"/>
+		<bind name="watchDH" value="'value'; []; peculiarityEyeEntity.peculiarityEye.value"/>
+		<bind name="watchDH" value="'isEnabled'; ['peculiarityEyeEntity.peculiarityEye.evEnabledChanged']; peculiarityEyeEntity.peculiarityEye.enabled"/>
+		<bind name="firstEntityDH" value="'resourceEntity'; CC.accountResource"/>
+		<bind name="watchDH" value="'operationsAccountLocked'; ['resourceEntity.accountResource.evOperationsLockChanged']; resourceEntity.accountResource.operationsLocked"/>
+		<bind name="clickSplit"/>
+		<style>
+			<width value="300px"/>
+		</style>
+		<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: isEnabled ? tr(ids + '_TAKE_OFF_SKIN_TOOLTIP') : tr(ids + '_SET_SKIN_TOOLTIP')}"/>
+		<bind name="action" value="'left_click'; 'ServerUIDataUSS.setPecularity'; { pecId: value }"/>
+		<bind name="name" value="'CarouselCheckBoxEye_pecularity_' + ids"/>
+		<block className="dock_submenu_item" type="native">
+			<style>
+				<width value="100%"/>
+			</style>
+			<block>
+				<style>
+					<hitTest value="false"/>
+				</style>
+				<styleClass value="$InfoBlockIndent"/>
+				<block type="text">
+					<style>
+						<maxWidth value="250"/>
+					</style>
+					<styleClass value="$TextDefaultNM"/>
+					<bind name="text" value="ids"/>
+				</block>
+			</block>
+			<block className="icon_eye_visible" type="native">
+				<styleClass value="$MiddleVAligned"/>
+				<style>
+					<position value="absolute"/>
+					<right value="12px"/>
+					<hitTest value="false"/>
+				</style>
+				<bind name="enabled" value="!operationsAccountLocked"/>
+				<bind name="selected" value="isEnabled"/>
+			</block>
+		</block>
+	</block>
+
+	<!-- chat -->
+	<block className="ClanSquadSwitchMenuItem">
+		<style>
+			<width value="100%"/>
+			<height value="100%f"/>
+			<backgroundColor value="0x01000000"/>
+		</style>
+		<bind name="dataRefDH" value="'clanSquadEntity'; '$dataRef.ref'"/>
+		<bind name="watchDH" value="'squadId'; []; clanSquadEntity.clanSquadLadderInfo.squadId"/>
+		<bind name="watch" value="'selected'; _currentSquad == squadId"/>
+		<bind name="action" value="'click'; 'ClanProxy.setClanSquad'; !(selected) ? {newSquadId: squadId} : null"/>
+		<block className="dock_submenu_item" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="selected" value="selected"/>
+		</block>
+		<block>
+			<style>
+				<hitTest value="false"/>
+				<width value="100%"/>
+				<height value="100%f"/>
+			</style>
+			<bind name="instance" value="'ClanSquadRatingInfo'; { _clanSquadEntityId: clanSquadEntity.id, _currentSquad: _currentSquad, _leadingSquadId: _leadingSquadId, _selected: selected }"/>
+		</block>
+	</block>
+	<block className="SwitchClanSquadContextMenu">
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<styleClass value="$RightSubMenuBehaviour"/>
+		<styleClass value="$ContextMenuDimentions"/>
+		<block className="MenuBg">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="instance" value="'InfotipBg'; false ? {} : null"/>
+			<bind name="instance" value="'ContextMenuBg'; !(false) ? {} : null"/>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="collectionRepeatDH" value="CC.clanSquadLadderInfo; 'ClanSquadSwitchMenuItem'; ''; {_currentSquad: _currentSquad, _leadingSquadId: _leadingSquadId}"/>
+		</block>
+	</block>
+	<block className="ChatDropDownMenu">
+		<bind name="primaryEntityDH" value="'routeEntityisInBalancer'; CC.route; SC.Ui_windows.ROUTE.BALANCER"/>
+		<bind name="watchDH" value="'isInBalancer'; ['routeEntityisInBalancer.route.evIsActiveChanged']; routeEntityisInBalancer.route.isActive"/>
+		<bind name="firstEntityDH" value="'divisionDataEntity'; CC.division"/>
+		<bind name="watchDH" value="'shipRestrictions';	['divisionDataEntity.division.evShipRestrictionsChanged']; divisionDataEntity.division.shipRestrictions"/>
+		<bind name="firstEntityDH" value="'realmConstantsEntity'; CC.realmConstants"/>
+		<bind name="watchDH" value="'currentRegion'; []; realmConstantsEntity.realmConstants.currentRegion"/>
+		<bind name="entityDH" value="'channelEntity'; channelEntityId"/>
+		<bind name="dataRefDH" value="'channel'; 'channelEntity.ch

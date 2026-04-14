@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="CRUISE_CONTROL_TYPE">
+		<const name="SPEED" 	value="0" type="Integer"/>
+		<const name="ANGLE" 	value="1" type="Integer"/>
+		<const name="DEPTH" 	value="2" type="Integer"/>
+	</enum>
+	<enum name="DEPTH_STATE">
+		<const name="SURFACE" 		value="0" type="Integer"/>
+		<const name="PERISCOPE" 	value="1" type="Integer"/>
+		<const name="UNMASKING" 	value="2" type="Integer"/>
+		<const name="WORKING" 		value="3" type="Integer"/>
+		<const name="CRITICAL" 		value="4" type="Integer"/>
+		
+		<range name="AVAILABLE_FOR_SUBS" values="PERISCOPE, UNMASKING, WORKING, CRITICAL"/>
+	</enum>
+	<enum name="DEPTH_CHARGES_STATE">
+		<const name="EMPTY" 		value="0" type="Integer"/>
+		<const name="RELOADING" 	value="1" type="Integer"/>
+		<const name="READY" 		value="2" type="Integer"/>
+		<const name="WORKING" 		value="3" type="Integer"/>
+		<const name="DESTROYED" 	value="4" type="Integer"/>
+	</enum>
+    <enum name="CARRIER_STATE">
+		<const name="NONE"				value="0" type="Integer"/>
+		<const name="COLLISION"			value="1" type="Integer"/>
+        <const name="SPOTTED_BY_PLANE"	value="2" type="Integer"/>
+		<const name="SPOTTED_BY_SHIP"	value="4" type="Integer"/>
+		<const name="HEAVY_DAMAGE"		value="8" type="Integer"/>
+		<const name="ARTILLERY_ALERT"	value="16" type="Integer"/>
+		<const name="TORPEDO_ALERT"	    value="32" type="Integer"/>
+		
+		<range name="ORDER" values="ARTILLERY_ALERT, HEAVY_DAMAGE, TORPEDO_ALERT, SPOTTED_BY_SHIP, SPOTTED_BY_PLANE, COLLISION"/>
+	</enum>
+    <enum name="POI_TYPE">
+		<const name="OWN_SHIP" 		value="0" type="Integer"/>
+	</enum>
+
+	<enum name="GAME_MODE">
+		<const name="TEST" 					value=" 0" type="Integer"/>
+		<const name="STANDART" 				value=" 1" type="Integer"/>
+		<const name="SINGLEBASE" 			value=" 2" type="Integer"/>
+		<!-- 3-6 are not used anymore -->
+		<const name="DOMINATION" 			value=" 7" type="Integer"/>
+		<const name="TUTORIAL" 				value=" 8" type="Integer"/>
+		<const name="MEGABASE" 				value=" 9" type="Integer"/>
+		<const name="FORTS" 				value=" 10" type="Integer"/>
+		<const name="STANDARD_DOMINATION" 	value=" 11" type="Integer"/>
+		<const name="EPICENTER" 			value=" 12" type="Integer"/>
+		<const name="ASSAULT_DEFENSE" 		value=" 13" type="Integer"/>
+		<const name="PVE" 					value=" 14" type="Integer"/>
+		<const name="ARMS_RACE" 			value=" 15" type="Integer"/>
+		<const name="EPICENTER_RING" 		value=" 16" type="Integer"/>
+		<const name="ANTI_STANDARD" 		value=" 17" type="Integer"/>
+		<const name="ATTACK_DEFENSE" 		value=" 18" type="Integer"/>
+		<const name="TORPEDO_BEAT" 			value=" 19" type="Integer"/>
+		<const name="TEAM_BATTLE_ROYALE" 	value=" 20" type="Integer"/>
+		<const name="ESCAPE_TO_PORTAL" 		value=" 21" type="Integer"/>
+		<const name="DOMINATION_ASYMM"		value=" 22" type="Integer"/>
+		<const name="KEY_BATTLE" 			value=" 23" type="Integer"/>
+	</enum>	
+
+	<enum name="BATTLE_RESULT">
+		<const name="DEFEAT"		value="0" type="Integer"/>
+		<const name="VICTORY"		value="1" type="Integer"/>
+		<const name="DRAW"			value="2" type="Integer"/>
+		<const name="SUCCESS"		value="3" type="Integer"/>
+		<const name="FAILURE"		value="4" type="Integer"/>
+		<const name="PORTAL"		value="5" type="Integer"/>
+		<const name="MATCH"			value="6" type="Integer"/>
+		<const name="DEATH"			value="7" type="Integer"/>
+
+		<range name="SUCCESS_RESULTS"	values="VICTORY, SUCCESS, PORTAL, MATCH"/>
+		<range name="FAIL_RESULTS"		values="DEFEAT, FAILURE"/>
+		<range name="KEY_BATTLE"		values="PORTAL, MATCH, DEATH"/>
+	</enum>
+
+	<enum name="DIPLOMACY_EVENT_TYPE">
+		<const name="INVITE"				value="0"  type="Integer"/>
+		<const name="REQUEST"				value="1"  type="Integer"/>
+	</enum>
+
+	<enum name="DIPLOMACY_RELATIONS">
+		<const name="SELF"				value="0"  type="Integer"/>
+		<const name="ALLY"				value="1"  type="Integer"/>
+		<const name="NEUTRAL"			value="2"  type="Integer"/>
+		<const name="ENEMY"				value="3"  type="Integer"/>
+		<const name="AGGRESSOR"			value="4"  type="Integer"/>
+
+		<range name="CAN_INVITE_TO_TEAM" values="NEUTRAL, AGGRESSOR"/>
+	</enum>
+
+	<enum name="RESOURCE_TYPES">
+		<const name="SURVIVOR"			value="1"	type="Integer"/>
+		<const name="MARINES"			value="2"	type="Integer"/>
+		<const name="FILTHIOR"			value="3"	type="Integer"/>
+		<const name="FILTHIOR_SAVED"	value="4"	type="Integer"/>
+		<const name="KEYS"				value="5"	type="Integer"/>
+		<const name="POINTS"			value="6"	type="Integer"/>
+
+		<range name="HIDDEN_RESOURCE_ZONES" values="POINTS, FILTHIOR_SAVED"/>
+	</enum>
+
+	<enum name="HEAT_STATE">
+		<const name="NONE"				value="0"	type="Integer"/>
+		<const name="LOW"				value="1"	type="Integer"/>
+		<const name="MEDIUM"			value="2"	type="Integer"/>
+		<const name="HIGH"				value="3"	type="Integer"/>
+	</enum>
+</constants>

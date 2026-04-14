@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SERVICE_COLORS">
+		<const name="YELLOW"	value="0xFFFFCC66" type="Hex"/>
+		<const name="DARK_BLUE" value="0xFF051523" type="Hex"/>
+		<const name="ORANGE"	value="0xFFFF9933" type="Hex"/>
+		<const name="RED"		value="0xFFFF6600" type="Hex"/>
+		<const name="WHITE"		value="0xFFFFFFFF" type="Hex"/>
+		<const name="GREEN"		value="0xFF4CE8AA" type="Hex"/>
+	</enum>
+
+	<enum name="UNIFIED_STATUS">
+		<const name="DEFAULT"				value="default" type="String" />
+		<const name="CHECK"					value="check" type="String" />
+		<const name="DATE"					value="date" type="String" />
+		<const name="DATE_ATTENTION"		value="date_attention" type="String" />
+		<const name="ATTENTION"				value="attention" type="String" />
+		<const name="NEGATIVE"				value="negative" type="String" />
+		<const name="WARNING"				value="warning" type="String" />
+		<const name="LOCK"					value="lock" type="String" />
+		<const name="MOUSE_LEFT"			value="mouse_left_click" type="String" />
+		<const name="MOUSE_DOUBLE_LEFT"		value="mouse_left_double_click" type="String" />
+		<const name="MOUSE_RIGHT"			value="mouse_right_click" type="String" />
+		<const name="MOUSE_SCROLL"			value="mouse_scroll" type="String" />
+		<const name="HIDDEN"				value="hidden" type="String" />
+		<const name="DEFAULT_REWARD"		value="default_reward" type="String" />
+		<const name="CAMPAIGN_REWARD"		value="campaign_reward" type="String" />
+		<const name="CONTAINER_REWARD"		value="container_reward" type="String" />
+		<const name="BROTHERHOOD_REWARD"	value="brotherhood_reward" type="String" />
+		<const name="SALE_AVAILABLE"		value="sale" type="String" />
+		<const name="INFO"					value="info" type="String" />
+		<const name="LINKED"				value="linked" type="String" />
+		<const name="REPAINTED"				value="repainted" type="String" />
+		<const name="UPDATE"				value="update" type="String" />
+		<const name="EPIC_SKILL"			value="epic_skill" type="String" />
+		<const name="UNIQUE_CREW"			value="unique_crew" type="String" />
+		<const name="ADVANCED_CREW"			value="advanced_crew" type="String" />
+		<const name="IN_BATTLE"				value="in_battle" type="String" />
+		<const name="RECOMMENDED"			value="recommended" type="String" />
+		<const name="RETRAINING"			value="retraining" type="String" />
+		<const name="EARLY_ACCESS"			value="early_access" type="String" />
+	</enum>
+</constants>

@@ -1,0 +1,20 @@
+
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+		<block>
+			<bind name="visible" value="isEditingRole &amp;&amp; isAttentionMessageState"/>
+			<style>
+				<width value="100%"/>
+				<marginTop value="4px"/>
+				<marginBottom value="4px"/>
+				<marginLeft value="4px"/>
+				<marginRight value="4px"/>
+			</style>
+			<bind name="instance" value="'StatusLine'; {	_width: '100%',
+										_text: attentionMessage,
+										_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+										_textClass: '$TextDefaultNM'
+									}"/>
+		</bl

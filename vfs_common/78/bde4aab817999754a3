@@ -1,0 +1,105 @@
+ value="'typeIdent'; 		['channelEntity.channel.evTypeChanged']; channelEntity.channel.typeIdent"/>
+		<bind name="watchDH" value="'isInvitation';		['channelEntity.channel.evOpenChanged', 'channelEntity.channel.evInvitationRefused']; channelEntity.channel.isInvitation"/>
+		<bind name="watchDH" value="'isPasswordNeeded';	['channelEntity.channel.evOpenChanged']; channelEntity.channel.isWaitingPassword"/>
+		<bind name="watch" value="'isDivision'; typeIdent == SC.Channel.CHANNEL_TYPE_IDENT_VALUE.PREBATTLE"/>
+		<bind name="watch" value="'isClanChat'; typeIdent == SC.Channel.CHANNEL_TYPE_IDENT_VALUE.CLAN"/>
+		<bind name="watch" value="'isTrainingRoom'; typeIdent == SC.Channel.CHANNEL_TYPE_IDENT_VALUE.TRAINING_ROOM"/>
+		<bind name="watch" value="'isSteadyChannel'; isClanChat || isTrainingRoom"/>
+		<bind name="firstEntityDH" value="'chatRestrictionsEntity'; CC.chatRestrictions"/>
+		<bind name="watchDH" value="'isXmppChatBlocked';		['chatRestrictionsEntity.chatRestrictions.evBlockDockAndClanChatChanged'];
+												chatRestrictionsEntity.chatRestrictions.isBlockDockAndClanChat"/>
+		<bind name="watchDH" value="'isPrebattleChatBlocked';['chatRestrictionsEntity.chatRestrictions.evBlockPrebattleChatChanged'];
+												chatRestrictionsEntity.chatRestrictions.isBlockPrebattleChat"/>
+		<bind name="watch" value="'isInputEnabled'; 	!(isXmppChatBlocked &amp;&amp; isIn(typeIdent, SC.Channel.CHANNEL_TYPE_IDENT_VALUE.DOCK_AND_CLAN)) &amp;&amp;
+									!(isPrebattleChatBlocked &amp;&amp; isIn(typeIdent, SC.Channel.CHANNEL_TYPE_IDENT_VALUE.PREBATTLE_AND_TRAINING))"/>
+		<bind name="collectionDH" value="CC.battleType; 'selectedBattleTypes'; 'selected'"/>
+		<bind name="watch" value="'selectedBattleType'; selectedBattleTypes[0].battleType.type"/>
+		<bind name="watch" value="'isClanDivision'; selectedBattleType == SC.Common.BATTLE_TYPES.CLAN_BATTLE"/>
+		<bind name="class" value="isDivision ? '$ChatBoxDivisionSize' : '$ChatBoxDefaultSize'"/>
+		<styleClass value="$ChatBoxDefaultPosition"/>
+		<block className="InfotipPanelBg">
+			<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+			<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+			<block className="DeclareBlurLayer">
+				<bind name="primaryEntityDH" value="'isBlurEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+				<bind name="watchDH" value="'isBlurEnabled'; ['isBlurEnabledEntity.preference.evValueChanged']; isBlurEnabledEntity.preference.value"/>
+				<bind name="visible" value="isBlurEnabled"/>
+				<block className="transparentPixel" type="native">
+					<bind name="blurLayer" value="0"/>
+				</block>
+				<style>
+					<position value="absolute"/>
+				</style>
+			</block>
+			<style>
+				<margin value="-2px"/>
+			</style>
+			<styleClass value="$FullsizeAbsolute"/>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<bind name="dispatch" value="'Tooltip.selfOpened'; 'startShow'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+				<bind name="dispatch" value="'Tooltip.selfClosed'; 'startHide'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+				<bind name="instance" value="'InfotipBlurmap'; isBlurOptionEnabled ? {} : null"/>
+			</block>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_panel.png"/>
+					<background9Slice value="[3]"/>
+				</style>
+				<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+			</block>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<block>
+				<style>
+					<width value="100%"/>
+					<marginBottom value="-2px"/>
+				</style>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<style>
+						<backgroundColor value="0x01000000"/>
+					</style>
+					<params>
+						<param name="name" value="chatBoxDragZone"/>
+					</params>
+				</block>
+				<block>
+					<style>
+						<width value="100%"/>
+					</style>
+					<bind name="instance" value="'ChatBoxHeader'; { 	_channelEntityId: channelEntityId, 
+													_isInvitation: isInvitation, 
+													_isPasswordNeeded: isPasswordNeeded, 
+													_isDivision: isDivision,
+													_isTrainingRoom: isTrainingRoom,
+													_isClanDivision: isClanDivision,
+													_isClanChat:isClanChat,
+													_isEditing: isEditing,
+													_isSteadyChannel: isSteadyChannel }"/>
+				</block>
+			</block>
+			<block>
+				<style>
+					<marginLeft value="-1px"/>
+					<marginRight value="-1px"/>
+					<width value="100%"/>
+				</style>
+				<block className="HorizontalDivider">
+					<styleClass value="$PxHorizontalCorrection"/>
+					<style>
+						<width value="100%"/>
+						<height value="2px"/>
+						<backgroundSize value="fill"/>
+						<marginTop value="1px"/>
+						<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+					</style>
+				</block>
+			</block>
+			<block>
+				<styleClass value="$Fullsize"/>
+				<bind name="instance" value="'ChatBoxContent'; { _channelEntityId: channelEntityId,
+												_isPasswordNeeded: isPasswordNeeded,
+					

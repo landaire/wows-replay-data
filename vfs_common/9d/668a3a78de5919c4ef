@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="TIP_TYPES">
+		<const name="DOCK_TECH_TREE" value="DockToTechTreeExploreShip" type="String" />
+		<const name="DOCK_TECH_TREE_BUY" value="DockToTechTreeBuyShip" type="String" />
+
+		<const name="TECH_TREE_BUY" value="TechTreeToShipExplore" type="String" />
+		<const name="TECH_TREE_BUY_BUY" value="TechTreeToShipBuy" type="String" />
+
+		<const name="MODULES_EXPLORE" value="ModulesToExploreBtn" type="String" />
+		<const name="MODULES_BUY" value="ModulesToBuyBtn" type="String" />
+
+		<const name="NATIONS" value="TechTreeToShipNation" type="String" />
+		<const name="NATIONS_BUY" value="TechTreeToShipNationBuy" type="String" />
+
+		<const name="MODULES_NEXT" value="ModulesToNextShipExplore" type="String" />
+		<const name="MODULES_NEXT_BUY" value="ModulesToNextShipBuy" type="String" />
+
+		<const name="INVITE_DOCK_USER_MENU" value="DockToUserMenu" type="String" />
+		<const name="INVITE_USER_MENU_INVITE_BTN" value="UserMenuInviteBtn" type="String" />
+
+		<const name="DOCK_RANDOM_FIGHT" value="DockToRandomFight" type="String" />
+		<const name="RANDOM_FIGHT_BTN" value="RandomFightBtn" type="String" />
+
+		<const name="DOCK_CREW" value="DockToCrew" type="String" />
+
+		<const name="DOCK_MODULES_EXPLORE" value="DockToModulesExplore" type="String" />
+		<const name="DOCK_MODULES_BUY" value="DockToModulesBuy" type="String" />
+		<const name="MODULES_EXPLORE_MODULE" value="ModulesExploreModule" type="String" />
+		<const name="MODULES_BUY_MODULE" value="ModulesBuyModule" type="String" />
+		<const name="MODULES_TOOLTIP_EXPLORE" value="ModulesTooltipExplore" type="String" />
+		<const name="MODULES_TOOLTIP_BUY" value="ModulesTooltipBuy" type="String" />
+
+		<const name="PARAGONS_TECH_TREE_NATION" value="ParagonsTechTreeExploreNation" type="String" />
+
+		<const name="DOCK_MODERNIZATIONS_EXPLORE" value="DockToModernizationsExplore" type="String" />
+		<const name="EXPLORE_MODERNIZATIONS" value="ExploreModernizations" type="String" />
+		<const name="BUY_MODERNIZATION_BLOCK" value="BuyModernizationBlock" type="String" />
+		<const name="INSTALL_MODERNIZATION_BLOCK" value="InstallModernizationBlock" type="String" />
+
+		<const name="EXPLORE_EXTERIOR_SIGNALS" value="ExploreExteriorSignals" type="String" />
+		<const name="EXPLORE_SIGNALS" value="ExploreSignals" type="String" />
+
+		<const name="EXPLORE_EXTERIOR_CAMOUFLAGES" value="ExploreExteriorCamouflages" type="String" />
+		<const name="EXPLORE_CAMOUFLAGES" value="ExploreCamouflages" type="String" />
+
+		<const name="EXPLORE_EXTERIOR_ENSIGNS" value="ExploreExteriorEnsigns" type="String" />
+		<const name="EXPLORE_ENSIGNS" value="ExploreEnsigns" type="String" />
+
+		<const name="SHIPYARD" value="Shipyard" type="String" />
+		<const name="METASHOP" value="Metashop" type="String" />
+		<const name="PREMIUM_SHOP" value="PremiumShop" type="String" />
+
+		<const name="UPDATE_SSE" value="UpdateSSE" type="String" />
+		<const name="EXPLORE_SSE" value="ExploreSSE" type="String" />
+
+		<const name="RANKED_QUAL" value="RankedQual" type="String" />
+	</enum>
+</constants>

@@ -1,0 +1,112 @@
+tion: isInvitation,
+												_isDivision: isDivision,
+												_isClanDivision: isClanDivision,
+												_isInputEnabled: isInputEnabled  }"/>
+			</block>
+		</block>
+		<bind name="watch" value="'restrict'; chatBoxState != WindowTooltipState.pinned ? {} : { down: true, left: true }"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<block className="ResizeFrame">
+				<styleClass value="$FullsizeAbsolute"/>
+				<block>
+					<bind name="visible" value="!(restrict.up)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_UP'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="100%"/>
+						<height value="6px"/>
+						<top value="-3px"/>
+						<backgroundColor value="0x01ff0000"/>
+					</style>
+					<params>
+						<param name="name" value="grip_top"/>
+					</params>
+				</block>
+				<block>
+					<bind name="visible" value="!(restrict.down)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_DOWN'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="100%"/>
+						<height value="6px"/>
+						<bottom value="-3px"/>
+						<backgroundColor value="0x01ff0000"/>
+					</style>
+					<params>
+						<param name="name" value="grip_bottom"/>
+					</params>
+				</block>
+				<block>
+					<bind name="visible" value="!(restrict.left)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_LEFT'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="6px"/>
+						<height value="100%"/>
+						<left value="-3px"/>
+						<backgroundColor value="0x01ff0000"/>
+					</style>
+					<params>
+						<param name="name" value="grip_left"/>
+					</params>
+				</block>
+				<block>
+					<bind name="visible" value="!(restrict.right)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_RIGHT'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="6px"/>
+						<height value="100%"/>
+						<right value="-3px"/>
+						<backgroundColor value="0x01ff0000"/>
+					</style>
+					<params>
+						<param name="name" value="grip_right"/>
+					</params>
+				</block>
+				<block>
+					<bind name="visible" value="!(restrict.up || restrict.left)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_UP_LEFT'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="12px"/>
+						<height value="12px"/>
+						<top value="-5px"/>
+						<left value="-5px"/>
+						<backgroundColor value="0x0100ff00"/>
+					</style>
+					<params>
+						<param name="name" value="grip_top_left"/>
+					</params>
+				</block>
+				<block>
+					<bind name="visible" value="!(restrict.up || restrict.right)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_UP_RIGHT'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="12px"/>
+						<height value="12px"/>
+						<top value="-5px"/>
+						<right value="-5px"/>
+						<backgroundColor value="0x0100ff00"/>
+					</style>
+					<params>
+						<param name="name" value="grip_top_right"/>
+					</params>
+				</block>
+				<block>
+					<bind name="visible" value="!(restrict.down || restrict.left)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_DOWN_LEFT'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="12px"/>
+						<height value="12px"/>
+						<bottom value="-5px"/>
+						<left value="-5px"/>
+						<backgroundColor value="0x0100ff00"/>
+					</style>
+					<params>
+						<param name="name" value="grip_bottom_left"/>
+					</params>
+				

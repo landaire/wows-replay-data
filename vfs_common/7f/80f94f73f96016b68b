@@ -1,0 +1,180 @@
+
+				<block>
+					<styleClass value="$MiddleVAligned"/>
+					<style>
+						<hitTest value="false"/>
+					</style>
+					<bind name="instance" value="'CarouselSortingText'; {}"/>
+					<style>
+						<flow value="horizontal"/>
+					</style>
+				</block>
+				<block>
+					<style>
+						<height value="100%"/>
+						<width value="12px"/>
+					</style>
+					<block>
+						<bind name="transition" value="((rollOver &amp;&amp; !mouseDown) || mouseDown) || shipNameFilterInfotipSelected; 0.15; {alpha: 0}; {alpha: 0.7}"/>
+						<bind name="name" value="'CarouselFilterClose_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType]"/>
+						<style>
+							<marginLeft value="2px"/>
+							<marginTop value="9px"/>
+						</style>
+						<bind name="instance" value="'CloseButton'; {
+						_action: 'setSearchString',
+						_actionParams: { value: '' },
+						_tooltipText: 'IDS_HINT_RESET_FILTER' 
+					}"/>
+					</block>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+		</block>
+	</block>
+	<block className="ResetAllFilters">
+		<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'"/>
+		<style>
+			<height value="30px"/>
+			<marginRight value="4px"/>
+		</style>
+		<bind name="appear" value="'addedToStage'; 0.15; 0; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+		<bind name="action" value="'click'; 'resetAllFilters'; {ident: 0}"/>
+		<bind name="tooltip" value="'SimpleStatusTooltip'; {	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.MOUSE_LEFT,
+											_text: 'IDS_HINT_RESET_ALL_FILTERS' }"/>
+		<bind name="dispatch" value="'click'; 'TextInputWithCancel.shipSearchCancelled'"/>
+		<bind name="soundSet" value="'resetallfilters_item'"/>
+		<block className="button_dock_bg" type="native">
+			<bind name="gotoAndStop!" value="'down'"/>
+			<style>
+				<height value="100%"/>
+			</style>
+			<bind name="transition" value="((rollOver &amp;&amp; !mouseDown) || (mouseDown)); 0.15; {alpha: 0}; {alpha: 0.7}"/>
+			<block>
+				<style>
+					<height value="100%"/>
+					<marginLeft value="8px"/>
+					<marginRight value="8px"/>
+				</style>
+				<bind name="transition" value="rollOver &amp;&amp; !mouseDown; 0.15; {alpha: 0.7}; {alpha: 1}"/>
+				<block type="text">
+					<style>
+						<marginTop value="2px"/>
+					</style>
+					<styleClass value="$TextHeaderBigDefault"/>
+					<bind name="text" value="'IDS_RESET_ALL_FILTERS'"/>
+				</block>
+				<block>
+					<bind name="transition" value="((rollOver &amp;&amp; !mouseDown) || mouseDown); 0.15; {alpha: 0}; {alpha: 0.7}"/>
+					<style>
+						<marginLeft value="4px"/>
+						<marginRight value="1px"/>
+						<marginTop value="11px"/>
+						<hitTest value="false"/>
+					</style>
+					<bind name="instance" value="'CloseButton'; {	_directEvent: SC.Common.STATISTICS_EVENTS.LOG,
+													_directEventParams: {event: SC.Common.SHIP_FILTER_STATISTICS.ALL_UNSELECTED}}"/>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+		</block>
+	</block>
+	<block className="ShipLevelRome">
+		<style>
+			<marginLeft value="2px"/>
+			<marginRight value="2px"/>
+			<flow value="horizontal"/>
+			<align value="middle"/>
+		</style>
+		<block type="text">
+			<styleClass value="$TextDefault17NM"/>
+			<bind name="text" value="_levelRange"/>
+		</block>
+	</block>
+	<block className="CarouselSortingText">
+		<bind name="firstEntityDH" value="'panelEntity'; CC.filterPanel"/>
+		<params>
+			<param name="name" value="CarouselSortingText"/>
+		</params>
+		<bind name="watchDH" value="'searchStr'; ['panelEntity.filterPanel.evUpdate']; panelEntity.filterPanel.searchString"/>
+		<style>
+			<flow value="horizontal"/>
+		</style>
+		<block>
+			<style>
+				<marginTop value="2px"/>
+				<marginRight value="1px"/>
+				<width value="18px"/>
+				<height value="18px"/>
+				<backgroundImage value="url:../service_kit/buttons/context/search.png"/>
+			</style>
+		</block>
+		<block type="text">
+			<style>
+				<marginRight value="4px"/>
+				<marginTop value="-1px"/>
+				<noTranslate value="true"/>
+			</style>
+			<styleClass value="$TextHeaderBigDefault"/>
+			<bind name="text" value="searchStr"/>
+		</block>
+	</block>
+	<block className="CarouselFilterShipTypeIcon">
+		<bind name="entityDH" value="'filterEntity'; $value"/>
+		<bind name="watchDH" value="'_field'; ['filterEntity.shipFilterItem.evUpdate']; filterEntity.shipFilterItem.field"/>
+		<bind name="instance" value="'ShipIcon'; {_shipType: _field}"/>
+	</block>
+	<block className="CarouselFilterTinyNationFlag">
+		<bind name="entityDH" value="'filterEntity'; $value"/>
+		<bind name="watchDH" value="'_field'; ['filterEntity.shipFilterItem.evUpdate']; filterEntity.shipFilterItem.field"/>
+		<style>
+			<marginRight value="4px"/>
+		</style>
+		<bind name="instance" value="'NationFlagsTiny'; {shipCountry: _field}"/>
+	</block>
+	<block className="CarouselFilterSpecialSortingIcon">
+		<bind name="entityDH" value="'filterEntity'; $value"/>
+		<bind name="watchDH" value="'_field'; ['filterEntity.shipFilterItem.evUpdate']; filterEntity.shipFilterItem.field"/>
+		<bind name="watch" value="'imagePath'; 'url:../service_kit/filters/'+ _field +'.png'"/>
+		<style>
+			<marginLeft value="-2px"/>
+			<height value="21px"/>
+			<width value="39px"/>
+		</style>
+		<block>
+			<style>
+				<position value="absolute"/>
+				<hitTest value="false"/>
+				<height value="39px"/>
+				<width value="39px"/>
+				<top value="-9px"/>
+				<left value="-2px"/>
+			</style>
+			<bind name="style" value="'backgroundImage'; imagePath"/>
+		</block>
+	</block>
+	<block className="CarouselFilterRarityIcon">
+		<bind name="entityDH" value="'filterEntity'; $value"/>
+		<bind name="watchDH" value="'_field'; ['filterEntity.shipFilterItem.evUpdate']; filterEntity.shipFilterItem.field"/>
+		<bind name="watch" value="'imagePath'; 'url:../service_kit/filters/' + toLowerCase(_field) + '.png'"/>
+		<style>
+			<marginLeft value="-2px"/>
+			<height value="21px"/>
+			<width value="39px"/>
+		</style>
+		<block>
+			<style>
+				<width value="39px"/>
+				<height value="39px"/>
+				<position value="absolute"/>
+				<top value="-9px"/>
+				<left value="-2px"/>
+				<hitTest value="false"/>
+			</style>
+			<bind name="style" value="'backgroundImage'; imagePath"/>
+		</block>
+	</blo

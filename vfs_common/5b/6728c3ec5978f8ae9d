@@ -1,0 +1,82 @@
+				<style>
+					<width value="100%f"/>
+					<marginLeft value="32px"/>
+				</style>
+				<bind name="instance" value="'PrimeTimeTillTimeInfo'; showPrimeTimeInfo ? { _entityId: currentEntityId, _textClass: '$TextDefault17NM'} : null"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+		<block type="text">
+			<bind name="visible" value="!showPrimeTimeInfo"/>
+			<style>
+				<width value="100%f"/>
+				<multiline value="false"/>
+			</style>
+			<styleClass value="$TextDefault17NM"/>
+			<bind name="class" value="'$FontColorOrange'"/>
+			<bind name="text" value="'IDS_CLAN_BATTLES_NO_CHOSEN_PRIMETIME'"/>
+		</block>
+	</block>
+	<block className="DivisionHeaderButton">
+		<style>
+			<width value="100%f"/>
+			<height value="36px"/>
+			<flow value="horizontal"/>
+		</style>
+		<block>
+			<style>
+				<marginLeft value="4px"/>
+				<marginTop value="3px"/>
+			</style>
+			<bind name="instance" value="'DivisionHeaderLock'; {}"/>
+		</block>
+		<block>
+			<block className="button_dock" type="native">
+				<params>
+					<param name="name" value="ChatBoxHeader"/>
+				</params>
+				<style>
+					<width value="100%"/>
+					<height value="32px"/>
+					<position value="absolute"/>
+					<marginRight value="-3px"/>
+					<marginTop value="3px"/>
+				</style>
+				<bind name="style" value="'hitTest'; _isActive"/>
+				<bind name="tooltip" value="'DivisionHeaderTooltip'; {_isClanDivision: _isClanDivision}"/>
+				<bind name="tooltip" value="'ChatDropDownMenu'; {_dropDown: true, channelEntityId: _channelEntityId, _isDivision: true, _isClanDivision: _isClanDivision}; 6"/>
+			</block>
+			<block>
+				<style>
+					<hitTest value="false"/>
+					<marginBottom value="4px"/>
+					<marginTop value="10px"/>
+					<marginLeft value="4px"/>
+					<marginRight value="3px"/>
+				</style>
+				<bind name="instance" value="'FormationHeader'; {_isClanDivision: _isClanDivision}"/>
+			</block>
+			<block className="icon_navigate" type="native">
+				<bind name="visible" value="_isActive"/>
+				<style>
+					<hitTest value="false"/>
+					<marginRight value="2px"/>
+					<marginTop value="11px"/>
+				</style>
+				<bind name="gotoAndStop!" value="'down'"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="ChatBoxContentInvitation">
+		<styleClass value="$Fullsize"/>
+		<block className="inner_panel" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<style>

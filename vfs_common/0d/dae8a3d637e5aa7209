@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="CRUISE_CONTROL_TYPE" type="Integer">
+		<const name="SPEED" 	value="0"/>
+		<const name="ANGLE" 	value="1"/>
+		<const name="DEPTH" 	value="2"/>
+	</enum>
+
+	<enum name="DEPTH_STATE" type="Integer">
+		<const name="SURFACE" 		value="0"/>
+		<const name="PERISCOPE" 	value="1"/>
+		<const name="UNMASKING" 	value="2"/>
+		<const name="WORKING" 		value="3"/>
+		<const name="CRITICAL" 		value="4"/>
+		
+		<range name="AVAILABLE_FOR_SUBS" values="PERISCOPE, UNMASKING, WORKING, CRITICAL"/>
+	</enum>
+
+	<enum name="DEPTH_CHARGES_STATE" type="Integer">
+		<const name="EMPTY" 		value="0"/>
+		<const name="RELOADING" 	value="1"/>
+		<const name="READY" 		value="2"/>
+		<const name="WORKING" 		value="3"/>
+		<const name="DESTROYED" 	value="4"/>
+	</enum>
+
+    <enum name="CARRIER_STATE" type="Integer">
+		<const name="NONE"				value="0"/>
+		<const name="COLLISION"			value="1"/>
+        <const name="SPOTTED_BY_PLANE"	value="2"/>
+		<const name="SPOTTED_BY_SHIP"	value="4"/>
+		<const name="HEAVY_DAMAGE"		value="8"/>
+		<const name="ARTILLERY_ALERT"	value="16"/>
+		<const name="TORPEDO_ALERT"	    value="32"/>
+		
+		<range name="ORDER" values="ARTILLERY_ALERT, HEAVY_DAMAGE, TORPEDO_ALERT, SPOTTED_BY_SHIP, SPOTTED_BY_PLANE, COLLISION"/>
+	</enum>
+
+    <enum name="POI_TYPE" type="Integer">
+		<const name="OWN_SHIP" 		value="0"/>
+	</enum>
+
+	<enum name="GAME_MODE" type="Integer" >
+		<const name="TEST" 						value="0" />
+		<const name="STANDART" 					value="1" />
+		<const name="SINGLEBASE" 				value="2" />
+		<!-- 3-6 are not used anymore -->
+		<const name="DOMINATION" 				value="7" />
+		<const name="TUTORIAL" 					value="8" />
+		<const name="MEGABASE" 					value="9" />
+		<const name="FORTS" 					value="10"/>
+		<const name="STANDARD_DOMINATION" 		value="11"/>
+		<const name="EPICENTER" 				value="12"/>
+		<const name="ASSAULT_DEFENSE" 			value="13"/>
+		<const name="PVE" 						value="14"/>
+		<const name="ARMS_RACE" 				value="15"/>
+		<const name="EPICENTER_RING" 			value="16"/>
+		<const name="ANTI_STANDARD" 			value="17"/>
+		<const name="ATTACK_DEFENSE" 			value="18"/>
+		<const name="TORPEDO_BEAT" 				value="19"/>
+		<const name="TEAM_BATTLE_ROYALE" 		value="20"/>
+		<const name="ESCAPE_TO_PORTAL" 			value="21"/>
+		<const name="DOMINATION_ASYMM"			value="22"/>
+		<const name="KEY_BATTLE" 				value="23"/>
+		<const name="PORTAL_2021" 				value="24"/>
+		<const name="TEAM_BATTLE_ROYALE_2021" 	value="25"/>
+	</enum>	
+
+	<enum name="BATTLE_RESULT" type="Integer">
+		<const name="DEFEAT"		value="0" />
+		<const name="VICTORY"		value="1" />
+		<const name="DRAW"			value="2" />
+		<const name="SUCCESS"		value="3" />
+		<const name="FAILURE"		value="4" />
+		<const name="PORTAL"		value="5" />
+		<const name="MATCH"			value="6" />
+		<const name="DEATH"			value="7" />
+
+		<range name="SUCCESS_RESULTS"	values="VICTORY, SUCCESS, PORTAL, MATCH"/>
+		<range name="FAIL_RESULTS"		values="DEFEAT, FAILURE"/>
+		<range name="KEY_BATTLE"		values="PORTAL, MATCH, DEATH"/>
+	</enum>
+
+	<enum name="DIPLOMACY_EVENT_TYPE" type="Integer">
+		<const name="INVITE"				value="0" />
+		<const name="REQUEST"				value="1" />
+	</enum>
+
+	<enum name="DIPLOMACY_RELATIONS" type="Integer">
+		<const name="SELF"				value="0"  />
+		<const name="ALLY"				value="1"  />
+		<const name="NEUTRAL"			value="2"  />
+		<const name="ENEMY"				value="3"  />
+		<const name="AGGRESSOR"			value="4"  />
+
+		<range name="CAN_INVITE_TO_TEAM" values="NEUTRAL, AGGRESSOR"/>
+	</enum>
+
+	<enum name="RESOURCE_TYPES" type="Integer">
+		<const name="SURVIVOR"			value="1"	/>
+		<const name="MARINES"			value="2"	/>
+		<const name="FILTHIOR"			value="3"	/>
+		<const name="FILTHIOR_SAVED"	value="4"	/>
+		<const name="KEYS"				value="5"	/>
+		<const name="POINTS"			value="6"	/>
+
+		<range name="HIDDEN_RESOURCE_ZONES" values="POINTS, FILTHIOR_SAVED"/>
+	</enum>
+
+	<enum name="HEAT_STATE" type="Integer">
+		<const name="NONE"				value="0"	/>
+		<const name="LOW"				value="1"	/>
+		<const name="MEDIUM"			value="2"	/>
+		<const name="HIGH"				value="3"	/>
+	</enum>
+
+	<enum name="DEATH_REASON_NAME" type="String">
+		<const name='NONE'			value='NONE'		/>		<!-- DeathReason(next(enum), 'NONE')															# 0 -->
+		<const name='ARTILLERY'		value='ARTILLERY'	/>		<!-- DeathReason(next(enum), 'ARTILLERY')														# 1 -->
+		<const name='ATBA'			value='ATBA'		/>		<!-- DeathReason(next(enum), 'ATBA', icon='icon_frag_atba', sound='ATBA')						# 2 -->
+		<const name='TORPEDO'		value='TORPEDO'		/>		<!-- DeathReason(next(enum), 'TORPEDO', icon='icon_frag_torpedo', sound='Torpedo')				# 3 -->
+		<const name='BOMB'			value='BOMB'		/>		<!-- DeathReason(next(enum), 'BOMB', icon='icon_frag_bomb', sound='Bomb')						# 4 -->
+		<const name='TBOMB'			value='TBOMB'		/>		<!-- DeathReason(next(enum), 'TBOMB', icon='icon_frag_torpedo', sound='Torpedo')				# 5 -->
+		<const name='BURNING'		value='BURNING'		/>		<!-- DeathReason(next(enum), 'BURNING', icon='icon_frag_burning', sound='Burning')				# 6 -->
+		<const name='RAM'			value='RAM'			/>		<!-- DeathReason(next(enum), 'RAM', icon='icon_frag_ram', sound='RAM')							# 7 -->
+		<const name='TERRAIN'		value='TERRAIN'		/>		<!-- DeathReason(next(enum), 'TERRAIN')															# 8 -->
+		<const name='FLOOD'			value='FLOOD'		/>		<!-- DeathReason(next(enum), 'FLOOD', icon='icon_frag_flood', sound='Flood')					# 9 -->
+		<const name='MIRROR'		value='MIRROR'		/>		<!-- DeathReason(next(enum), 'MIRROR')															# 10 -->
+		<const name='SEA_MINE'		value='SEA_MINE'	/>		<!-- DeathReason(next(enum), 'SEA_MINE', icon='icon_frag_naval_mine', sound='Torpedo')			# 11 -->
+		<const name='SPECIAL'		value='SPECIAL'		/>		<!-- DeathReason(next(enum), 'SPECIAL')															# 12 -->
+		<const name='DBOMB'			value='DBOMB'		/>		<!-- DeathReason(next(enum), 'DBOMB', icon='icon_frag_depthbomb', sound='DepthCharge')			# 13 -->
+		<const name='ROCKET'		value='ROCKET'		/>		<!-- DeathReason(next(enum), 'ROCKET', icon='icon_frag_rocket', sound='Rocket')					# 14 -->
+		<const name='DETONATE'		value='DETONATE'	/>		<!-- DeathReason(next(enum), 'DETONATE', icon='icon_frag_detonate', sound='Detonate')			# 15 -->
+		<const name='HEALTH'		value='HEALTH'		/>		<!-- DeathReason(next(enum), 'HEALTH', sound='Health')											# 16 -->
+		<const name='AP_SHELL'		value='AP_SHELL'	/>		<!-- DeathReason(next(enum), 'AP_SHELL', icon='icon_frag_main_caliber', sound='Shell_AP')		# 17 -->
+		<const name='HE_SHELL'		value='HE_SHELL'	/>		<!-- DeathReason(next(enum), 'HE_SHELL', icon='icon_frag_main_caliber', sound='Shell_HE')		# 18 -->
+		<const name='CS_SHELL'		value='CS_SHELL'	/>		<!-- DeathReason(next(enum), 'CS_SHELL', icon='icon_frag_main_caliber', sound='Shell_CS')		# 19 -->
+		<const name='FEL'			value='FEL'			/>		<!-- DeathReason(next(enum), 'FEL', icon='icon_frag_fel', sound='Fel')							# 20 -->
+		<const name='PORTAL'		value='PORTAL'		/>		<!-- DeathReason(next(enum), 'PORTAL', icon='icon_frag_portal', sound='Portal')					# 21 -->
+		<const name='SKIP_BOMB'		value='SKIP_BOMB'	/>		<!-- DeathReason(next(enum), 'SKIP_BOMB', icon='icon_frag_skip', sound='SkipBomb')				# 22 -->
+		<const name='SECTOR_WAVE'	value='SECTOR_WAVE'	/>		<!-- DeathReason(next(enum), 'SECTOR_WAVE', icon='icon_frag_wave', sound='SECTOR_WAVE')			# 22 -->
+		<const name='ACID'			value='ACID'		/>		<!-- DeathReason(next(enum), 'ACID', icon='icon_frag_acid')										# 23 -->
+		<const name='LASER'			value='LASER'		/>		<!-- DeathReason(next(enum), 'LASER', icon='icon_frag_laser', sound='LASER')					# 24 -->
+		<const name='MATCH'			value='MATCH'		/>		<!-- DeathReason(next(enum), 'MATCH', icon='icon_frag_octagon', sound='Match')					# 25 -->
+		<const name='TIMER'			value='TIMER'		/>		<!-- DeathReason(next(enum), 'TIMER', icon='icon_timer', sound='Timer')							# 26 -->
+	</enum>
+
+	<enum name="FINISH_TYPE" type="Integer">
+		<const name="UNKNOWN"					value="0" />
+		<const name="EXTERMINATION"				value="1" />
+		<const name="BASE"						value="2" />
+		<const name="TIMEOUT"					value="3" />
+		<const name="FAILURE"					value="4" />
+		<const name="TECHNICAL"					value="5" />
+		<const name="SCORE"						value="8" />
+		<const name="SCORE_ON_TIMEOUT"			value="9" />
+		<const name="PVE_MAIN_TASK_SUCCEEDED"	value="10" />
+		<const name="PVE_MAIN_TASK_FAILED"		value="11" />
+		<const name="SCORE_ZERO"				value="12" />
+		<const name="SCORE_EXCESS"				value="13" />
+	</enum>
+
+	<enum name="SLOT_VISUALIZATION_TYPE" type="Integer">
+		<const name="NONE"						value="0"	/>
+		<const name="SELECTION_BUTTON"			value="1"	/>
+		<const name="TORPEDO_ANGLE_SELECTION"	value="2"	/>
+		<const name="DEPTH_CHARGES_PACK"		value="3"	/>
+		<const name="AIRPLANES"					value="4"	/>
+	</enum>
+
+</constants>

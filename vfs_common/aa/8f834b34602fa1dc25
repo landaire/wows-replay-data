@@ -1,0 +1,56 @@
+ontextMenuVisible); 0.15; {alpha: 0}; {alpha: 1.0}"/>
+			<bind name="style" value="'hitTest'; !(isSuspended) || ((isSuspended) &amp;&amp; (groupIdsOfAccount != null))"/>
+			<styleClass value="$PxHorizontalCorrection"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="menu" value="'ContactContextMenu';	!(isSelf)	? 	{
+																_entityAccountId: _entityAccountId,
+																_currentGroupId: _currentGroupId,
+																_actionDenyReason: actionDenyReason,
+																_playerContext: _playerContext,
+																_inviteType: SC.Pre_battle.PRE_BATTLE_INVITE_TYPE.COMMON,
+																_channelId: _channelId}
+														: 	null;
+											 null; null; 'contactContextMenuVisible'"/>
+			<bind name="tooltip" value="'ContactInfoTooltip'; !(isSuspended) ?	{	_entityAccountId: _entityAccountId,
+																	_playerContext: _playerContext,
+																	_actionDenyReason: actionDenyReason,
+																	_isVisiblePatrolInfo: isInPatrolBlockVisible,
+																	_patrolName: patrolName,
+																	_isContextMenuAvailable: true,
+																	_isChatServerAvailable: isChatServerAvailable
+																}
+															:	null"/>
+			<bind name="clickSplit"/>
+			<bind name="firstEntityDH" value="'brawlSeasonEntity'; CC.brawlBattlesSeason"/>
+			<bind name="collectionDH" value="CC.battleType; 'selectedBattleTypes'; 'selected'"/>
+			<bind name="watch" value="'selectedBattleType'; selectedBattleTypes[0].battleType.type"/>
+			<bind name="watch" value="'isBrawlBattle'; selectedBattleType == SC.Common.BATTLE_TYPES.BRAWL_BATTLE"/>
+			<bind name="watchDH" value="'brawlShipCountRestrictions'; ['brawlSeasonEntity.divisionRestrictions.evUpdate']; brawlSeasonEntity.divisionRestrictions.shipsCount[1]"/>
+			<bind name="watch" value="'isInTrainingRoom'; trainingRoomEntity != null"/>
+			<bind name="watchDH" value="'trMaxPlayers'; ['trainingRoomEntity.trainingRoom.evUpdate']; trainingRoomEntity.trainingRoom.teamSize"/>
+			<bind name="watch" value="'maxPlayers';	isInTrainingRoom	? trMaxPlayers
+														: shipRestrictions.maxPlayers"/>
+			<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+			<bind name="watchDH" value="'isSelfPlayerCommander'; ['selfPlayerEntity.preBattlePlayerSimple.evIsCommanderChanged']; selfPlayerEntity.preBattlePlayerSimple.isCommander"/>
+			<bind name="watchDH" value="'selfPreBattleId'; ['selfPlayerEntity.preBattlePlayerSimple.evPreBattleIdChanged']; selfPlayerEntity.preBattlePlayerSimple.preBattleId"/>
+			<bind name="collectionDH" value="CC.preBattlePlayerSimple; 'preBattlePlayers'; 'byPreBattle.' + selfPreBattleId + '.preBattleMembers'"/>
+			<bind name="watch" value="'currentPlayersNumberInDivision'; preBattlePlayers.length ? preBattlePlayers.length : 0"/>
+			<bind name="watch" value="'freePlaces'; maxPlayers - currentPlayersNumberInDivision"/>
+			<bind name="watch" value="'isInviteSlotAvailable';	(isSelfPlayerCommander &amp;&amp; freePlaces &gt; 0) ||
+												(!divisionDataEntity &amp;&amp;
+												(!isBrawlBattle || brawlShipCountRestrictions &gt;= 2))"/>
+			<bind name="watch" value="'isActionEnabled'; (	!(isSelf) &amp;&amp;
+											(actionDenyReason == 'no_reason') &amp;&amp;
+											!(isSuspended) &amp;&amp;
+											!isInDivision &amp;&amp;
+											isInviteSlotAvailable
+										)"/>
+			<bind name="var" value="{showBusyIndicator: false}"/>
+			<bind name="watch" value="'isInvitedToDivision'; entityAccount.playerInvitedToPrebattleInfo != null"/>
+			<bind name="action" value="'left_click';	(isActionEnabled == false)						? '' :
+									(_playerContext.type == 'inviteToChannel')		? 'sendChannelInvite' :
+									(_playerContext.type == 'inviteToDivision')		? 'inviteToDivision' :
+									(_playerContext.type == 'inviteToTrainingRoom')	? 'TrainingRoomProxy.sendInvite' :
+									(isTextSettingsBlocked)							? '' :
+									(_playerContext.type == 'startPrivateChat')		? 'openChannelForPrivateMessages' :
+									(_playerContext.type == 'channelParticipants')	? 'openChannelF

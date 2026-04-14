@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="CRUISE_CONTROL_TYPE">
+		<const name="SPEED" 	value="0" type="Integer"/>
+		<const name="ANGLE" 	value="1" type="Integer"/>
+		<const name="DEPTH" 	value="2" type="Integer"/>
+	</enum>
+	<enum name="DEPTH_STATE">
+		<const name="SURFACE" 		value="0" type="Integer"/>
+		<const name="PERISCOPE" 	value="1" type="Integer"/>
+		<const name="UNMASKING" 	value="2" type="Integer"/>
+		<const name="WORKING" 		value="3" type="Integer"/>
+		<const name="CRITICAL" 		value="4" type="Integer"/>
+		
+		<range name="AVAILABLE_FOR_SUBS" values="PERISCOPE, UNMASKING, WORKING, CRITICAL"/>
+	</enum>
+	<enum name="DEPTH_CHARGES_STATE">
+		<const name="EMPTY" 		value="0" type="Integer"/>
+		<const name="RELOADING" 	value="1" type="Integer"/>
+		<const name="READY" 		value="2" type="Integer"/>
+		<const name="WORKING" 		value="3" type="Integer"/>
+		<const name="DESTROYED" 	value="4" type="Integer"/>
+	</enum>
+</constants>

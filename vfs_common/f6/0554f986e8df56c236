@@ -1,0 +1,85 @@
+Name"/>
+		<bind name="primaryEntityDH" value="'defaultRestrictionsEntity'; CC.battleTypeCommonRestrictions; SC.Common.BATTLE_TYPES.TRAINING_BATTLE"/>
+		<bind name="watch" value="'eventBattleName'; battleTypeEntity.eventBattleState.name"/>
+		<bind name="watch" value="'battleTypeIcon';	isEventBattle			? eventBattleName :
+									operationCustomIconName ? operationCustomIconName
+															: selectedBattleType"/>
+		<bind name="watch" value="'filterText'; 	selectedBattleType == SC.Common.BATTLE_TYPES.PVE_BATTLE					? tr('IDS_' + toUpperCase(operationEntity.operation.gpName) + '_NAME') :
+								isEventBattle															? tr('IDS_' + toUpperCase(eventBattleName))
+																										: tr('IDS_' + toUpperCase(selectedBattleType))"/>
+		<style>
+			<height value="30px"/>
+			<flow value="horizontal"/>
+		</style>
+		<bind name="appear" value="'addedToStage'; 0.15; 0; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+		<block className="button_dock_bg" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="gotoAndStop!" value="'down'"/>
+		</block>
+		<block>
+			<style>
+				<flow value="horizontal"/>
+				<backgroundColor value="0x01000000"/>
+			</style>
+			<block>
+				<style>
+					<marginLeft value="4px"/>
+					<width value="23px"/>
+					<height value="23px"/>
+					<marginTop value="4px"/>
+					<backgroundSize value="cover"/>
+				</style>
+				<bind name="style" value="'backgroundImage'; 'url:../service_kit/battle_types/' + battleTypeIcon + '_tiny.png'"/>
+			</block>
+			<block type="text">
+				<style>
+					<marginTop value="2px"/>
+				</style>
+				<styleClass value="$TextHeaderBigDefault"/>
+				<bind name="text" value="filterText"/>
+			</block>
+			<bind name="tooltip" value="'SimpleStatusTooltip'; { _text: tr(toUpperCase(	'IDS_CAROUSEL_' +
+																		(isEventBattle ? eventBattleName : selectedBattleType) +
+																		'_FILTER')) }"/>
+		</block>
+		<block>
+			<style>
+				<marginLeft value="16px"/>
+				<marginTop value="5px"/>
+			</style>
+			<bind name="instance" value="'ShipRestrictions'; 
+			selectedBattleType == SC.Common.BATTLE_TYPES.TRAINING_BATTLE	? {	_restrictionsEntityId: restrictionsEntityId, 
+																				_defaultRestrictionsEntityId: defaultRestrictionsEntity.id }
+																			: { _restrictionsEntityId: restrictionsEntityId }"/>
+		</block>
+	</block>
+	<block className="AppliedFilter">
+		<bind name="visible" value="selectedItems.length &gt; 0"/>
+		<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'"/>
+		<bind name="entityDH" value="'panelEntity'; _panelEntityId"/>
+		<bind name="watchDH" value="'selectedItems'; ['panelEntity.filteringGroup.evUpdate']; panelEntity.filteringGroup.selectedFilters[_filterType]"/>
+		<bind name="watch" value="'tooltipTitle';	_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_LEVEL	? 'IDS_LEVEL'	:
+									_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_TYPE		? 'IDS_CLASS'	:
+									_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_NATION 	? 'IDS_NATION'	:
+									_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_SPECIAL	? 'IDS_SPECIAL' :
+									_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_RARITY	? 'IDS_RARITY'
+																							: null"/>
+		<bind name="transition" value="(rollOver &amp;&amp; !mouseDown) || appliedFiltersInfotipSelected; 0.15; {alpha: 0.7}; {alpha: 1}"/>
+		<bind name="appear" value="'addedToStage'; 0.15; 0; {alpha: 0, top: 10}; {alpha: 0.7, top: 0}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+		<style>
+			<height value="30px"/>
+		</style>
+		<block className="button_dock_bg" type="native">
+			<bind name="gotoAndStop!" value="'down'"/>
+			<bind name="transition" value="((rollOver &amp;&amp; !mouseDown) || (mouseDown)) || appliedFiltersInfotipSelected; 0.15; {alpha: 0}; {alpha: 0.7}"/>
+			<style>
+				<height value="100%"/>
+			</style>
+			<bind name="tooltip" value="'CarouselAppliedFilterInfotip';	tooltipTitle ? {_title: tooltipTitle,   _filterType: _filterType, _arrow: _arrow} : null;
+														TooltipBehaviour.verticalInfotip; null; 'appliedFiltersInfotipSelected'"/>
+			<bind name="tooltip" value="'SimpleStatusTooltip'; {	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.MOUSE_LEFT,
+												_text: tr('IDS_CAROUSEL_APPLIED_FILTER_HINT_' + toUpperCase(SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType]))}"/>
+			<block>
+				<style>
+					<height value="100%"/>
+					<marginTop 

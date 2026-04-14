@@ -1,0 +1,52 @@
+ssName="CarouselShipRowsListItemRenderer">
+		<styleClass value="$ContextMenuListItem"/>
+		<bind name="var" value="{_toLowerCase: true}"/>
+		<bind name="stageSize"/>
+		<bind name="watch" value="'isFourRowsEnabled'; (stageHeight &gt; (720 + 295))"/>
+		<bind name="watch" value="'isThreeRowsEnabled'; (stageHeight &gt; (720 + 130))"/>
+		<bind name="watch" value="'isEnabled';	($index == 0)							? true :
+								(isThreeRowsEnabled &amp;&amp; ($index == 1))	? true :
+								(isFourRowsEnabled &amp;&amp; ($index == 2))	? true
+																		: false"/>
+		<style>
+			<backgroundColor value="0x01000000"/>
+		</style>
+		<bind name="tooltip" value="'SimpleStatusTooltip'; isEnabled ? null : {_text: tr('IDS_NOT_ENABLED_ON_LOW_RESOLUTION'), _unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.WARNING}"/>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<bind name="style" value="'alpha'; isEnabled ? 1 : 0.5"/>
+			<bind name="style" value="'hitTest'; isEnabled"/>
+			<block className="MenuItemWithSelection">
+				<styleClass value="$Fullsize"/>
+				<bind name="name" value="$value"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+					<bind name="selected" value="(_curItemIndex == $index)"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="class" value="(_curItemIndex == $index) == true ? '$Bold' : '$None'"/>
+					<bind name="text" value="(_toLowerCase ? toLowerCase(tr($value))
+											: (tr($value)))"/>
+					<bind name="name" value="'menu_item_' + _titleIds"/>
+				</block>
+			</block>
+			<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 	($index == 0)	? tr('IDS_SHOW_TWO_ROWS_IN_CAROUSEL') :
+														($index == 1)	? tr('IDS_SHOW_THREE_ROWS_IN_CAROUSEL') :
+														($index == 2)	? tr('IDS_SHOW_FOUR_ROWS_IN_CAROUSEL')
+																		: ''}"/>
+			<bind name="dispatch" value="'click'; ('ItemChooserInnerEvent.' + _onItemSelectedEvent); {_curItemIndex: $index}"/>
+			<bind name="dispatch" value="'click'; ('ItemChooserInnerEventDublicate.' + _onItemSelectedEvent)"/>
+		</block>
+	</block>
+	<block className="TrainingRoomRestrictions">
+		<bind name="watchDH" value="'selectedFilters' ; ['trainingRoomEntity.filteringGroup.evUpdate']; trainingRoomEntity.filteringGroup.selectedFilters"/>
+		<bind name="watchDH" value="'shipsCount' ; ['trainingRoomEntity.divisionRestrictions.evUpdate']; trainingRoomEntity.divisionRestrictions.shipsCount"/>
+		<bind name="watchDH" value="'typesCount' ; ['trainingRoomEntity.divisionRestrictions.evUpdate']; trainingRoomEntity.divisionRestrictions.typesCount"/>
+		<bind name="primaryEntityDH" value="'defaultRestrictionsEntity'; CC.battleTypeCommonRestrictions; SC.Common.BATTLE_TYPES.TRAINING_BATTLE"/>
+		<bind name="watchDH" value="'defaultTypesCount' ; ['defaultRestrictionsEntity.divisionRestrictions.evUpdate']; defaultRestrictionsEntity.divisionRestrictions.typesCount"/>
+		<bind name="watchDH" value="'idsfilters' ; ['trainingRoomEntity.specificShips.evUpdate']; trainingRoomEntity.specificShips.includedShips"/>
+		<bind name="watchDH" value="'levelfilters' ; ['trainingRoomEntity.filteringGroup.evUpdate']; trainingRoomEntity.filteringGroup.selectedFilters[SC.Common.SHIP_FILTER_TYPE.SHIP_LEVEL]"/>
+		<bind name="watchDH" value="'nationfilters' ; ['trainingRoomEntity.filteringGroup.evUpdate']; trainingRoomEntity.filter

@@ -1,0 +1,84 @@
+			</style>
+				<bind name="class" value="_disableReset ? '$TinyFilterMargins' : '$HugeFilterMargins'"/>
+				<block>
+					<style>
+						<height value="100%"/>
+						<hitTest value="false"/>
+					</style>
+					<bind name="instance" value="'AppliedFilterRenderer'; { _panelEntityId: _panelEntityId, _filterType: _filterType, _needDivider: _needDivider }"/>
+				</block>
+				<block>
+					<bind name="visible" value="_disableReset != true"/>
+					<style>
+						<height value="100%"/>
+						<width value="12px"/>
+					</style>
+					<block>
+						<bind name="name" value="'CarouselFilterClose_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType]"/>
+						<bind name="transition" value="((rollOver &amp;&amp; !mouseDown) || mouseDown) || appliedFiltersInfotipSelected; 0.15; {alpha: 0}; {alpha: 0.7}"/>
+						<style>
+							<marginLeft value="2px"/>
+							<marginTop value="9px"/>
+						</style>
+						<bind name="instance" value="'CloseButton'; {
+						_action: 'resetFilterType',
+						_actionParams: { type: _filterType, ident: 0 },
+						_directEvent: SC.Common.STATISTICS_EVENTS.LOG,
+						_directEventParams: {event: SC.Common.SHIP_FILTER_STATISTICS[SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType] + '_UNSELECTED']},
+						_tooltipText: 'IDS_HINT_RESET_FILTER'
+					}"/>
+					</block>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+		</block>
+	</block>
+	<block className="AppliedFilterRenderer">
+		<bind name="visible" value="selectedItems.length &gt; 0"/>
+		<bind name="entityDH" value="'panelEntity'; _panelEntityId"/>
+		<bind name="watchDH" value="'selectedItems'; ['panelEntity.filteringGroup.evUpdate']; panelEntity.filteringGroup.selectedFilters[_filterType]"/>
+		<bind name="watchDH" value="'levelString'; ['panelEntity.filteringGroup.evUpdate']; panelEntity.filteringGroup.levelString"/>
+		<style>
+			<flow value="horizontal"/>
+			<height value="100%"/>
+		</style>
+		<block>
+			<style>
+				<height value="100%"/>
+			</style>
+			<bind name="visible" value="_needDivider"/>
+			<block className="VerticalDivider">
+				<style>
+					<height value="100%"/>
+					<width value="3px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_v.png"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_LEVEL"/>
+			<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 'IDS_SHIP_LEVEL_RESTRICTION'}"/>
+			<styleClass value="$MiddleVAligned"/>
+			<bind name="class" value="_needMargins ? '$HugeFilterMargins' : '$None'"/>
+			<style>
+				<backgroundColor value="0x01000000"/>
+			</style>
+			<bind name="instance" value="'ShipLevelRome'; { _levelRange: levelString }"/>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+		<block>
+			<bind name="visible" value="_filterType != SC.Common.SHIP_FILTER_TYPE.SHIP_LEVEL"/>
+			<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: tr('IDS_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType] + '_RESTRICTION')}"/>
+			<styleClass value="$MiddleVAligned"/>
+			<bind name="class" value="_needMargins ? '$HugeFilterMargins' : '$None'"/>
+			<style>
+				<backgroundColor value="0x01000000"/>
+			</style>
+			<bind name="repeat" value="selectedItems;	(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_TYPE)	? 'CarouselFilterShipTypeIcon' :
+										(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_NATION)	? 'CarouselFilterTinyNationFlag' :
+										(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_SPECIAL)? 'Car

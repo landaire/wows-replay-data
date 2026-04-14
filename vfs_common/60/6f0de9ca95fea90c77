@@ -1,0 +1,127 @@
+om value="30px"/>
+				<align value="middle|center"/>
+			</style>
+			<bind name="instance" value="'InvitationToChatItem'; { _channelEntityId: _channelEntityId }"/>
+		</block>
+	</block>
+	<block className="ChatBoxContentEnterPassword">
+		<styleClass value="$Fullsize"/>
+		<block className="inner_panel" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<style>
+				<marginBottom value="48px"/>
+			</style>
+			<block>
+				<styleClass value="$MiddleVAligned"/>
+				<styleClass value="$MiddleAligned"/>
+				<bind name="instance" value="'EnterPasswordChatItem'; { _channelEntityId: _channelEntityId }"/>
+			</block>
+		</block>
+	</block>
+	<block className="ChatBoxContentCommon">
+		<bind name="entityDH" value="'channelEntity'; _channelEntityId"/>
+		<bind name="collectionDH" value="CC.channelParticipant; 'participants'; 'channelParticipants_' + channelEntity.id"/>
+		<styleClass value="$Fullsize"/>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="instance" value="'ClanChatDailyMessage'; (channelEntity.channel.typeIdent == 'clan') ? {} : null"/>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<block>
+				<styleClass value="$Fullsize"/>
+				<bind name="instance" value="'MessageBoxPanel'; { _channelEntityId: _channelEntityId, _isInputEnabled: _isInputEnabled }"/>
+			</block>
+			<block>
+				<style>
+					<height value="100%"/>
+				</style>
+				<bind name="visible" value="(participants.length != 0)"/>
+				<block className="VerticalDivider">
+					<style>
+						<height value="100%"/>
+						<width value="3px"/>
+						<backgroundSize value="fill"/>
+						<backgroundImage value="url:../service_kit/dividers/divider_v.png"/>
+					</style>
+				</block>
+			</block>
+			<block>
+				<style>
+					<height value="100%"/>
+				</style>
+				<bind name="instance" value="'ParticipantsPanel'; { _channelEntityId: _channelEntityId }"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="ChatBoxContentDivision">
+		<bind name="firstEntityDH" value="'divisionEntranceInfoEntity'; CC.divisionEntranceInfo"/>
+		<bind name="watchDH" value="'isDivisionAvailable'; ['divisionEntranceInfoEntity.divisionEntranceInfo.evisDivisionAvailableChanged']; divisionEntranceInfoEntity.divisionEntranceInfo.isDivisionAvailable"/>
+		<bind name="firstEntityDH" value="'chatEntity'; CC.chat"/>
+		<bind name="watchDH" value="'isChatServerAvailable'; ['chatEntity.chat.evConnected', 'chatEntity.chat.evDisConnected']; chatEntity.chat.isConnected"/>
+		<styleClass value="$Fullsize"/>
+		<block>
+			<style>
+				<width value="100%"/>
+				<height value="36px"/>
+			</style>
+			<block>
+				<styleClass value="$Fullsize"/>
+				<block>
+					<style>
+						<width value="40px"/>
+						<height value="100%"/>
+						<align value="middle|center"/>
+					</style>
+					<block>
+						<style>
+							<marginLeft value="2px"/>
+						</style>
+						<bind name="instance" value="'DivisionBattleTypeIcon'; {_size: -1}"/>
+					</block>
+				</block>
+				<block>
+					<style>
+						<height value="100%"/>
+						<paddingTop value="2px"/>
+						<paddingBottom value="4px"/>
+					</style>
+					<block className="VerticalDivider">
+						<style>
+							<height value="100%"/>
+							<width value="3px"/>
+							<backgroundSize value="fill"/>
+							<backgroundImage value="url:../service_kit/dividers/divider_v.png"/>
+						</style>
+					</block>
+				</block>
+				<block>
+					<styleClass value="$Fullsize"/>
+					<bind name="instance" value="'FormationStatuses'; {_divisionsAvailable: isDivisionAvailable}"/>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+					<position value="absolute"/>
+					<bottom value="0"/>
+				</style>
+				<block className="HorizontalDivider">
+					<styleClass value="$PxHorizontalCorrection"/>
+					<style>
+						<width value="100%"/>
+						<height value="2px"/>
+						<backgroundSize value="fill"/>
+						<marginTop value="1px"/>
+						<backgroundImage value="url:.

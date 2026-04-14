@@ -1,0 +1,1043 @@
+watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+		<bind name="action" value="'removedFromStage'; _hasFinishButton ? 'deactivateCurrentTipChain' : null; { tip_id:_newTipId }"/>
+		<bind name="watch" value="'pinOffset'; _pinOffset ? _pinOffset : 50"/>
+		<bind name="watch" value="'pointerOffset'; _pointerOffset ? _pointerOffset + 'px' : '0px'"/>
+		<bind name="watch" value="'oppositePointerOffset'; _oppositePointerOffset ? _oppositePointerOffset + 'px' : '0px'"/>
+		<bind name="directEvent" value="'addedToStage'; _tipShownEvent ? SC.Common.STATISTICS_EVENTS.LOG : null; _tipShownEvent ? {event: _tipShownEvent} : {}"/>
+		<style>
+			<position value="absolute"/>
+			<width value="340px"/>
+		</style>
+		<block className="DeclareBlurLayer">
+			<bind name="primaryEntityDH" value="'isBlurEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+			<bind name="watchDH" value="'isBlurEnabled'; ['isBlurEnabledEntity.preference.evValueChanged']; isBlurEnabledEntity.preference.value"/>
+			<bind name="visible" value="isBlurEnabled"/>
+			<block className="transparentPixel" type="native">
+				<bind name="blurLayer" value="0"/>
+			</block>
+			<style>
+				<position value="absolute"/>
+			</style>
+		</block>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="visible" value="isBlurOptionEnabled"/>
+			<block className="mc_blurmap5" type="native">
+				<styleClass value="$Fullsize"/>
+				<bind name="blurMap" value="0"/>
+			</block>
+		</block>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="child" value="_direction ? _direction : 'no_item'; 	{	_noPointer:				_noPointer,
+																_noArrow:				_noArrow,
+																_arrowOffsetInPx:		_arrowOffsetInPx,
+																_firstPinOffset:		pinOffset + '%',
+																_secondPinOffset:		(100 - pinOffset) + '%',
+																_pointerOffset:			pointerOffset,
+																_oppositePointerOffset: oppositePointerOffset	};
+															{	up: 	'NewContextGuidingTipPointerPanel_up',
+																down: 	'NewContextGuidingTipPointerPanel_down',
+																left: 	'NewContextGuidingTipPointerPanel_left',
+																right: 	'NewContextGuidingTipPointerPanel_right',
+																no_item:'EmptyItem'}"/>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="visible" value="_tipDescription &amp;&amp; _tipHeader"/>
+			<params>
+				<param name="name" value="contextGuidingTip"/>
+			</params>
+			<block>
+				<styleClass value="$NewContextGuidingTipTextMargins"/>
+				<block type="text">
+					<styleClass value="$TextDefaultBold19NM"/>
+					<styleClass value="$FontColorGolden"/>
+					<style>
+						<width value="100%"/>
+						<marginRight value="16"/>
+					</style>
+					<bind name="text" value="_tipHeader"/>
+					<params>
+						<param name="name" value="contextGuidingTipHeader"/>
+					</params>
+				</block>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<block className="HorizontalDividerTwoPx">
+					<style>
+						<width value="100%"/>
+						<height value="2px"/>
+						<backgroundSize value="fill"/>
+						<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+					</style>
+				</block>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block className="inner_panel" type="native">
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<marginLeft value="2px"/>
+					<marginRight value="2px"/>
+					<marginBottom value="3px"/>
+				</style>
+			</block>
+			<block>
+				<styleClass value="$NewContextGuidingTipTextMargins"/>
+				<block type="text">
+					<styleClass value="$TextDefault17NM"/>
+					<style>
+						<alpha value="0.75"/>
+						<width value="100%"/>
+						<marginBottom value="8"/>
+					</style>
+					<bind name="text" value="_tipDescription"/>
+					<params>
+						<param name="name" value="contextGuidingTipDescription"/>
+					</params>
+				</block>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<block className="HorizontalDividerTwoPx">
+					<style>
+						<width value="100%"/>
+						<height value="2px"/>
+						<backgroundSize value="fill"/>
+						<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+					</style>
+				</block>
+			</block>
+		</block>
+		<block>
+			<bind name="name" value="'btnCloseNewTip'"/>
+			<style>
+				<top value="16"/>
+				<right value="16"/>
+				<marginTop value="3px"/>
+				<position value="absolute"/>
+			</style>
+			<bind name="instance" value="'CloseButton'; {
+			_action: 'deactivateCurrentTipChain',
+			_actionParams: { tip_id: _newTipId },
+			_directEvent: _tipShownEvent ? SC.Common.STATISTICS_EVENTS.LOG : null,
+			_directEventParams: _tipShownEvent ? {event: SC.Common.UB2_TIPS_STATISTICS.TIP_CLOSED_CROSS} : {}
+		}"/>
+		</block>
+		<block>
+			<bind name="visible" value="_hasNextButton"/>
+			<style>
+				<align value="center|middle"/>
+				<width value="100%"/>
+				<margin value="16px"/>
+			</style>
+			<bind name="instance" value="'DefaultButton'; { 	_width: '120px', 
+											_size: 0,
+											_enabled: true, 
+											_isTransactionBtn: false, 
+											_label: 'IDS_NEWBIE_QUESTS_TOOLTIP_BUTTON_NEXT',
+											_action: 'nextTipButton',
+											_directEvent: _buttonLogEvent ? SC.Common.STATISTICS_EVENTS.LOG : null,
+											_directEventParams: _buttonLogEvent ? {event: _buttonLogEvent} : {} 
+											} "/>
+		</block>
+		<block>
+			<bind name="visible" value="_hasFinishButton"/>
+			<style>
+				<align value="center|middle"/>
+				<width value="100%"/>
+				<margin value="16px"/>
+			</style>
+			<bind name="instance" value="'DefaultButton'; { 	_width: '120px', 
+											_size: 0,
+											_enabled: true, 
+											_isTransactionBtn: false, 
+											_label: 'IDS_NEWBIE_QUESTS_TOOLTIP_BUTTON_FINISH',
+											_action: 'deactivateCurrentTipChain',
+											_actionParams: { tip_id: _newTipId },
+											_directEvent: _buttonLogEvent ? SC.Common.STATISTICS_EVENTS.LOG : null,
+											_directEventParams: _buttonLogEvent ? {event: _buttonLogEvent} : {} 
+											} "/>
+		</block>
+	</block>
+	<block className="NewGuidingTipHub">
+		<bind name="var" value="{entityActive: false, reasonOnStage: true, isOnTop: true}"/>
+		<bind name="catch" value="'addedToStage'; 		{reasonOnStage: true}"/>
+		<bind name="catch" value="'removedFromStage'; 	{reasonOnStage: false}"/>
+		<bind name="catch" value="'onLostTop'; {isOnTop: false}"/>
+		<bind name="catch" value="'onBecomeTop'; {isOnTop: true}"/>
+		<bind name="name" value="'NewGuidingTip_' + _newTipId"/>
+		<bind name="primaryEntityDH" value="'newTipEntity'; CC.newGuidingTip; _newTipId"/>
+		<bind name="watchDH" value="'header'; 	['newTipEntity.newGuidingTip.evChanged']; newTipEntity.newGuidingTip.header"/>
+		<bind name="watchDH" value="'desc';		['newTipEntity.newGuidingTip.evChanged']; newTipEntity.newGuidingTip.desc"/>
+		<bind name="watchDH" value="'isActive'; 	['newTipEntity.newGuidingTip.evChanged']; newTipEntity.newGuidingTip.isActive"/>
+		<bind name="watchDH" value="'targetID'; 	['newTipEntity.newGuidingTip.evChanged', 'newTipEntity.newGuidingTip.evTargetIDChanged']; newTipEntity.newGuidingTip.targetID"/>
+		<bind name="watch" value="'entityActive'; !!newTipEntity"/>
+		<bind name="watch" value="'tipVisible'; entityActive &amp;&amp; isOnTop &amp;&amp; isActive &amp;&amp; reasonOnStage"/>
+		<bind name="changeDispatch" value="tipVisible; tipVisible ? 'NewGuidingTipOpen' : 'NewGuidingTipClose'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.NONE"/>
+		<styleClass value="$FullsizeAbsolute"/>
+		<block>
+			<bind name="visible" value="_tipType == 'panel'"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<hitTest value="false"/>
+				<margin value="-4px"/>
+				<backgroundImage value="url:../service_kit/panel_backgrounds/new_tip_sector.png"/>
+				<background9Slice value="[6]"/>
+			</style>
+		</block>
+		<bind name="watch" value="'direction';	_tipPositioning == 'top'		?	'down'	:
+								_tipPositioning == 'bottom'	?	'up'		:
+								_tipPositioning == 'left'		?	'right'	:
+								_tipPositioning == 'right'		?	'left'
+																			:	'no_item'"/>
+		<bind name="popupNoCache" value="'NewContextGuidingTip';
+		{
+			_newTipId:				_newTipId,
+			_tipHeader:				tr(header),
+			_tipDescription:		tr(desc),
+			_direction:				direction,
+			_pinOffset: 			_pinOffset,
+			_pointerOffset: 		_pointerOffset,
+			_oppositePointerOffset: _oppositePointerOffset,
+			_tipChainId:			_tipChainId,
+			_hasNextButton:			_hasNextButton,
+			_hasFinishButton:		_hasFinishButton,
+			_noPointer:				_noPointer,
+			_noArrow:				_noArrow,
+			_arrowOffsetInPx:		_arrowOffsetInPx,
+			_tipShownEvent:			_tipShownEvent,
+			_buttonLogEvent:		_buttonLogEvent
+		}; 1;
+		{
+			type: 'lesta.unbound.bindings.popup.UbNativeReasonPopupSpacingComponent',
+			params:
+			{
+				directionsPriority: _keepOnNotFit ? [_tipPositioning] : [_tipPositioning, 'empty'],
+				reasonOffsetTop:	_offset,
+				reasonOffsetBottom: _offset,
+				reasonOffsetRight:	_offset,
+				reasonOffsetLeft:	_offset,
+
+				oppositeDirectionOffsetTop:		(_tipPositioning == 'top')		&amp;&amp;	_oppositeDirectionOffset ? _oppositeDirectionOffset : 0,
+				oppositeDirectionOffsetBottom: 	(_tipPositioning == 'bottom')	&amp;&amp;	_oppositeDirectionOffset ? _oppositeDirectionOffset : 0,
+				oppositeDirectionOffsetRight:	(_tipPositioning == 'right') 	&amp;&amp;	_oppositeDirectionOffset ? _oppositeDirectionOffset : 0,
+				oppositeDirectionOffsetLeft:	(_tipPositioning == 'left') 	&amp;&amp;	_oppositeDirectionOffset ? _oppositeDirectionOffset : 0,
+
+				screenOffsetTop:	_screenOffsetTop 	? _screenOffsetTop 		: 0,
+				screenOffsetBottom: _screenOffsetBottom ? _screenOffsetBottom 	: 0,
+				screenOffsetRight:	_screenOffsetRight 	? _screenOffsetRight	: 0,
+				screenOffsetLeft:	_screenOffsetLeft 	? _screenOffsetLeft		: 0,
+			}
+		};
+		{
+			reason:
+			{
+				removedFromStage: 		{ 	action:'hide',
+											params: { duration:0.0, startProps: { alpha:1, x:0, y:0 }, finishProps: { alpha:0, x:0, y: -5 }}
+										},
+				click:					{ 	action: _hideOnReasonClick ? 'hide' : 'none', 
+											params: { duration:0.1, startProps: { alpha:1, x:0, y:0 }, finishProps: { alpha:0, x:0, y: -5 }}
+										}
+			},
+
+			reasonScope:
+			{
+				NewGuidingTipOpen: 		{ 	action: 'show', 
+											params: { duration:0.3, startProps: { alpha:0, x:0, y:10 }, finishProps: { alpha:1, x:0, y: 0 }, delay: _onShowDelay ? _onShowDelay : 0.5}},
+
+				NewGuidingTipClose: 	{ 	action: 'hide',
+											params: { duration:0.0, startProps: { alpha:1, x:0, y:0 }, finishProps: { alpha:0, x:0, y: -5 }}}
+			}
+		}
+	"/>
+	</block>
+
+	<!-- paragons_elements -->
+	<block className="ParagonsResearchTreeFooter">
+		<bind name="firstEntityDH" value="'userTaskEntity'; CC.userTask"/>
+		<bind name="watchDH" value="'currentUserTaskFlags'; ['userTaskEntity.userTask.evFlagChanged']; userTaskEntity.userTask.flags"/>
+		<bind name="watch" value="'isSeenParagonInShipTree'; currentUserTaskFlags[SC.Common.USER_TASKS_FLAGS.KNOWS_ABOUT_PARAGONS_IN_SHIP_TREE]"/>
+		<bind name="firstEntityDH" value="'paragonSeasonEntity'; CC.paragonSeason"/>
+		<bind name="watchDH" value="'paragonSeasonEndDate'; ['paragonSeasonEntity.paragonSeason.evUpdate']; paragonSeasonEntity.paragonSeason.endDate"/>
+		<bind name="watchDH" value="'paragonSeasonDropsSharedMade';	['paragonSeasonEntity.paragonSeason.evUpdateDropsMade']; paragonSeasonEntity.paragonSeason.dropsSharedMade"/>
+		<bind name="watchDH" value="'bonusTagsForFirstDrop';	['paragonSeasonEntity.paragonSeason.evUpdate']; paragonSeasonEntity.paragonSeason.bonusTagsForFirstDrop"/>
+		<bind name="serverTime" value="'serverTime'"/>
+		<bind name="timeFormat" value="paragonSeasonEndDate - serverTime; 'HIGHEST'; 'paragonSeasonTimeToFinish'; true"/>
+		<style>
+			<width value="100%"/>
+			<marginBottom value="64px"/>
+			<marginTop value="16px"/>
+		</style>
+		<block>
+			<style>
+				<width value="100%"/>
+				<hitTest value="false"/>
+				<marginBottom value="32px"/>
+			</style>
+			<block className="TooltipSystemHorizontalDivider">
+				<bind name="visible" value="true"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<marginTop value="12px"/>
+					<marginBottom value="12px"/>
+					<marginRight value="-16px"/>
+					<marginLeft value="-16px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<style>
+				<flow value="horizontal"/>
+				<marginLeft value="16px"/>
+				<width value="700px"/>
+			</style>
+			<block>
+				<style>
+					<width value="80px"/>
+					<height value="80px"/>
+					<marginLeft value="16px"/>
+					<marginRight value="32px"/>
+					<backgroundSize value="cover"/>
+				</style>
+				<bind name="style" value="'backgroundImage'; 'url:../paragons/icon_paragon_rules.png'"/>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<block type="text">
+					<style>
+						<alpha value="0.9"/>
+						<width value="100%"/>
+						<marginBottom value="16px"/>
+					</style>
+					<styleClass value="$TextDefaultBold23NM"/>
+					<default_text value="IDS_PARAGON_FOOTER_TITLE"/>
+				</block>
+				<bind name="watch" value="'isMultiplierAvailable'; ((bonusTagsForFirstDrop &gt; 1) &amp;&amp; (paragonSeasonDropsSharedMade == 0))"/>
+				<block>
+					<style>
+						<alpha value="0.8"/>
+						<width value="100%"/>
+						<marginBottom value="8px"/>
+					</style>
+					<bind name="repeat" value="isMultiplierAvailable	? [	{_paragraphText:  subst('IDS_PARAGON_BONUS_FOOTER_MULTIPLIER_INFO', [], {multiplier: bonusTagsForFirstDrop})},
+														{_paragraphText: 'IDS_PARAGON_BONUS_FOOTER_SPECIAL_STORAGE_INFO'}]
+													: [	{_paragraphText: 'IDS_PARAGON_BONUS_FOOTER_NO_MULTIPLIER_INFO'},
+														{_paragraphText: 'IDS_PARAGON_BONUS_FOOTER_SPECIAL_STORAGE_INFO'}]; 
+								'RepeatParagraphItemNM'; {_class: '$TextDefault19NM', _width: '100%', _leading: -1, _marginBottom: '8px'}"/>
+				</block>
+				<block type="text">
+					<style>
+						<alpha value="0.6"/>
+						<width value="100%"/>
+						<marginBottom value="24px"/>
+					</style>
+					<styleClass value="$TextDefaultNM"/>
+					<bind name="text" value="subst('IDS_PARAGON_BONUS_SEASON_UPDATE', [], {timeUntilMultiplier: paragonSeasonTimeToFinish})"/>
+				</block>
+				<block>
+					<block>
+						<bind name="instance" value="'DefaultButton';	{	_width: '164px',
+															_label: 'IDS_PRMP_DETAILS_BUTTON',
+															_request: 'showRules',
+															_requestParams: { '_rulesType': 'paragons' },
+															_action: !isSeenParagonInShipTree ? 'ServerUIDataUSS.setUserTaskExecuted' : null,
+															_actionParams: {taskId: SC.Common.USER_TASKS_FLAGS.KNOWS_ABOUT_PARAGONS_IN_SHIP_TREE},
+															_enabled: true}
+														"/>
+					</block>
+					<block>
+						<bind name="fade" value="!isSeenParagonInShipTree; 0.15; {alpha: 0, top: 10}; {alpha: 1, top: 0}; {alpha: 0, top: -10}; 2"/>
+						<style>
+							<position value="absolute"/>
+							<right value="-20px"/>
+							<top value="-10px"/>
+						</style>
+						<bind name="instance" value="'MarkerNewAttention'; {}"/>
+					</block>
+				</block>
+			</block>
+		</block>
+	</block>
+
+	<!-- parallel_modules_management -->
+	<block className="ShipParallelModulesLayout">
+		<style>
+			<width value="100%"/>
+		</style>
+		<block type="text">
+			<styleClass value="$ManagementBlockHeader"/>
+			<bind name="text" value="'IDS_SHIP_MANAGEMENT_MODULES_BLOCK_HEADER'"/>
+		</block>
+		<block className="HorizontalDividerTwoPx">
+			<style>
+				<width value="100%"/>
+				<height value="2px"/>
+				<backgroundSize value="fill"/>
+				<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+			</style>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<styleClass value="$ManagementBlock"/>
+			<style>
+				<paddingTop value="720:2,1080:8ah"/>
+				<paddingBottom value="720:2,1080:8ah"/>
+			</style>
+			<block>
+				<style>
+					<width value="720:448,1080:492ah"/>
+					<height value="720:448,1080:492ah"/>
+				</style>
+				<block>
+					<style>
+						<width value="100%"/>
+						<height value="100%"/>
+					</style>
+					<bind name="repeat" value="SC.Ships.SHIP_MODULE_STR_TYPES.UI_RANGE; 'SingleElementUpgradeList'"/>
+				</block>
+				<block>
+					<style>
+						<width value="100%"/>
+						<position value="absolute"/>
+					</style>
+					<styleClass value="$MiddleVAligned"/>
+					<bind name="instance" value="'ModulesCurrentShip'; { _onlyShipView: true }"/>
+				</block>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+				<marginTop value="-1px"/>
+			</style>
+			<block className="HorizontalDividerTwoPx">
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+		</block>
+	</block>
+	<block className="SingleElementUpgradeList">
+		<styleClass value="$FullsizeAbsolute"/>
+		<bind name="var" value="{positioning: {
+
+								'_PrimaryWeapons' : {position : 'top', align: 'left'},
+								'_Hull' : {position : 'top', align: 'right'},
+								'_SecondaryWeapons' : {position : 'bottom', align: 'left'},
+								'_Abilities' : {position : 'bottom', align: 'right'}
+
+								},
+				positioningIndex: 0}"/>
+		<bind name="collectionDH" value="CC.module; 'moduleCollection'; 'byModuleType.' + $value"/>
+		<block>
+			<bind name="style" value="positioning[$value].position == 'top' ? 'top' : 'bottom'; '0px'"/>
+			<bind name="style" value="positioning[$value].align == 'left' ? 'left' : 'right'; '0px'"/>
+			<bind name="instance" value="'ShipModuleTypeBlock'; moduleCollection.length &gt; 0	?	{	_moduleCollection : moduleCollection,  
+																					_position: positioning[$value].position, 
+																					_align: positioning[$value].align,
+																					_value: $value,
+																				} : null"/>
+		</block>
+	</block>
+	<block className="ShipModuleTypeBlock">
+		<bind name="watch" value="'count'; _moduleCollection.length"/>
+		<bind name="watch" value="'_height'; (math.floor(count/2) + 1) * moduleHeight"/>
+		<bind name="visible" value="count &gt; 0"/>
+		<bind name="watch" value="'verticalRows'; math.ceil(count/2) + (count%2 == 0 ? 1 : 0)"/>
+		<block>
+			<block>
+				<bind name="visible" value="_align == 'right'"/>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+				<bind name="style" value="'marginTop'; _position == 'top' ? 0 : 100 * (verticalRows - 1) + '%'"/>
+				<bind name="repeat" value="math.floor(count/2); 'ShipModuleParallel'; {_collection : _moduleCollection, _startIndex : math.ceil(count/2), _isFirstEmpty : false}"/>
+			</block>
+			<block>
+				<style>
+					<flow value="vertical"/>
+				</style>
+				<bind name="repeat" value="verticalRows; 'ShipModuleParallel'; {_collection : _moduleCollection, _startIndex : _position == 'top' ? 0 : verticalRows - 1, _isFirstEmpty : count%2 == 0, _reversed: _position != 'top'}"/>
+			</block>
+			<block>
+				<bind name="visible" value="_align == 'left'"/>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+				<bind name="style" value="'marginTop'; _position == 'top' ? 0 : 100 * (verticalRows - 1)  + '%'"/>
+				<bind name="repeat" value="math.floor(count/2); 'ShipModuleParallel'; {_collection : _moduleCollection, _startIndex : math.ceil(count/2), _isFirstEmpty : false}"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="ShipModuleParallel">
+		<bind name="watchDH" value="'moduleComponent'; []; _collection[_startIndex + (_reversed ? ($index * -1) : $index)].module"/>
+		<bind name="watchDH" value="'modulePR'; []; moduleComponent.type + '_' + moduleComponent.depth"/>
+		<style>
+			<marginTop value="720:12,1080:16ah"/>
+			<marginBottom value="720:12,1080:16ah"/>
+			<marginRight value="720:12,1080:16ah"/>
+			<marginLeft value="720:12,1080:16ah"/>
+		</style>
+		<bind name="alpha" value="_isFirstEmpty &amp;&amp; $index == (_reversed ? _startIndex : 0) ? 0.0 : 1"/>
+		<bind name="instance" value="'ShipModuleParallelElement'; {_modulePR : modulePR, _isHeightProvider: true}"/>
+	</block>
+	<block className="ShipModuleParallelElement">
+		<bind name="firstEntityDH" value="'resourceEntity'; CC.accountResource"/>
+		<bind name="watchDH" value="'operationsAccountLocked';	['resourceEntity.accountResource.evOperationsLockChanged']; resourceEntity.accountResource.operationsLocked"/>
+		<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'"/>
+		<bind name="primaryEntityDH" value="'moduleEntity'; CC.module; _modulePR"/>
+		<bind name="watchDH" value="'isExplored';	['moduleEntity.module.evUpdated'];	moduleEntity.module.isExplored"/>
+		<bind name="watchDH" value="'isPurchased';	['moduleEntity.module.evUpdated'];	moduleEntity.module.isPurchased"/>
+		<bind name="watchDH" value="'moduleInfo'; ['moduleEntity.module.evUpdated']; moduleEntity.module"/>
+		<bind name="watchDH" value="'isInstalled'; ['moduleEntity.module.evUpdated']; !!moduleEntity.installedModule"/>
+		<bind name="watchDH" value="'isStockModule'; ['moduleEntity.module.evUpdated']; !!moduleEntity.stockModule"/>
+		<bind name="watchDH" value="'canBuy'; ['moduleEntity.module.evUpdated']; moduleEntity.module.canBuy"/>
+		<bind name="watch" value="'explorationLocked'; !canBuy &amp;&amp; !isPurchased"/>
+		<bind name="watch" value="'modulePK'; _modulePR"/>
+		<bind name="name" value="moduleInfo.name"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="primaryEntityDH" value="'shipEntity'; CC.ship; shipIdForModuleInset; 'evUpdate'"/>
+		<bind name="watchDH" value="'shipInfo'; ['shipEntity.ship.evUpdate', 'shipEntity.ship.evCurrentSkinChanged', 'shipEntity.ship.evFlagNameWithCrewChanged']; shipEntity.ship"/>
+		<bind name="watchDH" value="'upgradableShipInfo'; ['shipEntity.upgradableShipInfo.evUpdate']; shipEntity.upgradableShipInfo"/>
+		<bind name="primaryEntityDH" value="'ownShipEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'ownShipInfo'; ['ownShipEntity.ship.evUpdate', 'ownShipEntity.ship.evCurrentSkinChanged']; ownShipEntity.ship"/>
+		<bind name="watchDH" value="'isLocked';		['ownShipEntity.ownShip.evUpdateLock'];			ownShipEntity.ownShip.isLocked"/>
+		<bind name="watchDH" value="'isInFormation';	['ownShipEntity.ownShip.evUpdateLock'];			ownShipEntity.ownShip.isInFormation"/>
+		<bind name="watchDH" value="'isNeedRepair';	['ownShipEntity.ownShip.evUpdateDockState'];	ownShipEntity.ownShip.isNeedRepair"/>
+		<bind name="watchDH" value="'isNeedShell';	['ownShipEntity.ownShip.evUpdateDockState'];	ownShipEntity.ownShip.isNeedShell"/>
+		<bind name="watch" value="'isOwned'; ownShipEntity != null"/>
+		<bind name="watch" value="'isManagementOperationsLocked';	isInFormation || isLocked ||
+													isNeedRepair || isNeedShell	||
+													operationsAccountLocked"/>
+		<bind name="watch" value="'iconPath';	'url:../modules/event/' + moduleInfo.type + '/icon_module_' + moduleEntity.module.name + (isInstalled &amp;&amp; isOwned	? '_installed' : '') + '.png'"/>
+		<bind name="watch" value="'clickAction'; isManagementOperationsLocked ||
+								isInstalled						? null :
+								isPurchased						? 'installModule'
+																: null"/>
+		<bind name="watch" value="'actionParams';	clickAction == 'installModule'	?	{shipId: shipIdForModuleInset, moduleId: moduleInfo.id}
+																			:	null"/>
+		<style>
+			<align value="center"/>
+		</style>
+		<bind name="watch" value="'isAvailable';	isOwned"/>
+		<block>
+			<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; null; 'mt_'"/>
+			<bind name="watch" value="'commonAlpha'; isAvailable	? 0.7
+												: 0.3"/>
+			<bind name="alpha" value="	(isInstalled &amp;&amp; isOwned)				? 1 :
+					clickAction	&amp;&amp;	mt_mouseDown	? commonAlpha - 0.1 :
+					clickAction	&amp;&amp;	mt_rollOver		? commonAlpha + 0.3
+													: commonAlpha"/>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundColor value="0x01000000"/>
+				</style>
+				<bind name="tooltip" value="'ShipModuleParallelElementTooltip'; {_modulePK: modulePK}"/>
+				<bind name="action" value="'click';	clickAction; actionParams"/>
+				<bind name="action" value="'click';	clickAction == 'setUserPref' ? null : 'setUserPref'; {value: 0, name: 'previewModuleId'}"/>
+				<bind name="soundOn" value="'click'; 'press'; clickAction ? 'default_button' : ''"/>
+			</block>
+			<block>
+				<style>
+					<hitTest value="false"/>
+				</style>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<style>
+						<backgroundImage value="url:../service_kit/frames/one_pixel_frame.png"/>
+						<background9Slice value="[2,2]"/>
+					</style>
+					<bind name="colorTransform" value="isInstalled &amp;&amp; isOwned	?	{redOffset:0,greenOffset:-41,blueOffset:-153}
+																:	{}"/>
+				</block>
+				<block>
+					<style>
+						<width value="60px"/>
+						<height value="60px"/>
+						<margin value="2px"/>
+					</style>
+					<bind name="style" value="'backgroundImage'; iconPath"/>
+					<bind name="colorTransform" value="!isPurchased	?	{
+														redOffset: -127,
+														greenOffset: -127,
+														blueOffset: -127
+													}
+													:	{}"/>
+				</block>
+				<block>
+					<bind name="visible" value="explorationLocked"/>
+					<style>
+						<width value="48px"/>
+						<height value="48px"/>
+						<position value="absolute"/>
+						<left value="8px"/>
+						<top value="8px"/>
+					</style>
+					<bind name="style" value="'backgroundImage'; 'url:../service_kit/icons/icon_lock.png'"/>
+				</block>
+			</block>
+		</block>
+	</block>
+	<block className="ShipModuleParallelElementTooltip">
+		<bind name="primaryEntityDH" value="'moduleEntity'; CC.module; _modulePK"/>
+		<bind name="watchDH" value="'moduleInfo'; ['moduleEntity.module.evUpdated']; moduleEntity.module"/>
+		<bind name="watchDH" value="'isInstalled'; ['moduleEntity.module.evUpdated']; !!moduleEntity.installedModule &amp;&amp; isOwned"/>
+		<bind name="watchDH" value="'isStockModule'; ['moduleEntity.module.evUpdated']; !!moduleEntity.stockModule"/>
+		<bind name="watchDH" value="'canBuy'; ['moduleEntity.module.evUpdated']; moduleEntity.module.canBuy"/>
+		<bind name="watch" value="'explorationLocked'; !canBuy &amp;&amp; !isPurchased"/>
+		<bind name="watchDH" value="'isExplored'; ['moduleEntity.module.evUpdated']; moduleEntity.module.isExplored"/>
+		<bind name="watchDH" value="'isPurchased'; ['moduleEntity.module.evUpdated']; moduleEntity.module.isPurchased"/>
+		<bind name="firstEntityDH" value="'resourceEntity'; CC.accountResource"/>
+		<bind name="watchDH" value="'operationsAccountLocked';	['resourceEntity.accountResource.evOperationsLockChanged']; resourceEntity.accountResource.operationsLocked"/>
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+		<bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="watch" value="'isModulePreviewedInTTX'; userPrefs.previewModuleId == moduleInfo.id"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="primaryEntityDH" value="'shipEntity'; CC.ship; shipIdForModuleInset; 'evUpdate'"/>
+		<bind name="watchDH" value="'shipInfo'; ['shipEntity.ship.evUpdate', 'shipEntity.ship.evCurrentSkinChanged', 'shipEntity.ship.evFlagNameWithCrewChanged']; shipEntity.ship"/>
+		<bind name="watchDH" value="'upgradableShipInfo'; ['shipEntity.upgradableShipInfo.evUpdate']; shipEntity.upgradableShipInfo"/>
+		<bind name="primaryEntityDH" value="'ownShipEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'ownShipInfo'; ['ownShipEntity.ship.evUpdate', 'ownShipEntity.ship.evCurrentSkinChanged']; ownShipEntity.ship"/>
+		<bind name="watchDH" value="'isLocked';		['ownShipEntity.ownShip.evUpdateLock'];			ownShipEntity.ownShip.isLocked"/>
+		<bind name="watchDH" value="'isInFormation';	['ownShipEntity.ownShip.evUpdateLock'];			ownShipEntity.ownShip.isInFormation"/>
+		<bind name="watchDH" value="'isNeedRepair';	['ownShipEntity.ownShip.evUpdateDockState'];	ownShipEntity.ownShip.isNeedRepair"/>
+		<bind name="watchDH" value="'isNeedShell';	['ownShipEntity.ownShip.evUpdateDockState'];	ownShipEntity.ownShip.isNeedShell"/>
+		<bind name="watch" value="'isOwned'; ownShipEntity != null"/>
+		<bind name="watch" value="'headerIconPath';	'url:../modules/event/' + moduleInfo.type + '/icon_module_' + moduleEntity.module.name + (isInstalled &amp;&amp; isOwned	? '_installed' : '') + '.png'"/>
+		<bind name="watch" value="'unifiedStatus'; isInstalled ? SC.Ui_styles.UNIFIED_STATUS.CHECK : SC.Ui_styles.UNIFIED_STATUS.DEFAULT"/>
+		<bind name="watch" value="'headerText'; toUpperCase('IDS_'+ moduleInfo.name)"/>
+		<bind name="watch" value="'descriptionText'; toUpperCase('IDS_'+ moduleInfo.name + '_DESC')"/>
+		<bind name="watch" value="'subheaderText'; moduleInfo.subTypeIDS != '' ? moduleInfo.subTypeIDS : toUpperCase('IDS_MODULE_TYPE' + moduleInfo.type)"/>
+		<bind name="watch" value="'moduleStateInfo'; explorationLocked		?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.LOCK,
+																	_text: 'IDS_MODULE_STATE_CANNOT_BUY'} :
+									isInstalled				?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.CHECK,
+																	_text: 'IDS_MODULE_STATE_INSTALLED'} :
+									isPurchased				?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.INFO,
+																	_text: 'IDS_MODULE_STATE_AVAILABLE'} :
+									isExplored &amp;&amp;
+									isBuyPriceVisible &amp;&amp;
+									!isOwned				?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.INFO,
+																	_text: 'IDS_MODULE_STATE_RESEARCHED_SHIP_NOT_OWNED'} :
+									isExplored &amp;&amp;																			
+									isBuyPriceVisible		?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.INFO,
+																	_text: 'IDS_MODULE_STATE_RESEARCHED'} :
+									isStockModule			?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.INFO,
+																	_text: 'IDS_STOCK_MODULE_INFO'}
+															:	null"/>
+		<bind name="watch" value="'mouseInstruction';	_noMouseInstructions ||
+										isInstalled ||
+										explorationLocked			?	null :
+										isInFormation				?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+																			_text: 'IDS_SET_UNREADY_DIVISION_FIRST_TO_MANAGE_SHIP'} :
+										isLocked					?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+																			_text: 'IDS_LEAVE_BATTLE_FIRST_TO_MANAGE_SHIP'} :
+										isNeedRepair || isNeedShell	?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+																			_text: 'IDS_SERVICE_SHIP_TO_MANAGE_SHIP'} :
+										isPurchased					?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.MOUSE_LEFT,
+																			_text: 'IDS_MOUSE_INSTRUCTION_INSTALL_MODULE'} :
+										isModulePreviewedInTTX		? 	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.MOUSE_LEFT,
+																			_text: 'IDS_MOUSE_INSTRUCTION_STOP_PREVIEW_MODULE_TTX'} :
+										!isStockModule	||
+										(isStockModule &amp;&amp; isOwned)	?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.MOUSE_LEFT,
+																			_text: 'IDS_MOUSE_INSTRUCTION_START_PREVIEW_MODULE_TTX'}
+																	:	null"/>
+		<style>
+			<hitTest value="false"/>
+			<width value="320px"/>
+		</style>
+		<styleClass value="$DefaultTooltipBehaviour"/>
+		<bind name="primaryEntityDH" value="'_blurEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['_blurEntity.preference.evValueChanged']; _blurEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'_contrastEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['_contrastEntity.preference.evValueChanged']; _contrastEntity.preference.value"/>
+		<bind name="firstEntityDH" value="'windowManagerEntity'; CC.windowManager"/>
+		<bind name="watchDH" value="'windowQueue'; 	['windowManagerEntity.windowManager.evChanged']; windowManagerEntity.windowManager.windowQueue"/>
+		<bind name="watch" value="'isInBattle'; isIn('Battle', windowQueue)"/>
+		<bind name="watch" value="'isHighContrast'; isInBattle || isUIContrastOptionEnabled || !(isBlurOptionEnabled)"/>
+		<bind name="dispatch" value="'Tooltip.selfOpened'; 'startShow'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+		<bind name="dispatch" value="'Tooltip.selfClosed'; 'startHide'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<margin value="-1px"/>
+			</style>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<bind name="instance" value="'TooltipSystemBlur'; !(isHighContrast) ? {} : null"/>
+			</block>
+			<block>
+				<bind name="visible" value="!(isHighContrast)"/>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundImage value="url:../service_kit/panel_backgrounds/hint_panel.png"/>
+					<background9Slice value="[3]"/>
+				</style>
+			</block>
+			<block>
+				<bind name="visible" value="isHighContrast"/>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundImage value="url:../service_kit/panel_backgrounds/hint_panel_high_contrast.png"/>
+					<background9Slice value="[3]"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+				<paddingRight value="16px"/>
+				<paddingLeft value="16px"/>
+				<paddingBottom value="12px"/>
+				<paddingTop value="12px"/>
+			</style>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemHeaderWithIconAndText';	{	_imageUrl: headerIconPath,
+																	_imageWidth: '60px',
+																	_imageHeight: '60px',
+																	_unifiedStatus: unifiedStatus,
+																	_headerText: headerText,
+																	_subheaderText: subheaderText
+																}"/>
+			</block>
+			<block className="TooltipSystemHorizontalDivider">
+				<bind name="visible" value="moduleStateInfo"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<marginTop value="12px"/>
+					<marginBottom value="12px"/>
+					<marginRight value="-16px"/>
+					<marginLeft value="-16px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemStatusLine'; moduleStateInfo	?	moduleStateInfo
+																	: null"/>
+			</block>
+			<block className="TooltipSystemHorizontalDivider">
+				<bind name="visible" value="true"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<marginTop value="12px"/>
+					<marginBottom value="12px"/>
+					<marginRight value="-16px"/>
+					<marginLeft value="-16px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemDescriptionText'; {_descriptionText : descriptionText}"/>
+			</block>
+			<block className="TooltipSystemHorizontalDivider">
+				<bind name="visible" value="mouseInstruction"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<marginTop value="12px"/>
+					<marginBottom value="12px"/>
+					<marginRight value="-16px"/>
+					<marginLeft value="-16px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemStatusLine'; mouseInstruction"/>
+			</block>
+		</block>
+	</block>
+
+	<!-- params_modifier -->
+	<block className="ParamsModifierItem">
+		<style>
+			<width value="100%"/>
+		</style>
+		<bind name="style" value="'marginBottom';	(_isTooltipSystem == true)	? '12px' : '16px'"/>
+		<bind name="style" value="'paddingTop';		(_shrinkHeight == true)		? '-8px' : '0'"/>
+		<bind name="watch" value="'textColor';	category == 'positive'	? 0xFF4CE8AA :
+								category == 'negative'	? 0xFFFF6600
+														: 0xFFFFFFFF"/>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block type="text">
+				<bind name="class" value="_fontClass ? _fontClass : '$TextDefaultNM'"/>
+				<style>
+					<leading value="-2"/>
+					<alpha value="0.8"/>
+					<width value="100%"/>
+				</style>
+				<bind name="style" value="'alpha';	(!measuredValue &amp;&amp; textColor == 0xFFFF6600)	? 1 : 0.8"/>
+				<bind name="style" value="'textColor'; measuredValue ? 0xFFFFFFFF : textColor"/>
+				<bind name="text" value="attributeIDS"/>
+			</block>
+			<block type="text">
+				<bind name="class" value="_fontClass ? _fontClass : '$TextDefaultNM'"/>
+				<style>
+					<marginLeft value="12px"/>
+				</style>
+				<bind name="style" value="'textColor'; textColor"/>
+				<bind name="substitute" value="5;	{	'[battleship]'	: 'battleship_small_own',
+										'[aircarrier]'	: 'carrier_small_own',
+										'[destroyer]'	: 'destroyer_small_own',
+										'[submarine]'	: 'submarine_small_own'
+									}; format(measuredValue)"/>
+			</block>
+			<block type="text">
+				<bind name="class" value="_fontClass ? _fontClass : '$TextDefaultNM'"/>
+				<style>
+					<marginLeft value="4px"/>
+				</style>
+				<bind name="style" value="'alpha'; category == 'positive' ? 0.65 : 0.8"/>
+				<bind name="style" value="'textColor'; textColor"/>
+				<bind name="text" value="measure"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+		<block>
+			<bind name="visible" value="_dottedDivider"/>
+			<style>
+				<width value="100%"/>
+				<marginTop value="1px"/>
+				<alpha value="0.5"/>
+			</style>
+			<block className="DottedLine">
+				<style>
+					<backgroundImage value="bitmap:dotted_line"/>
+					<backgroundRepeatX value="true"/>
+					<width value="100%"/>
+					<height value="1px"/>
+					<alpha value="0.5"/>
+				</style>
+			</block>
+		</block>
+	</block>
+	<block className="ParamsModifierList">
+		<style>
+			<width value="100%"/>
+		</style>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="repeat" value="_attributesPositive; 'ParamsModifierItem'; {_shrinkHeight: _shrinkHeight, _dottedDivider: _dottedDivider, _fontClass: _fontClass, _isTooltipSystem: _isTooltipSystem}"/>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="repeat" value="_attributesNegative; 'ParamsModifierItem'; {_shrinkHeight: _shrinkHeight, _dottedDivider: _dottedDivider, _fontClass: _fontClass, _isTooltipSystem: _isTooltipSystem}"/>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="repeat" value="_attributesNeutral; 'ParamsModifierItem'; {_shrinkHeight: _shrinkHeight, _dottedDivider: _dottedDivider, _fontClass: _fontClass, _isTooltipSystem: _isTooltipSystem}"/>
+		</block>
+	</block>
+
+	<!-- patrols -->
+	<block className="PatrolsList">
+		<bind name="collectionDH" value="CC.clanman; 'clanMembersList'"/>
+		<bind name="collectionDH" value="CC.clanman; 'patrolsList'; 'sameClan.inPatrol'"/>
+		<bind name="watchDH" value="'countTotalClanmans'; ['']; clanMembersList.length"/>
+		<bind name="watchDH" value="'countInPatrols'; ['patrolsList.clanman.evPatrolNameChanged']; patrolsList.length"/>
+		<style>
+			<width value="100%"/>
+		</style>
+		<bind name="instance" value="'DivisionGroup'; {	_data: patrolsList,
+										_loopType: 'repeat',
+										_groupLabel: 'IDS_PATROLS_LIST',
+										_emptyDataLabel: 'IDS_PATROLS_LIST_EMPTY',
+										_dataItemRenderer: 'ClanPatrolListItem',
+										_headerRightContentRenderer: 'DivisionCountPlayers',
+										_externalContext: { playerContext: _playerContext },
+										_headerRightContentArgs: {
+											_curValue: countInPatrols,
+											_curValueTooltipText : 'IDS_PLAYER_IN_PATROLS',
+											_maxValue : countTotalClanmans,
+											_maxValueTooltipText : 'IDS_TOTAL_PLAYERS_IN_CLAN'
+										}}"/>
+	</block>
+	<block className="ClanPatrolListItem">
+		<bind name="entityDH" value="'playerInPatrolEntity'; id"/>
+		<style>
+			<width value="100%"/>
+			<height value="30px"/>
+		</style>
+		<bind name="fade" value="_isGroupExpanded; 0.15; {alpha: 0, height: 0}; {alpha: 1, height: 30}"/>
+		<block>
+			<bind name="name" value="'playerContact_' + playerInPatrolEntity.accountName.nickName"/>
+			<styleClass value="$Fullsize"/>
+			<bind name="instance" value="'PlayerContactItemWithRollover'; {	_entityAccountId: playerInPatrolEntity.id,
+															_playerContext: _playerContext,
+															_isVisiblePatrolInfo: true,
+														}"/>
+		</block>
+	</block>
+	<block className="IconClanPatrol">
+		<bind name="style" value="'width'; _isSmallSize ? '19px' : '24px'"/>
+		<bind name="style" value="'height'; _isSmallSize ? '19px' : '24px'"/>
+		<bind name="watch" value="'isSmallSize'; _isSmallSize ? _isSmallSize : false"/>
+		<block className="IconClanPatrol" type="ublock">
+			<bind name="build!" value="$ubPlayerProxy; {}"/>
+			<bind name="externalArgs" value="{ _patrolName: _patrolName, _isSmallSize: isSmallSize }"/>
+		</block>
+	</block>
+	<block className="ContactInfoTooltipPatrolInfo">
+		<bind name="primaryEntityDH" value="'patrolEntity'; CC.patrol; _patrolName"/>
+		<bind name="watch" value="'patrolTitle'; patrolEntity.patrol.title"/>
+		<bind name="watch" value="'patrolDescriptionText'; _isSelfUser	? 'IDS_PATROLS_CURRENT_USER_TOOLTIP_DESCRIPTION'
+														: 'IDS_PATROLS_TOOLTIP_DESCRIPTION'"/>
+		<style>
+			<width value="100%"/>
+			<minHeight value="30"/>
+		</style>
+		<block className="HorizontalDivider">
+			<styleClass value="$PxHorizontalCorrection"/>
+			<style>
+				<width value="100%"/>
+				<height value="2px"/>
+				<backgroundSize value="fill"/>
+				<marginTop value="1px"/>
+				<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+			</style>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+				<paddingTop value="12px"/>
+				<paddingBottom value="12px"/>
+				<paddingLeft value="10px"/>
+				<paddingRight value="8px"/>
+			</style>
+			<block>
+				<style>
+					<marginRight value="6px"/>
+				</style>
+				<bind name="instance" value="'IconClanPatrol'; { _patrolName: _patrolName, _isSmallSize: true }"/>
+			</block>
+			<block type="text">
+				<styleClass value="$TextDefaultNM"/>
+				<style>
+					<width value="100%"/>
+					<marginTop value="3px"/>
+				</style>
+				<bind name="text" value="subst(patrolDescriptionText, [], { title: patrolTitle })"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+
+	<!-- player -->
+	<block className="PlayerContactItemWithRollover">
+		<bind name="firstEntityDH" value="'trainingRoomEntity'; CC.trainingRoomWindowState"/>
+		<bind name="watchDH" value="'windowState'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.state"/>
+		<bind name="watchDH" value="'notReadyWindowState'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.notReadyWindowState"/>
+		<bind name="watchDH" value="'windowInset'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.inset"/>
+		<bind name="watchDH" value="'windowInsetLabel'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.insetLabel"/>
+		<bind name="primaryEntityDH" value="'routeEntityisInBalancer'; CC.route; SC.Ui_windows.ROUTE.BALANCER"/>
+		<bind name="watchDH" value="'isInBalancer'; ['routeEntityisInBalancer.route.evIsActiveChanged']; routeEntityisInBalancer.route.isActive"/>
+		<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+		<bind name="watchDH" value="'selfPlayerDbId'; 		[]; selfPlayerEntity.accountSimple.dbId"/>
+		<bind name="watchDH" value="'selfPlayerName'; 		['selfPlayerEntity.accountName.evChanged']; selfPlayerEntity.accountName.name"/>
+		<bind name="watchDH" value="'selfPlayerNickName'; 	['selfPlayerEntity.accountName.evChanged']; selfPlayerEntity.accountName.nickName"/>
+		<bind name="entityDH" value="'entityAccount'; _entityAccountId"/>
+		<bind name="watchDH" value="'isSelf'; []; entityAccount.accountSimple.isSelfPlayer"/>
+		<bind name="watchDH" value="'accountOnlineDH'; ['entityAccount.accountStatus.evOnlineChanged']; entityAccount.accountStatus.online"/>
+		<bind name="watch" value="'accountOnline'; accountOnlineDH || isSelf"/>
+		<bind name="watchDH" value="'accountLevel'; ['entityAccount.accountLevel.evLevelChanged']; entityAccount.accountLevel.level"/>
+		<bind name="watchDH" value="'groupIdsOfAccount'; ['entityAccount.elementInGroups.evGroupsChanged']; entityAccount.elementInGroups.groupIds"/>
+		<bind name="watchDH" value="'isIgnored';['entityAccount.contact.evIsIgnoredChanged']; !!entityAccount.contact.isIgnored"/>
+		<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'"/>
+		<bind name="watchDH" value="'referralType'; 		['entityAccount.referral.evTypeUpdated']; entityAccount.referral.type"/>
+		<bind name="watch" value="'isRefSysParticipant'; referralType != null"/>
+		<bind name="name" value="'playerContactName_' + entityAccount.accountName.name"/>
+		<bind name="watch" value="'isInDivision'; entityAccount.hasComponent(CC.preBattlePlayerSimple) &amp;&amp; !isInvitedToDivision"/>
+		<bind name="watchDH" value="'isSuspended'; ['entityAccount.accountSimple.evSuspendedChanged']; entityAccount.accountSimple.suspended"/>
+		<bind name="watchDH" value="'isSelfPlayerCommander'; ['selfPlayerEntity.preBattlePlayerSimple.evIsCommanderChanged']; selfPlayerEntity.preBattlePlayerSimple.isCommander"/>
+		<bind name="firstEntityDH" value="'divisionDataEntity'; CC.division"/>
+		<bind name="watchDH" value="'shipRestrictions';	['divisionDataEntity.division.evShipRestrictionsChanged']; divisionDataEntity.division.shipRestrictions"/>
+		<bind name="firstEntityDH" value="'chatEntity'; CC.chat"/>
+		<bind name="watchDH" value="'isChatServerAvailable'; ['chatEntity.chat.evConnected', 'chatEntity.chat.evDisConnected']; chatEntity.chat.isConnected"/>
+		<bind name="watch" value="'actionDenyReason';	(_playerContext.type == 'inviteToDivision') ? 			!(accountOnline)		? 'IDS_INVITE_TO_DIVISION_ACTION_DENY_REASON_OFFLINE' :
+																								isInvitedToDivision 	? 'IDS_INVITE_TO_DIVISION_ACTION_DENY_REASON_ALREADY_INVITED'
+																														: 'no_reason'
+																					: 	'no_reason'"/>
+		<bind name="firstEntityDH" value="'chatRestrictionsEntity'; CC.chatRestrictions"/>
+		<bind name="watchDH" value="'isTextSettingsBlocked'; []; chatRestrictionsEntity.chatRestrictions.isTextSettingsBlocked"/>
+		<bind name="watchDH" value="'patrolName'; ['entityAccount.clanman.evPatrolNameChanged']; entityAccount.clanman.patrolName"/>
+		<bind name="watch" value="'isInPatrolBlockVisible'; patrolName != null &amp;&amp; _isVisiblePatrolInfo"/>
+		<style>
+			<width value="100%"/>
+			<height value="30px"/>
+		</style>
+		<bind name="style" value="'alpha'; accountOnline ? 1 : 0.5"/>
+		<block>
+			<bind name="visible" value="isSelf"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<marginTop value="-1px"/>
+			</style>
+			<block className="inner_panel" type="native">
+				<styleClass value="$Fullsize"/>
+				<bind name="gotoAndStop!" value="'down'"/>
+			</block>
+		</block>
+		<block className="dock_submenu_item_bg" type="native">
+			<bind name="transition" value="(mouseDown &amp;&amp; !isSelf); 0.03; {alpha: 1}; {alpha: 0.7}"/>
+			<bind name="transition" value="(roll

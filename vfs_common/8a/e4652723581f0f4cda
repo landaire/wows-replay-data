@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="CRUISE_CONTROL_TYPE">
+		<const name="SPEED" 	value="0" type="Integer"/>
+		<const name="ANGLE" 	value="1" type="Integer"/>
+		<const name="DEPTH" 	value="2" type="Integer"/>
+	</enum>
+</constants>

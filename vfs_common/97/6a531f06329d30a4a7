@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="CAMOUFLAGE_CATEGORIES">
+		<const name="MSKIN" 		value="mskin" type="String"/>
+		<const name="PERMANENT" 	value="permanent" type="String"/>
+		<const name="EXPENDABLE" 	value="expendable" type="String"/>
+	</enum>
+	<enum name="SIGNALS_GROUPS">
+		<const name="BATTLE" 		value="0" type="Integer"/>
+		<const name="ECONOMICAL" 	value="1" type="Integer"/>
+		<const name="SPECIAL"	 	value="2" type="Integer"/>
+	</enum>
+</constants>

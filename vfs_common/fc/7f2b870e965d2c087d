@@ -1,0 +1,15 @@
+r'; null; 'cts_'"/>
+			<bind name="var" value="{ 
+		ctsMouseUp: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 0.7,
+			redOffset: 0,
+			greenOffset: 0,
+			blueOffset: 0,
+			alphaOffset: 0
+		}
+	}"/>
+			<bind name="var" value="{ 
+		ctsMouseDown: {

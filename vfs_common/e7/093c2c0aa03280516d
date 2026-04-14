@@ -1,0 +1,96 @@
+tBoxHeaderDivisionCommon">
+		<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+		<bind name="watchDH" value="'selfPreBattleId'; ['selfPlayerEntity.preBattlePlayerSimple.evPreBattleIdChanged']; selfPlayerEntity.preBattlePlayerSimple.preBattleId"/>
+		<bind name="watchDH" value="'selfIsInBattle'; ['selfPlayerEntity.preBattlePlayerSimple.evIsInBattleChanged']; selfPlayerEntity.preBattlePlayerSimple.isInBattle"/>
+		<bind name="primaryEntityDH" value="'preBattleEntity'; CC.preBattle; selfPreBattleId"/>
+		<bind name="watchDH" value="'isFormationInBattle'; ['preBattleEntity.preBattle.evStatusChanged']; preBattleEntity.preBattle.isInBattle"/>
+		<bind name="watch" value="'isActiveDivisionControls'; !(_isSteadyChannel || (isFormationInBattle &amp;&amp; selfIsInBattle))"/>
+		<bind name="watchDH" value="'isMercenary'; ['selfPlayerEntity.preBattlePlayerSimple.evIsMercenaryChanged']; selfPlayerEntity.preBattlePlayerSimple.isMercenary"/>
+		<bind name="watch" value="'showPrimeTime'; !isMercenary &amp;&amp; _isClanDivision"/>
+		<bind name="watch" value="'padding'; showPrimeTime ? 16 : 10"/>
+		<style>
+			<width value="100%"/>
+		</style>
+		<bind name="style" value="'paddingTop'; padding"/>
+		<bind name="style" value="'paddingBottom'; padding"/>
+		<block>
+			<styleClass value="$MiddleVAligned"/>
+			<style>
+				<width value="100%"/>
+				<height value="100%f"/>
+			</style>
+			<block>
+				<bind name="instance" value="'DivisionHeaderButton'; {	_channelEntityId: _channelEntityId,
+														_isClanDivision: _isClanDivision,
+														_isActive: isActiveDivisionControls	}"/>
+			</block>
+			<block>
+				<style>
+					<height value="20px"/>
+					<marginLeft value="41px"/>
+				</style>
+				<bind name="visible" value="showPrimeTime"/>
+				<bind name="firstEntityDH" value="'fixedPrimeTimeEntity'; CC.clanBattlePrimeTime; 'fixed'"/>
+				<bind name="collectionDH" value="CC.clanBattlePrimeTime; 'chosenPrimeTimes'; 'chosen'"/>
+				<bind name="watch" value="'chosenPrimeTimeEntity'; chosenPrimeTimes[0]"/>
+				<bind name="watch" value="'currentEntityId'; !!(fixedPrimeTimeEntity) ? fixedPrimeTimeEntity.id : chosenPrimeTimeEntity.id"/>
+				<bind name="watch" value="'isPrimeTimeChosen'; !!(currentEntityId)"/>
+				<block>
+					<bind name="fade" value="isPrimeTimeChosen; 0.15; {alpha: 0}; {alpha: 1}"/>
+					<style>
+						<width value="100%f"/>
+					</style>
+					<bind name="instance" value="'PrimeTimeStereotype'; {	_entityId: currentEntityId, _isBold: true,
+															_textColor: '$FontColorWhite', _showCountdown: true}"/>
+					<style>
+						<flow value="horizontal"/>
+					</style>
+				</block>
+				<block type="text">
+					<bind name="fade" value="!isPrimeTimeChosen; 0.15; {alpha: 0}; {alpha: 1}"/>
+					<style>
+						<width value="100%f"/>
+						<multiline value="false"/>
+					</style>
+					<styleClass value="$TextDefaultNM"/>
+					<styleClass value="$FontColorOrange"/>
+					<bind name="text" value="'IDS_CLAN_BATTLES_NO_CHOSEN_PRIMETIME'"/>
+				</block>
+			</block>
+		</block>
+		<block>
+			<style>
+				<position value="absolute"/>
+				<right value="12px"/>
+			</style>
+			<bind name="instance" value="'ChatBoxHeaderControls'; {_channelEntityId: _channelEntityId, _showCloseButton: isActiveDivisionControls}"/>
+		</block>
+	</block>
+	<block className="ChatBoxHeaderDivision">
+		<style>
+			<width value="100%"/>
+			<height value="100%f"/>
+		</style>
+		<bind name="instance" value="'DivisionHeaderButton'; {	_channelEntityId: _channelEntityId, 
+												_isClanDivision: false,
+												_isActive: isActiveDivisionControls	}"/>
+	</block>
+	<block className="ChatBoxHeaderClanDivision">
+		<bind name="firstEntityDH" value="'fixedPrimeTimeEntity'; CC.clanBattlePrimeTime; 'fixed'"/>
+		<bind name="collectionDH" value="CC.clanBattlePrimeTime; 'chosenPrimeTimes'; 'chosen'"/>
+		<bind name="watch" value="'chosenPrimeTimeEntity'; chosenPrimeTimes[0]"/>
+		<bind name="watch" value="'currentEntityId'; !!(fixedPrimeTimeEntity) ? fixedPrimeTimeEntity.id : chosenPrimeTimeEntity.id"/>
+		<bind name="watch" value="'showPrimeTimeInfo'; !!(chosenPrimeTimeEntity) || !!(fixedPrimeTimeEntity)"/>
+		<style>
+			<width value="100%"/>
+			<paddingLeft value="12px"/>
+		</style>
+		<block>
+			<bind name="visible" value="showPrimeTimeInfo"/>
+			<block>
+				<style>
+					<width value="100%f"/>
+				</style>
+				<bind name="instance" value="'PrimeTimeStereotype'; showPrimeTimeInfo 	? {	_entityId: currentEntityId, _isBig: true, _isBold: true,
+																			_textColor: '$FontColorWhite', _showCountdown: true} : null"/>
+			</bloc

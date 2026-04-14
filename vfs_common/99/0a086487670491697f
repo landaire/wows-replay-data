@@ -1,0 +1,106 @@
+mp; !(isIgnored) &amp;&amp; isPrivateChannel)"/>
+			<block className="MenuItem">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_ADD_TO_CONTACTS'"/>
+					<bind name="name" value="'menu_item_' + _titleIds"/>
+				</block>
+			</block>
+			<bind name="action" value="'click'; 'addContact'; {dbId: accountDbId}"/>
+		</block>
+		<block>
+			<bind name="visible" value="!(isIgnored) &amp;&amp; ((canAddGroupEntitiesId.length &gt; 0) &amp;&amp; (contactsGroup.length &gt; 1)) &amp;&amp; isPrivateChannel"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItem">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_ADD_TO_GROUP'"/>
+					<bind name="name" value="'menu_item_' + _titleIds"/>
+				</block>
+			</block>
+			<block className="button_expand_h" type="native">
+				<style>
+					<position value="absolute"/>
+					<right value="6px"/>
+				</style>
+				<styleClass value="$MouseDisable"/>
+				<styleClass value="$MiddleVAligned"/>
+			</block>
+			<bind name="tooltip" value="'MoveToGroupContextSubMenu'; {_entityAccountId: entityAccount.id, canAddGroupEntitiesId: canAddGroupEntitiesId, _dropDown: _dropDown}; 7"/>
+		</block>
+		<block>
+			<bind name="visible" value="isPrivateChannel"/>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block>
+				<styleClass value="$ContextMenuListItem"/>
+				<block className="MenuItem">
+					<styleClass value="$Fullsize"/>
+					<block className="dock_submenu_item" type="native">
+						<styleClass value="$FullsizeAbsolute"/>
+					</block>
+					<block type="text">
+						<styleClass value="$TextDefault"/>
+						<styleClass value="$MiddleVAligned"/>
+						<styleClass value="$ContextMenuListItemContent"/>
+						<bind name="text" value="(!isIgnored) ? 'IDS_IGNORE_PLAYER' : 'IDS_NOT_IGNORE_PLAYER'"/>
+						<bind name="name" value="'menu_item_' + _titleIds"/>
+					</block>
+				</block>
+				<bind name="action" value="'click'; 'userIgnoreContact'; {dbId: accountDbId, ignore: !(isIgnored)}"/>
+			</block>
+			<bind name="instance" value="'MenuItemReportPortChatMisbehaviour'; {_dbId: accountDbId, _channelId : channel.channelId}"/>
+		</block>
+		<block>
+			<bind name="visible" value="((groupIdsOfAccount!=null) &amp;&amp; !(isIgnored) &amp;&amp; isPrivateChannel)"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItemWithAction">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_REMOVE_FROM_CONTACTS'"/>
+				</block>
+				<bind name="action" value="'click'; 'removeContact'; {dbId: accountDbId}"/>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="!isInBalancer &amp;&amp; isPrivateChannel"/>
+			<styleClass value="$ContextMenuListItem"/>
+			<block className="MenuItem">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_PROFILE'"/>
+					<bind name="name" value="'menu_item_' + _titleIds"/>
+				</block>
+			</block>
+			<bind name="action" value="'click'; 'navigateTo'; {	route: SC.Ui_windows.ROUTE.PORTAL,
+												data: {url: SC.Ui_windows.GUI_URL.PLAYER_STATS, accountId: accountDbId + ''}}"/>
+		</block>
+	</block>
+	<block className="ChatBoxHeader">
+		<style>
+			<width value="100%"

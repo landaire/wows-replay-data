@@ -1,0 +1,62 @@
+dFilters[SC.Common.SHIP_FILTER_TYPE.SHIP_NATION]"/>
+		<bind name="contains" value="typesCount; $item[1] == -1; 'hasForbiddenShipType'"/>
+		<bind name="watch" value="'isCarriersRestricted'; typesCount[ShipTypes.AircraftCarrier] &amp;&amp; typesCount[ShipTypes.AircraftCarrier][1] != defaultTypesCount[ShipTypes.AircraftCarrier][1]"/>
+		<bind name="watch" value="'isBattleShipsRestricted'; typesCount[ShipTypes.BattleShip] &amp;&amp; typesCount[ShipTypes.BattleShip][1] != defaultTypesCount[ShipTypes.BattleShip][1]"/>
+		<bind name="watch" value="'isCruisersRestricted'; typesCount[ShipTypes.Cruiser] &amp;&amp; typesCount[ShipTypes.Cruiser][1] != defaultTypesCount[ShipTypes.Cruiser][1]"/>
+		<bind name="watch" value="'isDestroyersRestricted'; typesCount[ShipTypes.Destroyer] &amp;&amp; typesCount[ShipTypes.Destroyer][1] != defaultTypesCount[ShipTypes.Destroyer][1]"/>
+		<bind name="watch" value="'isSubmarinesRestricted'; typesCount[ShipTypes.Submarine] &amp;&amp; typesCount[ShipTypes.Submarine][1] != defaultTypesCount[ShipTypes.Submarine][1]"/>
+		<bind name="watch" value="'isAnyShipTypeRestricted'; isCarriersRestricted || isBattleShipsRestricted || isCruisersRestricted || isDestroyersRestricted || isSubmarinesRestricted"/>
+		<bind name="watch" value="'isShipFilterRestrictionsVisible'; isAnyShipTypeRestricted &amp;&amp; hasForbiddenShipType"/>
+		<bind name="watch" value="'hasTrainingRoomRestrictions'; (idsfilters.length &gt; 0)			||
+												(shipTypefilters.length &gt; 0)	||
+												(levelfilters.length &gt; 0)		||
+												(nationfilters.length &gt; 0)		||
+												isShipFilterRestrictionsVisible"/>
+	</block>
+	<block className="PeculiarityFiltersContent">
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<styleClass value="$DefaultMenuBehaviour"/>
+		<style>
+			<width value="300px"/>
+		</style>
+		<bind name="primaryEntityDH" value="'_blurEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['_blurEntity.preference.evValueChanged']; _blurEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'_contrastEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['_contrastEntity.preference.evValueChanged']; _contrastEntity.preference.value"/>
+		<bind name="firstEntityDH" value="'windowManagerEntity'; CC.windowManager"/>
+		<bind name="watchDH" value="'windowQueue'; 	['windowManagerEntity.windowManager.evChanged']; windowManagerEntity.windowManager.windowQueue"/>
+		<bind name="watch" value="'isInBattle'; isIn('Battle', windowQueue)"/>
+		<bind name="watch" value="'isHighContrast'; isInBattle || isUIContrastOptionEnabled || !(isBlurOptionEnabled)"/>
+		<bind name="watch" value="'isBlurEnabled'; isBlurOptionEnabled &amp;&amp; !(isInBattle)"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="instance" value="'TooltipSystemBlur'; isBlurEnabled ? {} : null"/>
+		</block>
+		<block className="contrast_panel" type="native">
+			<bind name="visible" value="isHighContrast"/>
+			<style>
+				<alpha value="1.4"/>
+			</style>
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<bind name="visible" value="!(isHighContrast)"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<backgroundImage value="url:../service_kit/panel_backgrounds/hint_panel.png"/>
+				<background9Slice value="[3]"/>
+			</style>
+		</block>
+		<block>
+			<styleClass value="$InfoBlockIndent"/>
+			<block type="text">
+				<styleClass value="$TextDefaultBold17NM"/>
+				<bind name="text" value="'IDS_ADDITIONAL_CONTENT'"/>
+			</block>
+		</block>
+		<block className="HorizontalDivider">
+			<styleClass value="$PxHorizontalCorrection"/>
+			<style>

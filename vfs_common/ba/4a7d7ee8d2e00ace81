@@ -1,0 +1,110 @@
+unt.accountRank.seasonId"/>
+		<bind name="watchDH" value="'clanId'; 			['entityAccount.clanman.evClanIdChanged']; entityAccount.clanman.clanId"/>
+		<bind name="watchDH" value="'isInBattle'; 		['entityAccount.preBattlePlayerSimple.evIsInBattleChanged']; entityAccount.preBattlePlayerSimple.isInBattle"/>
+		<bind name="watchDH" value="'isCommander'; 		['entityAccount.preBattlePlayerSimple.evIsCommanderChanged']; entityAccount.preBattlePlayerSimple.isCommander"/>
+		<bind name="watchDH" value="'isReady'; 			['entityAccount.preBattlePlayerSimple.evIsReadyChanged']; entityAccount.preBattlePlayerSimple.isReady"/>
+		<bind name="primaryEntityDH" value="'clanEntity'; CC.clan; clanId"/>
+		<bind name="primaryEntityDH" value="'clanExtendedEntity'; CC.clanExtended; clanId"/>
+		<bind name="watchDH" value="'clanTag'; 	['clanEntity.clan.evTagChanged']; clanEntity.clan.tag"/>
+		<bind name="watchDH" value="'color'; 	['clanExtendedEntity.clanExtended.evColorChanged']; clanExtendedEntity.clanExtended.color"/>
+		<bind name="watchDH" value="'league'; 	['clanExtendedEntity.clanExtended.evLeagueChanged']; clanExtendedEntity.clanExtended.league"/>
+		<bind name="watch" value="'clanTagColor'; ('0xff' + color)"/>
+		<bind name="watch" value="'isInvitedToDivision'; entityAccount.playerInvitedToPrebattleInfo != null"/>
+		<bind name="watch" value="'isInDivision'; isInFormation &amp;&amp; !isInvitedToDivision"/>
+		<bind name="watch" value="'isInFormation'; entityAccount.hasComponent(CC.preBattlePlayerSimple)"/>
+		<bind name="watchDH" value="'isMercenary';	['entityAccount.preBattlePlayerSimple.evIsMercenaryChanged']; entityAccount.preBattlePlayerSimple.isMercenary"/>
+		<bind name="watch" value="'isInFormationBattle'; isInDivision &amp;&amp; (isInBattle || inBattle)"/>
+		<bind name="watchDH" value="'inviteExpirationTime'; ['']; entityAccount.playerInvitedToPrebattleInfo.expirationTime"/>
+		<bind name="var" value="{wantedInDivision: false}"/>
+		<bind name="style" value="'alpha'; _isOfflineAlpha	? accountOnline ? 1
+															: 0.5
+											: 1"/>
+		<block>
+			<style>
+				<hitTest value="false"/>
+			</style>
+			<block>
+				<bind name="visible" value="accountOnline &amp;&amp; ((inBattle &amp;&amp; !(isInFormationBattle)) || wantedInDivision)"/>
+				<style>
+					<marginLeft value="3px"/>
+					<marginTop value="5px"/>
+				</style>
+				<block className="icon_player_status" type="native">
+					<bind name="gotoAndStop!" value="wantedInDivision								? 'wanted_in_division' :
+									inBattle										? 'in_battle'
+																					: 'not_ready'"/>
+				</block>
+			</block>
+			<block>
+				<bind name="visible" value="(isInDivision || (isInvitedToDivision &amp;&amp; !isSelf)) &amp;&amp; !isInTrainingRoom"/>
+				<style>
+					<marginLeft value="4px"/>
+				</style>
+				<block>
+					<style>
+						<position value="absolute"/>
+						<marginTop value="9px"/>
+						<marginLeft value="-12px"/>
+					</style>
+					<bind name="instance" value="'VoiceChatDockIcon'; (accountOnline &amp;&amp; isInFormation)	? {_playerName: pureName, _isSelf: isSelf}
+																						: null"/>
+				</block>
+				<block>
+					<style>
+						<marginTop value="4px"/>
+					</style>
+					<bind name="instance" value="'FormationPlayerIcon';	{	_isEmptySlot: isInvitedToDivision,
+															isCommander: isCommander,
+															isMercenary: isMercenary,
+															isReady: isReady,
+															isInBattle: isInFormationBattle} "/>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+			<block>
+				<bind name="visible" value="rank != 0 &amp;&amp; !(_isShort || isInDivision)"/>
+				<style>
+					<marginTop value="4px"/>
+				</style>
+				<bind name="instance" value="'IconRankSmall'; {_rank: rank, _league: rankLeague}"/>
+			</block>
+			<block type="text">
+				<bind name="name" value="'playerContactName_' + nickName"/>
+				<bind name="watch" value="'_tfWidth' ; 	_nickNameWidth	? _nickNameWidth :
+										_isShort		? 148
+														: 235"/>
+				<bind name="style" value="'width';	_notTrancated	? 'auto' :
+									((rank != 0) || inBattle || wantedInDivision)	? isInDivision	? _tfWidth - 37 + 'px'
+																									: _tfWidth - 20 + 'px'
+																					: isInDivision	? _tfWidth - 20 + 'px'
+																									: _tfWidth + 'px'"/>
+				<style>
+					<marginTop value="2px"/>
+					<marginLeft value="2px"/>
+					<multiline value="false"/>
+				</style>
+				<styleClass value="$TextHeaderBigDefault"/>
+				<style>
+					<noTranslate value="true"/>
+				</style>
+				<bind name="class" value=" (isSelf || isInDivision) &amp;&amp; !isMercenary	? '$FontColorGolden'
+																	: '$FontColorWhite'"/>
+				<bind name="class" value=" isSelf ? '$Bold' : '$None'"/>
+				<bind name="text" value="_playerContext.channelTypeIdent == 'clan' ? pureName : nickName"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="ContactInfoTooltip">
+		<bind name="firstEntityDH" value="'trainingRoomEntity'; CC.trainingRoomWindowState"/>
+		<bind name="watch" value="'isInTrainingRoom'; trainingRoomEntity != null"/>
+		<bind name="entityDH" value="'entityAccount'; _entityAccountId"/>
+		<bind name="watchDH" value="'isSelf'; []; entityAccount.accountSimple.isSelfPlayer"/>
+		<bind name="watchDH" value="'inBattle'; 		['entityAccount.accountStatus.evInBattleChanged']; entityAccount.accountStatus.inBattle"/>
+		<bind name="watchDH" value="'accountOnlineDH';	['entityAccount.accountStatus.evOnlineChanged']; entityAccount.accountStatus.online"/>
+		<bind name="watch" value="'accountOnline'; accountOnlineDH || isSelf"/>
+		<bind name="watchDH" value="'ac

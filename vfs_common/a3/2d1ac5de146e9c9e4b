@@ -1,0 +1,79 @@
+tialValueChanged'; null; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN; 0.1"/>
+			<bind name="catch" value="'TextInputWithCancel.shipSearchCancelled'; {inputStr: ''}"/>
+			<bind name="dispatch" value="'TextInputWithCancel.shipSearchCancelled'; 'Tooltip.Close'; {}; false; 0.1"/>
+			<bind name="var" value="{searchDelay: 0.2}"/>
+			<bind name="catch" value="'TextInputWithCancel.inputStrChanged'"/>
+			<bind name="dispatchDelayReset" value="'inputStr' + varChanged; 'strForSearchChanged'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.NONE; searchDelay"/>
+			<bind name="action" value="'strForSearchChanged'; 'setSearchString' ; {value: inputStr}"/>
+		</block>
+	</block>
+	<block className="FilterBlock">
+		<bind name="collectionDH" value="CC.shipFilterItem; 'filters'; 'byFilterType.' + _filterType"/>
+		<block type="text">
+			<style>
+				<marginTop value="5px"/>
+				<marginBottom value="8px"/>
+			</style>
+			<styleClass value="$MiddleAligned"/>
+			<styleClass value="$TextHeaderBold"/>
+			<bind name="class" value="'$FontColorBlueish'"/>
+			<bind name="text" value="_title"/>
+		</block>
+		<block>
+			<bind name="name" value="'FilterBlockValues'"/>
+			<style>
+				<flow value="vtile"/>
+				<height value="144px"/>
+				<marginLeft value="30px"/>
+				<marginRight value="6px"/>
+			</style>
+			<bind name="repeat" value="filters; 'FilterItem'; {_panelEntityId: _panelEntityId, _ident: _ident, _tooltipPrefix: _tooltipPrefix, _inCarousel: _inCarousel}"/>
+		</block>
+		<block>
+			<bind name="visible" value="needDivider"/>
+			<style>
+				<height value="100%"/>
+				<position value="absolute"/>
+			</style>
+			<block className="divider_v" type="native">
+				<style>
+					<height value="100%"/>
+				</style>
+			</block>
+		</block>
+	</block>
+	<block className="FilterItem">
+		<bind name="entityDH" value="'entity'; id"/>
+		<bind name="entityDH" value="'panelEntity'; _panelEntityId"/>
+		<bind name="watchDH" value="'_enabledFilters'; ['panelEntity.filterPanel.evUpdate']; panelEntity.filterPanel.enabledFilters"/>
+		<bind name="watchDH" value="'_filterType'; ['entity.shipFilterItem.evUpdate']; entity.shipFilterItem.type"/>
+		<bind name="watchDH" value="'selectedFilters'; ['panelEntity.filteringGroup.evUpdate']; panelEntity.filteringGroup.selectedFilters[_filterType]"/>
+		<bind name="watch" value="'_value'; selectedFilters &amp;&amp; isIn(entity.id, selectedFilters)"/>
+		<bind name="watchDH" value="'_field'; ['entity.shipFilterItem.evUpdate']; entity.shipFilterItem.field"/>
+		<bind name="watch" value="'_enabled'; isIn(id, _enabledFilters[_filterType])"/>
+		<bind name="instance" value="(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_LEVEL)	? 'ShipLevelCheckBox' :
+					(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_TYPE)	? 'ShipClassCheckBox' :
+					(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_NATION)	? (_field != 'Events' ? 'ShipNationCheckBox' : 'EmptyItem') :
+					(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_SPECIAL)? 'ShipSpecialCheckBox' :
+					(_filterType == SC.Common.SHIP_FILTER_TYPE.SHIP_RARITY)	? 'ShipRarityCheckBox'
+																			: 'FilterCheckBox'; 
+		{_filterType: _filterType, value: _value, field: _field, _ident: _ident, _tooltipPrefix: _tooltipPrefix, _disabled: (_inCarousel ? !_enabled : false)}"/>
+	</block>
+	<block className="FilterCheckBox">
+		<style>
+			<marginRight value="44px"/>
+			<marginBottom value="8px"/>
+		</style>
+		<bind name="instance" value="'CheckBox'; {	_isChecked: value,
+											_label: field,
+											_maxTfWidth: 150,
+											_disabled: _disabled,
+											_action: 'setFilterValue',
+											_actionParams: {type: _filterType, field: field, value: !value, ident: _ident}}"/>
+	</block>
+	<block className="ShipLevelCheckBox">
+		<bind name="name" value="'CarouselCheckBox_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType] + '_' + field"/>
+		<bind name="watch" value="'tooltipPrefix'; _tooltipPrefix ? _tooltipPrefix : 'IDS_'"/>
+		<bind name="watch" value="'isSupershipLevel'; Number(field) == SC.Ships.SHIP_LEVELS.SUPER_SHIP"/>
+		<bind name="watch" value="'statusTooltipData'; _disabled	? {	_text: isSupershipLevel	? 'IDS_HINT_CHECKBOX_FILTER_LEVEL_SUPERSHIP_NOT_AVAILABLE'
+														 					: subst('IDS_HINT_CHECKBOX_FILTER_LEVE

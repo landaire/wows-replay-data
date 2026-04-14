@@ -1,0 +1,1310 @@
+	<style>
+				<width value="62px"/>
+				<height value="62px"/>
+			</style>
+			<block>
+				<style>
+					<width value="60px"/>
+					<height value="60px"/>
+					<position value="absolute"/>
+					<top value="2px"/>
+					<left value="2px"/>
+					<hitTest value="false"/>
+				</style>
+				<bind name="style" value="'backgroundImage'; iconPath"/>
+			</block>
+			<block>
+				<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; null; 'cts_'"/>
+				<bind name="var" value="{ 
+		ctsMouseUp: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 0.7,
+			redOffset: 0,
+			greenOffset: 0,
+			blueOffset: 0,
+			alphaOffset: 0
+		}
+	}"/>
+				<bind name="var" value="{ 
+		ctsMouseDown: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 0.5,
+			redOffset: 0,
+			greenOffset: 0,
+			blueOffset: 0,
+			alphaOffset: 0
+		}
+	}"/>
+				<bind name="colorTransform" value="	true &amp;&amp; cts_mouseDown &amp;&amp; !false	? ctsMouseDown :
+							true &amp;&amp; (cts_rollOver || false)	? {}
+																		: ctsMouseUp"/>
+				<style>
+					<width value="64px"/>
+					<height value="64px"/>
+					<position value="absolute"/>
+				</style>
+				<bind name="style" value="'backgroundImage'; 'url:../service_kit/slots/' + strokeIconName"/>
+				<bind name="tooltip" value="'AltFireModeTooltip'; {_fireModeSlotEntityId: fireModeSlotEntity.id}; TooltipBehaviour.simple"/>
+			</block>
+			<block>
+				<style>
+					<position value="absolute"/>
+					<marginTop value="-1px"/>
+					<right value="-16px"/>
+				</style>
+				<block>
+					<bind name="fade" value="isNewMarkerVisible; 0.15; {alpha: 0, top: 10}; {alpha: 1, top: 0}; {alpha: 0, top: -10}; 2"/>
+					<bind name="instance" value="'MarkerNewAttention'; {}"/>
+				</block>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="commandId"/>
+			<style>
+				<width value="46px"/>
+				<height value="20px"/>
+				<align value="center"/>
+			</style>
+			<bind name="instance" value="'DockHotkeyIndicator'; {_commandId: commandId}"/>
+		</block>
+	</block>
+	<block className="RageModeItem">
+		<styleClass value="$ManagementSlotItem"/>
+		<bind name="alpha" value="isOwned ? 1 : 0.5"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="primaryEntityDH" value="'ownShipEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'ownShipInfo'; ['ownShipEntity.ship.evUpdate', 'ownShipEntity.ship.evCurrentSkinChanged']; ownShipEntity.ship"/>
+		<bind name="watch" value="'isOwned'; !!ownShipEntity"/>
+		<bind name="dataRefDH" value="'rageModeEntity'; '$dataRef.ref'"/>
+		<bind name="watchDH" value="'iconPath';		['rageModeEntity.rageMode.evUpdated']; rageModeEntity.rageMode.slotData.iconPath"/>
+		<bind name="watchDH" value="'commandId';		['rageModeEntity.rageMode.evUpdated']; rageModeEntity.rageMode.slotData.command"/>
+		<bind name="watchDH" value="'isAutoUsage';	['rageModeEntity.rageMode.evUpdated']; rageModeEntity.rageMode.slotData.isAutoUsage"/>
+		<style>
+			<align value="center"/>
+		</style>
+		<block>
+			<style>
+				<width value="60px"/>
+				<height value="60px"/>
+				<marginTop value="2px"/>
+			</style>
+			<bind name="style" value="'backgroundImage'; 'url:' + iconPath"/>
+			<bind name="tooltip" value="'RageModeTooltip'; {_rageModeEntityId: rageModeEntity.id}"/>
+		</block>
+		<block>
+			<bind name="visible" value="commandId &gt;= 0"/>
+			<style>
+				<width value="46px"/>
+				<height value="20px"/>
+				<align value="center"/>
+			</style>
+			<bind name="instance" value="'DockHotkeyIndicator'; !isAutoUsage ? {_commandId: commandId} : null"/>
+			<bind name="instance" value="'LabelAuto'; isAutoUsage ? {} : null"/>
+			<bind name="tooltip" value="'SimpleStatusTooltip'; isAutoUsage ? {_text: 'IDS_HINT_BATTLE_COMMAND_KEY_RAGE_MODE'}: {_text: 'IDS_HINT_BATTLE_COMMAND_KEY_RAGE_MODE'}"/>
+		</block>
+	</block>
+	<block className="ConsumableSlotItem">
+		<bind name="appear" value="'addedToStage'; 0.15; 0; {ubScaleX: 0}; {ubScaleX: 1}"/>
+		<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'"/>
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+		<bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="primaryEntityDH" value="'ownShipEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'ownShipInfo'; ['ownShipEntity.ship.evUpdate', 'ownShipEntity.ship.evCurrentSkinChanged']; ownShipEntity.ship"/>
+		<bind name="watch" value="'isOwned'; !!ownShipEntity"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="dataRefDH" value="'equipmentSlotEntity'; '$dataRef.ref'"/>
+		<bind name="watchDH" value="'installedEntityId';		['equipmentSlotEntity.equipmentSlot.evInstalledEntityIdChanged']; equipmentSlotEntity.equipmentSlot.installedEntityId"/>
+		<bind name="watchDH" value="'slotComandId';		['equipmentSlotEntity.equipmentSlot.evCommandIdChanged'];			equipmentSlotEntity.equipmentSlot.commandId"/>
+		<bind name="watchDH" value="'isSlotTactical'; []; equipmentSlotEntity.equipmentSlot.isSpecial"/>
+		<bind name="visible" value="isSlotTactical == _isTacticalPanel"/>
+		<bind name="entityDH" value="'abilityEntity'; installedEntityId"/>
+		<bind name="watchDH" value="'maxCharge';	['abilityEntity.ability.evMaxChargeChanged']; abilityEntity.ability.maxCharge"/>
+		<bind name="watch" value="'isLimitedCount'; maxCharge != -1"/>
+		<bind name="watchDH" value="'lifecycleType';	['abilityEntity.ability.evLifecycleTypeChanged']; abilityEntity.ability.lifecycleType"/>
+		<bind name="watch" value="'isTimeBased'; lifecycleType == SC.Battle.CONSUMABLE_LIFECYCLE_TYPE.TIME_BASED"/>
+		<bind name="timeFormat" value="maxCharge; maxCharge &gt;= 60 ? 'm:ss' : 'ss'; 'workTimeText'"/>
+		<bind name="var" value="{displayedNumConsumables: -1}"/>
+		<bind name="watch" value="'displayedNumConsumables';		isLimitedCount ? maxCharge : displayedNumConsumables"/>
+		<bind name="watchDH" value="'slotId';			['']; abilityEntity.ability.slotId"/>
+		<bind name="watchDH" value="'squadType';			['']; abilityEntity.ability.squadType"/>
+		<bind name="watchDH" value="'isSquadronAbility';	['']; abilityEntity.ability.isSquadronAbility"/>
+		<bind name="watchDH" value="'isSeen'; ['itemEntity.ability.evIsSeenChanged']; abilityEntity.ability.isSeen"/>
+		<bind name="primaryEntityDH" value="'shipOwnEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'isShipLocked';		['shipOwnEntity.ownShip.evUpdateLock'];			shipOwnEntity.ownShip.isLocked"/>
+		<bind name="watchDH" value="'isInFormation';		['shipOwnEntity.ownShip.evUpdateLock'];			shipOwnEntity.ownShip.isInFormation"/>
+		<bind name="watchDH" value="'subCollectionKey';	['']; equipmentSlotEntity.equipmentSlot.subCollectionKey"/>
+		<bind name="watchDH" value="'viewData'; ['abilityEntity.ability.evChanged']; abilityEntity.ability.viewData"/>
+		<bind name="collectionDH" value="CC.ability; 'abilitiesBySlotCollection'; 'shipAbilsBySlotId.' + slotId"/>
+		<bind name="collectionDH" value="CC.ability; 'unseenSpecialAbilities'; 'unseen'"/>
+		<bind name="watch" value="'unseenItemCount'; unseenSpecialAbilities.length"/>
+		<bind name="watch" value="'hasAlternatives'; abilitiesBySlotCollection.length &gt; 1 &amp;&amp; !isShipLocked &amp;&amp; !isInFormation"/>
+		<bind name="primaryEntityDH" value="'shipEntity'; CC.ship; shipIdForModuleInset; 'evUpdate'"/>
+		<bind name="watchDH" value="'shipInfo'; ['shipEntity.ship.evUpdate', 'shipEntity.ship.evCurrentSkinChanged', 'shipEntity.ship.evFlagNameWithCrewChanged']; shipEntity.ship"/>
+		<bind name="watch" value="'isAircarrierConsumable'; shipInfo.subtype == ShipTypes.AircraftCarrier &amp;&amp; !isSquadronAbility"/>
+		<bind name="watch" value="'isAutoUsageShown'; isAircarrierConsumable &amp;&amp; !isSlotTactical"/>
+		<bind name="watch" value="'orderCustomizationActive'; !isSquadronAbility &amp;&amp; !!userPrefs.consumablesOrderCustomizationActive &amp;&amp; !isSlotTactical"/>
+		<bind name="alpha" value="isOwned	? 1 : 0.5"/>
+		<bind name="watch" value="'isEmptySlot'; abilityEntity == null"/>
+		<bind name="dispatch" value="'dragging' + varChanged; dragging ? 'startDragging' : 'stopDragging'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.UP; 0"/>
+		<bind name="soundSet" value="hasAlternatives &amp;&amp; !orderCustomizationActive ? 'button_consumable' : ''"/>
+		<bind name="soundOn" value="'mouseDown';	!orderCustomizationActive || (isEmptySlot &amp;&amp; !_isStartDragConsumableSlotItem)	? null	: 'press'; 'drag_n_drop'"/>
+		<bind name="watch" value="'activeIds';  isSquadronAbility ? ['149'] : ['150']"/>
+		<bind name="watch" value="'fakeSlotId';  '150'"/>
+		<style>
+			<flow value="horizontal"/>
+		</style>
+		<block>
+			<style>
+				<width value="1280:4,1920:24aw"/>
+			</style>
+		</block>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.1; 0.12; {alpha: 0}; {alpha: 1}"/>
+			<style>
+				<width value="64px"/>
+				<height value="64px"/>
+			</style>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundColor value="0x01000000"/>
+				</style>
+				<bind name="tooltip" value="'ConsumableTooltip'; !orderCustomizationActive	? {	_abilityEntityId: installedEntityId,
+																				_hasAlternatives: hasAlternatives,
+																				_isAircarrierConsumable: isAircarrierConsumable}
+																			: null; TooltipBehaviour.simple"/>
+				<bind name="tooltip" value="'ConsumablesInfotip'; hasAlternatives &amp;&amp; !orderCustomizationActive	? {_slotId: slotId}
+																								: null; TooltipBehaviour.verticalInfotip; null; 'consumablesInfotipIsVisible'"/>
+				<bind name="dispatch" value="'consumableInfotipItemClicked'; consumablesInfotipIsVisible ? 'Tooltip.Close' : null; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.NONE;"/>
+				<bind name="action" value="'rollOver'; isSlotTactical ? 'setTacticalConsumableSeen' : null; { subtype: shipOwnEntity.ship.subtype, abilId: abilityEntity.ability.abilId }"/>
+				<block>
+					<bind name="fade" value="hasAlternatives || orderCustomizationActive; 0.15; {alpha: 0}; {alpha: 0.7}; {alpha: 0}; 2"/>
+					<bind name="style" value="'hitTest'; !orderCustomizationActive"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; null; 'cts_'"/>
+					<bind name="var" value="{ 
+		ctsMouseUp: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 0.7,
+			redOffset: 0,
+			greenOffset: 0,
+			blueOffset: 0,
+			alphaOffset: 0
+		}
+	}"/>
+					<bind name="var" value="{ 
+		ctsMouseDown: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 0.5,
+			redOffset: 0,
+			greenOffset: 0,
+			blueOffset: 0,
+			alphaOffset: 0
+		}
+	}"/>
+					<bind name="colorTransform" value="	true &amp;&amp; cts_mouseDown &amp;&amp; !!!consumablesInfotipIsVisible	? ctsMouseDown :
+							true &amp;&amp; (cts_rollOver || !!consumablesInfotipIsVisible)	? {}
+																		: ctsMouseUp"/>
+					<styleClass value="$FullsizeAbsolute"/>
+					<style>
+						<backgroundImage value="url:../service_kit/frames/64px_not_empty_field.png"/>
+					</style>
+					<bind name="alpha" value="droppableStatus == 'fadeIn' ? 1 : 0.7"/>
+				</block>
+				<block>
+					<style>
+						<position value="absolute"/>
+						<top value="2px"/>
+						<left value="2px"/>
+					</style>
+					<bind name="tooltip" value="'SimpleStatusTooltip';	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.MOUSE_LEFT,
+															_text: 'IDS_CONSUMABLE_CHANGE_ORDER_MOUSE_INSTRUCTION'}"/>
+					<bind name="style" value="'hitTest'; orderCustomizationActive &amp;&amp; installedEntityId ? true : false"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; null; 'ct_'"/>
+					<bind name="var" value="{
+		ctRollOver: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 1,
+			redOffset: 30,
+			greenOffset: 30,
+			blueOffset: 30,
+			alphaOffset: 0
+		}
+	}"/>
+					<bind name="var" value="{ 
+		ctMouseDown: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 1,
+			redOffset: -30,
+			greenOffset: -30,
+			blueOffset: -30,
+			alphaOffset: 0
+		}
+	}"/>
+					<bind name="colorTransform" value="	orderCustomizationActive &amp;&amp; !mouseDown &amp;&amp; ct_mouseDown &amp;&amp; !false	? ctMouseDown :
+							orderCustomizationActive &amp;&amp; !mouseDown &amp;&amp; (ct_rollOver || false)	? ctRollOver
+																		: {}"/>
+					<bind name="var" value="{isBitmapReady: true}"/>
+					<bind name="dispatch" value="'mouseDown'; 'evBitmapReady'; null; SC.Common.UBSCOPE_EVENT_DIRECTIONS.NONE; 0.05"/>
+					<bind name="catch" value="'mouseDown'; {isBitmapReady: false}"/>
+					<bind name="catch" value="'evBitmapReady'; {isBitmapReady: true}"/>
+					<bind name="draggable" value="orderCustomizationActive ? 'this' : null; fakeSlotId; {	slotId: subCollectionKey,
+																							commandId: slotComandId}; 'evBitmapReady'"/>
+					<bind name="droppable" value="'this'; !isSlotTactical ? activeIds : null; activeIds; 'droppableStatus'"/>
+					<bind name="action" value="'droppableStatus' + varChanged; droppableStatus == 'accept' ? 'swapConsumables' : null;	{	dragSlotId: droppableStatusData['slotId'],
+																															dropSlotId: subCollectionKey,
+																															dragCommandId: droppableStatusData['commandId'],
+																															dropCommandId: slotComandId}"/>
+					<block>
+						<bind name="visible" value="installedEntityId"/>
+						<style>
+							<width value="60px"/>
+							<height value="60px"/>
+						</style>
+						<bind name="style" value="'backgroundImage'; 'url:' + viewData.iconPath"/>
+						<bind name="alpha" value="	dragging ||
+									droppableStatus == 'fadeIn' ? 0.3
+																: 1"/>
+						<bind name="top" value="isBitmapReady ? 0 : -4"/>
+						<bind name="style" value="'dropShadowFilter'; mouseDown &amp;&amp; orderCustomizationActive	? '4 90 0x000000 0.7 4.0 4.0 0.7 1'
+																							: '0 0 0x000000 0 2.0 2.0 1.0 1'"/>
+					</block>
+					<block>
+						<bind name="visible" value="isTimeBased"/>
+						<style>
+							<width value="60px"/>
+							<height value="60px"/>
+							<top value="-2"/>
+							<left value="-2"/>
+							<position value="absolute"/>
+							<backgroundImage value="url:../consumables/features/time_based.png"/>
+						</style>
+					</block>
+					<block>
+						<bind name="visible" value="!installedEntityId &amp;&amp; !isSlotTactical"/>
+						<style>
+							<width value="60px"/>
+							<height value="60px"/>
+							<position value="absolute"/>
+							<backgroundImage value="url:../service_kit/frames/64px_drop_field.png"/>
+						</style>
+						<bind name="alpha" value="	dragging ||
+									droppableStatus == 'fadeIn' ? 0.3
+																: 0.7"/>
+					</block>
+				</block>
+			</block>
+			<block>
+				<bind name="fade" value="isLimitedCount &amp;&amp; !orderCustomizationActive; 0.15; {alpha: 0}; {alpha: 1}; {alpha: 0}; 2"/>
+				<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: isTimeBased ? 'IDS_CONSUMABLE_CAPACITY' : 'IDS_NUMCONSUMABLES'}"/>
+				<style>
+					<top value="4px"/>
+					<right value="5px"/>
+					<position value="absolute"/>
+					<backgroundColor value="0x01000000"/>
+				</style>
+				<block type="text">
+					<bind name="visible" value="!isTimeBased"/>
+					<style>
+						<textAlign value="right"/>
+						<alpha value="0.9"/>
+					</style>
+					<styleClass value="$TextDefaultBoldNM"/>
+					<bind name="text" value="displayedNumConsumables"/>
+				</block>
+				<block type="text">
+					<bind name="visible" value="isTimeBased"/>
+					<style>
+						<width value="41px"/>
+						<textAlign value="left"/>
+						<alpha value="0.9"/>
+					</style>
+					<styleClass value="$TextDefaultBoldNM"/>
+					<bind name="text" value="workTimeText"/>
+				</block>
+			</block>
+			<block>
+				<style>
+					<bottom value="-18px"/>
+					<left value="9px"/>
+					<width value="46px"/>
+					<height value="20px"/>
+					<align value="center"/>
+				</style>
+				<bind name="var" value="{
+					hotkeyActiveCT: {
+					redMultiplier: 1,
+					greenMultiplier: 1,
+					blueMultiplier: 1,
+					alphaMultiplier: 1,
+					redOffset: 40,
+					greenOffset: 40,
+					blueOffset: 40,
+					alphaOffset: 0}
+			}"/>
+				<bind name="colorTransform" value="	droppableStatus == 'fadeIn' ?	hotkeyActiveCT
+																:	{}"/>
+				<bind name="instance" value="'DockHotkeyIndicator'; slotComandId &gt;= 0 &amp;&amp; (!isAircarrierConsumable || isSlotTactical)	? {_commandId: slotComandId}
+																								: null"/>
+				<bind name="instance" value="'LabelAuto'; isAutoUsageShown ? {} : null"/>
+				<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: isAutoUsageShown	? 'IDS_HINT_BATTLE_COMMAND_AUTO'
+																			: 'IDS_HINT_BATTLE_COMMAND_KEY'}"/>
+			</block>
+			<block>
+				<bind name="visible" value="isSlotTactical"/>
+				<styleClass value="$FullsizeAbsolute"/>
+				<block>
+					<bind name="fade" value="unseenItemCount == 1; 0.15; {alpha: 0, top: 10}; {alpha: 1, top: 0}; {alpha: 0, top: -10}; 2"/>
+					<style>
+						<position value="absolute"/>
+						<right value="-8px"/>
+						<top value="2px"/>
+					</style>
+					<bind name="instance" value="'MarkerNewAttention'; {}"/>
+				</block>
+				<block>
+					<bind name="fade" value="unseenItemCount &gt; 1; 0.15; {alpha: 0, top: 10}; {alpha: 1, top: 0}; {alpha: 0, top: -10}; 2"/>
+					<style>
+						<position value="absolute"/>
+						<right value="-8px"/>
+						<top value="2px"/>
+					</style>
+					<bind name="instance" value="'MarkerNewCounter'; { _newContentCounter: unseenItemCount}"/>
+				</block>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="1280:4,1920:24aw"/>
+			</style>
+		</block>
+	</block>
+	<block className="ShipLineItemNoAttributes">
+		<bind name="watchDH" value="'upgradableShipInfo'; ['shipEntity.upgradableShipInfo.evUpdate']; shipEntity.upgradableShipInfo"/>
+		<bind name="primaryEntityDH" value="'shipEntity'; CC.ship; $value; 'evUpdate'"/>
+		<bind name="watchDH" value="'shipInfo'; ['shipEntity.ship.evUpdate', 'shipEntity.ship.evCurrentSkinChanged', 'shipEntity.ship.evFlagNameWithCrewChanged']; shipEntity.ship"/>
+		<style>
+			<flow value="horizontal"/>
+			<marginTop value="1px"/>
+			<marginBottom value="1px"/>
+		</style>
+		<block>
+			<style>
+				<width value="27px"/>
+				<height value="27px"/>
+				<marginTop value="-7px"/>
+				<marginLeft value="-4px"/>
+				<marginBottom value="-3px"/>
+			</style>
+			<bind name="style" value="'backgroundImage'; 'url:../service_kit/ship_classes/icon_default_' + toLowerCase(shipInfo.subtype) + '.png'"/>
+		</block>
+		<block>
+			<style>
+				<marginTop value="1px"/>
+				<align value="middle"/>
+			</style>
+			<bind name="style" value="'marginLeft';	shipInfo.levelIcon.length == 0 ? '3px' : '0px'"/>
+			<bind name="style" value="'marginRight';	shipInfo.levelIcon.length == 0 ? '2px' : '1px'"/>
+			<bind name="instance" value="'ShipLevelNM';	{	_levelIcon: shipInfo.levelIcon,
+											_alpha: 0.9,
+										 	_levelRome : shipInfo.levelRome,
+										 	_fontClass : '$TextDefaultBoldNM',
+										}"/>
+		</block>
+		<block type="text">
+			<style>
+				<alpha value="0.9"/>
+				<marginTop value="1px"/>
+				<marginRight value="3px"/>
+			</style>
+			<styleClass value="$TextDefaultBoldNM"/>
+			<bind name="text" value="toUpperCase(tr(shipInfo.nameIDS))"/>
+		</block>
+	</block>
+	<block className="IconWarning">
+		<style>
+			<marginTop value="-1px"/>
+		</style>
+		<block className="icon_warning_orange" type="native">
+			<bind name="visible" value="(_showGreyIcon &amp;&amp; _showOrangeIcon) || _showOrangeIcon"/>
+		</block>
+		<block className="icon_warning_grey" type="native">
+			<bind name="visible" value="(_showGreyIcon &amp;&amp; !_showOrangeIcon)"/>
+		</block>
+	</block>
+	<block className="ConsumablesInfotip">
+		<style>
+			<width value="360px"/>
+		</style>
+		<styleClass value="$VerticalInfotipBehaviourCenterForSlotsWithHotkey"/>
+		<bind name="stageSize"/>
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="watch" value="'needScroll'; (_itemsInSlot.length * 145) &gt; (stageHeight - 20)"/>
+		<bind name="primaryEntityDH" value="'ownShipEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'ownShipInfo'; ['ownShipEntity.ship.evUpdate', 'ownShipEntity.ship.evCurrentSkinChanged']; ownShipEntity.ship"/>
+		<bind name="watchDH" value="'isLocked';			['ownShipEntity.ownShip.evUpdateLock'];	ownShipEntity.ownShip.isLocked"/>
+		<bind name="watchDH" value="'isInFormation';		['ownShipEntity.ownShip.evUpdateLock'];	ownShipEntity.ownShip.isInFormation"/>
+		<bind name="watch" value="'isOwned'; ownShipEntity != null"/>
+		<bind name="primaryEntityDH" value="'slotEntity'; CC.equipmentSlot; SC.Ships.SHIP_SLOT_TYPES.ABILITY + '_' + _slotId +'_' "/>
+		<bind name="watch" value="'isTacticalSlot'; slotEntity.equipmentSlot.isSpecial"/>
+		<bind name="collectionDH" value="CC.ability; 'tacticalAbilities'; 'special.sorted'"/>
+		<bind name="watchDH" value="'isComplete'; ['']; tacticalAbilities.length &gt; 0 ? tacticalAbilities[tacticalAbilities.length-1].ability.isUnlocked : true"/>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="style" value="'height'; needScroll == true ? (stageHeight - 20) + 'px' : '100%f'"/>
+			<block className="InfotipBg">
+				<styleClass value="$FullsizeAbsolute"/>
+				<block className="InfotipPanelBg">
+					<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+					<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+					<block className="DeclareBlurLayer">
+						<bind name="primaryEntityDH" value="'isBlurEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+						<bind name="watchDH" value="'isBlurEnabled'; ['isBlurEnabledEntity.preference.evValueChanged']; isBlurEnabledEntity.preference.value"/>
+						<bind name="visible" value="isBlurEnabled"/>
+						<block className="transparentPixel" type="native">
+							<bind name="blurLayer" value="0"/>
+						</block>
+						<style>
+							<position value="absolute"/>
+						</style>
+					</block>
+					<style>
+						<margin value="-2px"/>
+					</style>
+					<styleClass value="$FullsizeAbsolute"/>
+					<block>
+						<styleClass value="$FullsizeAbsolute"/>
+						<bind name="dispatch" value="'Tooltip.selfOpened'; 'startShow'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+						<bind name="dispatch" value="'Tooltip.selfClosed'; 'startHide'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+						<bind name="instance" value="'InfotipBlurmap'; isBlurOptionEnabled ? {} : null"/>
+					</block>
+					<block>
+						<styleClass value="$FullsizeAbsolute"/>
+						<style>
+							<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_panel.png"/>
+							<background9Slice value="[3]"/>
+						</style>
+						<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+					</block>
+				</block>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<style>
+						<margin value="-2px"/>
+					</style>
+					<block className="InfotipPins">
+						<styleClass value="$FullsizeAbsolute"/>
+						<block>
+							<params>
+								<param name="name" value="pinTop"/>
+							</params>
+							<style>
+								<position value="absolute"/>
+								<top value="-10px"/>
+							</style>
+							<block>
+								<style>
+									<position value="absolute"/>
+								</style>
+								<block className="mc_blurmap_infotip_arrow_vert" type="native">
+									<style>
+										<position value="absolute"/>
+										<width value="22px"/>
+										<height value="12px"/>
+									</style>
+									<bind name="visible" value="false"/>
+								</block>
+								<bind name="instance" value="'InfotipPinBlurmapVert'; isBlurOptionEnabled ? {} : null"/>
+							</block>
+							<block>
+								<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+								<style>
+									<width value="22px"/>
+									<height value="12px"/>
+									<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_vert.png"/>
+								</style>
+							</block>
+						</block>
+						<block>
+							<params>
+								<param name="name" value="pinBottom"/>
+							</params>
+							<style>
+								<position value="absolute"/>
+								<bottom value="-22px"/>
+							</style>
+							<bind name="scaleY" value="-1"/>
+							<block>
+								<style>
+									<position value="absolute"/>
+								</style>
+								<block className="mc_blurmap_infotip_arrow_vert" type="native">
+									<style>
+										<position value="absolute"/>
+										<width value="22px"/>
+										<height value="12px"/>
+									</style>
+									<bind name="visible" value="false"/>
+								</block>
+								<bind name="instance" value="'InfotipPinBlurmapVert'; isBlurOptionEnabled ? {} : null"/>
+							</block>
+							<block>
+								<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+								<style>
+									<width value="22px"/>
+									<height value="12px"/>
+									<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_vert.png"/>
+								</style>
+							</block>
+						</block>
+						<block>
+							<params>
+								<param name="name" value="pinLeft"/>
+							</params>
+							<style>
+								<position value="absolute"/>
+								<left value="-10px"/>
+							</style>
+							<block>
+								<style>
+									<position value="absolute"/>
+								</style>
+								<block className="mc_blurmap_infotip_arrow_hor" type="native">
+									<style>
+										<position value="absolute"/>
+										<width value="12px"/>
+										<height value="22px"/>
+									</style>
+									<bind name="visible" value="false"/>
+								</block>
+								<bind name="instance" value="'InfotipPinBlurmapHor'; isBlurOptionEnabled ? {} : null"/>
+							</block>
+							<block>
+								<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+								<style>
+									<position value="absolute"/>
+									<width value="12px"/>
+									<height value="22px"/>
+									<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_hor.png"/>
+								</style>
+							</block>
+						</block>
+						<block>
+							<params>
+								<param name="name" value="pinRight"/>
+							</params>
+							<style>
+								<position value="absolute"/>
+								<right value="-10px"/>
+							</style>
+							<bind name="scaleX" value="-1"/>
+							<block>
+								<style>
+									<position value="absolute"/>
+								</style>
+								<block className="mc_blurmap_infotip_arrow_hor" type="native">
+									<style>
+										<position value="absolute"/>
+										<width value="12px"/>
+										<height value="22px"/>
+									</style>
+									<bind name="visible" value="false"/>
+								</block>
+								<bind name="instance" value="'InfotipPinBlurmapHor'; isBlurOptionEnabled ? {} : null"/>
+							</block>
+							<block>
+								<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+								<style>
+									<position value="absolute"/>
+									<width value="12px"/>
+									<height value="22px"/>
+									<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_hor.png"/>
+								</style>
+							</block>
+						</block>
+					</block>
+				</block>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+					<height value="100%f"/>
+					<overflow value="scroll"/>
+				</style>
+				<bind name="class" value="needScroll ? '$ModernizationAndConsumScrollBar' : '$None'"/>
+				<bind name="collectionRepeatDH" value="CC.ability; 'ConsumablesInfotipItem'; isTacticalSlot ? 'special.sorted' : 'shipAbilsBySlotId.' + _slotId; {}"/>
+			</block>
+			<block>
+				<bind name="visible" value="isOwned &amp;&amp; (isLocked || isInFormation)"/>
+				<style>
+					<width value="100%"/>
+				</style>
+				<block className="HorizontalDividerTwoPx">
+					<style>
+						<width value="100%"/>
+						<height value="2px"/>
+						<backgroundSize value="fill"/>
+						<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+					</style>
+				</block>
+				<block>
+					<style>
+						<width value="100%"/>
+						<marginTop value="12px"/>
+						<marginBottom value="12px"/>
+						<marginLeft value="16px"/>
+						<marginRight value="16px"/>
+					</style>
+					<bind name="instance" value="'StatusLine'; {	_text: isInFormation	? 'IDS_SET_UNREADY_DIVISION_FIRST_TO_CHANGE_CONSUMABLES'
+																		: 'IDS_LEAVE_BATTLE_FIRST_TO_CHANGE_CONSUMABLES',
+												_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+												_width: '100%' }"/>
+				</block>
+			</block>
+		</block>
+	</block>
+	<block className="ConsumablesInfotipItem">
+		<bind name="dataRefDH" value="'itemEntity'; '$dataRef.ref'"/>
+		<bind name="watchDH" value="'slotId';			['']; itemEntity.ability.slotId"/>
+		<bind name="watchDH" value="'isInstalled';		['itemEntity.ability.evIsInstalledChanged']; itemEntity.ability.isInstalled"/>
+		<bind name="watchDH" value="'commandId';			['']; itemEntity.ability.commandId"/>
+		<bind name="watchDH" value="'squadType';			['']; itemEntity.ability.squadType"/>
+		<bind name="watchDH" value="'hasLimitation';		['']; itemEntity.ability.hasLimitation"/>
+		<bind name="watchDH" value="'viewData'; ['itemEntity.ability.evChanged']; itemEntity.ability.viewData"/>
+		<bind name="watch" value="'equipmentSlotPk'; SC.Ships.SHIP_SLOT_TYPES.ABILITY + '_' + slotId + '_'"/>
+		<bind name="primaryEntityDH" value="'equipmentSlotEntity'; CC.equipmentSlot; equipmentSlotPk"/>
+		<bind name="watchDH" value="'slotComandId'; ['equipmentSlotEntity.equipmentSlot.evCommandIdChanged']; equipmentSlotEntity.equipmentSlot.commandId"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="primaryEntityDH" value="'shipInsetEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'isLocked';	['shipInsetEntity.ownShip.evUpdateLock'];	shipInsetEntity.ownShip.isLocked"/>
+		<bind name="watch" value="'isOwned'; !!shipInsetEntity"/>
+		<bind name="watch" value="'verifiedInstalled'; isOwned ? isInstalled : false"/>
+		<bind name="watchDH" value="'lifecycleType';	['itemEntity.ability.evLifecycleTypeChanged']; itemEntity.ability.lifecycleType"/>
+		<bind name="watch" value="'isTimeBased'; lifecycleType == SC.Battle.CONSUMABLE_LIFECYCLE_TYPE.TIME_BASED"/>
+		<bind name="watchDH" value="'isTactical';	['']; itemEntity.ability.isSpecial"/>
+		<bind name="watchDH" value="'isSeen';		['itemEntity.ability.evIsSeenChanged']; itemEntity.ability.isSeen"/>
+		<style>
+			<width value="100%"/>
+			<height value="70px"/>
+		</style>
+		<block>
+			<bind name="visible" value="$index &gt; 0"/>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block className="HorizontalDividerTwoPx">
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<bind name="tooltip" value="'ConsumableTooltip'; {_abilityEntityId: itemEntity.id} ; TooltipBehaviour.simple"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<backgroundColor value="0x01000000"/>
+			</style>
+			<bind name="style" value="'marginTop'; $index &gt; 0 ? '1px' : '-1px'"/>
+			<bind name="watch" value="'isUnlockedFully'; !(isLocked || isLockedBySSE) "/>
+			<block className="dock_submenu_item" type="native">
+				<bind name="request" value="'click'; isOwned &amp;&amp; isUnlockedFully ? 'consumableClicked' : null; {abilityId: itemEntity.ability.abilId, slotId: slotId}"/>
+				<bind name="dispatch" value="'click'; isOwned &amp;&amp; isUnlockedFully ? 'consumableInfotipItemClicked' : null; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.UP;"/>
+				<bind name="style" value="'hitTest'; isOwned &amp;&amp; isUnlockedFully"/>
+				<bind name="action" value="'rollOver'; isTactical &amp;&amp; isUnlocked ? 'setTacticalConsumableSeen' : null; { subtype: shipInsetEntity.ship.subtype, abilId: itemEntity.ability.abilId }"/>
+				<bind name="selected" value="verifiedInstalled"/>
+				<bind name="enabled" value="isOwned"/>
+				<styleClass value="$FullsizeAbsolute"/>
+				<params>
+					<param name="soundSet" value="dropdown"/>
+				</params>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+				<margin value="4px"/>
+			</style>
+			<block>
+				<style>
+					<align value="middle"/>
+				</style>
+				<block>
+					<bind name="style" value="'backgroundImage'; 'url:' + viewData.iconPath"/>
+					<style>
+						<width value="60px"/>
+						<height value="60px"/>
+						<backgroundSize value="fill"/>
+						<hitTest value="false"/>
+					</style>
+				</block>
+				<block>
+					<bind name="visible" value="isTimeBased"/>
+					<style>
+						<width value="60px"/>
+						<height value="60px"/>
+						<hitTest value="false"/>
+						<position value="absolute"/>
+						<backgroundImage value="url:../consumables/features/time_based.png"/>
+					</style>
+				</block>
+				<block>
+					<bind name="visible" value="hasLimitation"/>
+					<style>
+						<position value="absolute"/>
+						<bottom value="7px"/>
+						<right value="7px"/>
+						<width value="17px"/>
+						<height value="15px"/>
+						<backgroundImage value="bitmap:icon_consumable_attention"/>
+					</style>
+				</block>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+					<height value="60px"/>
+					<align value="middle"/>
+					<hitTest value="false"/>
+				</style>
+				<block>
+					<style>
+						<width value="100%"/>
+						<marginLeft value="8px"/>
+					</style>
+					<block type="text">
+						<styleClass value="$TextDefaultBoldNM"/>
+						<bind name="class" value="verifiedInstalled	? '$FontColorGolden' 
+													: '$FontColorWhite'"/>
+						<bind name="text" value="viewData.title"/>
+					</block>
+				</block>
+				<block>
+					<bind name="visible" value="!isSeen"/>
+					<styleClass value="$FullsizeAbsolute"/>
+					<block>
+						<bind name="fade" value="!isSeen; 0.15; {alpha: 0, top: 10}; {alpha: 1, top: 0}; {alpha: 0, top: -10}; 2"/>
+						<styleClass value="$MiddleVAligned"/>
+						<style>
+							<position value="absolute"/>
+							<right value="0px"/>
+						</style>
+						<bind name="instance" value="'MarkerNewAttention'; {}"/>
+					</block>
+				</block>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+
+	<!-- nation_flags -->
+	<block className="NationFlagsBig">
+		<style>
+			<backgroundSize value="fill"/>
+		</style>
+		<bind name="style" value="'width'; _width ? _width : '694px' "/>
+		<bind name="style" value="'height'; _height ? _height : '426px' "/>
+		<bind name="style" value="'alpha'; _alpha ? _alpha : '1' "/>
+		<bind name="style" value="'backgroundImage'; 'url:../nation_flags/big/flag_' + shipCountry + '.png'"/>
+	</block>
+	<block className="NationFlagsSmall">
+		<style>
+			<backgroundSize value="fill"/>
+		</style>
+		<bind name="style" value="'width'; _width ? _width : '117px' "/>
+		<bind name="style" value="'height'; _height ? _height : '72px' "/>
+		<bind name="style" value="'alpha'; _alpha ? _alpha : '1' "/>
+		<bind name="style" value="'backgroundImage'; 'url:../nation_flags/small/flag_' + shipCountry + '.png'"/>
+	</block>
+	<block className="NationFlagsTiny">
+		<style>
+			<width value="27px"/>
+			<height value="27px"/>
+			<marginBottom value="-5px"/>
+			<marginTop value="-5px"/>
+			<backgroundSize value="fill"/>
+		</style>
+		<bind name="style" value="'backgroundImage'; 'url:../nation_flags/tiny/flag_' + shipCountry + '.png'"/>
+	</block>
+
+	<!-- naval_flag_item -->
+	<block className="NavalFlagItem">
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="firstEntityDH" value="'resourceEntity'; CC.accountResource"/>
+		<bind name="watchDH" value="'operationsAccountLocked';	['resourceEntity.accountResource.evOperationsLockChanged']; resourceEntity.accountResource.operationsLocked"/>
+		<bind name="primaryEntityDH" value="'navalFlagEntity'; CC.navalFlag; $value"/>
+		<bind name="watchDH" value="'navalFlag'; []; navalFlagEntity.navalFlag"/>
+		<bind name="primaryEntityDH" value="'shipEntity'; CC.ship; shipId; 'evUpdate'"/>
+		<bind name="watchDH" value="'currentNavalFlag';	['shipEntity.ship.evCurrentFlagChanged'];	shipEntity.ship.currentNavalFlag"/>
+		<bind name="watchDH" value="'isInFormation';		['shipEntity.ownShip.evUpdateLock'];		shipEntity.ownShip.isInFormation"/>
+		<bind name="watchDH" value="'isLocked';			['shipEntity.ownShip.evUpdateLock'];		shipEntity.ownShip.isLocked"/>
+		<bind name="watchDH" value="'isNeedRepair';		['shipEntity.ownShip.evUpdateDockState'];	shipEntity.ownShip.isNeedRepair"/>
+		<bind name="watchDH" value="'isNeedShell';		['shipEntity.ownShip.evUpdateDockState'];	shipEntity.ownShip.isNeedShell"/>
+		<bind name="watch" value="'isInstalled'; currentNavalFlag == $value"/>
+		<bind name="tooltip" value="'NavalFlagTooltip'; { _navalFlagName: $value }"/>
+		<bind name="watch" value="'clickAction'; isInFormation || isLocked || isNeedRepair || isNeedShell || isInstalled	? null
+																										: 'DockProxy.changeNavalFlag'"/>
+		<bind name="soundSet" value="clickAction ? 'button_flag' : ''"/>
+		<bind name="action" value="'click'; clickAction; { shipID: shipId, flagName: $value }"/>
+		<styleClass value="$ExteriorItemMargins"/>
+		<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; null; 'ct_'"/>
+		<bind name="var" value="{
+		ctRollOver: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 1,
+			redOffset: 30,
+			greenOffset: 30,
+			blueOffset: 30,
+			alphaOffset: 0
+		}
+	}"/>
+		<bind name="var" value="{ 
+		ctMouseDown: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 1,
+			redOffset: -30,
+			greenOffset: -30,
+			blueOffset: -30,
+			alphaOffset: 0
+		}
+	}"/>
+		<bind name="colorTransform" value="	clickAction &amp;&amp; ct_mouseDown &amp;&amp; !false	? ctMouseDown :
+							clickAction &amp;&amp; (ct_rollOver || false)	? ctRollOver
+																		: {}"/>
+		<block>
+			<bind name="visible" value="isInstalled"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<hitTest value="false"/>
+				<margin value="-2px"/>
+				<backgroundImage value="url:../service_kit/frames/one_pixel_frame.png"/>
+				<background9Slice value="[2]"/>
+			</style>
+			<bind name="colorTransform" value="{redOffset:0,greenOffset:-41,blueOffset:-153}"/>
+		</block>
+		<block>
+			<style>
+				<width value="60px"/>
+				<height value="60px"/>
+			</style>
+			<bind name="style" value="'backgroundImage'; 'url:../exteriors/ensigns/naval/' + navalFlagEntity.navalFlag.id + '.png'"/>
+		</block>
+	</block>
+	<block className="NavalFlagTooltip">
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="primaryEntityDH" value="'playerShipEntity'; CC.ownShip; shipId"/>
+		<bind name="watchDH" value="'isLocked';		['playerShipEntity.ownShip.evUpdateLock'];		playerShipEntity.ownShip.isLocked"/>
+		<bind name="watchDH" value="'isInFormation';	['playerShipEntity.ownShip.evUpdateLock'];		playerShipEntity.ownShip.isInFormation"/>
+		<bind name="watchDH" value="'isNeedRepair';	['playerShipEntity.ownShip.evUpdateDockState'];	playerShipEntity.ownShip.isNeedRepair"/>
+		<bind name="watchDH" value="'isNeedShell';	['playerShipEntity.ownShip.evUpdateDockState'];	playerShipEntity.ownShip.isNeedShell"/>
+		<bind name="primaryEntityDH" value="'shipEntity'; CC.ship; shipId; 'evUpdate'"/>
+		<bind name="watchDH" value="'installedNavalFlagName'; ['shipEntity.ship.evCurrentFlagChanged']; shipEntity.ship.currentNavalFlag"/>
+		<bind name="watch" value="'isInstalled'; installedNavalFlagName == _navalFlagName"/>
+		<bind name="primaryEntityDH" value="'navalFlagEntity'; CC.navalFlag; _navalFlagName"/>
+		<bind name="watchDH" value="'navalFlag'; ['navalFlagEntity.navalFlag.evCurrentFlagChanged']; navalFlagEntity.navalFlag"/>
+		<bind name="watch" value="'headerIconPath'; 'url:../exteriors/ensigns/naval/' + navalFlag.id + '.png'"/>
+		<bind name="watch" value="'unifiedStatus'; isInstalled ? SC.Ui_styles.UNIFIED_STATUS.CHECK : SC.Ui_styles.UNIFIED_STATUS.DEFAULT"/>
+		<bind name="watch" value="'mouseInstruction';	isInstalled 				? null :
+										isInFormation				? {	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+																		_text: 'IDS_SET_UNREADY_DIVISION_FIRST_TO_OPERATE_EXTERIORS'} :
+										isLocked					? {	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+																		_text: 'IDS_LEAVE_BATTLE_FIRST_TO_OPERATE_EXTERIORS'} :
+										isNeedRepair || isNeedShell	? {	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.ATTENTION,
+																		_text: 'IDS_SERVICE_SHIP_TO_OPERATE_EXTERIORS'}
+																	: {	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.MOUSE_LEFT,
+																		_text:	'IDS_MOUSE_INSTRUCTION_INSTALL_ENSIGN'} "/>
+		<style>
+			<hitTest value="false"/>
+			<width value="320px"/>
+		</style>
+		<styleClass value="$DefaultTooltipBehaviour"/>
+		<bind name="primaryEntityDH" value="'_blurEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['_blurEntity.preference.evValueChanged']; _blurEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'_contrastEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['_contrastEntity.preference.evValueChanged']; _contrastEntity.preference.value"/>
+		<bind name="firstEntityDH" value="'windowManagerEntity'; CC.windowManager"/>
+		<bind name="watchDH" value="'windowQueue'; 	['windowManagerEntity.windowManager.evChanged']; windowManagerEntity.windowManager.windowQueue"/>
+		<bind name="watch" value="'isInBattle'; isIn('Battle', windowQueue)"/>
+		<bind name="watch" value="'isHighContrast'; isInBattle || isUIContrastOptionEnabled || !(isBlurOptionEnabled)"/>
+		<bind name="dispatch" value="'Tooltip.selfOpened'; 'startShow'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+		<bind name="dispatch" value="'Tooltip.selfClosed'; 'startHide'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<margin value="-1px"/>
+			</style>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<bind name="instance" value="'TooltipSystemBlur'; !(isHighContrast) ? {} : null"/>
+			</block>
+			<block>
+				<bind name="visible" value="!(isHighContrast)"/>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundImage value="url:../service_kit/panel_backgrounds/hint_panel.png"/>
+					<background9Slice value="[3]"/>
+				</style>
+			</block>
+			<block>
+				<bind name="visible" value="isHighContrast"/>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundImage value="url:../service_kit/panel_backgrounds/hint_panel_high_contrast.png"/>
+					<background9Slice value="[3]"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+				<paddingRight value="16px"/>
+				<paddingLeft value="16px"/>
+				<paddingBottom value="12px"/>
+				<paddingTop value="12px"/>
+			</style>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemHeaderWithIconAndText';	{	_imageUrl: headerIconPath,
+																	_imageWidth: 60,
+																	_imageHeight: 60,
+																	_unifiedStatus: unifiedStatus,
+																	_headerText: ('IDS_' + navalFlag.nameIDS),
+																	_subheaderText: 'IDS_NAVAL_FLAG',
+																	_headerIconType: 0
+																}"/>
+			</block>
+			<block className="TooltipSystemHorizontalDivider">
+				<bind name="visible" value="isInstalled"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<marginTop value="12px"/>
+					<marginBottom value="12px"/>
+					<marginRight value="-16px"/>
+					<marginLeft value="-16px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemStatusLine'; isInstalled 	?	{	_unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.CHECK,
+																		_text: 'IDS_INSTALLED'}
+																:	null"/>
+			</block>
+			<block className="TooltipSystemHorizontalDivider">
+				<bind name="visible" value="true"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<marginTop value="12px"/>
+					<marginBottom value="12px"/>
+					<marginRight value="-16px"/>
+					<marginLeft value="-16px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemDescriptionText'; { _descriptionText: ('IDS_' + navalFlag.nameIDS + '_DESCRIPTION') }"/>
+			</block>
+			<block className="TooltipSystemHorizontalDivider">
+				<bind name="visible" value="mouseInstruction"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<marginTop value="12px"/>
+					<marginBottom value="12px"/>
+					<marginRight value="-16px"/>
+					<marginLeft value="-16px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TooltipSystemStatusLine'; mouseInstruction"/>
+			</block>
+		</block>
+	</block>
+
+	<!-- new_guiding_tips -->
+	<block className="NewGuidingTipPinAnimation">
+		<style>
+			<hitTest value="false"/>
+			<alpha value="0.8"/>
+			<marginLeft value="-29px"/>
+			<marginTop value="-29px"/>
+			<width value="58px"/>
+			<height value="58px"/>
+			<backgroundImage value="url:../animations/spine/guiding_tip_pin/guiding_tip_pin.skel"/>
+		</style>
+	</block>
+	<block className="NewContextGuidingTipPointerPanel_up">
+		<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'isUIContrastOptionEnabledEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['isUIContrastOptionEnabledEntity.preference.evValueChanged']; isUIContrastOptionEnabledEntity.preference.value"/>
+		<styleClass value="$FullsizeAbsolute"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<block className="context_guiding_tip_line_up" type="native">
+				<style>
+					<marginLeft value="1px"/>
+				</style>
+				<bind name="style" value="'width';	_arrowOffsetInPx	? _arrowOffsetInPx :
+									_noArrow			? '50%' 
+														: _firstPinOffset"/>
+			</block>
+			<block>
+				<bind name="visible" value="!_noPointer"/>
+				<block>
+					<style>
+						<position value="absolute"/>
+						<marginTop value="-19px"/>
+						<marginLeft value="11px"/>
+					</style>
+					<bind name="style" value="'top'; _pointerOffset"/>
+					<bind name="style" value="'left'; _oppositePointerOffset"/>
+					<bind name="instance" value="'NewGuidingTipPinAnimation'; {}"/>
+				</block>
+				<block className="context_guiding_tip_pointer_up" type="native">
+					<bind name="visible" value="!_noArrow"/>
+					<style>
+						<top value="-10px"/>
+					</style>
+				</block>
+			</block>
+			<block className="context_guiding_tip_line_up" type="native">
+				<style>
+					<marginRight value="1px"/>
+				</style>
+				<bind name="style" value="'width';	_arrowOffsetInPx	? '100%' :
+									_noArrow			? '50%' 
+														: _secondPinOffset"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+		<block className="context_guiding_tip_panel_up" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="style" value="'alpha'; !isBlurOptionEnabled || isUIContrastOptionEnabled ? 1.3 : 1"/>
+		</block>
+	</block>
+	<block className="NewContextGuidingTipPointerPanel_down">
+		<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'isUIContrastOptionEnabledEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['isUIContrastOptionEnabledEntity.preference.evValueChanged']; isUIContrastOptionEnabledEntity.preference.value"/>
+		<styleClass value="$FullsizeAbsolute"/>
+		<block className="context_guiding_tip_panel_down" type="native">
+			<styleClass value="$Fullsize"/>
+			<bind name="style" value="'alpha'; !isBlurOptionEnabled || isUIContrastOptionEnabled ? 1.3 : 1"/>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<style>
+				<marginTop value="-2px"/>
+			</style>
+			<block className="context_guiding_tip_line_down" type="native">
+				<style>
+					<marginLeft value="1px"/>
+				</style>
+				<bind name="style" value="'width';	_arrowOffsetInPx	? _arrowOffsetInPx :
+									_noArrow			? '50%' 
+														: _firstPinOffset"/>
+			</block>
+			<block>
+				<bind name="visible" value="!_noPointer"/>
+				<block>
+					<style>
+						<position value="absolute"/>
+						<marginTop value="22px"/>
+						<marginLeft value="11px"/>
+					</style>
+					<bind name="style" value="'top'; _pointerOffset"/>
+					<bind name="style" value="'left'; _oppositePointerOffset"/>
+					<bind name="instance" value="'NewGuidingTipPinAnimation'; {}"/>
+				</block>
+				<block className="context_guiding_tip_pointer_down" type="native">
+					<bind name="visible" value="!_noArrow"/>
+				</block>
+			</block>
+			<block className="context_guiding_tip_line_down" type="native">
+				<style>
+					<marginRight value="1px"/>
+				</style>
+				<bind name="style" value="'width';	_arrowOffsetInPx	? '100%' :
+									_noArrow			? '50%' 
+														: _secondPinOffset"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="NewContextGuidingTipPointerPanel_right">
+		<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'isUIContrastOptionEnabledEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['isUIContrastOptionEnabledEntity.preference.evValueChanged']; isUIContrastOptionEnabledEntity.preference.value"/>
+		<styleClass value="$FullsizeAbsolute"/>
+		<block className="context_guiding_tip_panel_right" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="style" value="'alpha'; !isBlurOptionEnabled || isUIContrastOptionEnabled ? 1.3 : 1"/>
+		</block>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<block className="context_guiding_tip_line_right" type="native">
+				<style>
+					<marginTop value="2px"/>
+					<right value="0px"/>
+				</style>
+				<bind name="style" value="'height';	_arrowOffsetInPx	? _arrowOffsetInPx :
+									_noArrow			? '50%' 
+														: _firstPinOffset"/>
+			</block>
+			<block>
+				<bind name="visible" value="!_noPointer"/>
+				<style>
+					<right value="-10px"/>
+				</style>
+				<block>
+					<style>
+						<position value="absolute"/>
+						<marginTop value="10px"/>
+						<marginLeft value="22px"/>
+					</style>
+					<bind name="style" value="'left'; _pointerOffset"/>
+					<bind name="style" value="'top'; _oppositePointerOffset"/>
+					<bind name="instance" value="'NewGuidingTipPinAnimation'; {}"/>
+				</block>
+				<block className="context_guiding_tip_pointer_right" type="native">
+					<bind name="visible" value="!_noArrow"/>
+				</block>
+			</block>
+			<block className="context_guiding_tip_line_right" type="native">
+				<style>
+					<marginBottom value="2px"/>
+					<right value="0px"/>
+				</style>
+				<bind name="style" value="'height';	_arrowOffsetInPx	? '100%' :
+									_noArrow			? '50%' 
+														: _secondPinOffset"/>
+			</block>
+		</block>
+	</block>
+	<block className="NewContextGuidingTipPointerPanel_left">
+		<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'isUIContrastOptionEnabledEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['isUIContrastOptionEnabledEntity.preference.evValueChanged']; isUIContrastOptionEnabledEntity.preference.value"/>
+		<styleClass value="$FullsizeAbsolute"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<block className="context_guiding_tip_line_left" type="native">
+				<style>
+					<marginTop value="2px"/>
+				</style>
+				<bind name="style" value="'height';	_arrowOffsetInPx	? _arrowOffsetInPx :
+									_noArrow			? '50%' 
+														: _firstPinOffset"/>
+			</block>
+			<block>
+				<bind name="visible" value="!_noPointer"/>
+				<block>
+					<style>
+						<position value="absolute"/>
+						<marginTop value="10px"/>
+						<marginLeft value="-21px"/>
+					</style>
+					<bind name="style" value="'left'; _pointerOffset"/>
+					<bind name="style" value="'top'; _oppositePointerOffset"/>
+					<bind name="instance" value="'NewGuidingTipPinAnimation'; {}"/>
+				</block>
+				<block className="context_guiding_tip_pointer_left" type="native">
+					<bind name="visible" value="!_noArrow"/>
+					<style>
+						<left value="-10px"/>
+					</style>
+				</block>
+			</block>
+			<block className="context_guiding_tip_line_left" type="native">
+				<style>
+					<marginBottom value="1px"/>
+				</style>
+				<bind name="style" value="'height';	_arrowOffsetInPx	? '100%' :
+									_noArrow			? '50%' 
+														: _secondPinOffset"/>
+			</block>
+		</block>
+		<block className="context_guiding_tip_panel_left" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="style" value="'alpha'; !isBlurOptionEnabled || isUIContrastOptionEnabled ? 1.3 : 1"/>
+		</block>
+	</block>
+	<block className="NewContextGuidingTip">
+		<bind name="var" value="{inPort: true}"/>
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<bind name="var" value="{isVisible: true}"/>
+		<bind name="visible" value="isVisible"/>
+		<bind name="catch" value="'evNewContextGuidingTipHide'; {isVisible: false}"/>
+		<bind name="catch" value="'evNewContextGuidingTipUnHide'; {isVisible: true}"/>
+		<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>

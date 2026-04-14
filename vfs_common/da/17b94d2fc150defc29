@@ -1,0 +1,49 @@
+, [], {level: field}),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.ATTENTION}
+												: { _text: isSupershipLevel	? tooltipPrefix + 'HINT_CHECKBOX_FILTER_LEVEL_SUPERSHIP'
+																			: subst(tooltipPrefix + 'HINT_CHECKBOX_FILTER_LEVEL', [], {level: field}),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.DEFAULT}"/>
+		<bind name="watch" value="'index'; Number(field) - 1"/>
+		<bind name="watch" value="'eventName'; SC.Common.SHIP_FILTER_STATISTICS.TIERS[index]"/>
+		<bind name="watch" value="'eventPostfix'; value ? '_unselected' : '_selected'"/>
+		<style>
+			<marginBottom value="8px"/>
+			<width value="80px"/>
+		</style>
+		<bind name="instance" value="'CheckBox'; {	_isChecked: value,
+											_label: toRomanShipLevels(field),
+											_disabled: _disabled,
+											_action: 'setFilterValue',
+											_directEvent: SC.Common.STATISTICS_EVENTS.LOG,
+											_statusTooltipData: statusTooltipData,
+											_actionParams: {type: _filterType, field: field, value: !value, ident: _ident},
+											_directEventParams: {event: eventName + '_' + eventPostfix}}"/>
+	</block>
+	<block className="ShipClassCheckBox">
+		<bind name="name" value="'CarouselCheckBox_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType] + '_' + field"/>
+		<bind name="watch" value="'tooltipPrefix'; _tooltipPrefix ? _tooltipPrefix : 'IDS_'"/>
+		<bind name="watch" value="'statusTooltipData'; _disabled	? {	_text: toUpperCase('IDS_HINT_CHECKBOX_FILTER_CLASS_NOT_AVAILABLE_' + field),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.ATTENTION}
+												: { _text: toUpperCase(tooltipPrefix + 'HINT_CHECKBOX_FILTER_CLASS_' + field),
+													_unifiedStatus:	 SC.Ui_styles.UNIFIED_STATUS.DEFAULT}"/>
+		<bind name="watch" value="'eventPostfix'; value ? '_unselected' : '_selected'"/>
+		<style>
+			<marginBottom value="8px"/>
+			<width value="80px"/>
+		</style>
+		<bind name="instance" value="'CheckBox'; {	_isChecked: value,
+											_customLabelInstance: 'CheckBoxShipTypeLabel',
+											_customLabelInstanceParams: {_shipType: field},
+											_statusTooltipData: statusTooltipData,
+											_disabled: _disabled,
+											_action: 'setFilterValue',
+											_directEvent: SC.Common.STATISTICS_EVENTS.LOG,
+											_statusTooltipData: statusTooltipData,
+											_actionParams: {type: _filterType, field: field, value: !value, ident: _ident},
+											_directEventParams: {event: SC.Common.SHIP_FILTER_STATISTICS[toUpperCase(field)] + '_' + eventPostfix}}"/>
+	</block>
+	<block className="ShipNationCheckBox">
+		<bind name="name" value="'CarouselCheckBox_' + SC.Common.SHIP_FILTER_TYPE.VALUE_TO_NAME[_filterType] + '_' + field"/>
+		<bind name="watch" value="'tooltipPrefix'; _tooltipPrefix ? _tooltipPrefix : 'IDS_'"/>
+		<bind name="watch" value="'statusTooltipData'; _disabled	? {	_text: toUpperCase('IDS_HINT_CHECKBOX_FILTER_NATION_NOT_AVAILABLE_' + field),
+													_unifiedSt

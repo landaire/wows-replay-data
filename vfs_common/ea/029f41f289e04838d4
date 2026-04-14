@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="HINT_TYPE" type="Integer">
+		<const name="OLD_STYLE"	value="0"/>
+		<const name="WASD" 		value="1"/>
+
+	</enum>
+
+	<enum name="HINT_PROGRESS" type="Integer">
+		<const name="NONE" value="0"/>
+		<const name="SHOWN" value="1"/>
+		<const name="HIDDEN" value="2"/>
+		<const name="CLOSED" value="3"/>
+		<const name="NO_SAVING" value="1000"/>
+	</enum>
+
+	<enum name = "USER_PREF_KEY" type="String">
+		<const name="HINTS_SEEN" 			value="seenTutorialHints"/>
+		<const name="HINTS_REPEAT_COUNT" 	value="tutorialHintsRepeatCount"/>
+		<const name="TAB_STATS_INDEX" 		value="tabStatsTabIndex"/>
+		<const name="EVENT_BATTLE_MODE" 	value="eventBattleModes"/>
+	</enum>
+	
+	<enum name="EVENTS" type="String">
+		<const name="DEFAULT"					value="EventBattle"				/>
+		<const name="NAVAL_BATTLE"				value="NavalBattle"				/>
+		<const name="PORTAL"					value="Portal"					/>
+		<const name="PORTAL_HARD"				value="Portal_Hard"				/>
+		<const name="PORTAL_ULTRAHARD"			value="Portal_Ultrahard"		/>
+		<const name="PORTAL_NIGHTMARE"			value="Portal_Nightmare"		/>
+		<const name="TEAM_BATTLE_ROYALE_2021"	value="TeamBattleRoyale2021"	/>
+		<const name="LEGENDARY_BATTLE"			value="Legendary_Battle"		/>
+		<const name="ESCORT"					value="PCVE024"					/>
+	</enum>
+
+	<enum name = "CONFIRMATION_WINDOW_TYPE" type="String">
+		<const name="CONVERT" value="convert"/>
+		<const name="EXCHANGE" value="exchange"/>
+	</enum>
+
+	<enum name = "SPLASH_SCREEN_TYPE" type="String">
+		<const name="RVR" value="rvr"/>
+		<const name="SHIPACES" value="shipaces"/>
+		<const name="EVENT" value="event"/>
+		<const name="OPERATION" value="operation"/>
+	</enum>
+</constants>

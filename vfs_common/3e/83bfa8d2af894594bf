@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="WINDOWS" type="String">
+		<const name="LOGIN"					value="Login" />
+		<const name="DOCK"					value="Dock" />
+		<const name="FAKE_DOCK" 			value="FakeDock" />
+		<const name="BATTLE_LOADING" 		value="LoadingBattle" />
+		<const name="FAKE_BATTLE_LOADING" 	value="FakeLoadingBattle" />
+		<const name="OPTIONS" 				value="Options" />
+	</enum>
+
+	<enum name="MODAL" type="String">
+		<const name="LOBBY"					value="LobbyMenu" />
+		<const name="GAME_MENU"				value="GameMenu" />
+		<const name="WAITING"				value="Waiting" />
+		<const name="HELP"					value="Help" />
+		<const name="LOGIN_QUEUE"			value="LoginQueue" />
+		<const name="CONVERT_EXP"			value="ModalWindowConvertExp" />
+		<const name="CREW_FILE"				value="CrewFile" />
+		<const name="CREW_HIRE"				value="ModalWindowHireCrew" />
+		<const name="CREW_ASSIGN"			value="ModalWindowAssignCrew" />
+		<const name="CREW_RETRAIN"			value="ModalWindowRetrainCrew" />
+		<const name="CREW_FAST_RETRAIN"		value="ModalWindowCrewFastTraining" />
+		<const name="CREW_PENALTY_COMPENSATION"	value="ModalWindowCrewPenaltyCompensation" />
+		<const name="TUTORIAL"				value="ModalWindowTutorial" />
+		<const name="EXTERIOR_PURCHASE"		value="ModalWindowBuyExterior" />
+		<const name="EXTERIOR_UNINSTALL"	value="ModalWindowUninstallExterior" />
+		<const name="BATTLE_TYPE_CHOOSER"	value="ModalWindowBattleTypeChooser" />
+		<const name="PVE_OPERATION_CHOOSER"	value="ModalWindowPVEOperationChooser" />
+		<const name="RESULT_SCREEN"			value="ResultsScreen" />
+		<const name="RESULT_SCREEN_PORT"	value="ExtendedSystemLogWindow" />
+		<const name="RESULT_SCREEN_PORT_UNAVAILABLE"	value="UnavailableExtendedSystemLogWindow" />
+		<const name="DOGTAGS"				value="ModalWindowDogTag" />
+
+	</enum>
+
+	<enum name="PANEL" type="String">
+		<const name="SHIP_CAROUSEL" 	value="ShipsCarouselPanel" />
+		<const name="CHAT_NOTIFICATION" value="ChatNotificationsPanel" />
+		<const name="SHIP_TTH_DOCK" 	value="ShipTTXPanelDock" />
+	</enum>
+
+	<enum name="BROWSER" type="String">
+		<const name="GUIDE_WINDOW"	value="GuideBrowserWindow" />
+	</enum>
+
+	<enum name="ROUTE" type="String">
+		<const name="PORT"						value="port"		/>
+		<const name="BARGE"						value="barge"		/>
+		<const name="SHIPYARD"					value="shipyard"	/>
+		<const name="BALANCER"					value="balancer"	/>
+		<const name="SHIP_PREVIEW"				value="ship_preview"/>
+		<const name="METASHOP"					value="metashop"	/>
+
+		<const name="MAIN"						value="main"		/>
+		<const name="MANAGEMENT"				value="management"	/>
+		<const name="EXTERIOR"					value="exterior"	/>
+		<const name="RESEARCH"					value="research"	/>
+		<const name="PROFILE"					value="profile"		/>
+		<const name="CLANS"						value="clans"		/>
+
+		<const name="CAMOUFLAGE"				value="camouflage"	/>
+		<const name="SIGNALS"					value="signals"		/>
+		<const name="ENSIGN"					value="ensign"		/>
+
+		<const name="LEVELING"					value="leveling"	/>
+		<const name="ACHIEVEMENTS"				value="achievements"	/>
+		<const name="RANKS"						value="ranks"		/>
+		<const name="COLLECTIONS"				value="collections"	/>
+		<const name="SUMMARY"					value="summary"		/>
+
+		<const name="PATCH"						value="patch"		/>
+		<const name="EMBLEM"					value="emblem"		/>
+		<const name="SYMBOL"					value="symbol"		/>
+		<const name="BACKGROUND"				value="background"	/>
+
+		<const name="GRAPHICS"					value="graphics"	/>
+		<const name="SOUND"						value="sound"		/>
+		<const name="CONTROLS"					value="controls"	/>
+
+		<range name="CAROUSEL_VISIBLE"			values="MAIN, MANAGEMENT, EXTERIOR"/>
+		<range name="TTX_VISIBLE"				values="MAIN, MANAGEMENT, EXTERIOR, RESEARCH"/>
+	</enum>
+
+</constants>

@@ -1,0 +1,24 @@
+tion">
+				<styleClass value="$Fullsize"/>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block type="text">
+					<styleClass value="$TextDefault"/>
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$ContextMenuListItemContent"/>
+					<bind name="text" value="'IDS_INVITE_IN_DIVISION'"/>
+				</block>
+				<bind name="action" value="'click'; 'inviteToDivision'; {playerId: entityAccount.accountSimple.dbId, playerName: pureName, inviteType: SC.Pre_battle.PRE_BATTLE_INVITE_TYPE.COMMON}"/>
+			</block>
+		</block>
+		<bind name="firstEntityDH" value="'chatEntity'; CC.chat"/>
+		<bind name="dataRefDH" value="'accountDbId'; 'entityAccount.accountSimple.dbId'"/>
+		<bind name="collectionDH" value="CC.contactsGroup; 'contactsGroup'"/>
+		<bind name="watchDH" value="'groupIdsOfAccount'; ['entityAccount.elementInGroups.evGroupsChanged']; entityAccount.elementInGroups.groupIds"/>
+		<bind name="watchDH" value="'isIgnored';['entityAccount.contact.evIsIgnoredChanged']; !!entityAccount.contact.isIgnored"/>
+		<bind name="watchDH" value="'canAddGroupEntitiesId'; ['entityAccount.elementInGroups.evCanAddGroupEntitiesChanged', 'chatEntity.chat.evRosterChanged']; (entityAccount.elementInGroups) ? entityAccount.elementInGroups.canAddGroupEntitiesId : chatEntity.chat.canAddGroupEntitiesId"/>
+		<bind name="watch" value="'isPrivateChannel'; channel.typeIdent == SC.Channel.CHANNEL_TYPE_IDENT_VALUE.PRIVATE"/>
+		<block>
+			<styleClass value="$ContextMenuListItem"/>
+			<bind name="visible" value="((groupIdsOfAccoun

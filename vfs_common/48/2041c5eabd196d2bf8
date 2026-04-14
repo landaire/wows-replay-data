@@ -1,0 +1,253 @@
+er: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 0.5,
+			redOffset: 0,
+			greenOffset: 0,
+			blueOffset: 0,
+			alphaOffset: 0
+		}
+	}"/>
+			<bind name="colorTransform" value="	isClickableSlot &amp;&amp; cts_mouseDown &amp;&amp; !!!modernizationInfotipIsVisible	? ctsMouseDown :
+							isClickableSlot &amp;&amp; (cts_rollOver || !!modernizationInfotipIsVisible)	? {}
+																		: ctsMouseUp"/>
+			<bind name="style" value="'backgroundImage'; !hasInstalledItem	? isOwned 	? 'url:../service_kit/frames/64px_empty_field.png' 
+																		: 'url:../service_kit/frames/64px_expand_field.png' 
+															: 'url:../service_kit/frames/64px_not_empty_field.png'"/>
+		</block>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="primaryEntityDH" value="'modFinalNewTip';		CC.newGuidingTip; SC.Context_guiding_tip.TIP_TYPE.MODERNIZATION_FINAL"/>
+			<bind name="primaryEntityDH" value="'modFinalRepeatNewTip';	CC.newGuidingTip; SC.Context_guiding_tip.TIP_TYPE.MODERNIZATION_FINAL_REPEAT"/>
+			<bind name="watchDH" value="'modFinalNewTipActive';		['modFinalNewTip.newGuidingTip.evChanged']; 		modFinalNewTip.newGuidingTip.isActive"/>
+			<bind name="watchDH" value="'modFinalRepeatNewTipActive';['modFinalRepeatNewTip.newGuidingTip.evChanged']; 	modFinalRepeatNewTip.newGuidingTip.isActive"/>
+			<bind name="watchDH" value="'modFinalNewTipTarget';		['modFinalNewTip.newGuidingTip.evChanged', 'modFinalNewTip.newGuidingTip.evTargetIDChanged']; 		
+							modFinalNewTip.newGuidingTip.targetID"/>
+			<bind name="watchDH" value="'modFinalRepeatNewTipTarget';['modFinalRepeatNewTip.newGuidingTip.evChanged', 'modFinalRepeatNewTip.newGuidingTip.evTargetIDChanged']; 	
+							modFinalRepeatNewTip.newGuidingTip.targetID"/>
+			<bind name="watch" value="'newTipID'; 	modFinalNewTipActive		? SC.Context_guiding_tip.TIP_TYPE.MODERNIZATION_FINAL : 
+									modFinalRepeatNewTipActive	? SC.Context_guiding_tip.TIP_TYPE.MODERNIZATION_FINAL_REPEAT
+																: SC.Context_guiding_tip.TIP_TYPE.NONE"/>
+			<bind name="watch" value="'newTargetID'; modFinalNewTipActive ? modFinalNewTipTarget : modFinalRepeatNewTipTarget"/>
+			<bind name="watch" value="'isNewTipVisible'; newTipID != SC.Context_guiding_tip.TIP_TYPE.NONE &amp;&amp; $index == newTargetID &amp;&amp; !modernizationInfotipIsVisible"/>
+			<bind name="instance" value="'NewGuidingTipHub'; isNewTipVisible	? {	_newTipId: newTipID,
+																_tipPositioning: 'right', 
+																_offset: 5,
+																_hasFinishButton: hasInstalledItem,
+																_noArrow: hasInstalledItem}
+															: null"/>
+		</block>
+		<block>
+			<bind name="visible" value="$index == 0"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<block>
+				<bind name="fade" value="modernizationsFeatureState == 'new'; 0.15; {alpha: 0, top: 10}; {alpha: 1, top: 0}; {alpha: 0, top: -10}; 2"/>
+				<style>
+					<position value="absolute"/>
+					<right value="-8px"/>
+					<top value="2px"/>
+				</style>
+				<bind name="instance" value="'MarkerNewAttention'; {}"/>
+			</block>
+		</block>
+	</block>
+	<block className="ModernizationItemView">
+		<style>
+			<width value="60px"/>
+			<height value="60px"/>
+		</style>
+		<block className="ModernizationItemView" type="ublock">
+			<bind name="build!" value="$ubPlayerProxy; {	_name: _name,
+										_amount: _amount ? _amount : 0,
+										_isRecommended: _isRecommended }"/>
+			<bind name="externalArgs" value="{	_name: _name,
+								_amount: _amount ? _amount : 0,
+								_isRecommended: _isRecommended }"/>
+		</block>
+	</block>
+	<block className="WeaponSlotUniqueFeatureItem">
+		<bind name="watch" value="'featureName'; toLowerCase(SC.Weapons.AMMO_UNIQUE_FEATURES.VALUE_TO_NAME[id])"/>
+		<bind name="watch" value="'iconPath'; 'url:../ammo/unique_features/indicators/' + featureName + '.png'"/>
+		<style>
+			<width value="60px"/>
+			<height value="60px"/>
+		</style>
+		<bind name="style" value="'backgroundImage'; iconPath"/>
+	</block>
+	<block className="WeaponSlotItem">
+		<styleClass value="$ManagementSlotItem"/>
+		<bind name="alpha" value="isOwned	? 1 : 0.5"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="primaryEntityDH" value="'ownShipEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'ownShipInfo'; ['ownShipEntity.ship.evUpdate', 'ownShipEntity.ship.evCurrentSkinChanged']; ownShipEntity.ship"/>
+		<bind name="watch" value="'isOwned'; !!ownShipEntity"/>
+		<bind name="dataRefDH" value="'weaponSlotEntity'; '$dataRef.ref'"/>
+		<bind name="watchDH" value="'slotIdent';			['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.id"/>
+		<bind name="watchDH" value="'weaponType';		['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.weaponType"/>
+		<bind name="watchDH" value="'commandId';			['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.commandId"/>
+		<bind name="watchDH" value="'iconPath';			['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.viewData.iconPath"/>
+		<bind name="watchDH" value="'secondaryIconPath';	['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.viewData.secondaryIconPath"/>
+		<bind name="watchDH" value="'isAutoUsage';		['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.isAutoUsage"/>
+		<bind name="watchDH" value="'hasSecondaryAmmo';	['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.hasSecondaryAmmo"/>
+		<bind name="watchDH" value="'isReserveAmmo';		['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.isReserveAmmo"/>
+		<bind name="watchDH" value="'uniqueFeatures';	['weaponSlotEntity.ammo.evUpdated']; weaponSlotEntity.ammo.viewData.uniqueFeatures"/>
+		<bind name="watch" value="'isSlotInteractive'; weaponType == SC.Ships.SHIP_WEAPON_TYPES.AIRPLANES"/>
+		<bind name="watch" value="'isSlotSelected'; _selectedAmmoId == weaponSlotEntity.id"/>
+		<bind name="watch" value="'isSlotActive'; isSlotInteractive &amp;&amp; !(isSlotSelected)"/>
+		<bind name="firstEntityDH" value="'fireModeSlotEntity'; CC.fireModeSlot"/>
+		<bind name="watchDH" value="'isActiveFireMode';		['fireModeSlotEntity.fireModeSlot.evUpdated']; fireModeSlotEntity.fireModeSlot.isActive"/>
+		<bind name="watchDH" value="'isBurstFire';			['fireModeSlotEntity.fireModeSlot.evUpdated']; fireModeSlotEntity.fireModeSlot.isBurstFire"/>
+		<bind name="watch" value="'isSecondaryActive'; hasSecondaryAmmo &amp;&amp; isActiveFireMode"/>
+		<bind name="watch" value="'isCanBurst'; isBurstFire &amp;&amp; weaponType == SC.Ships.SHIP_WEAPON_TYPES.ARTILLERY"/>
+		<bind name="primaryEntityDH" value="'limitedAmmoEntity'; CC.limitedAmmo; slotIdent"/>
+		<bind name="watchDH" value="'maxAmmoCount';			['limitedAmmoEntity.limitedAmmo.evChanged']; limitedAmmoEntity.limitedAmmo.maxAmmoCount"/>
+		<bind name="watch" value="'isLimitedCount'; maxAmmoCount != -1"/>
+		<bind name="watch" value="'isNewMarkerVisible'; !!weaponSlotEntity.newItem &amp;&amp; isActiveFireMode"/>
+		<block>
+			<style>
+				<width value="60px"/>
+				<height value="60px"/>
+			</style>
+			<styleClass value="$MiddleVHAbsolutely"/>
+			<bind name="alpha" value="isReserveAmmo ? 0.7 : 1"/>
+			<bind name="action" value="'rollOver'; isNewMarkerVisible ? 'makeSeen' : null; { entityId: weaponSlotEntity.id }"/>
+			<bind name="dispatch" value="'click'; isSlotActive ? 'evWeaponItemClicked' : null; {selectedAmmoId: weaponSlotEntity.id}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.UP;"/>
+			<bind name="soundSet" value="isSlotActive ? 'button_consumable' : ''"/>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundSize value="fill"/>
+				</style>
+				<bind name="style" value="'backgroundImage'; 'url:' + (isSecondaryActive ? secondaryIconPath : iconPath)"/>
+				<block>
+					<style>
+						<flow value="htile"/>
+						<width value="42px"/>
+					</style>
+					<bind name="repeat" value="uniqueFeatures; 'WeaponSlotUniqueFeatureItem'"/>
+				</block>
+				<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; null; 'ct_'"/>
+				<bind name="var" value="{
+		ctRollOver: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 1,
+			redOffset: 30,
+			greenOffset: 30,
+			blueOffset: 30,
+			alphaOffset: 0
+		}
+	}"/>
+				<bind name="var" value="{ 
+		ctMouseDown: {
+			redMultiplier: 1,
+			greenMultiplier: 1,
+			blueMultiplier: 1,
+			alphaMultiplier: 1,
+			redOffset: -30,
+			greenOffset: -30,
+			blueOffset: -30,
+			alphaOffset: 0
+		}
+	}"/>
+				<bind name="colorTransform" value="	isSlotActive &amp;&amp; ct_mouseDown &amp;&amp; !isSlotSelected	? ctMouseDown :
+							isSlotActive &amp;&amp; (ct_rollOver || isSlotSelected)	? ctRollOver
+																		: {}"/>
+				<bind name="tooltip" value="'WeaponTooltip'; {_ammoEntityId: weaponSlotEntity.id, _isSecondaryActive: isSecondaryActive, _isActiveBurst: isCanBurst &amp;&amp; isActiveFireMode}; TooltipBehaviour.simple"/>
+			</block>
+			<block>
+				<bind name="fade" value="isLimitedCount &amp;&amp; isSecondaryActive; 0.15; {alpha: 0}; {alpha: 1}; {alpha: 0}; 2"/>
+				<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 'IDS_NUMCONSUMABLES'}"/>
+				<style>
+					<top value="4px"/>
+					<right value="5px"/>
+					<position value="absolute"/>
+					<backgroundColor value="0x01000000"/>
+				</style>
+				<block type="text">
+					<style>
+						<textAlign value="right"/>
+						<alpha value="0.9"/>
+					</style>
+					<styleClass value="$TextDefaultBoldNM"/>
+					<bind name="text" value="maxAmmoCount ? maxAmmoCount : ''"/>
+				</block>
+			</block>
+			<block>
+				<bind name="visible" value="isCanBurst &amp;&amp; isActiveFireMode"/>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<backgroundSize value="fill"/>
+					<hitTest value="false"/>
+					<backgroundImage value="url:../ammo/unique_features/indicators/burst_fire.png"/>
+				</style>
+			</block>
+			<block>
+				<bind name="visible" value="isSlotActive"/>
+				<style>
+					<position value="absolute"/>
+					<bottom value="-36"/>
+					<width value="100%"/>
+					<height value="1px"/>
+					<backgroundImage value="url:../service_kit/tabs/tabs_selectable_bar.png"/>
+					<backgroundSize value="fill"/>
+				</style>
+				<bind name="style" value="'alpha'; 	ct_mouseDown 	? 0.6 :
+						 			ct_rollOver 	? 1
+						 							: 0.7"/>
+			</block>
+			<block>
+				<bind name="visible" value="commandId &gt;= 0"/>
+				<style>
+					<bottom value="-18px"/>
+					<left value="7px"/>
+					<width value="46px"/>
+					<height value="18px"/>
+					<align value="center"/>
+				</style>
+				<bind name="instance" value="'DockHotkeyIndicator'; !isAutoUsage ? {_commandId: commandId} : null"/>
+				<bind name="instance" value="'LabelAuto'; isAutoUsage ? {} : null"/>
+				<bind name="tooltip" value="'SimpleStatusTooltip'; isAutoUsage ? {_text: 'IDS_HINT_BATTLE_COMMAND_AUTO'} : null"/>
+			</block>
+		</block>
+		<block>
+			<style>
+				<position value="absolute"/>
+				<marginTop value="-1px"/>
+				<right value="-16px"/>
+			</style>
+			<block>
+				<bind name="fade" value="isNewMarkerVisible; 0.15; {alpha: 0, top: 10}; {alpha: 1, top: 0}; {alpha: 0, top: -10}; 2"/>
+				<bind name="instance" value="'MarkerNewAttention'; {}"/>
+			</block>
+		</block>
+	</block>
+	<block className="FireModeSlotItem">
+		<styleClass value="$ManagementSlotItem"/>
+		<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'"/>
+		<bind name="firstEntityDH" value="'dockEntity'; CC.dockDataMarker"/>
+		<bind name="watchDH" value="'shipId'; ['dockEntity.shipSelection.evShipUpdate']; dockEntity.shipSelection.currentShipId"/>
+		<bind name="watchDH" value="'shipIdForModuleInset'; ['dockEntity.shipSelection.evShipViewUpdate']; dockEntity.shipSelection.currentShipIdForModuleInset"/>
+		<bind name="watchDH" value="'shipIdForResearch'; ['dockEntity.shipSelection.evShipUpdate'] ; dockEntity.shipSelection.currentShipIdForResearch"/>
+		<bind name="primaryEntityDH" value="'ownShipEntity'; CC.ownShip; shipIdForModuleInset"/>
+		<bind name="watchDH" value="'ownShipInfo'; ['ownShipEntity.ship.evUpdate', 'ownShipEntity.ship.evCurrentSkinChanged']; ownShipEntity.ship"/>
+		<bind name="watch" value="'isOwned'; !!ownShipEntity"/>
+		<bind name="dataRefDH" value="'fireModeSlotEntity'; '$dataRef.ref'"/>
+		<bind name="watchDH" value="'commandId';				['fireModeSlotEntity.fireModeSlot.evUpdated'];	fireModeSlotEntity.fireModeSlot.commandId"/>
+		<bind name="watchDH" value="'isActiveFireMode';		['fireModeSlotEntity.fireModeSlot.evUpdated'];	fireModeSlotEntity.fireModeSlot.isActive"/>
+		<bind name="watchDH" value="'iconPath';				['fireModeSlotEntity.fireModeSlot.evUpdated'];	'url:' + fireModeSlotEntity.fireModeSlot.iconPath"/>
+		<bind name="watchDH" value="'isBurstFire';			['fireModeSlotEntity.fireModeSlot.evUpdated'];	fireModeSlotEntity.fireModeSlot.isBurstFire"/>
+		<bind name="watch" value="'strokeIconName'; isActiveFireMode ? 'button_selected_slot.png' : 'button_full_slot_up.png'"/>
+		<bind name="action" value="'click'; 'changeFireModeState'; {}"/>
+		<bind name="soundSet" value="'button_consumable'"/>
+		<bind name="primaryEntityDH" value="'unseenLimitedAmmo'; CC.newContent; SC.Common.CONTENT_CATEGORY.LIMITED_AMMO"/>
+		<bind name="watchDH" value="'unseenLimitedAmmoCount'; ['unseenLimitedAmmo.newContent.evCountChanged']; unseenLimitedAmmo.newContent.count"/>
+		<bind name="watch" value="'isNewMarkerVisible'; 	unseenLimitedAmmoCount"/>
+		<bind name="alpha" value="isOwned	? 1 : 0.5"/>
+		<style>
+			<align value="center"/>
+		</style

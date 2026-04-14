@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="CHANNEL_TYPE_IDENT_VALUE">
+		<const name="UNKNOWN" 		value='unknown'/>
+		<const name="GROUP_OPEN" 	value='group_open'/>
+		<const name="GROUP_CLOSED" 	value='group_closed'/>
+		<const name="PREBATTLE" 	value='division'/>
+		<const name="COMMON" 		value='common'/>
+		<const name="PRIVATE" 		value='private'/>
+		<const name="CLAN" 			value='clan'/>
+		<const name="TRAINING_ROOM" value='training_room'/>
+	</enum>
+</constants>

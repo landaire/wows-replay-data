@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SHIP_GROUPS">
+		<const name="START"						value="start"						type="String"/>
+		<const name="UPGRADEABLE"				value="upgradeable"					type="String"/>
+		<const name="UPGRADEABLE_EXCL"			value="upgradeableExclusive"		type="String"/>
+		<const name="PREMIUM"					value="premium"						type="String"/>
+		<const name="SPECIAL"					value="special"						type="String"/>
+		<const name="SPECIAL_UNSELLABLE"		value="specialUnsellable"			type="String"/>
+		<const name="DEMO_WITHOUT_STATS"		value="demoWithoutStats"			type="String"/>
+		<const name="EVENT"						value="event"						type="String"/>
+		<const name="UNAVAILABLE"				value="unavailable"					type="String"/>
+		<const name="PRESERVED"					value="preserved"					type="String"/>
+		<const name="DISABLED"					value="disabled"					type="String"/>
+		<const name="PECULIAR"					value="peculiar"					type="String"/>
+		<const name="CLAN"						value="clan"						type="String"/>
+		<const name="ULTIMATE"					value="ultimate"					type="String"/>
+		<const name="EARLY_ACCESS"				value="earlyAccess"					type="String"/>
+		<const name="UPGRADEABLE_ULT"			value="upgradeableUltimate"			type="String"/>
+	</enum>
+	
+	<enum name="BRANCH">
+		<const name="US_CV"			type="Integer"/>
+		<const name="US_BB"			type="Integer"/>
+		<const name="US_BB_NEW"		type="Integer"/>
+		<const name="US_CA_EARLY"		type="Integer"/>
+		<const name="US_CA_LIGHT"		type="Integer"/>
+		<const name="US_CA_HEAVY"		type="Integer"/>
+		<const name="US_DD_ARTILLERY"	type="Integer"/>
+		<const name="US_DD_TORPEDO"	type="Integer"/>
+		
+		<const name="JP_CV"			type="Integer"/>
+		<const name="JP_BB"			type="Integer"/>
+		<const name="JP_CA"			type="Integer"/>
+		<const name="JP_DD_MAIN"		type="Integer"/>
+		<const name="JP_DD_ART"		type="Integer"/>
+		<const name="JP_DD_TORP"		type="Integer"/>
+		
+		<const name="UK_CV"			type="Integer"/>
+		<const name="UK_BB"			type="Integer"/>
+		<const name="UK_CA_LIGHT"	type="Integer"/>
+		<const name="UK_CA_HEAVY"		type="Integer"/>
+		<const name="UK_DD"			type="Integer"/>
+		
+		<const name="ASIA_DD"			type="Integer"/>
+		
+		<const name="GER_BB"			type="Integer"/>
+		<const name="GER_CA"			type="Integer"/>
+		<const name="GER_DD_1"		type="Integer"/>
+		<const name="GER_DD_2"		type="Integer"/>
+		
+		<const name="ITA_CA"			type="Integer"/>
+		
+		<const name="RU_CA"			type="Integer"/>
+		<const name="RU_BB"			type="Integer"/>
+		<const name="RU_DD_1"			type="Integer"/>
+		<const name="RU_DD_ART"		type="Integer"/>
+		<const name="RU_DD_SUPPORT"	type="Integer"/>
+		
+		<const name="FR_BB"			type="Integer"/>
+		<const name="FR_CA"			type="Integer"/>
+		<const name="FR_DD_1"			type="Integer"/>
+		<const name="FR_DD_2"			type="Integer"/>
+
+		<const name="EU_DD"			type="Integer"/>
+
+	</enum>
+
+	<enum name="QUALITY">
+		<const name="GOOD"		type="Integer"/>
+		<const name="BAD"		type="Integer"/>
+		<const name="NEUTRAL"	type="Integer"/>
+	</enum>
+	
+	<enum name="FEAT_CATEGORY">
+		<const name="BOMBERS" 				value="bombers"				type="String"/>
+		<const name="VISION" 				value="vision"				type="String"/>
+		<const name="MAIN_CALIBER" 			value="main_caliber"		type="String"/>
+		<const name="MOVEMENT" 				value="movement"			type="String"/>
+		<const name="DURABILITY" 			value="durability"			type="String"/>
+		<const name="AIRDEFENSE" 			value="airdefense"			type="String"/>
+		<const name="SECONDARY_CALIBER" 	value="secondary_caliber"	type="String"/>
+		<const name="CONSUMABLES" 			value="consumables"			type="String"/>
+		<const name="T_BOMBERS" 			value="t_bombers"			type="String"/>
+		<const name="TORPEDOES" 			value="torpedoes"			type="String"/>
+		<const name="ATTACK_AIRCRAFT" 		value="attack_aircraft"		type="String"/>
+	</enum>
+</constants>
+
+
+
+
+
+
+
+
+

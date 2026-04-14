@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<root>
+    <Properties>
+        <globalWeatherStateList>
+            <Type>ARRAY
+                <of>GLOBAL_WEATHER_STATE</of>
+            </Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </globalWeatherStateList>
+    </Properties>
+    <ClientMethods>
+        <startTransition></startTransition>
+        <prepareForTransition>
+            <Arg>GAMEPARAMS_ID</Arg>
+        </prepareForTransition>
+        <notification>
+            <Arg>FLOAT</Arg>
+            <Arg>GAMEPARAMS_ID</Arg>
+        </notification>
+        <syncStartTransition>
+            <Arg>FLOAT</Arg>
+        </syncStartTransition>
+    </ClientMethods>
+    <CellMethods>
+        <onClientEnterWorld>
+            <Exposed></Exposed>
+        </onClientEnterWorld>
+    </CellMethods>
+    <BaseMethods></BaseMethods>
+</root>
+

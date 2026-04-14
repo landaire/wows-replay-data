@@ -1,0 +1,57 @@
+<root>
+	<Properties>
+	</Properties>
+	
+	<TempProperties>
+		<_events/>
+		<_collectedVision/>
+		<_visibilityTimeout/>
+		<isUpdateVision/>
+		<_visibilityUpdateVaryId/>
+		<visibilityFlagsByEntities/>
+		<_visionFlag/>
+		<_spotChecker/>
+		<_teamVisionCoefficient/>
+
+		<visibilityFactor/>
+		<visibilityFactorByPlane/>
+		<visibilityFactorInSmoke/>
+
+		<visibilityByShip/>
+		<visibilityByPlane/>
+		<visibilityInSmoke/>
+		<blockerForce/>
+		
+		<directVision/>
+		<planesVision/>
+		<visibility/>
+		<visibilityFlags/>
+		<permanentlyVisibleByTeammates/>
+		<permanentlyVisibleByEnemies/>
+
+		<checkShootTime/>
+		<visibilityCounter/>
+		<visibilityATBACounter/>
+		<checkShootATBATime/>
+		<timeLastShoot/>
+		<timeLastShootIFHE/>
+		<timeLastShootATBA/>
+		<timeLastShootInSmoke/>
+
+		<previousTickSpotters/>
+		<currentSpotters/>
+		<closestSpotters/>
+	</TempProperties>
+	
+	<CellMethods>
+		<isInvisible>
+		</isInvisible>
+		<onVisibilityChanged>
+			<Arg>	ENTITY_ID	</Arg>
+			<Arg>	UINT8		</Arg>
+		</onVisibilityChanged>
+		<removeFromVision>
+			<Arg>	ENTITY_ID	</Arg>
+		</removeFromVision>
+	</CellMethods>
+</root>

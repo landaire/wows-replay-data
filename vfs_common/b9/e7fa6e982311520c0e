@@ -1,0 +1,103 @@
+earchingShipByName: false, inputStr: ''}"/>
+			<bind name="action" value="'TextInputWithCancel.shipSearchCancelled'; 'setSearchString'; {value: ''}"/>
+			<bind name="dispatch" value="'Tooltip.selfOpened'; searchStr ? 'searchShipButtonClicked' : 'closeSearchField'"/>
+			<bind name="dispatch" value="'Tooltip.selfClosed'; searchStr ? null : 'closeSearchField'"/>
+			<block>
+				<style>
+					<height value="34px"/>
+					<width value="100%"/>
+				</style>
+				<block type="text">
+					<style>
+						<marginLeft value="12px"/>
+						<marginTop value="4px"/>
+					</style>
+					<styleClass value="$TextHeaderBold"/>
+					<bind name="class" value="'$FontColorBlueish'"/>
+					<default_text value="IDS_FILTERS"/>
+				</block>
+				<block>
+					<style>
+						<marginTop value="2px"/>
+						<marginLeft value="6px"/>
+					</style>
+					<bind name="instance" value="'ResetAllFilters'; isResetButtonVisible ? {} : null"/>
+				</block>
+				<block>
+					<bind name="visible" value="!isSearchingShipByName"/>
+					<bind name="name" value="'ButtonSearchShip'"/>
+					<bind name="tooltip" value="'SimpleStatusTooltip'; { _text: 'IDS_HINT_SEARCH_SHIP_BY_NAME'}"/>
+					<style>
+						<right value="12px"/>
+						<marginTop value="7px"/>
+						<position value="absolute"/>
+					</style>
+					<bind name="instance" value="'ImageButton'; {_width: '18px',
+												_height: '18px',
+												_enabled: true,
+												_dispatch: 'searchShipButtonClicked',
+												_backgroundImage: 'url:../service_kit/buttons/context/search.png'}"/>
+				</block>
+				<block>
+					<bind name="visible" value="isSearchingShipByName"/>
+					<style>
+						<width value="284px"/>
+						<position value="absolute"/>
+						<top value="17px"/>
+						<right value="0"/>
+					</style>
+					<bind name="instance" value="'TextInputWithCancelCustom'; isSearchingShipByName	?	{	onEnterEvent: 'startShipSearch',
+																							onCancelEvent: 'shipSearchCancelled',
+																							onInputStrChangedEvent: 'inputStrChanged',
+																							updateInitialValueEvent: 'initialValueChanged',
+																							_onEnterTooltipText: 'IDS_HINT_FIND',
+																							_closeButtonTooltipText: 'IDS_HINT_RESET_FILTER',
+																							_initialInputValue: searchStr,
+																							_maxChars: 20,
+																							_tfWidth: '250px'}
+																				: null"/>
+					<bind name="dispatch" value="'Tooltip.selfOpened'; 'TextInputWithCancel.initialValueChanged'; null; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN; 0.1"/>
+					<bind name="var" value="{searchDelay: 0.2}"/>
+					<bind name="catch" value="'TextInputWithCancel.inputStrChanged'"/>
+					<bind name="dispatchDelayReset" value="'TextInputWithCancel.inputStrChanged'; 'strForSearchChanged'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.NONE; searchDelay"/>
+					<bind name="action" value="'strForSearchChanged'; 'setSearchString'; {value: inputStr}"/>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+			<block className="HorizontalDividerTwoPx">
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<block className="inner_panel" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+				</block>
+				<block>
+					<bind name="firstEntityDH" value="'panelEntity'; CC.filterPanel"/>
+					<bind name="instance" value="'FilterBlock'; {_title: 'IDS_LEVEL',	_filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_LEVEL,		needDivider: false,	_panelEntityId: panelEntity.id, _ident: 0, _inCarousel: true}"/>
+					<bind name="instance" value="'FilterBlock'; {_title: 'IDS_CLASS',	_filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_TYPE, 		needDivider: true,	_panelEntityId: panelEntity.id, _ident: 0, _inCarousel: true}"/>
+					<bind name="instance" value="'FilterBlock'; {_title: 'IDS_NATION',	_filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_NATION,	needDivider: true,	_panelEntityId: panelEntity.id, _ident: 0, _inCarousel: true}"/>
+					<bind name="instance" value="'FilterBlock'; {_title: 'IDS_SPECIAL',	_filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_SPECIAL,	needDivider: true,	_panelEntityId: panelEntity.id, _ident: 0, _inCarousel: true}"/>
+					<bind name="instance" value="'FilterBlock'; {_title: 'IDS_RARITY',	_filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_RARITY,	needDivider: true,	_panelEntityId: panelEntity.id, _ident: 0, _inCarousel: true}"/>
+					<style>
+						<flow value="horizontal"/>
+					</style>
+				</block>
+			</block>
+			<block className="HorizontalDividerTwoPx">
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<w

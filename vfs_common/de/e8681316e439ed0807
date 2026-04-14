@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="HINT_TYPE" type="Integer">
+		<const name="OLD_STYLE"	value="0"/>
+		<const name="WASD" 		value="1"/>
+
+	</enum>
+
+	<enum name="HINT_PROGRESS" type="Integer">
+		<const name="NONE" value="0"/>
+		<const name="SHOWN" value="1"/>
+		<const name="HIDDEN" value="2"/>
+		<const name="CLOSED" value="3"/>
+		<const name="NO_SAVING" value="1000"/>
+	</enum>
+
+	<enum name = "USER_PREF_KEY" type="String">
+		<const name="HINTS_SEEN" 			value="seenTutorialHints"/>
+		<const name="HINTS_REPEAT_COUNT" 	value="tutorialHintsRepeatCount"/>
+		<const name="TAB_STATS_INDEX" 		value="tabStatsTabIndex"/>
+		<const name="EVENT_BATTLE_MODE" 	value="eventBattleModes"/>
+	</enum>
+	
+	<enum name="EVENTS" type="String">
+		<const name="DEFAULT"					value="EventBattle"				/>
+		<const name="NAVAL_BATTLE"				value="NavalBattle"				/>
+		<const name="PORTAL"					value="Portal"					/>
+		<const name="PORTAL_HARD"				value="Portal_Hard"				/>
+		<const name="PORTAL_ULTRAHARD"			value="Portal_Ultrahard"		/>
+		<const name="PORTAL_NIGHTMARE"			value="Portal_Nightmare"		/>
+		<const name="TEAM_BATTLE_ROYALE_2021"	value="TeamBattleRoyale2021"	/>
+		<const name="LEGENDARY_BATTLE"			value="Legendary_Battle"		/>
+		<const name="ESCORT"					value="PCVE024"					/>
+	</enum>
+
+	<enum name = "CONFIRMATION_WINDOW_TYPE" type="String">
+		<const name="CONVERT" value="convert"/>
+		<const name="EXCHANGE" value="exchange"/>
+	</enum>
+
+	<enum name = "SPLASH_SCREEN_TYPE" type="String">
+		<const name="RVR" value="rvr"/>
+		<const name="SHIPACES" value="shipaces"/>
+		<const name="EVENT" value="event"/>
+		<const name="OPERATION" value="operation"/>
+	</enum>
+
+	<enum name = "SNOWFLAKES_BANNER_STATE" type="Integer">
+		<const name="DISABLED"	value="0"/>
+		<const name="ACTIVE"	value="1"/>
+		<const name="INACTIVE"	value="2"/>
+	</enum>
+
+	<enum name="SHIP_PARAM_VALUE_MOCKUP" type="Integer">
+		<const name="DEFAULT"			value="0"/>		<!-- значение ед1[/ значение ед2[/ значение ед3]] ед -->
+		<const name="LIST_AMMO"			value="1"/>		<!-- список элементов :  значение x значение -->
+		<const name="DIFF_COLOR"		value="2"/>		<!-- жизнь -->
+		<const name="PLANES"			value="3"/>		<!-- количество самолетов по типам -->
+		<const name="GUNS_AND_TUBES"	value="4"/>		<!-- x значение (значение) -->
+		<const name="RANGE"				value="5"/>		<!-- значение - значение ед -->
+		<const name="LIST_VALUES"		value="6"/>		<!-- значение ед / значение ед / значение ед / ... -->
+		<const name="GUN_INFO"			value="7"/>		<!-- инвертированый -->
+		<const name="BIG_RANGE"			value="8"/>		<!-- 4x2 120mm -->
+		<const name="SHIP_TYPE"			value="9"/>		<!-- 4—2 km -->
+	</enum>
+
+	<enum name="SHIP_PARAM_TITLE_MOCKUP" type="Integer">
+		<const name="DEFAULT"			value="0"/>		<!-- ids someValue -->
+		<const name="VERTICAL"			value="1"/>		<!-- vertical -->
+		<const name="SUBTITLE"			value="2"/>		<!-- ids someValue as subtitle -->
+		<const name="NAME_IDS"			value="3"/>		<!-- ids from ShipParamBuilder without value -->
+
+		<range name="NEED_EXTRA_SPACE"	values="SUBTITLE, NAME_IDS"/>
+	</enum>
+
+	<enum name="UB_FOCUS" type="String">
+		<const name="FOCUS_SCOPE_FIELD_KEY" value="$isFocused"/>
+	</enum>
+
+	<enum name="CREW_FILTERING_NATION_TYPE" type="Integer">
+		<const name="CURRENT"				value="0"/>
+		<const name="ALL_NATION"			value="1"/>
+	</enum>
+
+	<enum name="CREW_SORTING_ALL_NATION_TYPE" type="Integer">
+		<const name="NATION"				value="0"/>
+		<const name="LEVEL"					value="1"/>
+	</enum>
+</constants>

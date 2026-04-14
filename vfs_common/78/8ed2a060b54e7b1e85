@@ -1,0 +1,56 @@
+ue="100%"/>
+				<height value="2px"/>
+				<backgroundSize value="fill"/>
+				<marginTop value="1px"/>
+				<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+			</style>
+		</block>
+		<bind name="watch" value="'categoryArray'; [{category: 'event'}, {category: 'historical'}, {category: 'author'}, {category: 'ship_destruction'}]"/>
+		<bind name="repeat" value="categoryArray; 'PeculiarityFiltersCategory'; {}"/>
+	</block>
+	<block className="PeculiarityFiltersCategory">
+		<bind name="tooltip" value="'PeculiarityFiltersCategorySubMenu'; {_category: category}; TooltipBehaviour.contextSubmenuNoClickHide"/>
+		<style>
+			<width value="100%"/>
+		</style>
+		<block className="dock_submenu_item" type="native">
+			<styleClass value="$ContextMenuListItem"/>
+			<block>
+				<style>
+					<hitTest value="false"/>
+				</style>
+				<styleClass value="$InfoBlockIndent"/>
+				<styleClass value="$MiddleVAligned"/>
+				<block type="text">
+					<styleClass value="$TextDefaultNM"/>
+					<bind name="text" value="'IDS_SHIP_FILTER_' + toUpperCase(category)"/>
+				</block>
+			</block>
+			<block className="button_expand_h" type="native">
+				<style>
+					<position value="absolute"/>
+					<right value="12px"/>
+					<hitTest value="false"/>
+				</style>
+				<styleClass value="$MiddleVAligned"/>
+			</block>
+		</block>
+	</block>
+	<block className="PeculiarityFiltersCategorySubMenu">
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<styleClass value="$LeftSubMenuBehaviour"/>
+		<style>
+			<width value="300px"/>
+		</style>
+		<bind name="primaryEntityDH" value="'_blurEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['_blurEntity.preference.evValueChanged']; _blurEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'_contrastEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['_contrastEntity.preference.evValueChanged']; _contrastEntity.preference.value"/>
+		<bind name="firstEntityDH" value="'windowManagerEntity'; CC.windowManager"/>
+		<bind name="watchDH" value="'windowQueue'; 	['windowManagerEntity.windowManager.evChanged']; windowManagerEntity.windowManager.windowQueue"/>
+		<bind name="watch" value="'isInBattle'; isIn('Battle', windowQueue)"/>
+		<bind name="watch" value="'isHighContrast'; isInBattle || isUIContrastOptionEnabled || !(isBlurOptionEnabled)"/>
+		<bind name="watch" value="'isBlurEnabled'; isBlurOption

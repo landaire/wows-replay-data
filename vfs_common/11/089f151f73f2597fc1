@@ -1,0 +1,88 @@
+"/>
+					<marginTop value="5px"/>
+				</style>
+				<block>
+					<style>
+						<width value="100%"/>
+						<marginLeft value="14px"/>
+					</style>
+					<block>
+						<style>
+							<marginTop value="7px"/>
+						</style>
+						<bind name="instance" value="'CheckBox'; {	_isChecked: _isSmallCarouselView,
+													_label: 'IDS_SMALL_CAROUSEL_VIEW',
+													_name: 'SmallCarouselView',
+													_dispatch: 'carouselViewChanged',
+													_statusTooltipData: _isSmallCarouselView	? {	_text: 'IDS_HINT_CHECKBOX_DISABLE_SMALL_VIEW'}
+																								: { _text: 'IDS_HINT_CHECKBOX_ENABLE_SMALL_VIEW'}}"/>
+					</block>
+					<block>
+						<style>
+							<marginLeft value="8px"/>
+						</style>
+						<bind name="style" value="'hitTest'; _isSmallCarouselView == true ? true : false"/>
+						<bind name="transition" value="_isSmallCarouselView == true; 0.1; {alpha: 0}; {alpha: 1}"/>
+						<bind name="instance" value="'CarouselRowsChooser'; {}"/>
+					</block>
+					<block>
+						<style>
+							<right value="14px"/>
+							<position value="absolute"/>
+						</style>
+						<block type="text">
+							<style>
+								<marginTop value="4px"/>
+							</style>
+							<styleClass value="$TextHeaderBold"/>
+							<bind name="class" value="'$FontColorBlueish'"/>
+							<default_text value="IDS_SORTING_TYPE_COLON"/>
+						</block>
+						<block>
+							<style>
+								<marginLeft value="2px"/>
+								<marginTop value="3px"/>
+							</style>
+							<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+							<bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+							<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+							<bind name="watchDH" value="'_direction'; ['panelEntity.filterPanel.evUpdate']; panelEntity.filterPanel.reverse"/>
+							<bind name="watchDH" value="'_curItemIndex'; ['panelEntity.filterPanel.evUpdate']; panelEntity.filterPanel.sortFieldIndex"/>
+							<bind name="watchDH" value="'shipSorter'; ['panelEntity.filterPanel.evUpdate']; panelEntity.filterPanel.sortFields"/>
+							<bind name="catch" value="'ItemChooser.shipsSortSelected'; null; 'shipSortChanged'"/>
+							<bind name="instance" value="'ItemChooser'; {	_items: [shipSorter[0].ids, shipSorter[1].ids, shipSorter[2].ids, shipSorter[3].ids], curIndex: _curItemIndex, curDirection: _direction,
+															_choosedItemRenderer: 'BluishTextChoosedItemRenderer', _listItemRenderer: 'TextListItemRenderer',
+															onItemSelectedEvent: 'shipsSortSelected', _itemChooserTooltipText: 'IDS_HINT_SHIP_CAROUSEL_SORT', _name: 'CarouselOrdering'}"/>
+							<bind name="action" value="'shipSortChanged'; 'setSortOrder'; {sortFieldIndex: _curItemIndex, reverse: _direction}"/>
+						</block>
+						<style>
+							<flow value="horizontal"/>
+						</style>
+					</block>
+					<style>
+						<flow value="horizontal"/>
+					</style>
+				</block>
+				<block>
+					<style>
+						<marginLeft value="14px"/>
+						<marginBottom value="12px"/>
+					</style>
+					<bind name="instance" value="'CheckBox'; {	_isChecked: _isFilteredShipsHidden,
+												_label: 'IDS_HIDE_FILTERED_SHIPS',
+												_name: 'HideFilteredShips',
+												_dispatch: 'carouselHideFilteredChanged',
+												_action: 'hideFilteredChanged',
+												_actionParams: {newValue: !_isFilteredShipsHidden},
+												_statusTooltipData: _isFilteredShipsHidden	? {	_text: 'IDS_TURN_OFF_HIDE_FILTERED_SHIPS'}
+																							: { _text: 'IDS_TURN_ON_HIDE_FILTERED_SHIPS'}}"/>
+				</block>
+			</block>
+		</block>
+	</block>
+	<block className="TextInputWithCancelCustom">
+		<styleClass value="$Fullsize"/>
+		<bind name="var" value="{textInput: ''}"/>
+		<bind name="catch" value="'removedFromStage'; {textInput: ''}"/>
+		<bind name="dispatch" value="'TextInputWithCancel.'+ updateInitialValueEvent; 'setDefaultValue'; null; SC.Common.UBSCOPE_EVENT_DIRECTIONS.NONE"/>
+		<b

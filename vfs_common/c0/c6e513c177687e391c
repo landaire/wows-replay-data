@@ -1,0 +1,63 @@
+lock>
+					<bind name="visible" value="!(restrict.down || restrict.right)"/>
+					<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'; 'HANGAR_DRAGGING_DOWN_RIGHT'"/>
+					<style>
+						<position value="absolute"/>
+						<width value="12px"/>
+						<height value="12px"/>
+						<bottom value="-5px"/>
+						<right value="-5px"/>
+						<backgroundColor value="0x0100ff00"/>
+					</style>
+					<params>
+						<param name="name" value="grip_bottom_right"/>
+					</params>
+				</block>
+			</block>
+		</block>
+		<bind name="resize" value="'grip_top';			'up'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+		<bind name="resize" value="'grip_bottom';		'down'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+		<bind name="resize" value="'grip_left';			'left'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+		<bind name="resize" value="'grip_right';			'right'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+		<bind name="resize" value="'grip_top_left';		'up,left'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+		<bind name="resize" value="'grip_top_right';		'up,right'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+		<bind name="resize" value="'grip_bottom_left';	'down,left'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+		<bind name="resize" value="'grip_bottom_right';	'down,right'; 'chatBoxWidth'; 'chatBoxHeight'; subKey"/>
+	</block>
+	<block className="ParticipantsPanel">
+		<bind name="entityDH" value="'channelEntity'; _channelEntityId"/>
+		<bind name="watchDH" value="'channelTypeIdent'; ['channelEntity.channel.evTypeChanged']; channelEntity.channel.typeIdent"/>
+		<bind name="collectionDH" value="CC.channelParticipant; 'participants'; 'channelParticipants_' + channelEntity.id"/>
+		<bind name="visible" value="(participants.length != 0)"/>
+		<bind name="watch" value="'isSteadyChannel'; isIn(channelTypeIdent, [SC.Channel.CHANNEL_TYPE_IDENT_VALUE.PREBATTLE,
+															SC.Channel.CHANNEL_TYPE_IDENT_VALUE.CLAN,
+															SC.Channel.CHANNEL_TYPE_IDENT_VALUE.TRAINING_ROOM])"/>
+		<style>
+			<width value="186px"/>
+			<height value="100%"/>
+		</style>
+		<block className="inner_panel" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<block>
+				<bind name="visible" value="!(isSteadyChannel)"/>
+				<style>
+					<width value="100%"/>
+					<height value="30px"/>
+				</style>
+				<block className="dock_submenu_item" type="native">
+					<styleClass value="$Fullsize"/>
+					<block>
+						<styleClass value="$MiddleVAligned"/>
+						<style>
+							<hitTest value="false"/>
+							<marginLeft value="5px"/>
+						</style>
+						<block>
+							<styleClass value="$MiddleVAligned"/>
+							<block className="icon_plus" type="native">
+								<style>
+									<marginTop value="1px"/>
+								</sty

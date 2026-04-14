@@ -1,0 +1,257 @@
+entityAccount.accountLevel.evLevelChanged']; entityAccount.accountLevel.level"/>
+		<bind name="watchDH" value="'rank'; 			['entityAccount.accountRank.evRankChanged']; entityAccount.accountRank.rank"/>
+		<bind name="watchDH" value="'isSuspended'; 	['entityAccount.accountSimple.evSuspendedChanged']; entityAccount.accountSimple.suspended"/>
+		<bind name="watchDH" value="'referralType'; 		['entityAccount.referral.evTypeUpdated']; entityAccount.referral.type"/>
+		<bind name="watch" value="'isRefSysParticipant'; referralType != null"/>
+		<bind name="watchDH" value="'pureName'; ['entityAccount.accountName.evChanged']; entityAccount.accountName.name"/>
+		<bind name="watchDH" value="'nickName'; ['entityAccount.accountName.evChanged']; entityAccount.accountName.nickName"/>
+		<bind name="watchDH" value="'isMercenary'; ['entityAccount.preBattlePlayerSimple.evIsMercenaryChanged']; entityAccount.preBattlePlayerSimple.isMercenary"/>
+		<bind name="watchDH" value="'isInBattle'; 		['entityAccount.preBattlePlayerSimple.evIsInBattleChanged']; entityAccount.preBattlePlayerSimple.isInBattle"/>
+		<bind name="watchDH" value="'isCommander'; 		['entityAccount.preBattlePlayerSimple.evIsCommanderChanged']; entityAccount.preBattlePlayerSimple.isCommander"/>
+		<bind name="watchDH" value="'isReady'; 			['entityAccount.preBattlePlayerSimple.evIsReadyChanged']; entityAccount.preBattlePlayerSimple.isReady"/>
+		<bind name="watch" value="'isInvitedToDivision'; entityAccount.playerInvitedToPrebattleInfo != null"/>
+		<bind name="watch" value="'isInDivision'; isInFormation &amp;&amp; !isInvitedToDivision"/>
+		<bind name="watch" value="'isInFormation'; entityAccount.hasComponent(CC.preBattlePlayerSimple)"/>
+		<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+		<bind name="watchDH" value="'selfPreBattlePlayerId'; []; selfPlayerEntity.preBattlePlayerSimple.id"/>
+		<bind name="watchDH" value="'trainingRoomOwnerId';	['trainingRoomEntity.preBattle.evOwnerIdChanged'];	trainingRoomEntity.preBattle.ownerId"/>
+		<bind name="watch" value="'isSelfPlayerTrainingRoomOwner'; isInTrainingRoom &amp;&amp; (trainingRoomOwnerId == selfPreBattlePlayerId)"/>
+		<bind name="watch" value="'isLeftMouseInstructionVisible'; _actionDenyReason == 'no_reason' &amp;&amp; !isBot &amp;&amp; !isSuspended &amp;&amp; !isSelf"/>
+		<bind name="watch" value="'isRightMouseInstructionVisible'; (isSelfPlayerTrainingRoomOwner || !isBot) &amp;&amp; !isSelf"/>
+		<bind name="watch" value="'isBot'; entityAccount.bot != undefined"/>
+		<bind name="watch" value="'playerTooltipItem';	isBot 		? 2 :
+										rank == 0	? 0
+													: 1"/>
+		<bind name="watch" value="'isInFormationBattle'; isInDivision &amp;&amp; (isInBattle || inBattle)"/>
+		<bind name="watchDH" value="'expirationTime'; ['']; entityAccount.playerInvitedToPrebattleInfo.expirationTime"/>
+		<bind name="countdown" value="expirationTime; 'countdownText'; 'mm:ss'"/>
+		<bind name="var" value="{wantedInDivision: false}"/>
+		<styleClass value="$DefaultTooltipBehaviour"/>
+		<style>
+			<width value="320px"/>
+		</style>
+		<bind name="primaryEntityDH" value="'_blurEntity'; CC.preference; 'graphics.GUI.blur'"/>
+		<bind name="watchDH" value="'isBlurOptionEnabled'; ['_blurEntity.preference.evValueChanged']; _blurEntity.preference.value"/>
+		<bind name="primaryEntityDH" value="'_contrastEntity'; CC.preference; 'graphics.GUI.contrast'"/>
+		<bind name="watchDH" value="'isUIContrastOptionEnabled'; ['_contrastEntity.preference.evValueChanged']; _contrastEntity.preference.value"/>
+		<bind name="firstEntityDH" value="'windowManagerEntity'; CC.windowManager"/>
+		<bind name="watchDH" value="'windowQueue'; 	['windowManagerEntity.windowManager.evChanged']; windowManagerEntity.windowManager.windowQueue"/>
+		<bind name="watch" value="'isInBattle'; isIn('Battle', windowQueue)"/>
+		<bind name="watch" value="'isHighContrast'; isInBattle || isUIContrastOptionEnabled || !(isBlurOptionEnabled)"/>
+		<bind name="watch" value="'isBlurEnabled'; isBlurOptionEnabled &amp;&amp; !(isInBattle)"/>
+		<block>
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="instance" value="'TooltipSystemBlur'; isBlurEnabled ? {} : null"/>
+		</block>
+		<block className="contrast_panel" type="native">
+			<bind name="visible" value="isHighContrast"/>
+			<style>
+				<alpha value="1.4"/>
+			</style>
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<bind name="visible" value="!(isHighContrast)"/>
+			<styleClass value="$FullsizeAbsolute"/>
+			<style>
+				<backgroundImage value="url:../service_kit/panel_backgrounds/hint_panel.png"/>
+				<background9Slice value="[3]"/>
+			</style>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="instance" value="'ContactInfoTooltipAccountHeader'; {_entityAccountId: _entityAccountId, _isBot: isBot}"/>
+		</block>
+		<block>
+			<bind name="visible" value="isRefSysParticipant"/>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block className="HorizontalDivider">
+				<styleClass value="$PxHorizontalCorrection"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<backgroundSize value="fill"/>
+					<marginTop value="1px"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<marginLeft value="8px"/>
+					<marginTop value="8px"/>
+					<marginBottom value="8px"/>
+				</style>
+				<bind name="instance" value="'ContactInfoTooltipReferralStatus'; isRefSysParticipant ? { _referralType: referralType, _maxWidth: 280 } : null"/>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="(!accountOnline || (inBattle &amp;&amp; !isInFormationBattle)) &amp;&amp; !isBot"/>
+			<style>
+				<width value="100%"/>
+				<height value="30px"/>
+			</style>
+			<block className="HorizontalDivider">
+				<styleClass value="$PxHorizontalCorrection"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<backgroundSize value="fill"/>
+					<marginTop value="1px"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+					<marginTop value="4px"/>
+					<marginBottom value="-4px"/>
+					<marginLeft value="10px"/>
+					<marginRight value="5px"/>
+				</style>
+				<block>
+					<block className="icon_player_status" type="native">
+						<bind name="gotoAndStop!" value=" inBattle	? 'in_battle'
+													: 'not_ready'"/>
+					</block>
+				</block>
+				<block type="text">
+					<bind name="style" value="'alpha'; (!(accountOnline) || inBattle) ? 0.6 : 1"/>
+					<style>
+						<marginLeft value="1px"/>
+					</style>
+					<styleClass value="$TextDefault"/>
+					<bind name="text" value=" inBattle	? tr('IDS_IN_BATTLE')
+										: tr('IDS_PLAYER_IS_OFFLINE_C')"/>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="instance" value="'ContactInfoTooltipWantInFormation'; _playerContext.isFormationSeeker ? {_playerContext: _playerContext} : null"/>
+		</block>
+		<bind name="watch" value="'isFormationStatusVisible';	isInDivision &amp;&amp; !isInTrainingRoom"/>
+		<block>
+			<bind name="visible" value="isFormationStatusVisible &amp;&amp; !(_playerContext.isInvitation)"/>
+			<style>
+				<width value="100%"/>
+				<height value="30px"/>
+			</style>
+			<block className="HorizontalDivider">
+				<styleClass value="$PxHorizontalCorrection"/>
+				<style>
+					<width value="100%"/>
+					<height value="2px"/>
+					<backgroundSize value="fill"/>
+					<marginTop value="1px"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+				</style>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+					<marginTop value="4px"/>
+					<marginBottom value="-4px"/>
+					<marginLeft value="5px"/>
+					<marginRight value="5px"/>
+				</style>
+				<block>
+					<style>
+						<marginLeft value="4px"/>
+					</style>
+					<bind name="instance" value="'FormationPlayerIcon'; {	_isEmptySlot: _playerContext.isInvitation,
+															isCommander: isCommander,
+															isReady: isReady,
+															isMercenary: isMercenary,
+															isInBattle: isInFormationBattle	}"/>
+				</block>
+				<block type="text">
+					<style>
+						<marginLeft value="4px"/>
+					</style>
+					<styleClass value="$TextDefaultBold"/>
+					<bind name="class" value=" !isMercenary	? '$FontColorGolden'
+											: '$FontColorWhite'"/>
+					<bind name="watch" value="'playerRoleStr'; 	isCommander	? tr('IDS_DIVISION_COMMANDER_C')
+															: isMercenary	? tr('IDS_MERCENARY')
+																			: tr('IDS_IN_DIVISION')"/>
+					<bind name="watch" value="'playerStatusStr'; isInFormationBattle	? tr('IDS_IN_BATTLE')
+																	: isReady	? tr('IDS_READY')
+																				: tr('IDS_NOT_READY')"/>
+					<bind name="text" value="playerRoleStr + '. ' + playerStatusStr"/>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="instance" value="'PlayerTooltipInvitationCountdown'; isInvitedToDivision &amp;&amp; !(isSelf)	? {	_expirationTime: expirationTime,
+																									_text: 'IDS_INVITED_IN_DIVISION'}
+																								: null"/>
+		</block>
+		<block>
+			<bind name="visible" value="isFormationStatusVisible"/>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="instance" value="'ContactInfoTooltipVoiceChatStatus'; (accountOnline &amp;&amp; isInFormation)	? {_isSelf: isSelf, _playerName: pureName}
+																								: null"/>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="instance" value="'ContactInfoTooltipActionDenyReason'; _actionDenyReason != 'no_reason' ? {_actionDenyReason: _actionDenyReason} : null"/>
+		</block>
+		<block>
+			<bind name="visible" value="_isVisiblePatrolInfo"/>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="instance" value="'ContactInfoTooltipPatrolInfo'; { _patrolName: _patrolName, _isSelfUser: isSelf }"/>
+		</block>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block>
+				<bind name="firstEntityDH" value="'chatRestrictionsEntity'; CC.chatRestrictions"/>
+				<bind name="watchDH" value="'isTextSettingsBlocked'; []; chatRestrictionsEntity.chatRestrictions.isTextSettingsBlocked"/>
+				<bind name="visible" value="isLeftMouseInstructionVisible &amp;&amp; _isChatServerAvailable &amp;&amp; !(_playerContext.type == 'startPrivateChat' &amp;&amp; isTextSettingsBlocked)"/>
+				<style>
+					<width value="100%"/>
+				</style>
+				<block className="HorizontalDivider">
+					<styleClass value="$PxHorizontalCorrection"/>
+					<style>
+						<width value="100%"/>
+						<height value="2px"/>
+						<backgroundSize value="fill"/>
+						<marginTop value="1px"/>
+						<backgroundImage value="url:../service_kit/dividers/divider_h.png"/>
+					</style>
+				</block>
+				<block>
+					<style>
+						<marginLeft value="10px"/>
+						<marginRight value="8px"/>
+						<marginBottom value="3px"/>
+						<marginTop value="4px"/>
+					</style>
+					<bind name="instance" value="'MouseInstruction'; {_type: 'left',	_instructionText:	(_playerContext.type == 'startPrivateChat')		? 'IDS_HINT_LEFT_CLICK_TO_START_CHAT' :
+																						(_playerContext.type == 'inviteToChannel')		? 'IDS_HINT_LEFT_CLICK_TO_INVITE_TO_CHANNEL' :
+																						(_playerContext.type == 'inviteToDivision')		? 'IDS_HINT_LEFT_CLICK_TO_INVITE_TO_DIVISION' :
+																						(_playerContext.type == 'inviteToTrainingRoom')	? 'IDS_HINT_LEFT_CLICK_TO_INVITE_TO_TRAINING_ROOM' :
+																						(_playerContext.type == '

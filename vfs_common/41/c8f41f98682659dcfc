@@ -1,0 +1,82 @@
+erType: SC.Common.SHIP_FILTER_TYPE.SHIP_TYPE,		_panelEntityId: panelEntity.id }"/>
+				<bind name="instance" value="'AppliedFilter'; { _filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_NATION,		_panelEntityId: panelEntity.id }"/>
+				<bind name="instance" value="'AppliedFilter'; { _filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_SPECIAL,	_panelEntityId: panelEntity.id }"/>
+				<bind name="instance" value="'AppliedFilter'; { _filterType: SC.Common.SHIP_FILTER_TYPE.SHIP_RARITY,		_panelEntityId: panelEntity.id }"/>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+			<block>
+				<bind name="instance" value="'ResetAllFilters'; isResetButtonVisible ? {} : null"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="CarouselFiltersInfotip">
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<bind name="firstEntityDH" value="'panelEntity'; CC.filterPanel"/>
+		<bind name="watchDH" value="'searchStr'; ['panelEntity.filterPanel.evUpdate']; panelEntity.filterPanel.searchString"/>
+		<bind name="watchDH" value="'isFiltersEmpty'; ['panelEntity.filteringGroup.evUpdate']; panelEntity.filteringGroup.isEmpty"/>
+		<styleClass value="$VerticalInfotipBehaviourCenterUpper"/>
+		<bind name="dispatch" value="'carouselRowsCountChanged'; 'Tooltip.Place'; {}; 2; 0.15"/>
+		<bind name="dispatch" value="'carouselViewChanged'; 'Tooltip.Place'; {}; 2; 0.15"/>
+		<bind name="name" value="CarouselFiltersInfotipClip"/>
+		<block className="InfotipBg">
+			<styleClass value="$FullsizeAbsolute"/>
+			<block className="InfotipPanelBg">
+				<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+				<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+				<block className="DeclareBlurLayer">
+					<bind name="primaryEntityDH" value="'isBlurEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+					<bind name="watchDH" value="'isBlurEnabled'; ['isBlurEnabledEntity.preference.evValueChanged']; isBlurEnabledEntity.preference.value"/>
+					<bind name="visible" value="isBlurEnabled"/>
+					<block className="transparentPixel" type="native">
+						<bind name="blurLayer" value="0"/>
+					</block>
+					<style>
+						<position value="absolute"/>
+					</style>
+				</block>
+				<style>
+					<margin value="-2px"/>
+				</style>
+				<styleClass value="$FullsizeAbsolute"/>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<bind name="dispatch" value="'Tooltip.selfOpened'; 'startShow'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+					<bind name="dispatch" value="'Tooltip.selfClosed'; 'startHide'; {}; SC.Common.UBSCOPE_EVENT_DIRECTIONS.DOWN"/>
+					<bind name="instance" value="'InfotipBlurmap'; isBlurOptionEnabled ? {} : null"/>
+				</block>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<style>
+						<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_panel.png"/>
+						<background9Slice value="[3]"/>
+					</style>
+					<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+				</block>
+			</block>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<margin value="-2px"/>
+				</style>
+				<block className="InfotipPins">
+					<styleClass value="$FullsizeAbsolute"/>
+					<block>
+						<params>
+							<param name="name" value="pinTop"/>
+						</params>
+						<style>
+							<position value="absolute"/>
+							<top value="-10px"/>
+						</style>
+						<block>
+							<style>
+								<position value="absolute"/>
+							</sty

@@ -1,0 +1,84 @@
+e="$TextDefaultNM"/>
+					<bind name="class" value="messageOfTheDay ? null : '$FontColorBlueish'"/>
+					<bind name="text" value="isMessageExists ? messageOfTheDay : 'IDS_CLAN_CHAT_EDIT_MOTD_DEFAULT_TEXT'"/>
+				</block>
+			</block>
+			<block>
+				<bind name="visible" value="isEditingRole &amp;&amp; !isAttentionMessageState"/>
+				<bind name="tooltip" value="'SimpleStatusTooltip'; {_text: 'IDS_CLAN_CHAT_EDIT_MOTD_TOOLTIP'}"/>
+				<style>
+					<marginBottom value="-8px"/>
+					<marginTop value="-6px"/>
+					<marginLeft value="8px"/>
+				</style>
+				<bind name="instance" value="'ImageButton'; {_width: '23px',
+											_height: '23px',
+											_enabled: true,
+											_dispatch: 'changeFieldVisibility',
+											_dispatchParams: {InputFieldVisibility: true},
+											_backgroundImage: 'url:../service_kit/buttons/context/pencil.png'}"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+		<block>
+			<bind name="visible" value="InputFieldVisibility"/>
+			<style>
+				<width value="100%"/>
+			</style>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<block className="text_area_elastic_enter" type="native">
+					<bind name="watch" value="'maxChars'; 180"/>
+					<params>
+						<param name="actAsButton" value="true"/>
+						<param name="maxChars" value="180"/>
+						<param name="noTranslate" value="true"/>
+					</params>
+					<bind name="controller" value="'lesta.dialogs.dock.controllers.ElasticBlockController'"/>
+					<bind name="minNumLines" value="1"/>
+					<style>
+						<width value="100%"/>
+					</style>
+					<bind name="action" value="'textInputEnter'; 'ClanProxy.setMessageOfTheDay'; { message: txtMessage }"/>
+					<bind name="dispatch" value="'textInputEnter';'changeFieldVisibility'; {InputFieldVisibility: false}"/>
+					<bind name="text" value="messageOfTheDay"/>
+					<bind name="ubFocus" value="0; InputFieldVisibility; true; true"/>
+					<bind name="sync" value="'text'; 'change'; 'txtMessage'"/>
+					<block>
+						<styleClass value="$TextAreaEnterButton"/>
+						<bind name="tooltip" value="'SimpleStatusTooltip'; (txtMessage.length &gt; maxChars) ? {_text: 'IDS_MAX_STATUS_LENGTH', _unifiedStatus: SC.Ui_styles.UNIFIED_STATUS.WARNING} : null"/>
+						<bind name="tooltip" value="'SimpleStatusTooltip'; (txtMessage.length &lt;= maxChars) ? {_text: 'IDS_HINT_ADD_SEEKER_STATUS'} : null"/>
+						<block className="button_dock" type="native">
+							<styleClass value="$FullsizeAbsolute"/>
+							<bind name="action" value="'click'; 'ClanProxy.setMessageOfTheDay'; { message: txtMessage }"/>
+							<bind name="dispatch" value="'buttonClick';'changeFieldVisibility'; {InputFieldVisibility: false}"/>
+							<bind name="style" value="'hitTest'; (commentStatus == 'submitted') &amp;&amp; (txtMessage.length &lt;= maxChars) ? false : true"/>
+							<bind name="enabled" value="(txtMessage.length &lt;= maxChars)"/>
+						</block>
+					</block>
+					<block>
+						<style>
+							<position value="absolute"/>
+							<bottom value="3"/>
+							<right value="56"/>
+						</style>
+						<bind name="fade" value="(isBanned || (commentStatus != 'submitted')); 0.1;
+								{top: 10, alpha: 0}; {top: 0, alpha: 1}; {top: 10, alpha: 0}"/>
+						<bind name="instance" value="'CharCounter'; { _string: txtMessage, _maxChars: maxChars}"/>
+					</block>
+				</block>
+			</block>
+			<block>
+				<style>
+					<marginLeft value="8px"/>
+					<marginRight value="6px"/>
+				</style>
+				<bind name="instance" value="'CloseButton'; {
+				_event: 'changeFieldVisibility',
+				_eventData: { InputFieldVisibility: false },
+				_tooltipText: 'IDS_CLAN_CHAT_EDIT_MOTD_EXIT_TOOLTIP'
+			}

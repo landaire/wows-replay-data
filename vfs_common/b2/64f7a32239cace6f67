@@ -1,0 +1,57 @@
+							</style>
+								<bind name="visible" value="false"/>
+							</block>
+							<bind name="instance" value="'InfotipPinBlurmapHor'; isBlurOptionEnabled ? {} : null"/>
+						</block>
+						<block>
+							<bind name="alpha" value="isBlurOptionEnabled ? 1 : 1.35"/>
+							<style>
+								<position value="absolute"/>
+								<width value="12px"/>
+								<height value="22px"/>
+								<backgroundImage value="url:../service_kit/panel_backgrounds/infotip_pin_hor.png"/>
+							</style>
+						</block>
+					</block>
+				</block>
+			</block>
+		</block>
+		<block>
+			<bind name="instance" value="'FilterBlock'; {_title: _title, _filterType: _filterType, needDivider: false, _panelEntityId: panelEntity.id, _ident: 0, _inCarousel: true}"/>
+		</block>
+	</block>
+	<block className="CarouselAppliedFilterShipNameInfotip">
+		<bind name="firstEntityDH" value="'panelEntity'; CC.filterPanel"/>
+		<bind name="watchDH" value="'searchStr'; ['panelEntity.filterPanel.evUpdate']; panelEntity.filterPanel.searchString"/>
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<styleClass value="$VerticalInfotipBehaviourCenterUpper"/>
+		<bind name="name" value="'CarouselAppliedFilterShipNameInfotip'"/>
+		<style>
+			<width value="301px"/>
+			<height value="57px"/>
+		</style>
+		<block className="InfotipBg">
+			<styleClass value="$FullsizeAbsolute"/>
+			<block className="InfotipPanelBg">
+				<bind name="primaryEntityDH" value="'isBlurOptionEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+				<bind name="watchDH" value="'isBlurOptionEnabled'; ['isBlurOptionEnabledEntity.preference.evValueChanged']; isBlurOptionEnabledEntity.preference.value"/>
+				<block className="DeclareBlurLayer">
+					<bind name="primaryEntityDH" value="'isBlurEnabledEntity'; CC.preference; 'graphics.GUI.blur'"/>
+					<bind name="watchDH" value="'isBlurEnabled'; ['isBlurEnabledEntity.preference.evValueChanged']; isBlurEnabledEntity.preference.value"/>
+					<bind name="visible" value="isBlurEnabled"/>
+					<block className="transparentPixel" type="native">
+						<bind name="blurLayer" value="0"/>
+					</block>
+					<style>
+						<position value="absolute"/>
+					</style>
+				</block>
+				<style>
+					<margin value="-2px"/>
+				</style>
+				<styleClass value="$FullsizeAbsolute"/>
+				<block>
+					<styleClass valu

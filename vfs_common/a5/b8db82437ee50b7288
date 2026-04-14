@@ -1,0 +1,77 @@
+viders/divider_h.png"/>
+					</style>
+				</block>
+			</block>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<block>
+				<style>
+					<height value="100%"/>
+				</style>
+				<bind name="instance" value="'FormationResizableMainElement'; { _channelEntityId: _channelEntityId}"/>
+			</block>
+			<block className="VerticalDivider">
+				<style>
+					<height value="100%"/>
+					<width value="3px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_v.png"/>
+				</style>
+			</block>
+			<block>
+				<styleClass value="$Fullsize"/>
+				<bind name="instance" value="'MessageBoxPanel'; isChatServerAvailable ? { _channelEntityId: _channelEntityId, _isInputEnabled: _isInputEnabled} : null"/>
+				<bind name="instance" value="'ServerIsUnavailable'; !isChatServerAvailable ? {} : null"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+	</block>
+	<block className="ChatBoxContent">
+		<styleClass value="$Fullsize"/>
+		<bind name="entityDH" value="'channelEntity'; _channelEntityId"/>
+		<bind name="watch" value="'contentType'; _isInvitation 		? 'invite' :
+								_isPasswordNeeded 	? 'password' :
+								_isDivision 		? 'division'
+													: 'common'"/>
+		<bind name="childParentScope" value="contentType; {	_channelEntityId: _channelEntityId,
+											_isInputEnabled: _isInputEnabled }; {invite: 	'ChatBoxContentInvitation',
+																				password:	'ChatBoxContentEnterPassword',
+																				division:	'ChatBoxContentDivision',
+																				common:		'ChatBoxContentCommon' }"/>
+	</block>
+	<block className="ChatBox">
+		<bind name="firstEntityDH" value="'dockDataEntity'; CC.dockData"/>
+		<bind name="watchDH" value="'isShipOverviewEnabled';  ['dockDataEntity.dockData.evIsShipOverviewEnabledChanged']; dockDataEntity.dockData.isShipOverviewEnabled"/>
+		<bind name="transition" value="isShipOverviewEnabled; isShipOverviewEnabled ? 0.4 : 0.25; {alpha: 1}; {alpha: 0}; {alpha: 1}; SC.Common.EASING_FUNCTIONS.IN_QUAD; !isShipOverviewEnabled &amp;&amp; !(inPort) ? 0.15 : 0.5"/>
+		<bind name="style" value="'hitTest'; !isShipOverviewEnabled"/>
+		<bind name="entityDH" value="'channelEntity'; channelEntityId"/>
+		<bind name="actionIsDisplay" value="'setChannelChatBoxIsDisplay'; {entityId: channelEntityId}"/>
+		<bind name="draggableWindow" value="'chatBoxDragZone'; 'chatBoxPosition'; channelEntity.channel.channelId"/>
+		<bind name="changeDispatch" value="dragging; 'draggingChangedEv'; null; true"/>
+		<bind name="appear" value="'addedToStage'; 0.3; 0; {alpha: 0}; {alpha: 1}"/>
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+		<bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="stageSize"/>
+		<bind name="watch" value="'subKey'; channelEntity.channel.channelId"/>
+		<bind name="watch" value="'chatBoxPositionX';	(userPrefs.chatBoxPositionX &amp;&amp; userPrefs.chatBoxPositionX[subKey])		?	userPrefs.chatBoxPositionX[subKey]	: undefined"/>
+		<bind name="watch" value="'chatBoxPositionY';	(userPrefs.chatBoxPositionY &amp;&amp; userPrefs.chatBoxPositionY[subKey])		?	userPrefs.chatBoxPositionY[subKey]	: undefined"/>
+		<bind name="watch" value="'dragPositionsWasSet'; (userPrefs.chatBoxPositionX &amp;&amp; userPrefs.chatBoxPositionX[subKey]) &amp;&amp; (userPrefs.chatBoxPositionY &amp;&amp; userPrefs.chatBoxPositionY[subKey])"/>
+		<bind name="changeDispatch" value="chatBoxPositionX &amp;&amp; dragPositionsWasSet;	'chatBoxPositionXchanged'; {}; true"/>
+		<bind name="changeDispatch" value="chatBoxPositionY &amp;&amp; dragPositionsWasSet;	'chatBoxPositionYchanged'; {}; true"/>
+		<bind name="action" value="'chatBoxPositionXchanged' ; 'setUserPref' ; {value : chatBoxPositionX, name : 'chatBoxPositionX', subName: subKey}"/>
+		<bind name="action" value="'chatBoxPositionYchanged' ; 'setUserPref' ; {value : chatBoxPositionY, name : 'chatBoxPositionY', subName: subKey}"/>
+		<bind name="left" value="chatBoxPositionX"/>
+		<bind name="top" value="chatBoxPositionY"/>
+		<bind name="watch" value="'chatBoxWidth';	(userPrefs.chatBoxWidth &amp;&amp; userPrefs.chatBoxWidth[subKey])		?	userPrefs.chatBoxWidth[subKey]	: undefined"/>
+		<bind name="watch" value="'chatBoxHeight';	(userPrefs.chatBoxHeight &amp;&amp; userPrefs.chatBoxHeight[subKey])	?	userPrefs.chatBoxHeight[subKey]	: undefined"/>
+		<bind name="width" value="chatBoxWidth"/>
+		<bind name="height" value="chatBoxHeight"/>
+		<bind name="var" value="{isEditing: false}"/>
+		<bind name="catch" value="'chatChannelRenameStart';		{isEditing : true}"/>
+		<bind name="catch" value="'chatChannelRenameCancelled';	{isEditing : false}"/>
+		<bind name="catch" value="'chatChannelRenameSuccessed';	{isEditing: false}"/>
+		<bin

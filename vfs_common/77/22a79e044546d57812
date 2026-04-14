@@ -1,0 +1,81 @@
+alue="100f%"/>
+			<align value="middle"/>
+		</style>
+		<bind name="entityDH" value="'channelEntity'; _channelEntityId"/>
+		<bind name="dispatch" value="'draggingChangedEv'; 'Tooltip.Close'; null; 2"/>
+		<bind name="watch" value="'contentType'; _isDivision ? 'division' : 'common'"/>
+		<bind name="childParentScope" value="contentType; { _channelEntityId: _channelEntityId, _isClanChat:_isClanChat }; { division: 	'ChatBoxHeaderDivisionCommon',
+																											common:		'ChatBoxHeaderCommon' }"/>
+	</block>
+	<block className="ChatBoxHeaderCommon">
+		<style>
+			<width value="100%"/>
+			<paddingTop value="8px"/>
+			<paddingBottom value="8px"/>
+		</style>
+		<block>
+			<style>
+				<width value="100%"/>
+			</style>
+			<bind name="visible" value="!(_isEditing)"/>
+			<block>
+				<style>
+					<height value="100%f"/>
+				</style>
+				<bind name="style" value="'hitTest'; !(_isPasswordNeeded) &amp;&amp; !(_isInvitation)"/>
+				<block className="button_dock" type="native">
+					<params>
+						<param name="name" value="ChatBoxHeader"/>
+					</params>
+					<bind name="style" value="'hitTest'; !(_isSteadyChannel)"/>
+					<styleClass value="$FullsizeAbsolute"/>
+					<style>
+						<marginTop value="-4px"/>
+						<marginBottom value="-7px"/>
+						<marginRight value="-4px"/>
+						<marginLeft value="2px"/>
+					</style>
+					<bind name="tooltip" value="'ChatDropDownMenu'; {_dropDown: true, channelEntityId: _channelEntityId}; 6"/>
+				</block>
+				<block>
+					<style>
+						<hitTest value="false"/>
+						<marginLeft value="8px"/>
+					</style>
+					<bind name="instance" value="'ChannelTitleWithIcon'; {channelEntityId: _channelEntityId, _bold: true, _maxWidth: 350, _channelHeader: true}"/>
+				</block>
+				<block className="icon_navigate" type="native">
+					<bind name="visible" value="!(_isPasswordNeeded || _isSteadyChannel || _isInvitation)"/>
+					<style>
+						<hitTest value="false"/>
+						<marginRight value="2px"/>
+						<top value="60%"/>
+					</style>
+					<styleClass value="$MiddleVAligned"/>
+					<bind name="gotoAndStop!" value="'down'"/>
+				</block>
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+			<block>
+				<styleClass value="$MiddleVAlignedAbsolutely"/>
+				<style>
+					<right value="12px"/>
+				</style>
+				<bind name="instance" value="'ChatBoxHeaderControls'; {_channelEntityId: _channelEntityId, _showCloseButton: !(_isTrainingRoom || _isClanChat)}"/>
+			</block>
+			<style>
+				<flow value="horizontal"/>
+			</style>
+		</block>
+		<block>
+			<bind name="visible" value="_isEditing"/>
+			<style>
+				<width value="100%"/>
+				<height value="37px"/>
+			</style>
+			<bind name="instance" value="'ChannelHeaderEditing'; _isEditing ? {channelEntityId: _channelEntityId} : null"/>
+		</block>
+	</block>
+	<bloc
