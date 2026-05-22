@@ -217,3 +217,8 @@ build = 313919
 "spaces/s06_Atoll/minimap_water.png" = "3c6e91a850675a7e7973"
 "spaces/s07_Advance/minimap.png" = "1ffde5b875ab3592cfe2"
 "spaces/s07_Advance/minimap_water.png" = "3e417aca6f2975b8840d"
+
+[derived]
+"game_params.rkyv" = "dba86e274a539d3a473a"
+"game_params.rkyv.zst" = "62e23cdaf03d23a58f4c"
+"translations/en/LC_MESSAGES/global.mo.zst" = "e63683a4d587e0212428"

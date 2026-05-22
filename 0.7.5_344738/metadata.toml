@@ -234,3 +234,8 @@ build = 344738
 "spaces/s07_Advance/minimap_water.png" = "3e417aca6f2975b8840d"
 "spaces/s09_LePVE/minimap.png" = "ba2905b3deeb61a78aec"
 "spaces/s09_LePVE/minimap_water.png" = "378dbb9d05c1c8a9429a"
+
+[derived]
+"game_params.rkyv" = "479132ed5bcebdb5c73e"
+"game_params.rkyv.zst" = "fae86743cb0358615bf6"
+"translations/en/LC_MESSAGES/global.mo.zst" = "ab0e862a9bd43a67bb1a"

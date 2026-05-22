@@ -211,3 +211,8 @@ build = 297724
 "spaces/s02_Naval_Defense/minimap_water.png" = "7108f44ff11ba0049cc2"
 "spaces/s03_Labyrinth/minimap.png" = "b5ae6f12f3ff0b73c3bc"
 "spaces/s03_Labyrinth/minimap_water.png" = "c034acf9f2888e3c1dba"
+
+[derived]
+"game_params.rkyv" = "734ad31450c1bb158777"
+"game_params.rkyv.zst" = "4eefb352cd8327c536f2"
+"translations/en/LC_MESSAGES/global.mo.zst" = "27222655928763c59b5e"

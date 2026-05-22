@@ -487,3 +487,8 @@ build = 3052606
 "spaces/dock_London/space.settings" = "5856dcf71979365995d4"
 "spaces/dock_dry/space.settings" = "c5e7c029e08a5c3708b9"
 "spaces/dock_nagasaki/space.settings" = "3be57f5a23963fdf7584"
+
+[derived]
+"game_params.rkyv" = "96b730da080ee3641767"
+"game_params.rkyv.zst" = "239f43d91f3b67e5bb33"
+"translations/en/LC_MESSAGES/global.mo.zst" = "da52ab3f058cee19ce45"

@@ -255,3 +255,8 @@ build = 346043
 "spaces/s09_LePVE/minimap_water.png" = "378dbb9d05c1c8a9429a"
 "spaces/s10_USS_CL/minimap.png" = "5177482643586ec147e5"
 "spaces/s10_USS_CL/minimap_water.png" = "3e417aca6f2975b8840d"
+
+[derived]
+"game_params.rkyv" = "64b954c2ecfc1d9140ec"
+"game_params.rkyv.zst" = "f57a8682e6662e4b9744"
+"translations/en/LC_MESSAGES/global.mo.zst" = "d9d612c45488af285221"

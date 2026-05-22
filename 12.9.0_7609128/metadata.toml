@@ -1685,3 +1685,8 @@ build = 7609128
 "scripts/entity_defs/interfaces/WalletOwner.def" = "21fee9feee94828adbd6"
 "scripts/entity_defs/interfaces/WalletProperties.def" = "21fee9feee94828adbd6"
 "scripts/entity_defs/interfaces/WeatherOwner.def" = "a3cdb0ad65ef278e30ef"
+
+[derived]
+"game_params.rkyv" = "1511d80c955cc258c292"
+"game_params.rkyv.zst" = "ba08c174f9f19988ece3"
+"translations/en/LC_MESSAGES/global.mo.zst" = "ba39d77f52d71401dd17"
