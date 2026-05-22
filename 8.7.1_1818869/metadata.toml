@@ -381,6 +381,6 @@ build = 1818869
 "spaces/s10_USS_CL/minimap_water.png" = "3e417aca6f2975b8840d"
 
 [derived]
-"game_params.rkyv" = "b87b76767182676e85af"
-"game_params.rkyv.zst" = "87032f7e87500fdcaddb"
+"game_params.rkyv" = "82e90d14943144f9a100"
+"game_params.rkyv.zst" = "80c7a91d33abca9cbd77"
 "translations/en/LC_MESSAGES/global.mo.zst" = "4743028ac9e663849242"

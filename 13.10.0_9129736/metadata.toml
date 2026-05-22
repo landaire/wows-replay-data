@@ -1770,6 +1770,6 @@ build = 9129736
 "scripts/entity_defs/interfaces/WritableEntity.def" = "498258d01143f993ac24"
 
 [derived]
-"game_params.rkyv" = "7271a18f66844965b5fc"
-"game_params.rkyv.zst" = "99efce7ecb577a924f10"
+"game_params.rkyv" = "8ee4310e65db3ed14a54"
+"game_params.rkyv.zst" = "c59a7e989f422e555076"
 "translations/en/LC_MESSAGES/global.mo.zst" = "eee0c3af32d089fbc7c5"

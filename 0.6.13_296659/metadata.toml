@@ -213,6 +213,6 @@ build = 296659
 "spaces/s03_Labyrinth/minimap_water.png" = "c034acf9f2888e3c1dba"
 
 [derived]
-"game_params.rkyv" = "7b7dd540b45ce1ab9a70"
-"game_params.rkyv.zst" = "4593eca80a222ec34f62"
+"game_params.rkyv" = "3931b6662d29699f030d"
+"game_params.rkyv.zst" = "3e6cc19182f1bd6186f2"
 "translations/en/LC_MESSAGES/global.mo.zst" = "27222655928763c59b5e"
