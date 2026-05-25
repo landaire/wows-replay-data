@@ -364,6 +364,6 @@ build = 2591463
 "spaces/dock_nagasaki/space.settings" = "3be57f5a23963fdf7584"
 
 [derived]
-"game_params.rkyv" = "7026acfee781bcb15bcc"
-"game_params.rkyv.zst" = "f4188a52cb316fc5fa61"
+"game_params.rkyv" = "346057c2c59558e21c15"
+"game_params.rkyv.zst" = "6db9ee4610cf502143e5"
 "translations/en/LC_MESSAGES/global.mo.zst" = "56c8945c5f0bec338fb6"

@@ -1695,6 +1695,6 @@ build = 7814610
 "scripts/entity_defs/interfaces/WeatherOwner.def" = "a3cdb0ad65ef278e30ef"
 
 [derived]
-"game_params.rkyv" = "d11f10e668bdf17a06de"
-"game_params.rkyv.zst" = "0ec80ba1766b1bf97672"
+"game_params.rkyv" = "b1456d90357e72f55958"
+"game_params.rkyv.zst" = "63afb4c009bc1da44029"
 "translations/en/LC_MESSAGES/global.mo.zst" = "abb8df34d1227749da78"

@@ -2007,6 +2007,6 @@ build = 12116141
 "scripts/entity_defs/interfaces/WritableEntity.def" = "498258d01143f993ac24"
 
 [derived]
-"game_params.rkyv" = "ae1e61e8b6ee5928507e"
-"game_params.rkyv.zst" = "91c6710519fb38914ca7"
+"game_params.rkyv" = "f0be24aed542d8cbead7"
+"game_params.rkyv.zst" = "bf414770fed0009d2aa7"
 "translations/en/LC_MESSAGES/global.mo.zst" = "414cd1db19cd3c2404d9"
