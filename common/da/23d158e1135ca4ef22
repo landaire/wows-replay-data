@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SHIP_GROUPS" type="String">
+		<const name="START"						value="start"						/>
+		<const name="UPGRADEABLE"				value="upgradeable"					/>
+		<const name="UPGRADEABLE_EXCL"			value="upgradeableExclusive"		/>
+		<const name="PREMIUM"					value="premium"						/>
+		<const name="SPECIAL"					value="special"						/>
+		<const name="SPECIAL_UNSELLABLE"		value="specialUnsellable"			/>
+		<const name="DEMO_WITHOUT_STATS"		value="demoWithoutStats"			/>
+		<const name="EVENT"						value="event"						/>
+		<const name="UNAVAILABLE"				value="unavailable"					/>
+		<const name="PRESERVED"					value="preserved"					/>
+		<const name="DISABLED"					value="disabled"					/>
+		<const name="PECULIAR"					value="peculiar"					/>
+		<const name="CLAN"						value="clan"						/>
+		<const name="ULTIMATE"					value="ultimate"					/>
+		<const name="EARLY_ACCESS"				value="earlyAccess"					/>
+		<const name="UPGRADEABLE_ULT"			value="upgradeableUltimate"			/>
+		<const name="LEGENDARY_BATTLE"			value="legendaryBattle"				/>
+		<const name="DEMO_WITH_STATS"			value="demoWithStats"				/>
+	</enum>
+	
+	<enum name="BRANCH" type="Integer">
+		<const name="US_CV"			/>
+		<const name="US_BB"			/>
+		<const name="US_BB_TOP"		/>
+		<const name="US_BB_NEW"		/>
+		<const name="US_CA_EARLY"	/>
+		<const name="US_CA_LIGHT"		/>
+		<const name="US_CA_HEAVY"		/>
+		<const name="US_DD_ARTILLERY"	/>
+		<const name="US_DD_TORPEDO"	/>
+		
+		<const name="JP_CV"			/>
+		<const name="JP_BB"			/>
+		<const name="JP_CA"			/>
+		<const name="JP_DD_MAIN"		/>
+		<const name="JP_DD_ART"		/>
+		<const name="JP_DD_TORP"		/>
+		
+		<const name="UK_CV"			/>
+		<const name="UK_BB"			/>
+		<const name="UK_CA_LIGHT"	/>
+		<const name="UK_CA_HEAVY"		/>
+		<const name="UK_DD"			/>
+		
+		<const name="ASIA_DD"			/>
+		
+		<const name="GER_BB"			/>
+		<const name="GER_CA"			/>
+		<const name="GER_DD_1"		/>
+		<const name="GER_DD_2"		/>
+		<const name="GER_DD_150"		/>
+		<const name="GER_CV"		/>
+		
+		<const name="ITA_CA"			/>
+		<const name="ITA_BB"			/>
+
+		<const name="RU_CA"			/>
+		<const name="RU_CA_HEAVY"			/>
+		<const name="RU_BB"			/>
+		<const name="RU_DD_1"			/>
+		<const name="RU_DD_ART"		/>
+		<const name="RU_DD_SUPPORT"	/>
+		<const name="RU_CV"			/>
+		
+		<const name="FR_BB"			/>
+		<const name="FR_CA"			/>
+		<const name="FR_DD_1"			/>
+		<const name="FR_DD_2"			/>
+
+		<const name="EU_DD"			/>
+
+		<const name="NED_CL"			/>
+		<const name="NED_CA"			/>
+
+		<const name="BATTLESHIPS"	/>
+		<const name="CRUISERS"		/>
+		<const name="DESTROYERS"	/>
+		<const name="AIR_CARRIERS"	/>
+		<const name="SUBMARINES"	/>
+		<const name="PREMIUM_SHIP"	/>
+
+		<value_to_name/>
+	</enum>
+
+	<enum name="QUALITY" type="Integer">
+		<const name="GOOD"		/>
+		<const name="BAD"		/>
+		<const name="NEUTRAL"	/>
+	</enum>
+	
+	<enum name="FEAT_CATEGORY" type="String">
+		<const name="BOMBERS" 				value="bombers"				/>
+		<const name="VISION" 				value="vision"				/>
+		<const name="MAIN_CALIBER" 			value="main_caliber"		/>
+		<const name="MOVEMENT" 				value="movement"			/>
+		<const name="DURABILITY" 			value="durability"			/>
+		<const name="AIRDEFENSE" 			value="airdefense"			/>
+		<const name="SECONDARY_CALIBER" 	value="secondary_caliber"	/>
+		<const name="CONSUMABLES" 			value="consumables"			/>
+		<const name="T_BOMBERS" 			value="t_bombers"			/>
+		<const name="SKIP_BOMBERS" 			value="skip_bombers"		/>
+		<const name="TORPEDOES" 			value="torpedoes"			/>
+		<const name="ATTACK_AIRCRAFT" 		value="attack_aircraft"		/>
+		<const name="AIR_SUPPORT" 			value="air_support"			/>
+	</enum>
+
+	<!-- KEEP IN SYNC WITH WeaponType.py -->
+	<enum name="SHIP_WEAPON_TYPES" type="Integer">
+		<const name="NONE" 				value="-1" 	/>
+		<const name="ARTILLERY" 		value="0" 	/>
+		<const name="ATBA" 				value="1" 	/>
+		<const name="TORPEDO" 			value="2" 	/>
+		<const name="AIRPLANES" 		value="3" 	/>
+		<const name="AIRDEFENCE" 		value="4" 	/>
+		<const name="DEPTH_CHARGES" 	value="5" 	/>
+		<const name="PINGER" 			value="6" 	/>
+		<const name="CHARGE_LASER" 		value="7" 	/>
+		<const name="IMPULSE_LASER" 	value="8" 	/>
+		<const name="AXIS_LASER" 		value="9" 	/>
+		<const name="WAVES" 			value="10" 	/>
+		<const name="AIR_SUPPORT"	 	value="11"	/>
+
+		<const name="SQUADRON" 			value="100" />
+
+		<range name="SHOW_SHIP_DOLL"	values="ARTILLERY, TORPEDO, CHARGE_LASER, IMPULSE_LASER"/>
+		<range name="HIDE_RELOAD_BARS"	values="DEPTH_CHARGES"/>
+	</enum>
+
+	<enum name="SHIP_MODULE_TYPES" type="Integer">
+		<const name="ARTILLERY" 		value="0" 	        />
+		<const name="HULL" 				value="1"			/>
+		<const name="TORPEDOES" 		value="2" 	        />
+		<const name="SUO" 		        value="3"			/>
+		<const name="ENGINE" 		    value="4" 	        />
+		<const name="TORPEDO_BOMBER" 	value="5" 	    	/>
+		<const name="DIVE_BOMBER" 		value="6" 	    	/>
+		<const name="FIGHTER" 			value="7" 	        />
+		<const name="FLIGHT_CONTROLL" 	value="8" 			/>
+		<const name="HYDROPHONE" 	    value="9" 	    	/>
+		<const name="SKIP_BOMBER"		value="10"			/>
+		<const name="PRIMARY_WEAPONS"	value="11" 	    	/>
+		<const name="SECONDARY_WEAPONS"	value="12" 	    	/>
+		<const name="ABILITIES"		    value="13" 	    	/>
+	</enum>
+
+	<enum name="SHIP_MODULE_STR_TYPES" type="String">
+		<const name="ARTILLERY"			value="_Artillery"		/>
+		<const name="HULL"				value="_Hull"			/>
+		<const name="TORPEDOES"			value="_Torpedoes"		/>
+		<const name="SUO"				value="_Suo"			/>
+		<const name="ENGINE"			value="_Engine"			/>
+		<const name="TORPEDO_BOMBER"	value="_TorpedoBomber"	/>
+		<const name="DIVE_BOMBER"		value="_DiveBomber"		/>
+		<const name="SKIP_BOMBER"		value="_SkipBomber"		/>
+		<const name="FIGHTER"			value="_Fighter"		/>
+		<const name="FLIGHT_CONTROLL"	value="_FlightControl"	/>
+		<const name="HYDROPHONE"		value="_Hydrophone"		/>
+		<const name="PRIMARY_WEAPONS"	value="_PrimaryWeapons"	/>
+		<const name="SECONDARY_WEAPONS"	value="_SecondaryWeapons"	/>
+		<const name="ABILITIES"			value="_Abilities"		/>
+		<const name="SONAR"				value="_Sonar"			/>
+		<range name="UI_RANGE"			values="ARTILLERY, PRIMARY_WEAPONS, HULL, SONAR, SECONDARY_WEAPONS, TORPEDOES, SUO, FIGHTER, TORPEDO_BOMBER, DIVE_BOMBER, SKIP_BOMBER, ENGINE, ABILITIES"/>
+	</enum>
+
+	<enum name="SHIP_SLOT_TYPES" type="Integer">
+		<const name="ABILITY" 	        value="0" 	    />
+		<const name="MODERNIZATION" 	value="1" 	    />
+		<const name="AMMO" 	            value="2" 	    />
+		<const name="MODULE" 	        value="3" 	    />
+		<const name="SQUADRON_ABILITY" 	value="4" 	    />
+	</enum>
+	<enum name="SQUAD_TYPES" type="String">
+		<const name="FIGHTER" 	        value="Fighter"		/>
+		<const name="BOMBER" 			value="Bomber" 	    />
+		<const name="DIVE" 				value="Dive" 	    />
+		<const name="SKIP"				value="Skip"		/>
+	</enum>
+	
+	<enum name="SHIP_TAG" type="Integer">
+		<const name="HIDE_ARMOR"		/>
+		<const name="HIDE_EXTERIORS"	/>
+		<const name="EXCURSION_OFF"		/>
+	</enum>
+
+	<enum name="PECULIARITY" type="String">
+		<const name="DEFAULT"			value="default"/>
+	</enum>
+
+	<enum name="SHIP_MODERNIZATION_TYPES" type="Integer">
+		<const name="COMMON"		value="0" 	/>
+		<const name="RARE"			value="1" 	/>
+		<const name="LEGENDARY"		value="3" 	/>
+	</enum>
+
+</constants>
+
+
+
+
+
+
+
+
+
