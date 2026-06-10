@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="HINT_TYPE">
+		<const name="DEFAULT"	value="0" type="Integer"/>
+		<const name="WASD" 		value="1" type="Integer"/>
+		<const name="OLD_STYLE"	value="2" type="Integer"/>
+	</enum>
+
+	<enum name="HINT_PROGRESS">
+		<const name="NONE" value="0" type="Integer"/>
+		<const name="SHOWN" value="1" type="Integer"/>
+		<const name="HIDDEN" value="2" type="Integer"/>
+		<const name="CLOSED" value="3" type="Integer"/>
+		<const name="NO_SAVING" value="1000" type="Integer"/>
+	</enum>
+
+	<enum name = "USER_PREF_KEY">
+		<const name="HINTS_SEEN" value="seenTutorialHints" type="String"/>
+		<const name="TAB_STATS_INDEX" value="tabStatsTabIndex" type="String"/>
+	</enum>
+</constants>
