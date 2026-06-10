@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<constants>
+    <enum name="PRMP_OFFER_TYPES">
+        <const name="IN_GAME" value="in_game"/>
+        <const name="EXTERNAL" value="external"/>
+        <const name="CONTENT" value="content"/>
+        <const name="IN_GAME_SURVEY" value="in_game_survey"/>
+    </enum>
+
+    <enum name="PRMP_CONTENT_TYPES">
+        <const name="TEXT" value="text"/>
+        <const name="VIDEO" value="video"/>
+        <const name="SURVEY" value="survey"/>
+
+        <range name="URL_REQUIRED" values="TEXT, VIDEO, SURVEY"/>
+    </enum>
+
+    <enum name="ABUSE_STATUS">
+        <const name="NORMAL" value="0" type="Integer"/>
+        <const name="SUSPECT" value="1" type="Integer"/>
+        <const name="CONFIRMED" value="2" type="Integer"/>
+
+        <range name="NEGATIVE" values="NORMAL, CONFIRMED"/>
+    </enum>
+</constants>

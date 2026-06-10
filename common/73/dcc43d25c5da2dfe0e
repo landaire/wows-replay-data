@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="TIP_TYPES" type="String">
+		<const name="DOCK_TECH_TREE" value="DockToTechTreeExploreShip" />
+		<const name="DOCK_TECH_TREE_BUY" value="DockToTechTreeBuyShip" />
+
+		<const name="TECH_TREE_BUY" value="TechTreeToShipExplore" />
+		<const name="TECH_TREE_BUY_BUY" value="TechTreeToShipBuy" />
+
+		<const name="MODULES_EXPLORE" value="ModulesToExploreBtn" />
+		<const name="MODULES_BUY" value="ModulesToBuyBtn" />
+
+		<const name="NATIONS" value="TechTreeToShipNation" />
+		<const name="NATIONS_BUY" value="TechTreeToShipNationBuy" />
+
+		<const name="MODULES_NEXT" value="ModulesToNextShipExplore" />
+		<const name="MODULES_NEXT_BUY" value="ModulesToNextShipBuy" />
+
+		<const name="INVITE_DOCK_USER_MENU" value="DockToUserMenu" />
+		<const name="INVITE_USER_MENU_INVITE_BTN" value="UserMenuInviteBtn" />
+
+		<const name="DOCK_RANDOM_FIGHT" value="DockToRandomFight" />
+		<const name="RANDOM_FIGHT_BTN" value="RandomFightBtn" />
+
+		<const name="DOCK_CREW" value="DockToCrew" />
+
+		<const name="DOCK_MODULES_EXPLORE" value="DockToModulesExplore" />
+		<const name="DOCK_MODULES_BUY" value="DockToModulesBuy" />
+		<const name="MODULES_EXPLORE_MODULE" value="ModulesExploreModule" />
+		<const name="MODULES_BUY_MODULE" value="ModulesBuyModule" />
+		<const name="MODULES_TOOLTIP_EXPLORE" value="ModulesTooltipExplore" />
+		<const name="MODULES_TOOLTIP_BUY" value="ModulesTooltipBuy" />
+
+		<const name="PARAGONS_TECH_TREE_NATION" value="ParagonsTechTreeExploreNation" />
+
+		<const name="DOCK_MODERNIZATIONS_EXPLORE" value="DockToModernizationsExplore" />
+		<const name="EXPLORE_MODERNIZATIONS" value="ExploreModernizations" />
+		<const name="BUY_MODERNIZATION_BLOCK" value="BuyModernizationBlock" />
+		<const name="INSTALL_MODERNIZATION_BLOCK" value="InstallModernizationBlock" />
+
+		<const name="EXPLORE_EXTERIOR_SIGNALS" value="ExploreExteriorSignals" />
+		<const name="EXPLORE_SIGNALS" value="ExploreSignals" />
+
+		<const name="EXPLORE_EXTERIOR_CAMOUFLAGES" value="ExploreExteriorCamouflages" />
+		<const name="EXPLORE_CAMOUFLAGES" value="ExploreCamouflages" />
+
+		<const name="EXPLORE_EXTERIOR_ENSIGNS" value="ExploreExteriorEnsigns" />
+		<const name="EXPLORE_ENSIGNS" value="ExploreEnsigns" />
+
+		<const name="SHIPYARD" value="Shipyard" />
+		<const name="METASHOP" value="Metashop" />
+		<const name="PREMIUM_SHOP" value="PremiumShop" />
+
+		<const name="EXPLORE_PROSPECTIVE_EVENT" value="ExploreProspectiveEvent" />
+		<const name="CHECK_PROSPECTIVE_EVENT" value="CheckProspectiveEvent" />
+
+		<const name="EXPLORE_SSE" value="ExploreSSE" />
+
+		<const name="KEY_BATTLE_DIVISIONS" value="KeyBattleDivisions" />
+
+		<const name="RANKED_QUAL" value="RankedQual" type="String" />
+
+		<const name="EXPLORE_RVR" value="ExploreRVR" type="String" />
+		<const name="NEW_STAGE_RVR" value="NewStageRVR" type="String" />
+
+		<const name="EXPLORE_GENERAL_BATTLE" value="ExploreGeneralBattle" type="String" />
+
+		<const name="SUBMARINE_NEED_CHOOSE_BATTLE_TYPE" value="SubmarineNeedChooseBattle" type="String" />
+	</enum>
+</constants>
