@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<constants>
+    <enum name="PRMP_OFFER_TYPES">
+        <const name="IN_GAME" value="in_game"/>
+        <const name="EXTERNAL" value="external"/>
+        <const name="CONTENT" value="content"/>
+        <const name="IN_GAME_SURVEY" value="in_game_survey"/>
+    </enum>
+
+    <enum name="PRMP_CONTENT_TYPES">
+        <const name="TEXT" value="text"/>
+        <const name="VIDEO" value="video"/>
+        <const name="SURVEY" value="survey"/>
+
+        <range name="URL_REQUIRED" values="VIDEO, SURVEY"/>
+    </enum>
+
+    <enum name="ABUSE_STATUS">
+        <const name="NORMAL" value="0" type="Integer"/>
+        <const name="SUSPECT" value="1" type="Integer"/>
+        <const name="CONFIRMED" value="2" type="Integer"/>
+
+        <range name="NEGATIVE" values="NORMAL, CONFIRMED"/>
+    </enum>
+	
+	<enum name="PREMIUM_TYPE">
+		<const name="NONE" value="0" type="Integer"/>
+		<const name="COMMON" value="1" type="Integer"/>
+		<const name="WOWS" value="2" type="Integer"/>
+		
+		<range name="RANGE" values="COMMON, WOWS"/>
+	</enum>
+
+	<enum name="LEVELING_STEP_TYPES">
+		<const name="NONE" value="0" type="Integer"/>
+		<const name="FUNCTIONAL" value="1" type="Integer"/>
+		<const name="FUNCTIONAL_PROMO" value="2" type="Integer"/>
+		<const name="REWARD" value="3" type="Integer"/>
+		<const name="REWARD_PROMO" value="4" type="Integer"/>
+	</enum>
+
+	<enum name="CONTENT_CATEGORY">
+		<const name="NEWS" 		value="0" type="Integer"/>
+		<const name="DOGTAGS" 	value="1" type="Integer"/>
+		<const name="EMBLEMS" 	value="2" type="Integer"/>
+		<const name="PATCHES" 	value="3" type="Integer"/>
+		<const name="SIGNS" 	value="4" type="Integer"/>
+		<const name="DOLLS" 	value="5" type="Integer"/>
+		<const name="ALBUMS" 	value="6" type="Integer"/>
+		<const name="SUBALBUMS" value="7" type="Integer"/>
+		<const name="CARDS" 	value="8" type="Integer"/>
+		<const name="CAMPAIGNS" value="9" type="Integer"/>
+		<const name="LOOTBOX" 	value="10" type="Integer"/>
+	</enum>
+
+	<enum name="UBSCOPE_EVENT_DIRECTIONS">
+		<const name="UP"  value="0" type="Integer"/>
+		<const name="DOWN"  value="1" type="Integer"/>
+		<const name="NONE"  value="2" type="Integer"/>
+	</enum>
+
+	<enum name="REFERRAL_TYPE">
+		<const name="RECRUIT" value="0" type="Integer"/>
+		<const name="VETERAN" value="1" type="Integer"/>
+	</enum>
+
+	<enum name="HAS_RECRUITS_STATUS">
+		<const name="UNKNOWN"	value="0" type="Integer"/>
+		<const name="YES"		value="1" type="Integer"/>
+		<const name="NO"		value="2" type="Integer"/>
+	</enum>
+
+	<enum name="PARAGON_DENY_REASONS">
+		<const name="IS_IN_BATTLE"		value="1" type="Integer"/>
+		<const name="IS_IN_DIVISION"	value="2" type="Integer"/>
+		<const name="IS_NEED_SERVICE"	value="3" type="Integer"/>
+	</enum>
+
+</constants>

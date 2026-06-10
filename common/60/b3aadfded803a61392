@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<root>
+    <Properties>
+        <configPath>
+            <Type>STRING</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </configPath>
+        <scheme>
+            <Type>UINT16</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </scheme>
+        <weather>
+            <Type>UINT16</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </weather>
+        <transitionFactor>
+            <Type>FLOAT</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </transitionFactor>
+    </Properties>
+    <ClientMethods>
+        <startTransition></startTransition>
+        <prepareForTransition></prepareForTransition>
+        <notification>
+            <Arg>FLOAT</Arg>
+        </notification>
+        <syncStartTransition>
+            <Arg>FLOAT</Arg>
+        </syncStartTransition>
+    </ClientMethods>
+    <CellMethods>
+        <onClientEnterWorld>
+            <Exposed></Exposed>
+        </onClientEnterWorld>
+    </CellMethods>
+    <BaseMethods></BaseMethods>
+</root>
+

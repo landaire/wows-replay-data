@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="WINDOWS">
+		<const name="LOGIN"					value="Login"/>
+		<const name="DOCK"					value="Dock"/>
+		<const name="FAKE_DOCK" 			value="FakeDock"/>
+		<const name="BATTLE_LOADING" 		value="LoadingBattle"/>
+		<const name="FAKE_BATTLE_LOADING" 	value="FakeLoadingBattle"/>
+		<const name="OPTIONS" 				value="Options"/>
+	</enum>
+
+	<enum name="MODAL">
+		<const name="LOBBY"					value="LobbyMenu"/>
+		<const name="GAME_MENU"				value="GameMenu"/>
+		<const name="WAITING"				value="Waiting"/>
+		<const name="HELP"					value="Help"/>
+		<const name="LOGIN_QUEUE"			value="LoginQueue"/>
+		<const name="CONVERT_EXP"			value="ModalWindowConvertExp"/>
+		<const name="CREW_FILE"				value="CrewFile"/>
+		<const name="CREW_HIRE"				value="ModalWindowHireCrew"/>
+		<const name="CREW_ASSIGN"			value="ModalWindowAssignCrew"/>
+		<const name="CREW_RETRAIN"			value="ModalWindowRetrainCrew"/>
+		<const name="CREW_FAST_RETRAIN"		value="ModalWindowCrewFastTraining"/>
+		<const name="CREW_PENALTY_COMPENSATION"	value="ModalWindowCrewPenaltyCompensation"/>
+		<const name="TUTORIAL"				value="ModalWindowTutorial"/>
+		<const name="EXTERIOR_PURCHASE"		value="ModalWindowBuyExterior"/>
+		<const name="EXTERIOR_UNINSTALL"	value="ModalWindowUninstallExterior"/>
+		<const name="BATTLE_TYPE_CHOOSER"	value="ModalWindowBattleTypeChooser"/>
+		<const name="PVE_OPERATION_CHOOSER"	value="ModalWindowPVEOperationChooser"/>
+		<const name="RESULT_SCREEN"			value="ResultsScreen"/>
+		<const name="RESULT_SCREEN_PORT"	value="ExtendedSystemLogWindow"/>
+		<const name="RESULT_SCREEN_PORT_UNAVAILABLE"	value="UnavailableExtendedSystemLogWindow"/>
+
+	</enum>
+
+	<enum name="PANEL">
+		<const name="SHIP_CAROUSEL" 	value="ShipsCarouselPanel"/>
+		<const name="CHAT_NOTIFICATION" value="ChatNotificationsPanel"/>
+		<const name="SHIP_TTH_DOCK" 	value="ShipTTXPanelDock"/>
+	</enum>
+
+	<enum name="BROWSER">
+		<const name="GUIDE_WINDOW"	value="GuideBrowserWindow"/>
+	</enum>
+
+</constants>
