@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="CAMOUFLAGE_CATEGORIES">
+		<const name="MSKIN" 		value="MSKIN"/>
+		<const name="PERMANENT" 	value="PERMANENT"/>
+		<const name="CAMOUFLAGE" 	value="CAMOUFLAGE"/>
+	</enum>
+</constants>

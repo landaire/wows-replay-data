@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name = "TOOLTIP_TYPES">
+		<const name="SIMPLE"				value="simple" type="String"/>
+		<const name="ENSIGNS"				value="ensigns" type="String"/>
+		<const name="FREE_XP"				value="freexp" type="String"/>
+		<const name="REAMMUNITION"			value="reammunition" type="String"/>
+		<const name="RECAMO"				value="recamo" type="String"/>
+		<const name="RESIGNAL"				value="resignal" type="String"/>
+		<const name="REEQUIP"				value="reequip" type="String"/>
+		<const name="SSE"					value="sse" type="String"/>
+		<const name="TEAM_KILLER"			value="team_killer" type="String"/>
+		<const name="TAKEN_ARTILLERY"		value="taken_artillery" type="String"/>
+		<const name="TAKEN_TORPEDOES"		value="taken_torpedoes" type="String"/>
+		<const name="TAKEN_BOMBS"			value="taken_bombs" type="String"/>
+		<const name="TAKEN_SKIP_BOMBS"		value="taken_skip_bombs" type="String"/>
+		<const name="TAKEN_ROCKETS"			value="taken_rockets" type="String"/>
+		<const name="TAKEN_NAVAL_MINES"		value="taken_naval_mines" type="String"/>
+		<const name="TAKEN_DEPTH_CHARGES"	value="taken_depth_charges" type="String"/>
+		<const name="TAKEN_OTHER"			value="taken_other" type="String"/>
+	</enum>
+
+	<enum name = "COLORS">
+		<const name="ALPHABLACK"	value="alphablack" type="String"/>
+		<const name="ALPHARED"		value="alphared" type="String"/>
+		<const name="GREY"			value="grey" type="String"/>
+		<const name="PINK"			value="pink" type="String"/>
+		<const name="RED"			value="red" type="String"/>
+	</enum>
+
+	<enum name = "BLOCKS">
+		<const name="CREWEXP"		value="crew_exp" type="String"/>
+		<const name="ACCOUNTEXP"	value="account_exp" type="String"/>
+		<const name="CREDITS"		value="credits" type="String"/>
+	</enum>
+
+	<enum name = "FORMAT">
+		<const name="GOLD"							value="gold" type="String"/>
+		<const name="FREE_XP_RIGHT"					value="freexp_right" type="String"/>
+		<const name="GOLD_APPLIED"					value="gold_applied" type="String"/>
+		<const name="NO_VALUE"						value="no_value" type="String"/>
+		<const name="EXP"							value="exp" type="String"/>
+		<const name="BOLD"							value="bold" type="String"/>
+		<const name="TOOLTIP_PERCENTS"				value="tooltip_percents" type="String"/>
+		<const name="SKILL_POINTS"					value="skill_points" type="String"/>
+		<const name="NEW_LEVEL"						value="new_level" type="String"/>
+		<const name="CREDITS_APPLIED_SHOW_ZERO"		value="credits_applied_show_zero" type="String"/>
+		<const name="GOLD_RIGHT"					value="gold_right" type="String"/>
+		<const name="SUBTITLE"						value="subtitle" type="String"/>
+		<const name="STRING"						value="string" type="String"/>
+		<const name="FREE_XP"						value="freexp" type="String"/>
+		<const name="PERIOD"						value="period" type="String"/>
+		<const name="WARNING_ICON"					value="warning_icon" type="String"/>
+		<const name="ELITE_XP"						value="elite_xp" type="String"/>
+		<const name="DISTANCE"						value="distance" type="String"/>
+		<const name="CREDITS_ZERO_HIDE"				value="credits_zero_hide" type="String"/>
+		<const name="AOGAS"							value="aogas" type="String"/>
+		<const name="CREDITS"						value="credits" type="String"/>
+		<const name="TIME"							value="time" type="String"/>
+		<const name="PERCENTS"						value="percents" type="String"/>
+		<const name="CREDITS_APPLIED"				value="credits_applied" type="String"/>
+	</enum>
+
+	<enum name = "TYPES">
+		<const name="HEADER"					value="0" type="Integer"/>
+		<const name="SUBHEADER"					value="1" type="Integer"/>
+		<const name="LINE"						value="2" type="Integer"/>
+		<const name="SUBLINE"					value="3" type="Integer"/>
+		<const name="LIST"						value="4" type="Integer"/>
+		<const name="TOTAL"						value="5" type="Integer"/>
+		<const name="PLANE"						value="6" type="Integer"/>
+		<const name="MODULE_CRIT"				value="7" type="Integer"/>
+		<const name="MODULE_KILL"				value="8" type="Integer"/>
+		<const name="CAROUSEL_ITEM"				value="9" type="Integer"/>
+		<const name="TOOLTIP_HEADER"			value="10" type="Integer"/>
+		<const name="EXP_WITH_PROGRESS"			value="11" type="Integer"/>
+		<const name="EMPTY_LINE"				value="12" type="Integer"/>
+		<const name="TOOLTIP_LINE"				value="13" type="Integer"/>
+		<const name="BUILDING_TOOLTIP_HEADER"	value="14" type="Integer"/>
+		<const name="PLAYER"					value="15" type="Integer"/>
+		<const name="WARNING_LINE"				value="16" type="Integer"/>
+	</enum>
+
+</constants>
