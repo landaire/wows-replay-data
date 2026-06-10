@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="GUN_STATE" type="Integer">
+		<const name="READY"		 value="1" /> <!-- Орудие готово к стрельбе -->
+		<const name="WORK" 		 value="2" /> <!-- Орудие в работе -->
+		<const name="RELOAD"	 value="3" /> <!-- Орудие перезаряжается -->
+		<const name="CHARGE"	 value="4" /> <!-- Орудие заряжается -->
+		<const name="CRITICAL"	 value="5" /> <!-- Орудие критически повреждено -->
+		<const name="DESTROYED"	 value="6" /> <!-- Орудие полностью недоступно -->
+	</enum>
+
+	<enum name="BARREL_FIRE_MODE" type="Integer" >
+		<const name="SINGLE"	value="1" />
+		<const name="SALVO" 	value="2" />
+	</enum>
+</constants>
