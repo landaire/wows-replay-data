@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SHIP_GROUPS">
+		<const name="START"						value="start"						type="String"/>
+		<const name="UPGRADEABLE"				value="upgradeable"					type="String"/>
+		<const name="UPGRADEABLE_EXCL"			value="upgradeableExclusive"		type="String"/>
+		<const name="PREMIUM"					value="premium"						type="String"/>
+		<const name="SPECIAL"					value="special"						type="String"/>
+		<const name="SPECIAL_UNSELLABLE"		value="specialUnsellable"			type="String"/>
+		<const name="DEMO_WITHOUT_STATS"		value="demoWithoutStats"			type="String"/>
+		<const name="EVENT"						value="event"						type="String"/>
+		<const name="UNAVAILABLE"				value="unavailable"					type="String"/>
+		<const name="PRESERVED"					value="preserved"					type="String"/>
+		<const name="DISABLED"					value="disabled"					type="String"/>
+		<const name="PECULIAR"					value="peculiar"					type="String"/>
+		<const name="CLAN"						value="clan"						type="String"/>
+		<const name="ULTIMATE"					value="ultimate"					type="String"/>
+		<const name="EARLY_ACCESS"				value="earlyAccess"					type="String"/>
+		<const name="UPGRADEABLE_ULT"			value="upgradeableUltimate"			type="String"/>
+	</enum>
+</constants>
