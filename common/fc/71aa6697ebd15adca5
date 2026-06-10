@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<root>
+    <Properties>
+        <battleType>
+            <Type>UINT16</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </battleType>
+        <timeLeft>
+            <Type>UINT16</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </timeLeft>
+        <battleStage>
+            <Type>UINT8</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </battleStage>
+        <scenarioPhase>
+            <Type>UINT8</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </scenarioPhase>
+        <state>
+            <Type>BATTLE_LOGIC_STATE</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </state>
+        <debugText>
+            <Type>ARRAY
+                <of>BATTLE_LOGIC_DEBUG_TEXT</of>
+            </Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </debugText>
+    </Properties>
+    <ClientMethods>
+        <playEffectOnce>
+            <Arg>STRING</Arg>
+            <Arg>VECTOR3</Arg>
+            <Arg>FLOAT</Arg>
+        </playEffectOnce>
+    </ClientMethods>&gt;
+    <CellMethods></CellMethods>
+    <BaseMethods></BaseMethods>
+</root>
+

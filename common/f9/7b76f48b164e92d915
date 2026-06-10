@@ -1,0 +1,40 @@
+<root>
+	<Properties>
+		<airDefenseTargetId>
+			<Type>ARRAY<of>PLANE_ID</of></Type>
+			<Flags>			ALL_CLIENTS     </Flags>
+		</airDefenseTargetId>
+		<airDefenseDispRadius>
+			<Type>			FLOAT32			</Type>
+			<Flags>			ALL_CLIENTS		</Flags>
+			<Default>		0.0		</Default>
+		</airDefenseDispRadius>
+		<isAntiAirMode>
+			<Type> BOOL </Type>
+			<Flags> ALL_CLIENTS </Flags>
+			<Default> 0 </Default>
+		</isAntiAirMode>
+		<antiAirAuras>
+			<Type> ARRAY<of>AIR_DEFENCE_AURA</of> </Type>
+			<Flags> ALL_CLIENTS </Flags>
+		</antiAirAuras>
+	</Properties>
+		
+	<TempProperties>	
+	</TempProperties>	
+	
+	<ClientMethods>
+	</ClientMethods>
+	
+	<CellMethods>
+		<setAntiAirMode>
+			<Exposed/>
+			<Arg> BOOL </Arg>
+		</setAntiAirMode>
+
+		<setEnabledUniversalAura>
+			<Exposed/>
+			<Arg> BOOL </Arg>
+		</setEnabledUniversalAura>
+	</CellMethods>
+</root>
