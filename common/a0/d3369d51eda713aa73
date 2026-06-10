@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="TIP_TYPES">
+		<const name="DOCK_TECH_TREE" value="DockToTechTreeExploreShip"/>
+		<const name="DOCK_TECH_TREE_BUY" value="DockToTechTreeBuyShip"/>
+
+		<const name="TECH_TREE_BUY" value="TechTreeToShipExplore"/>
+		<const name="TECH_TREE_BUY_BUY" value="TechTreeToShipBuy"/>
+
+		<const name="MODULES_EXPLORE" value="ModulesToExploreBtn"/>
+		<const name="MODULES_BUY" value="ModulesToBuyBtn"/>
+
+		<const name="NATIONS" value="TechTreeToShipNation"/>
+		<const name="NATIONS_BUY" value="TechTreeToShipNationBuy"/>
+
+		<const name="MODULES_NEXT" value="ModulesToNextShipExplore"/>
+		<const name="MODULES_NEXT_BUY" value="ModulesToNextShipBuy"/>
+
+		<const name="INVITE_DOCK_USER_MENU" value="DockToUserMenu"/>
+		<const name="INVITE_USER_MENU_INVITE_BTN" value="UserMenuInviteBtn"/>
+
+		<const name="DOCK_RANDOM_FIGHT" value="DockToRandomFight"/>
+		<const name="RANDOM_FIGHT_BTN" value="RandomFightBtn"/>
+
+		<const name="DOCK_CREW" value="DockToCrew"/>
+
+		<const name="DOCK_MODULES_EXPLORE" value="DockToModulesExplore"/>
+		<const name="DOCK_MODULES_BUY" value="DockToModulesBuy"/>
+		<const name="MODULES_EXPLORE_MODULE" value="ModulesExploreModule"/>
+		<const name="MODULES_BUY_MODULE" value="ModulesBuyModule"/>
+		<const name="MODULES_TOOLTIP_EXPLORE" value="ModulesTooltipExplore"/>
+		<const name="MODULES_TOOLTIP_BUY" value="ModulesTooltipBuy"/>
+	</enum>
+</constants>
