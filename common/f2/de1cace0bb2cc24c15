@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<constants>
+    <enum name="CLAN_ROLE">
+        <const name="EXECUTIVE_OFFICER" value="executive_officer" type="String"/>
+        <const name="PRIVATE" value="private" type="String"/>
+        <const name="OFFICER" value="officer" type="String"/>
+        <const name="COMMISSIONED_OFFICER" value="commissioned_officer" type="String"/>
+        <const name="RECRUITMENT_OFFICER" value="recruitment_officer" type="String"/>
+        <const name="COMMANDER" value="commander" type="String"/>
+    </enum>
+
+    <enum name="CLAN_BATTLE_STAGE">
+        <const name="PROMOTION" value="promotion" type="String"/>
+        <const name="DEMOTION" value="demotion" type="String"/>
+        <const name="LEAGUE" value="league" type="String"/>
+    </enum>
+
+    <enum name="CLAN_BATTLE_PROGRESS">
+        <const name="VICTORY" value="victory" type="String"/>
+        <const name="DEFEAT" value="defeat" type="String"/>
+        <const name="DRAW" value="draw" type="String"/>
+        <const name="UNKNOWN" value="unknown" type="String"/>
+    </enum>
+
+    <enum name="CLAN_LEAGUE_COLORS">
+        <const name="HURRICANE" value="0xAB45E6" type="Hex"/> <!-- 0 -->
+        <const name="TYPHOON" value="0xE5124A" type="Hex"/> <!-- 1 -->
+        <const name="STORM" value="0xF1AE07" type="Hex"/> <!-- 2 -->
+        <const name="GALE" value="0x0644D9" type="Hex"/> <!-- 3 -->
+        <const name="SQUALL" value="0x00D8D0" type="Hex"/> <!-- 4 -->
+        <const name="DEFAULT" value="0xFFFFFF" type="Hex"/>
+    </enum>
+</constants>
