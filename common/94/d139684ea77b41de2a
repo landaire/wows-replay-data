@@ -1,0 +1,23 @@
+<space.settings>
+	<skipLods>	false	</skipLods>
+	<chunkSize>	100.0000	</chunkSize>
+	<bounds>
+		<minX>	-4	</minX>
+		<maxX>	3	</maxX>
+		<minY>	-4	</minY>
+		<maxY>	3	</maxY>
+	</bounds>
+	<terrain>
+		<version>	200	</version>
+		<heightMapSize>	128	</heightMapSize>
+		<normalMapSize>	128	</normalMapSize>
+	</terrain>
+	<navmeshGenerator>	navgen	</navmeshGenerator>
+	<UnprocessedData>
+		<shadows>	true	</shadows>
+		<cdlod>	true	</cdlod>
+		<heightMap>	true	</heightMap>
+		<miniMap>	true	</miniMap>
+		<saved>	false	</saved>
+	</UnprocessedData>
+</space.settings>

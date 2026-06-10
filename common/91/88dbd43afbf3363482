@@ -1,0 +1,21 @@
+<!-- Used to publish stats to Steam or WinStore -->
+<root>
+	<ClientMethods>
+		<receivePublicIntStat>
+			<Args>
+				<stat_id> STRING </stat_id>
+				<value> INT32 </value>
+				<add> BOOL </add>
+			</Args>
+		</receivePublicIntStat>
+
+		<!-- could be in StatsReceiver iface -->
+		<receivePublicFloatStat>
+			<Args>
+				<stat_id> STRING </stat_id>
+				<value> FLOAT </value>
+				<add> BOOL </add>
+			</Args>
+		</receivePublicFloatStat>
+	</ClientMethods>
+</root>
