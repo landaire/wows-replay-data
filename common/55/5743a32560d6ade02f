@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<constants>
+	<enum name="SERVICE_COLORS">
+		<const name="YELLOW"	value="0xFFFFCC66"/>
+		<const name="DARK_BLUE" value="0xFF051523"/>
+		<const name="ORANGE"	value="0xFFFF9933"/>
+		<const name="RED"		value="0xFFFF6600"/>
+		<const name="WHITE"		value="0xFFFFFFFF"/>
+		<const name="GREEN"		value="0xFF4CE8AA"/>
+	</enum>
+
+	<enum name="UNIFIED_STATUS">
+		<const name="DEFAULT"			value="default"/>
+		<const name="CHECK"				value="check"/>
+		<const name="DATE"				value="date"/>
+		<const name="DATE_ATTENTION"	value="date_attention"/>
+		<const name="ATTENTION"			value="attention"/>
+		<const name="NEGATIVE"			value="negative"/>
+		<const name="WARNING"			value="warning"/>
+		<const name="LOCK"				value="lock"/>
+	</enum>
+</constants>
