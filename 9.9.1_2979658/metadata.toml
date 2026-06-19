@@ -1632,8 +1632,8 @@ build = 2979658
 "spaces/s10_USS_CL/space.settings" = "ae569df7f72946ce85b8"
 
 [derived]
-"game_params.rkyv" = "f7fdc431779131e1184c"
-"game_params.rkyv.zst" = "a6da6b25ff4a43be282a"
+"game_params.rkyv" = "ba849b9e06d677bf2b55"
+"game_params.rkyv.zst" = "6e3728f1380846363851"
 "translations/cs/LC_MESSAGES/global.mo" = "592d45d602f540a9ab86"
 "translations/de/LC_MESSAGES/global.mo" = "a77ba2f82cca30d9b202"
 "translations/en/LC_MESSAGES/global.mo" = "37edbfb49382f0586c8d"
