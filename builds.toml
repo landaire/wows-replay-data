@@ -101,355 +101,355 @@ dir = "0.7.6_346043"
 dumped_at = "2026-04-13T09:30:24.441187346-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "7.8.0"
+version = "0.7.8"
 build = 987447
 dir = "7.8.0_987447"
 dumped_at = "2026-05-29T14:27:27.191190092-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "7.9.0"
+version = "0.7.9"
 build = 1037117
 dir = "7.9.0_1037117"
 dumped_at = "2026-05-29T14:29:18.698015595-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "7.10.1"
+version = "0.7.10"
 build = 1130563
 dir = "7.10.1_1130563"
 dumped_at = "2026-05-29T14:42:49.223276035-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "7.10.2"
+version = "0.7.10"
 build = 1150515
 dir = "7.10.2_1150515"
 dumped_at = "2026-05-29T14:44:00.344483052-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "7.11.0"
+version = "0.7.11"
 build = 1167524
 dir = "7.11.0_1167524"
 dumped_at = "2026-05-30T11:07:59.932798634-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "7.11.1"
+version = "0.7.11"
 build = 1194326
 dir = "7.11.1_1194326"
 dumped_at = "2026-05-30T11:09:11.618806805-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.0.2"
+version = "0.8.0"
 build = 1325581
 dir = "8.0.2_1325581"
 dumped_at = "2026-05-30T11:14:58.525572372-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.0.3"
+version = "0.8.0"
 build = 1350826
 dir = "8.0.3_1350826"
 dumped_at = "2026-05-30T11:16:09.851852847-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.1.1"
+version = "0.8.1"
 build = 1374796
 dir = "8.1.1_1374796"
 dumped_at = "2026-05-29T15:01:19.794637413-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.2.0"
+version = "0.8.2"
 build = 1427460
 dir = "8.2.0_1427460"
 dumped_at = "2026-05-29T15:04:25.004769112-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.3.1"
+version = "0.8.3"
 build = 1491147
 dir = "8.3.1_1491147"
 dumped_at = "2026-05-29T15:15:59.053749736-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.4.0"
+version = "0.8.4"
 build = 1549228
 dir = "8.4.0_1549228"
 dumped_at = "2026-05-29T15:17:25.463491574-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.5.1"
+version = "0.8.5"
 build = 1631917
 dir = "8.5.1_1631917"
 dumped_at = "2026-05-29T15:29:30.141709583-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.6.0"
+version = "0.8.6"
 build = 1690929
 dir = "8.6.0_1690929"
 dumped_at = "2026-05-29T15:30:55.658565012-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.7.1"
+version = "0.8.7"
 build = 1818869
 dir = "8.7.1_1818869"
 dumped_at = "2026-05-29T15:38:54.855728276-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.8.0"
+version = "0.8.8"
 build = 1860153
 dir = "8.8.0_1860153"
 dumped_at = "2026-05-29T15:40:17.996900388-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.8.1"
+version = "0.8.8"
 build = 1874437
 dir = "8.8.1_1874437"
 dumped_at = "2026-05-30T11:27:52.92703096-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.9.0"
+version = "0.8.9"
 build = 1942147
 dir = "8.9.0_1942147"
 dumped_at = "2026-05-30T11:29:58.256931418-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.9.1"
+version = "0.8.9"
 build = 1991370
 dir = "8.9.1_1991370"
 dumped_at = "2026-05-29T15:59:14.745712065-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.10.0"
+version = "0.8.10"
 build = 2030144
 dir = "8.10.0_2030144"
 dumped_at = "2026-05-29T16:00:34.184381046-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "8.11.0"
+version = "0.8.11"
 build = 2118554
 dir = "8.11.0_2118554"
 dumped_at = "2026-05-29T16:30:13.776914444-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.0.0"
+version = "0.9.0"
 build = 2171354
 dir = "9.0.0_2171354"
 dumped_at = "2026-05-29T16:31:31.226814398-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.1.1"
+version = "0.9.1"
 build = 2270610
 dir = "9.1.1_2270610"
 dumped_at = "2026-05-29T17:04:51.542444863-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.2.0"
+version = "0.9.2"
 build = 2316552
 dir = "9.2.0_2316552"
 dumped_at = "2026-05-29T17:06:25.618372038-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.2.1"
+version = "0.9.2"
 build = 2380178
 dir = "9.2.1_2380178"
 dumped_at = "2026-05-30T11:44:44.864062995-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.3.0"
+version = "0.9.3"
 build = 2404350
 dir = "9.3.0_2404350"
 dumped_at = "2026-05-29T17:14:09.988386097-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.3.1"
+version = "0.9.3"
 build = 2466969
 dir = "9.3.1_2466969"
 dumped_at = "2026-05-29T17:15:36.731620361-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.4.0"
+version = "0.9.4"
 build = 2506084
 dir = "9.4.0_2506084"
 dumped_at = "2026-05-30T11:58:22.544576163-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.4.1"
+version = "0.9.4"
 build = 2571457
 dir = "9.4.1_2571457"
 dumped_at = "2026-05-30T12:00:36.578546005-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.5.0"
+version = "0.9.5"
 build = 2591463
 dir = "9.5.0_2591463"
 dumped_at = "2026-05-29T17:35:11.626945106-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.5.1"
+version = "0.9.5"
 build = 2643263
 dir = "9.5.1_2643263"
 dumped_at = "2026-05-29T17:36:31.160077805-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.6.0"
+version = "0.9.6"
 build = 2666186
 dir = "9.6.0_2666186"
 dumped_at = "2026-05-30T12:15:35.513276318-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.6.1"
+version = "0.9.6"
 build = 2697511
 dir = "9.6.1_2697511"
 dumped_at = "2026-05-30T12:17:49.088602572-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.7.0"
+version = "0.9.7"
 build = 2744482
 dir = "9.7.0_2744482"
 dumped_at = "2026-05-29T18:10:07.241190534-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.8.0"
+version = "0.9.8"
 build = 2832630
 dir = "9.8.0_2832630"
 dumped_at = "2026-05-29T18:11:36.701004773-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.9.1"
+version = "0.9.9"
 build = 2979658
 dir = "9.9.1_2979658"
 dumped_at = "2026-05-29T18:38:53.580912196-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.10.0"
+version = "0.9.10"
 build = 3052606
 dir = "9.10.0_3052606"
 dumped_at = "2026-05-29T18:42:04.04072918-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "9.12.0"
+version = "0.9.12"
 build = 3245976
 dir = "9.12.0_3245976"
 dumped_at = "2026-05-29T19:23:37.72444552-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.0.0"
+version = "0.10.0"
 build = 3343484
 dir = "10.0.0_3343484"
 dumped_at = "2026-05-29T19:25:15.524768393-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.1.0"
+version = "0.10.1"
 build = 3471783
 dir = "10.1.0_3471783"
 dumped_at = "2026-04-13T14:48:19.19747624-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.2.0"
+version = "0.10.2"
 build = 3611516
 dir = "10.2.0_3611516"
 dumped_at = "2026-04-13T14:49:03.994586032-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.3.0"
+version = "0.10.3"
 build = 3747819
 dir = "10.3.0_3747819"
 dumped_at = "2026-05-29T20:06:20.822286336-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.4.0"
+version = "0.10.4"
 build = 3912232
 dir = "10.4.0_3912232"
 dumped_at = "2026-05-29T20:07:46.437447339-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.5.0"
+version = "0.10.5"
 build = 4046169
 dir = "10.5.0_4046169"
 dumped_at = "2026-05-29T20:27:53.525607631-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.6.0"
+version = "0.10.6"
 build = 4181350
 dir = "10.6.0_4181350"
 dumped_at = "2026-05-29T20:30:51.467636392-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.7.2"
+version = "0.10.7"
 build = 4365481
 dir = "10.7.2_4365481"
 dumped_at = "2026-05-29T20:39:23.001320002-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.8.0"
+version = "0.10.8"
 build = 4462593
 dir = "10.8.0_4462593"
 dumped_at = "2026-05-29T20:42:27.054529924-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.9.0"
+version = "0.10.9"
 build = 4610639
 dir = "10.9.0_4610639"
 dumped_at = "2026-05-29T20:52:41.917114508-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.10.0"
+version = "0.10.10"
 build = 4747907
 dir = "10.10.0_4747907"
 dumped_at = "2026-05-29T20:54:41.397307331-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "10.11.0"
+version = "0.10.11"
 build = 4883153
 dir = "10.11.0_4883153"
 dumped_at = "2026-05-29T21:03:52.220632556-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.0.0"
+version = "0.11.0"
 build = 5045210
 dir = "11.0.0_5045210"
 dumped_at = "2026-05-29T21:05:42.727189056-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.1.1"
+version = "0.11.1"
 build = 5241351
 dir = "11.1.1_5241351"
 dumped_at = "2026-05-29T21:13:26.229168892-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.2.0"
+version = "0.11.2"
 build = 5315992
 dir = "11.2.0_5315992"
 dumped_at = "2026-05-29T21:15:26.020138939-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.2.1"
+version = "0.11.2"
 build = 5343985
 dir = "11.2.1_5343985"
 dumped_at = "2026-05-30T12:42:55.106994225-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.3.0"
+version = "0.11.3"
 build = 5450485
 dir = "11.3.0_5450485"
 dumped_at = "2026-05-29T21:25:32.726987184-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.4.0"
+version = "0.11.4"
 build = 5624555
 dir = "11.4.0_5624555"
 dumped_at = "2026-05-29T21:27:32.954364095-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.5.0"
+version = "0.11.5"
 build = 5771708
 dir = "11.5.0_5771708"
 dumped_at = "2026-04-11T19:28:09.7335894-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.6.0"
+version = "0.11.6"
 build = 5915585
 dir = "11.6.0_5915585"
 dumped_at = "2026-04-11T19:28:55.310069228-07:00[America/Los_Angeles]"
 
 [[builds]]
-version = "11.7.0"
+version = "0.11.7"
 build = 6081105
 dir = "11.7.0_6081105"
 dumped_at = "2026-04-11T19:43:50.380440278-07:00[America/Los_Angeles]"
