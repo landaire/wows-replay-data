@@ -887,8 +887,8 @@ build = 296659
 "spaces/s03_Labyrinth/space.settings" = "4e40f6d2b4efbb215952"
 
 [derived]
-"game_params.rkyv" = "37f1479b59f2324c5cc3"
-"game_params.rkyv.zst" = "51e8696feba4b0fb82e7"
+"game_params.rkyv" = "33a9b4ad220910b6f781"
+"game_params.rkyv.zst" = "ddf1608f7f586a4371ab"
 "translations/be/LC_MESSAGES/global.mo" = "d9bc32f50310f2bd6964"
 "translations/cs/LC_MESSAGES/global.mo" = "39fb2797a38c61ee280d"
 "translations/de/LC_MESSAGES/global.mo" = "93c15d2614e06fec8634"

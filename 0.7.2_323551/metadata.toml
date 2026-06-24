@@ -959,8 +959,8 @@ build = 323551
 "spaces/s09_LePVE/space.settings" = "de2f30a621f88d43b7c9"
 
 [derived]
-"game_params.rkyv" = "bd6ea8d12ade07011b87"
-"game_params.rkyv.zst" = "347cae5fc63694c90d9d"
+"game_params.rkyv" = "da13daf39ed07fa4249f"
+"game_params.rkyv.zst" = "a20cbe451dca13c3dcda"
 "translations/be/LC_MESSAGES/global.mo" = "e069d9ac586f06a7c153"
 "translations/cs/LC_MESSAGES/global.mo" = "3e582b6332ec798b459b"
 "translations/de/LC_MESSAGES/global.mo" = "72380418400c94763dd3"

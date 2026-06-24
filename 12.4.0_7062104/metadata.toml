@@ -3183,8 +3183,8 @@ build = 7062104
 "spaces/s10_USS_CL/space.settings" = "4995750bd26a11ed8fdb"
 
 [derived]
-"game_params.rkyv" = "50b6158596753d4f54f7"
-"game_params.rkyv.zst" = "3228ca49e697458b4733"
+"game_params.rkyv" = "73a901a4e95c5b3ecc90"
+"game_params.rkyv.zst" = "008ecf7ac0e867e77625"
 "translations/cs/LC_MESSAGES/global.mo" = "968f40b74c65e88ea516"
 "translations/de/LC_MESSAGES/global.mo" = "1e5d38c6eb9c890e73bc"
 "translations/en/LC_MESSAGES/global.mo" = "dcca7e42b9c1be0187ef"

@@ -3281,8 +3281,8 @@ build = 5624555
 "spaces/s07_Advance/space.settings" = "ff3e7a1c823f2c290738"
 
 [derived]
-"game_params.rkyv" = "90d7ecff39d5c2ee5a9e"
-"game_params.rkyv.zst" = "6480d077335901d81473"
+"game_params.rkyv" = "56f3b4cf46f0c1c40f12"
+"game_params.rkyv.zst" = "a87cdb81b09d98aa176b"
 "translations/cs/LC_MESSAGES/global.mo" = "4ddd6b56a5b4cf73a6a3"
 "translations/de/LC_MESSAGES/global.mo" = "759bce73b3b1608bba87"
 "translations/en/LC_MESSAGES/global.mo" = "c5ec5f90b96394ade45d"
