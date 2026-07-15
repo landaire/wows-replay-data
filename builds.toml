@@ -753,3 +753,9 @@ version = "15.5.0"
 build = 12668706
 dir = "15.5.0_12668706"
 dumped_at = "2026-06-18T09:40:08.20733-07:00[America/Los_Angeles]"
+
+[[builds]]
+version = "15.6.0"
+build = 12830008
+dir = "15.6.0_12830008"
+dumped_at = "2026-07-15T14:28:25.3340463-07:00[America/Los_Angeles]"
