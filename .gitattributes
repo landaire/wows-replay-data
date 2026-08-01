@@ -1,0 +1,4 @@
+# A content-addressed store: every object name IS the hash of that object's
+# bytes. Line-ending translation rewrites content, so it breaks the hash of
+# every text-looking object it touches. Nothing here may be treated as text.
+* -text
