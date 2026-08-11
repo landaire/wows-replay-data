@@ -1,0 +1,1527 @@
+{
+  "version": 1,
+  "build": 12830008,
+  "sections": {
+    "content/gameplay/netherlands/ship/submarine/HSS302_Tonijn_1966/HSS302_Tonijn_1966.model": [
+      6.894
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC303_Hawaii_1955/ASC303_Hawaii_1955.model": [
+      86.5725,
+      19.4145,
+      -39.5145,
+      -100.1445
+    ],
+    "content/gameplay/japan/ship/destroyer/JSD050_Yamagiri_1944/JSD050_Yamagiri_1944.model": [
+      59.6865,
+      25.545,
+      -12.3855,
+      -62.8965
+    ],
+    "content/gameplay/france/ship/battleship/FSB010_France_1957/FSB010_France_1957.model": [
+      101.304,
+      24.963,
+      -30.2085,
+      -102.999
+    ],
+    "content/gameplay/germany/ship/aircarrier/GSA008_Max_Immelmann_1945/GSA008_Max_Immelmann_1945.model": [
+      87.84,
+      22.075499,
+      -43.884003,
+      -95.337006
+    ],
+    "content/gameplay/russia/ship/destroyer/RSD023_Neustrashimy_1948/RSD023_Neustrashimy_1948.model": [
+      53.9685,
+      22.4205,
+      -29.2155,
+      -56.143497
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC025_Donskoy_1948/RSC025_Donskoy_1948.model": [
+      86.304,
+      25.3335,
+      -34.5255,
+      -81.6585
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC303_Blucher_1940/GSC303_Blucher_1940.model": [
+      73.034996,
+      31.368002,
+      -28.560001,
+      -78.489006
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC307_Manteuffel_1945/GSC307_Manteuffel_1945.model": [
+      83.860504,
+      21.891,
+      -17.9445,
+      -95.576996
+    ],
+    "content/gameplay/usa/ship/battleship/ASB012_North_Carolina_1945/ASB012_North_Carolina_1945.model": [
+      80.7705,
+      14.703,
+      -38.1615,
+      -84.456
+    ],
+    "content/gameplay/japan/ship/battleship/JSB068_Tsurugi_1944/JSB068_Tsurugi_1944.model": [
+      110.907,
+      42.997498,
+      -27.126001,
+      -96.666
+    ],
+    "content/gameplay/netherlands/ship/cruiser/HSC301_Prins_Van_Oranje_1947/HSC301_Prins_Van_Oranje_1947.model": [
+      90.4515,
+      -0.28800002,
+      -37.269,
+      -81.850494
+    ],
+    "content/gameplay/germany/ship/battleship/GSB041_Hannover_1945/GSB041_Hannover_1945.model": [
+      118.6695,
+      18.0075,
+      -53.9145,
+      -118.62
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD030_Black_1943/ASD030_Black_1943.model": [
+      45.5025,
+      15.057,
+      -14.5035,
+      -45.84
+    ],
+    "content/gameplay/japan/ship/aircarrier/JSA005_Kaga_1942/JSA005_Kaga_1942.model": [
+      93.6585,
+      33.9255,
+      -23.031,
+      -76.956
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC034_Zao_1944/JSC034_Zao_1944.model": [
+      83.778,
+      21.560999,
+      -27.164999,
+      -76.7685
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC054_Yodo_1944/JSC054_Yodo_1944.model": [
+      91.275,
+      15.607501,
+      -30.420002,
+      -93.7185
+    ],
+    "content/gameplay/japan/ship/destroyer/JSD035_Hayate_1945/JSD035_Hayate_1945.model": [
+      52.431,
+      19.41,
+      -23.766,
+      -54.7965
+    ],
+    "content/gameplay/japan/ship/destroyer/JSD015_Yugumo_1941/JSD015_Yugumo_1941.model": [
+      50.614502,
+      27.2925,
+      -16.872,
+      -44.9025
+    ],
+    "content/gameplay/uk/ship/cruiser/BSC025_Goliath_1949/BSC025_Goliath_1949.model": [
+      89.155495,
+      36.105,
+      -25.263,
+      -93.9
+    ],
+    "content/gameplay/france/ship/destroyer/FSD015_Marceau_1949/FSD015_Marceau_1949.model": [
+      54.147003,
+      20.759998,
+      -28.7085,
+      -58.017
+    ],
+    "content/gameplay/italy/ship/battleship/ISB011_Giuseppe_Verdi_1942/ISB011_Giuseppe_Verdi_1942.model": [
+      97.821,
+      9.6555,
+      -45.4185,
+      -100.999504
+    ],
+    "content/gameplay/spain/ship/destroyer/SSD001_Alvaro_de_Bazan_1944/SSD001_Alvaro_de_Bazan_1944.model": [
+      59.2095,
+      24.7665,
+      -14.572499,
+      -55.674
+    ],
+    "content/gameplay/japan/ship/battleship/JSB052_Satsuma_1945/JSB052_Satsuma_1945.model": [
+      117.6915,
+      37.4085,
+      -24.3225,
+      -101.457
+    ],
+    "content/gameplay/russia/ship/battleship/RSB015_Sovetskaya_Rossiya_1953/RSB015_Sovetskaya_Rossiya_1953.model": [
+      114.96751,
+      26.332499,
+      -44.7195,
+      -117.489
+    ],
+    "content/gameplay/panamerica/ship/battleship/VSB302_Los_Andes_1943/VSB302_Los_Andes_1943.model": [
+      96.334496,
+      19.9905,
+      -56.140503,
+      -123.318
+    ],
+    "content/gameplay/italy/ship/battleship/ISB020_Ruggiero_di_Lauria_1944/ISB020_Ruggiero_di_Lauria_1944.model": [
+      111.219,
+      53.478,
+      -11.4135,
+      -104.2455
+    ],
+    "content/gameplay/usa/ship/battleship/ASB301_Rhode_Island_1952/ASB301_Rhode_Island_1952.model": [
+      97.0935,
+      20.220001,
+      -43.038,
+      -103.6725
+    ],
+    "content/gameplay/france/ship/battleship/FSB031_Flandre_1952/FSB031_Flandre_1952.model": [
+      94.6245,
+      6.5175,
+      -37.956,
+      -104.5455
+    ],
+    "content/gameplay/italy/ship/cruiser/ISC032_Michelangelo_1941/ISC032_Michelangelo_1941.model": [
+      96.312004,
+      24.702,
+      -43.113003,
+      -104.6415
+    ],
+    "content/gameplay/russia/ship/battleship/RSB029_Navarin_1944/RSB029_Navarin_1944.model": [
+      82.473,
+      9.93,
+      -48.2115,
+      -90.30299
+    ],
+    "content/gameplay/europe/ship/battleship/WSB307_Thor_1952/WSB307_Thor_1952.model": [
+      94.365,
+      23.053501,
+      -53.769,
+      -95.5035
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC020_Des_Moines_1948/ASC020_Des_Moines_1948.model": [
+      81.747,
+      18.309,
+      -23.2965,
+      -80.7795
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD302_Z57_1945/GSD302_Z57_1945.model": [
+      54.045,
+      22.056,
+      -15.111,
+      -55.1805
+    ],
+    "content/gameplay/panamerica/ship/aircarrier/VSA301_Independencia_1959/VSA301_Independencia_1959.model": [
+      94.590004,
+      41.895,
+      -19.611,
+      -94.605
+    ],
+    "content/gameplay/france/ship/battleship/FSB006_Alsace_1945/FSB006_Alsace_1945.model": [
+      93.9735,
+      6.846,
+      -31.223999,
+      -103.972496
+    ],
+    "content/gameplay/usa/ship/submarine/ASS301_Archerfish_1944/ASS301_Archerfish_1944.model": [
+      14.436
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD048_Fletcher_1945/ASD048_Fletcher_1945.model": [
+      45.4575,
+      15.221999,
+      -25.3755,
+      -49.6395
+    ],
+    "content/gameplay/germany/ship/battleship/GSB008_Friedrich_der_Grosse_1940/GSB008_Friedrich_der_Grosse_1940.model": [
+      98.3565,
+      26.946,
+      -42.27,
+      -105.318
+    ],
+    "content/gameplay/panamerica/ship/cruiser/VSC302_Almirante_Irizar_1955/VSC302_Almirante_Irizar_1955.model": [
+      81.748505,
+      21.8055,
+      -22.987501,
+      -80.8785
+    ],
+    "content/gameplay/uk/ship/destroyer/BSD011_Lightning_1944/BSD011_Lightning_1944.model": [
+      42.7395,
+      16.476,
+      -15.7215,
+      -47.0325
+    ],
+    "content/gameplay/russia/ship/aircarrier/RSA005_Admiral_Nakhimov_1951/RSA005_Admiral_Nakhimov_1951.model": [
+      94.8135,
+      40.079998,
+      -41.139,
+      -104.586006
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD067_Halford_1943/ASD067_Halford_1943.model": [
+      47.1735,
+      14.782499,
+      -23.1585,
+      -47.7765
+    ],
+    "content/gameplay/russia/ship/submarine/RSS001_K_type/RSS001_K_type.model": [
+      4.6155
+    ],
+    "content/gameplay/uk/ship/cruiser/BSC033_Edgar_1975/BSC033_Edgar_1975.model": [
+      83.9985,
+      9.315,
+      -28.7115,
+      -80.8845
+    ],
+    "content/gameplay/europe/ship/destroyer/WSD011_Smaland_1955/WSD011_Smaland_1955.model": [
+      47.510998,
+      15.327001,
+      -19.303501,
+      -50.3115
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC016_Roon_1945/GSC016_Roon_1945.model": [
+      83.860504,
+      42.3795,
+      -36.66,
+      -82.2945
+    ],
+    "content/gameplay/netherlands/ship/cruiser/HSC304_Utrecht_1957/HSC304_Utrecht_1957.model": [
+      79.515,
+      23.345999,
+      -17.835001,
+      -85.776
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD301_Georg_Hoffmann_1945/GSD301_Georg_Hoffmann_1945.model": [
+      59.349,
+      28.561499,
+      -27.280499,
+      -63.0345
+    ],
+    "content/gameplay/usa/ship/battleship/ASB040_Ohio_1945/ASB040_Ohio_1945.model": [
+      106.29301,
+      35.204998,
+      -20.105999,
+      -101.7615
+    ],
+    "content/gameplay/japan/ship/battleship/JSB302_Aki_1944/JSB302_Aki_1944.model": [
+      95.258995,
+      -2.5049999,
+      -33.66,
+      -99.270004
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC027_Mainz_1945/GSC027_Mainz_1945.model": [
+      77.5185,
+      35.9355,
+      -31.485,
+      -83.373
+    ],
+    "content/gameplay/russia/ship/destroyer/RSD047_Perekop_1953/RSD047_Perekop_1953.model": [
+      53.665497,
+      20.716501,
+      -27.9735,
+      -57.323997
+    ],
+    "content/gameplay/italy/ship/battleship/ISB301_Sicilia_1946/ISB301_Sicilia_1946.model": [
+      107.835,
+      24.3855,
+      -28.524,
+      -114.8835
+    ],
+    "content/gameplay/uk/ship/battleship/BSB030_Incomparable_1944/BSB030_Incomparable_1944.model": [
+      121.36499,
+      8.391001,
+      -45.1035,
+      -124.3605
+    ],
+    "content/gameplay/uk/ship/destroyer/BSD012_Jutland_1945/BSD012_Jutland_1945.model": [
+      48.856503,
+      13.8029995,
+      -29.725498,
+      -49.14
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD009_Z52_1945/GSD009_Z52_1945.model": [
+      52.8555,
+      13.7565,
+      -27.7905,
+      -52.698
+    ],
+    "content/gameplay/usa/ship/aircarrier/ASA007_Hornet_1942/ASA007_Hornet_1942.model": [
+      78.7545,
+      31.053,
+      -31.907999,
+      -86.663994
+    ],
+    "content/gameplay/russia/ship/battleship/RSB011_Vladivostok_1944/RSB011_Vladivostok_1944.model": [
+      99.474,
+      61.681503,
+      -1.9035001,
+      -99.069
+    ],
+    "content/gameplay/usa/ship/battleship/ASB075_Louisiana_1949/ASB075_Louisiana_1949.model": [
+      108.9555,
+      25.6545,
+      -58.0065,
+      -112.338005
+    ],
+    "content/gameplay/russia/ship/destroyer/RSD046_Yerevan_1952/RSD046_Yerevan_1952.model": [
+      57.159,
+      11.364,
+      -30.359999,
+      -59.4105
+    ],
+    "content/gameplay/panamerica/ship/cruiser/VSC013_Almirante_Grau_1973/VSC013_Almirante_Grau_1973.model": [
+      81.748505,
+      27.8595,
+      -24.636,
+      -74.598
+    ],
+    "content/gameplay/usa/ship/submarine/ASS008_Gato_1943/ASS008_Gato_1943.model": [
+      10.6215
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC301_Jacksonville_1952/ASC301_Jacksonville_1952.model": [
+      91.512,
+      17.9505,
+      -25.0815,
+      -89.1435
+    ],
+    "content/gameplay/panamerica/ship/battleship/VSB303_Libertad_1944/VSB303_Libertad_1944.model": [
+      108.2085,
+      34.6455,
+      -51.1005,
+      -118.917
+    ],
+    "content/gameplay/france/ship/battleship/FSB301_Roussillon_1944/FSB301_Roussillon_1944.model": [
+      94.6245,
+      6.1035,
+      -37.236,
+      -104.5455
+    ],
+    "content/gameplay/usa/ship/battleship/ASB024_Alabama_1945/ASB024_Alabama_1945.model": [
+      74.5935,
+      12.697499,
+      -32.6415,
+      -84.558
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC022_Siegfried_1945/GSC022_Siegfried_1945.model": [
+      101.4015,
+      12.609,
+      -47.468998,
+      -105.555
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD008_Z46_1945/GSD008_Z46_1945.model": [
+      51.027,
+      27.579,
+      -17.865,
+      -50.112
+    ],
+    "content/gameplay/germany/ship/battleship/GSB047_Mecklenburg_1945/GSB047_Mecklenburg_1945.model": [
+      99.230995,
+      12.279,
+      -40.3965,
+      -104.50201
+    ],
+    "content/gameplay/germany/ship/battleship/GSB037_Prinz_Ruprecht_1944/GSB037_Prinz_Ruprecht_1944.model": [
+      94.365,
+      18.726,
+      -9.356999,
+      -95.5035
+    ],
+    "content/gameplay/germany/ship/submarine/GSS006_U4501_1945/GSS006_U4501_1945.model": [
+      3.2475
+    ],
+    "content/gameplay/panamerica/ship/battleship/VSB306_Sete_de_Setembro_1950/VSB306_Sete_de_Setembro_1950.model": [
+      78.894005,
+      21.816,
+      -27.085499,
+      -79.959
+    ],
+    "content/gameplay/russia/ship/battleship/RSB010_Sovetskyi_Soyuz_1949/RSB010_Sovetskyi_Soyuz_1949.model": [
+      104.5155,
+      16.1265,
+      -45.904503,
+      -106.002
+    ],
+    "content/gameplay/usa/ship/submarine/ASS005_Salmon_1944/ASS005_Salmon_1944.model": [
+      9.882
+    ],
+    "content/gameplay/germany/ship/battleship/GSB002_Tirpiz_1942/GSB002_Tirpiz_1942.model": [
+      95.044495,
+      31.1295,
+      -31.304998,
+      -101.7615
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC052_Shimanto_1944/JSC052_Shimanto_1944.model": [
+      86.4615,
+      15.247499,
+      -27.9765,
+      -85.143
+    ],
+    "content/gameplay/japan/ship/destroyer/JSD029_Kitakaze_1945/JSD029_Kitakaze_1945.model": [
+      56.461502,
+      18.5685,
+      -22.041,
+      -55.5
+    ],
+    "content/gameplay/usa/ship/battleship/ASB028_Iowa_1945/ASB028_Iowa_1945.model": [
+      97.3365,
+      19.748999,
+      -37.195503,
+      -103.6845
+    ],
+    "content/gameplay/italy/ship/cruiser/ISC031_Piemonte_1964/ISC031_Piemonte_1964.model": [
+      87.03,
+      33.417,
+      -45.933002,
+      -97.518005
+    ],
+    "content/gameplay/europe/ship/destroyer/WSD025_Gdansk_1955/WSD025_Gdansk_1955.model": [
+      63.836998,
+      22.1805,
+      -27.003,
+      -65.8815
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC044_Pr_84_Alexander_Nevsky_1959/RSC044_Pr_84_Alexander_Nevsky_1959.model": [
+      72.801,
+      16.065,
+      -35.829002,
+      -83.771996
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC012_Ibuki_1944/JSC012_Ibuki_1944.model": [
+      86.2515,
+      25.455,
+      -37.653,
+      -83.056496
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD306_Hull_1970/ASD306_Hull_1970.model": [
+      54.7605,
+      20.8155,
+      -14.889,
+      -54.579002
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC075_Congress_1944/ASC075_Congress_1944.model": [
+      81.777,
+      21.4965,
+      -24.669,
+      -83.958
+    ],
+    "content/gameplay/japan/ship/battleship/JSB066_Daisen_1944/JSB066_Daisen_1944.model": [
+      104.997,
+      35.399998,
+      -43.2705,
+      -112.017
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC068_Chikuma_1944/JSC068_Chikuma_1944.model": [
+      77.2665,
+      17.64,
+      -24.727499,
+      -75.4365
+    ],
+    "content/gameplay/uk/ship/aircarrier/BSA008_Implacable_1945/BSA008_Implacable_1945.model": [
+      100.7325,
+      36.6255,
+      -38.181,
+      -97.6995
+    ],
+    "content/gameplay/usa/ship/aircarrier/ASA015_Midway_1945/ASA015_Midway_1945.model": [
+      118.686,
+      45.024002,
+      -38.135998,
+      -119.244
+    ],
+    "content/gameplay/russia/ship/battleship/RSB026_Admiral_Ushakov_1955/RSB026_Admiral_Ushakov_1955.model": [
+      142.185,
+      24.796501,
+      -55.125,
+      -131.724
+    ],
+    "content/gameplay/europe/ship/battleship/WSB305_Enigheten_1945/WSB305_Enigheten_1945.model": [
+      94.365,
+      30.2895,
+      -31.866,
+      -95.5035
+    ],
+    "content/gameplay/usa/ship/battleship/ASB044_Minnesota_1945/ASB044_Minnesota_1945.model": [
+      79.3725,
+      17.442,
+      -23.502,
+      -80.7345
+    ],
+    "content/gameplay/japan/ship/destroyer/JSD012_Shimakaze_1943/JSD012_Shimakaze_1943.model": [
+      52.941,
+      28.543499,
+      -13.785001,
+      -51.4095
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC308_Prinz_Adalbert_1945/GSC308_Prinz_Adalbert_1945.model": [
+      84.215996,
+      17.0805,
+      -33.9645,
+      -104.091
+    ],
+    "content/gameplay/japan/ship/destroyer/JSD303_Fuyutsuki_1944/JSD303_Fuyutsuki_1944.model": [
+      54.978,
+      20.9565,
+      -21.3345,
+      -55.1205
+    ],
+    "content/gameplay/uk/ship/aircarrier/BSA003_Audacious_1951/BSA003_Audacious_1951.model": [
+      93.6585,
+      30.687,
+      -41.5095,
+      -106.030495
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC028_Aegir_1945/GSC028_Aegir_1945.model": [
+      105.583496,
+      14.9805,
+      -40.300503,
+      -105.7425
+    ],
+    "content/gameplay/russia/ship/submarine/RSS008_L_20_1942/RSS008_L_20_1942.model": [
+      5.3505
+    ],
+    "content/gameplay/japan/ship/battleship/JSB056_Iwami_1944/JSB056_Iwami_1944.model": [
+      95.0295,
+      44.3685,
+      -3.9104998,
+      -82.8435
+    ],
+    "content/gameplay/italy/ship/cruiser/ISC017_Napoli_1944/ISC017_Napoli_1944.model": [
+      85.150505,
+      -0.2685,
+      -41.685,
+      -102.891
+    ],
+    "content/gameplay/usa/ship/aircarrier/ASA009_Roosevelt_1947/ASA009_Roosevelt_1947.model": [
+      101.500496,
+      49.092,
+      -36.413998,
+      -127.40099
+    ],
+    "content/gameplay/uk/ship/battleship/BSB040_St_Vincent_1944/BSB040_St_Vincent_1944.model": [
+      101.652,
+      18.4305,
+      -54.234,
+      -120.748505
+    ],
+    "content/gameplay/usa/ship/battleship/ASB015_Missouri_1950/ASB015_Missouri_1950.model": [
+      92.982,
+      21.435,
+      -44.2845,
+      -101.103
+    ],
+    "content/gameplay/panasia/ship/cruiser/ZSC011_Harbin_1947/ZSC011_Harbin_1947.model": [
+      69.408005,
+      16.1235,
+      -19.3485,
+      -61.858498
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC026_Alaska_1944/ASC026_Alaska_1944.model": [
+      86.5725,
+      17.7255,
+      -37.239,
+      -91.014
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC017_Baltimore_1944/ASC017_Baltimore_1944.model": [
+      78.582,
+      17.803501,
+      -30.078,
+      -80.0505
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC022_Seattle_1945/ASC022_Seattle_1945.model": [
+      76.284,
+      27.5655,
+      -28.2555,
+      -78.958496
+    ],
+    "content/gameplay/italy/ship/destroyer/ISD010_Adriatico_1945/ISD010_Adriatico_1945.model": [
+      57.807,
+      12.3225,
+      -16.0545,
+      -53.2065
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC010_Sevastopol_1961/RSC010_Sevastopol_1961.model": [
+      93.1485,
+      32.7375,
+      -22.692,
+      -93.57
+    ],
+    "content/gameplay/panasia/ship/cruiser/ZSC302_Incheon_1950/ZSC302_Incheon_1950.model": [
+      85.7445,
+      25.164,
+      -25.617,
+      -91.1535
+    ],
+    "content/gameplay/europe/ship/destroyer/WSD027_Jager_1917/WSD027_Jager_1917.model": [
+      52.092,
+      22.2645,
+      -19.651499,
+      -51.726
+    ],
+    "content/gameplay/panasia/ship/battleship/ZSB005_Sun_Yat_Sen_1955/ZSB005_Sun_Yat_Sen_1955.model": [
+      99.456,
+      14.5755005,
+      -48.0045,
+      -112.138504
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD019_Z44_1945/GSD019_Z44_1945.model": [
+      51.1695,
+      9.442499,
+      -32.895,
+      -53.425503
+    ],
+    "content/gameplay/russia/ship/destroyer/RSD004_Pr_24_Khabarovsk_1947/RSD004_Pr_24_Khabarovsk_1947.model": [
+      53.0805,
+      24.995998,
+      -27.3285,
+      -58.6035
+    ],
+    "content/gameplay/usa/ship/battleship/ASB023_Georgia_1945/ASB023_Georgia_1945.model": [
+      97.0935,
+      23.5755,
+      -48.282,
+      -100.515
+    ],
+    "content/gameplay/japan/ship/battleship/JSB023_Izumo_1945/JSB023_Izumo_1945.model": [
+      93.921005,
+      28.0095,
+      -35.9535,
+      -98.665504
+    ],
+    "content/gameplay/japan/ship/battleship/JSB041_Yashima_1945/JSB041_Yashima_1945.model": [
+      88.1265,
+      23.337,
+      -27.1035,
+      -92.586
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD303_ZH_1_1942/GSD303_ZH_1_1942.model": [
+      46.044003,
+      22.106998,
+      -19.199999,
+      -46.5135
+    ],
+    "content/gameplay/panasia/ship/destroyer/ZSD025_Lushun_1955/ZSD025_Lushun_1955.model": [
+      53.169,
+      21.535501,
+      -14.2095,
+      -55.5225
+    ],
+    "content/gameplay/france/ship/cruiser/FSC028_Brest_1944/FSC028_Brest_1944.model": [
+      72.6975,
+      2.3565001,
+      -50.334003,
+      -83.9115
+    ],
+    "content/gameplay/europe/ship/battleship/WSB301_Niord_1948/WSB301_Niord_1948.model": [
+      94.365,
+      18.726,
+      -9.356999,
+      -95.5035
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC032_Stalingrad_1953/RSC032_Stalingrad_1953.model": [
+      116.046005,
+      13.653,
+      -42.5655,
+      -105.802505
+    ],
+    "content/gameplay/commonwealth/ship/cruiser/USC313_Pioneer_1952/USC313_Pioneer_1952.model": [
+      90.134995,
+      30.411,
+      -29.9865,
+      -88.801506
+    ],
+    "content/gameplay/commonwealth/ship/destroyer/USD003_Vampire_2_1959/USD003_Vampire_2_1959.model": [
+      51.363,
+      17.1765,
+      -20.942999,
+      -44.586
+    ],
+    "content/gameplay/panamerica/ship/battleship/VSB301_Oceano_1944/VSB301_Oceano_1944.model": [
+      108.2085,
+      42.993,
+      -37.0605,
+      -114.3645
+    ],
+    "content/gameplay/france/ship/battleship/FSB025_Bourgogne_1945/FSB025_Bourgogne_1945.model": [
+      93.921005,
+      5.4674997,
+      -42.7965,
+      -103.972496
+    ],
+    "content/gameplay/italy/ship/battleship/ISB008_Marco_Polo_1942/ISB008_Marco_Polo_1942.model": [
+      97.821,
+      9.6555,
+      -45.4185,
+      -100.999504
+    ],
+    "content/gameplay/europe/ship/battleship/WSB002_Karl_XIV_Johan_1952/WSB002_Karl_XIV_Johan_1952.model": [
+      95.3715,
+      34.614,
+      -20.3775,
+      -102.127495
+    ],
+    "content/gameplay/panasia/ship/destroyer/ZSD005_Hsiang_Yang_1945/ZSD005_Hsiang_Yang_1945.model": [
+      46.626003,
+      17.4675,
+      -15.303,
+      -49.9395
+    ],
+    "content/gameplay/italy/ship/battleship/ISB006_Cristoforo_Colombo_1945/ISB006_Cristoforo_Colombo_1945.model": [
+      107.835,
+      24.3855,
+      -28.524,
+      -114.8835
+    ],
+    "content/gameplay/france/ship/destroyer/FSD012_Kleber_1952/FSD012_Kleber_1952.model": [
+      55.977,
+      18.119999,
+      -22.518,
+      -62.8635
+    ],
+    "content/gameplay/russia/ship/battleship/RSB018_Pobeda_1955/RSB018_Pobeda_1955.model": [
+      107.82,
+      25.0665,
+      -45.171,
+      -116.178
+    ],
+    "content/gameplay/netherlands/ship/cruiser/HSC009_Johan_de_Witt_1945/HSC009_Johan_de_Witt_1945.model": [
+      73.167,
+      19.905,
+      -31.9035,
+      -82.017
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC081_Annapolis_1953/ASC081_Annapolis_1953.model": [
+      97.4895,
+      9.043501,
+      -35.8665,
+      -89.406
+    ],
+    "content/gameplay/usa/ship/battleship/ASB074_Delaware_1949/ASB074_Delaware_1949.model": [
+      107.2605,
+      18.285,
+      -58.0065,
+      -112.338005
+    ],
+    "content/gameplay/germany/ship/battleship/GSB027_Brandenburg_1945/GSB027_Brandenburg_1945.model": [
+      97.19701,
+      29.3865,
+      -35.061,
+      -100.779
+    ],
+    "content/gameplay/panasia/ship/destroyer/ZSD019_Kunming_1947/ZSD019_Kunming_1947.model": [
+      55.140003,
+      25.0275,
+      -24.465,
+      -54.648
+    ],
+    "content/gameplay/france/ship/destroyer/FSD306_Cassard_1955/FSD306_Cassard_1955.model": [
+      53.934,
+      16.8105,
+      -14.743501,
+      -56.246998
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC037_Clausewitz_1945/GSC037_Clausewitz_1945.model": [
+      83.385,
+      21.264,
+      -19.938,
+      -87.846
+    ],
+    "content/gameplay/uk/ship/aircarrier/BSA010_Eagle_1956/BSA010_Eagle_1956.model": [
+      93.789,
+      36.6255,
+      -27.7935,
+      -97.6995
+    ],
+    "content/gameplay/commonwealth/ship/cruiser/USC003_Brisbane_1950/USC003_Brisbane_1950.model": [
+      76.0605,
+      10.6995,
+      -27.267,
+      -71.3445
+    ],
+    "content/gameplay/italy/ship/destroyer/ISD011_Attilio_Regolo_1942/ISD011_Attilio_Regolo_1942.model": [
+      57.531002,
+      9.102,
+      -27.0765,
+      -57.122997
+    ],
+    "content/gameplay/europe/ship/destroyer/WSD010_Halland_1955/WSD010_Halland_1955.model": [
+      47.510998,
+      15.327001,
+      -19.303501,
+      -50.3115
+    ],
+    "content/gameplay/usa/ship/battleship/ASB045_Vermont_1945/ASB045_Vermont_1945.model": [
+      115.9815,
+      35.955,
+      -12.204,
+      -106.776
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD038_Somers_1938/ASD038_Somers_1938.model": [
+      47.4225,
+      13.818,
+      -22.503,
+      -47.8185
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC043_Petropavlovsk_1957/RSC043_Petropavlovsk_1957.model": [
+      97.772995,
+      41.0505,
+      -32.845497,
+      -98.541
+    ],
+    "content/gameplay/uk/ship/battleship/BSB039_Duncan_1944/BSB039_Duncan_1944.model": [
+      87.916504,
+      27.9765,
+      -26.115002,
+      -98.352
+    ],
+    "content/gameplay/netherlands/ship/cruiser/HSC010_Gouden_Leeuw_1948/HSC010_Gouden_Leeuw_1948.model": [
+      85.525505,
+      2.901,
+      -36.342003,
+      -83.463
+    ],
+    "content/gameplay/germany/ship/submarine/GSS009_U_2501_1945/GSS009_U_2501_1945.model": [
+      4.137
+    ],
+    "content/gameplay/russia/ship/destroyer/RSD015_Pr_20i_Tashkent_1945/RSD015_Pr_20i_Tashkent_1945.model": [
+      57.8955,
+      28.1175,
+      -39.459,
+      -60.03
+    ],
+    "content/gameplay/italy/ship/submarine/ISS303_Calvi_1935/ISS303_Calvi_1935.model": [
+      -6.012
+    ],
+    "content/gameplay/panamerica/ship/battleship/VSB305_Valparaiso_1950/VSB305_Valparaiso_1950.model": [
+      96.334496,
+      31.723501,
+      -40.404,
+      -101.532
+    ],
+    "content/gameplay/europe/ship/battleship/WSB306_Gustav_den_Store_1949/WSB306_Gustav_den_Store_1949.model": [
+      94.365,
+      16.053,
+      -31.14,
+      -95.5035
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD060_Forrest_Sherman_1958/ASD060_Forrest_Sherman_1958.model": [
+      50.454,
+      21.993,
+      -19.6665,
+      -53.825996
+    ],
+    "content/gameplay/france/ship/cruiser/FSC017_Colbert_1959/FSC017_Colbert_1959.model": [
+      73.662,
+      11.721001,
+      -26.217,
+      -77.295
+    ],
+    "content/gameplay/japan/ship/battleship/JSB046_Bungo_1944/JSB046_Bungo_1944.model": [
+      111.915,
+      54.8745,
+      -15.166501,
+      -102.228
+    ],
+    "content/gameplay/usa/ship/battleship/ASB073_Nebraska_1944/ASB073_Nebraska_1944.model": [
+      85.014,
+      13.4445,
+      -43.512,
+      -90.387
+    ],
+    "content/gameplay/uk/ship/cruiser/BSC017_Minotaur_1947/BSC017_Minotaur_1947.model": [
+      80.78551,
+      24.3255,
+      -25.473,
+      -77.937
+    ],
+    "content/gameplay/france/ship/battleship/FSB038_Patrie_1957/FSB038_Patrie_1957.model": [
+      106.191,
+      21.342,
+      -45.8745,
+      -111.321
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC302_Hildebrand_1945/GSC302_Hildebrand_1945.model": [
+      105.583496,
+      14.9805,
+      -29.571001,
+      -98.3925
+    ],
+    "content/gameplay/netherlands/ship/destroyer/HSD002_Groningen_1956/HSD002_Groningen_1956.model": [
+      50.4495,
+      4.0095,
+      -22.1115,
+      -51.7575
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC305_Kurama_1945/JSC305_Kurama_1945.model": [
+      80.7645,
+      32.0175,
+      -24.380999,
+      -91.962
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC037_Smolensk_1951/RSC037_Smolensk_1951.model": [
+      67.397995,
+      14.129999,
+      -29.379002,
+      -70.5075
+    ],
+    "content/gameplay/spain/ship/battleship/SSB302_Triunfante_1945/SSB302_Triunfante_1945.model": [
+      114.3615,
+      32.763,
+      -54.5415,
+      -120.4755
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD063_Joshua_Humphreys_1950/ASD063_Joshua_Humphreys_1950.model": [
+      59.511,
+      13.818,
+      -22.503,
+      -57.6585
+    ],
+    "content/gameplay/commonwealth/ship/cruiser/USC310_Cerberus_1945/USC310_Cerberus_1945.model": [
+      86.9115,
+      36.855,
+      -30.379501,
+      -82.207504
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD020_ZF_2_1944/GSD020_ZF_2_1944.model": [
+      51.0555,
+      22.932,
+      -12.6705,
+      -51.207
+    ],
+    "content/gameplay/russia/ship/battleship/RSB306_Sibir_1954/RSB306_Sibir_1954.model": [
+      114.96751,
+      26.332499,
+      -44.7195,
+      -117.489
+    ],
+    "content/gameplay/usa/ship/battleship/ASB043_Kansas_1945/ASB043_Kansas_1945.model": [
+      82.3755,
+      20.350498,
+      -17.556,
+      -82.1085
+    ],
+    "content/gameplay/usa/ship/aircarrier/ASA026_Yorktown_1945/ASA026_Yorktown_1945.model": [
+      78.762,
+      31.1355,
+      -32.018997,
+      -86.772
+    ],
+    "content/gameplay/uk/ship/battleship/BSB060_Scarlet_Thunder_1944/BSB060_Scarlet_Thunder_1944.model": [
+      89.547,
+      26.802,
+      -27.592499,
+      -94.455
+    ],
+    "content/gameplay/italy/ship/submarine/ISS302_Pietro_Micca_1935/ISS302_Pietro_Micca_1935.model": [
+      -5.253
+    ],
+    "content/gameplay/japan/ship/battleship/JSB045_Adatara_1945/JSB045_Adatara_1945.model": [
+      97.6695,
+      25.234499,
+      -41.1315,
+      -97.85551
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC044_Yoshino_1945/JSC044_Yoshino_1945.model": [
+      107.11951,
+      15.867001,
+      -44.373,
+      -102.832504
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC010_Mogami_1944/JSC010_Mogami_1944.model": [
+      80.052,
+      15.637501,
+      -27.294,
+      -78.201
+    ],
+    "content/gameplay/france/ship/destroyer/FSD308_Chateaurenault_1954/FSD308_Chateaurenault_1954.model": [
+      56.596497,
+      24.432001,
+      -19.47,
+      -60.704998
+    ],
+    "content/gameplay/italy/ship/battleship/ISB302_Affondatore_1968/ISB302_Affondatore_1968.model": [
+      107.835,
+      40.593,
+      -26.1345,
+      -108.459
+    ],
+    "content/gameplay/europe/ship/destroyer/WSD023_Split_1943/WSD023_Split_1943.model": [
+      50.949,
+      13.1085,
+      -22.099499,
+      -53.1945
+    ],
+    "content/gameplay/uk/ship/cruiser/BSC048_Defence_1948/BSC048_Defence_1948.model": [
+      88.984505,
+      45.225002,
+      -13.137,
+      -75.468
+    ],
+    "content/gameplay/uk/ship/battleship/BSB008_Lion_1950/BSB008_Lion_1950.model": [
+      93.795,
+      6.4020004,
+      -49.5375,
+      -98.5185
+    ],
+    "content/gameplay/japan/ship/battleship/JSB012_Kii_1944/JSB012_Kii_1944.model": [
+      93.5835,
+      30.185999,
+      -39.7845,
+      -98.118004
+    ],
+    "content/gameplay/france/ship/cruiser/FSC026_Conde_1957/FSC026_Conde_1957.model": [
+      87.774,
+      7.1400003,
+      -48.7905,
+      -94.593
+    ],
+    "content/gameplay/usa/ship/battleship/ASB079_Illinois_1953/ASB079_Illinois_1953.model": [
+      89.658,
+      18.819,
+      -38.209503,
+      -97.5315
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC011_Pr_66_Moskva_1948/RSC011_Pr_66_Moskva_1948.model": [
+      94.0515,
+      15.3135,
+      -39.7515,
+      -102.7785
+    ],
+    "content/gameplay/france/ship/cruiser/FSC025_Carnot_1945/FSC025_Carnot_1945.model": [
+      93.54,
+      44.065502,
+      -33.4695,
+      -107.932495
+    ],
+    "content/gameplay/netherlands/ship/destroyer/HSD003_Tromp_1945/HSD003_Tromp_1945.model": [
+      53.418,
+      21.8295,
+      -22.773,
+      -52.548
+    ],
+    "content/gameplay/france/ship/battleship/FSB003_Richelieu_1944/FSB003_Richelieu_1944.model": [
+      85.6065,
+      3.1605,
+      -60.650997,
+      -107.3265
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC304_Kushiro_1945/JSC304_Kushiro_1945.model": [
+      86.690994,
+      25.598999,
+      -29.4795,
+      -85.9725
+    ],
+    "content/gameplay/germany/ship/battleship/GSB038_Schlieffen_1944/GSB038_Schlieffen_1944.model": [
+      106.554,
+      19.714499,
+      -26.163,
+      -109.3005
+    ],
+    "content/gameplay/usa/ship/battleship/ASB083_Maine_1958/ASB083_Maine_1958.model": [
+      117.642,
+      22.563,
+      -36.1995,
+      -111.279
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC042_Riga_1948/RSC042_Riga_1948.model": [
+      81.111,
+      11.3475,
+      -36.927002,
+      -86.772
+    ],
+    "content/gameplay/uk/ship/battleship/BSB056_Devastation_1952/BSB056_Devastation_1952.model": [
+      105.708,
+      29.522999,
+      -34.986,
+      -113.756996
+    ],
+    "content/gameplay/europe/ship/destroyer/WSD009_Ostergotland_1959/WSD009_Ostergotland_1959.model": [
+      43.9005,
+      -0.40199998,
+      -28.585499,
+      -48.6765
+    ],
+    "content/gameplay/panamerica/ship/destroyer/VSD309_Nueva_Esparta_1953/VSD309_Nueva_Esparta_1953.model": [
+      56.04,
+      20.325,
+      -8.598,
+      -42.9645
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC306_Knesebeck_1940/GSC306_Knesebeck_1940.model": [
+      90.501,
+      28.566,
+      -26.713501,
+      -92.5185
+    ],
+    "content/gameplay/germany/ship/battleship/GSB006_Grossdeutschland_1945/GSB006_Grossdeutschland_1945.model": [
+      105.21,
+      25.5765,
+      -39.159,
+      -118.62
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC016_Worcester_1948/ASC016_Worcester_1948.model": [
+      82.466995,
+      20.221498,
+      -23.435999,
+      -82.152
+    ],
+    "content/gameplay/panamerica/ship/cruiser/VSC012_San_Martin_1949/VSC012_San_Martin_1949.model": [
+      82.9575,
+      34.515003,
+      -16.2945,
+      -77.76
+    ],
+    "content/gameplay/japan/ship/aircarrier/JSA038_Sekiryu_1945/JSA038_Sekiryu_1945.model": [
+      127.818,
+      45.928497,
+      -41.364002,
+      -107.931
+    ],
+    "content/gameplay/commonwealth/ship/cruiser/USC309_Encounter_1943/USC309_Encounter_1943.model": [
+      86.9115,
+      31.806,
+      -31.444498,
+      -75.333
+    ],
+    "content/gameplay/france/ship/cruiser/FSC303_Amiral_Lartigue_1955/FSC303_Amiral_Lartigue_1955.model": [
+      93.246,
+      23.337,
+      -41.583,
+      -78.318
+    ],
+    "content/gameplay/uk/ship/aircarrier/BSA004_Malta_1950/BSA004_Malta_1950.model": [
+      88.86,
+      36.972,
+      -58.3185,
+      -103.836
+    ],
+    "content/gameplay/japan/ship/destroyer/JSD030_Harugumo_1945/JSD030_Harugumo_1945.model": [
+      60.908997,
+      8.2815,
+      -31.0725,
+      -63.274498
+    ],
+    "content/gameplay/netherlands/ship/battleship/HSB301_Willem_de_Eerste_1950/HSB301_Willem_de_Eerste_1950.model": [
+      105.21,
+      19.8945,
+      -44.5995,
+      -121.422
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC015_Hindenburg_1945/GSC015_Hindenburg_1945.model": [
+      87.6765,
+      32.034,
+      -44.67,
+      -90.9375
+    ],
+    "content/gameplay/panamerica/ship/destroyer/VSD301_La_Pampa_1947/VSD301_La_Pampa_1947.model": [
+      48.856503,
+      13.8029995,
+      -19.5195,
+      -44.91
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC023_Salem_1950/ASC023_Salem_1950.model": [
+      82.972496,
+      13.7175,
+      -22.2195,
+      -80.7795
+    ],
+    "content/gameplay/germany/ship/battleship/GSB001_Bismarck_1941/GSB001_Bismarck_1941.model": [
+      91.47,
+      11.962501,
+      -28.2315,
+      -98.515495
+    ],
+    "content/gameplay/uk/ship/submarine/BSS006_Thrasher_1944/BSS006_Thrasher_1944.model": [
+      3.2819998
+    ],
+    "content/gameplay/germany/ship/battleship/GSB030_Ludendorff_1945/GSB030_Ludendorff_1945.model": [
+      102.594,
+      26.761501,
+      -38.9205,
+      -110.8845
+    ],
+    "content/gameplay/germany/ship/aircarrier/GSA005_Richthofen_1945/GSA005_Richthofen_1945.model": [
+      89.445,
+      48.4185,
+      -51.476997,
+      -97.6905
+    ],
+    "content/gameplay/japan/ship/battleship/JSB039_Yamato_1945/JSB039_Yamato_1945.model": [
+      88.1265,
+      23.337,
+      -27.1035,
+      -92.586
+    ],
+    "content/gameplay/italy/ship/battleship/ISB007_Lepanto_1945/ISB007_Lepanto_1945.model": [
+      94.079994,
+      20.358,
+      -50.985,
+      -107.929504
+    ],
+    "content/gameplay/france/ship/destroyer/FSD011_Mogador_1951/FSD011_Mogador_1951.model": [
+      58.261497,
+      25.0605,
+      -23.7705,
+      -56.58
+    ],
+    "content/gameplay/panasia/ship/cruiser/ZSC013_Jinan_1952/ZSC013_Jinan_1952.model": [
+      69.408005,
+      11.751,
+      -33.480003,
+      -69.2355
+    ],
+    "content/gameplay/uk/ship/cruiser/BSC042_Monmouth_1947/BSC042_Monmouth_1947.model": [
+      92.246994,
+      45.225002,
+      -8.5665,
+      -81.874504
+    ],
+    "content/gameplay/usa/ship/battleship/ASB078_Wisconsin_1945/ASB078_Wisconsin_1945.model": [
+      97.0935,
+      22.287,
+      -36.453003,
+      -92.529
+    ],
+    "content/gameplay/france/ship/cruiser/FSC010_Henri_IV_1957/FSC010_Henri_IV_1957.model": [
+      87.151505,
+      10.647,
+      -47.346,
+      -91.6185
+    ],
+    "content/gameplay/uk/ship/destroyer/BSD013_Daring_1952/BSD013_Daring_1952.model": [
+      49.977,
+      18.198,
+      -14.0685005,
+      -51.7245
+    ],
+    "content/gameplay/uk/ship/battleship/BSB027_Thunderer_1949/BSB027_Thunderer_1949.model": [
+      108.5025,
+      29.595001,
+      -30.1335,
+      -106.602005
+    ],
+    "content/gameplay/france/ship/cruiser/FSC009_Saint_Louis_1945/FSC009_Saint_Louis_1945.model": [
+      78.800995,
+      14.464499,
+      -23.748,
+      -72.4365
+    ],
+    "content/gameplay/uk/ship/cruiser/BSC016_Neptune_1947/BSC016_Neptune_1947.model": [
+      83.68201,
+      25.521,
+      -31.038,
+      -84.372
+    ],
+    "content/gameplay/japan/ship/submarine/JSS302_I_56_44_1944/JSS302_I_56_44_1944.model": [
+      1.8885
+    ],
+    "content/gameplay/italy/ship/cruiser/ISC015_Torino_1943/ISC015_Torino_1943.model": [
+      89.7,
+      18.283499,
+      -22.060501,
+      -90.015
+    ],
+    "content/gameplay/italy/ship/battleship/ISB002_Roma_1943/ISB002_Roma_1943.model": [
+      88.4625,
+      9.7095,
+      -37.056,
+      -99.363
+    ],
+    "content/gameplay/uk/ship/cruiser/BSC031_Plymouth_1945/BSC031_Plymouth_1945.model": [
+      83.8905,
+      37.197,
+      -39.8985,
+      -80.6745
+    ],
+    "content/gameplay/italy/ship/battleship/ISB305_Conte_Verde_1944/ISB305_Conte_Verde_1944.model": [
+      111.219,
+      53.478,
+      -11.4135,
+      -104.2455
+    ],
+    "content/gameplay/usa/ship/battleship/ASB025_Massachusetts_1946/ASB025_Massachusetts_1946.model": [
+      76.038,
+      14.4885,
+      -35.082,
+      -80.5575
+    ],
+    "content/gameplay/italy/ship/aircarrier/ISA001_Aquila_1944/ISA001_Aquila_1944.model": [
+      74.350494,
+      12.153,
+      -38.135998,
+      -88.782
+    ],
+    "content/gameplay/italy/ship/cruiser/ISC006_Milano_1943/ISC006_Milano_1943.model": [
+      87.03,
+      45.6345,
+      -32.137497,
+      -95.8245
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC055_Komissar_1944/RSC055_Komissar_1944.model": [
+      87.345,
+      23.043001,
+      -19.5465,
+      -77.7555
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD307_Laffey_1944/ASD307_Laffey_1944.model": [
+      46.626003,
+      17.4675,
+      -13.660501,
+      -48.8625
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC301_Wiesbaden_1945/GSC301_Wiesbaden_1945.model": [
+      71.0475,
+      28.1385,
+      -28.836,
+      -77.7165
+    ],
+    "content/gameplay/germany/ship/submarine/GSS002_U_190_1945/GSS002_U_190_1945.model": [
+      1.65
+    ],
+    "content/gameplay/europe/ship/destroyer/WSD017_Dalarna_1953/WSD017_Dalarna_1953.model": [
+      53.267998,
+      18.9945,
+      -20.2695,
+      -53.518497
+    ],
+    "content/gameplay/germany/ship/battleship/GSB043_Preussen_1945/GSB043_Preussen_1945.model": [
+      107.535,
+      26.279999,
+      -39.231003,
+      -127.93651
+    ],
+    "content/gameplay/usa/ship/aircarrier/ASA013_Essex_1945/ASA013_Essex_1945.model": [
+      114.161995,
+      20.796,
+      -58.829998,
+      -111.666
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC065_Austin_1952/ASC065_Austin_1952.model": [
+      71.994,
+      18.9525,
+      -25.0455,
+      -76.187996
+    ],
+    "content/gameplay/panamerica/ship/destroyer/VSD310_Veinte_de_Julio_1958/VSD310_Veinte_de_Julio_1958.model": [
+      46.7295,
+      13.1189995,
+      -24.1485,
+      -47.715
+    ],
+    "content/gameplay/russia/ship/destroyer/RSD021_Grozovoy_1945/RSD021_Grozovoy_1945.model": [
+      55.6665,
+      20.715,
+      -30.696001,
+      -56.097
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC029_Puerto_Rico_1949/ASC029_Puerto_Rico_1949.model": [
+      97.007996,
+      28.008,
+      -27.9225,
+      -102.5055
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD303_Christopher_1945/ASD303_Christopher_1945.model": [
+      54.072,
+      18.6435,
+      -17.868,
+      -57.7695
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC004_Hipper_1943/GSC004_Hipper_1943.model": [
+      75.165,
+      36.333,
+      -34.6815,
+      -81.80701
+    ],
+    "content/gameplay/russia/ship/cruiser/RSC053_Novosibirsk_1965/RSC053_Novosibirsk_1965.model": [
+      94.0515,
+      22.816502,
+      -39.5595,
+      -102.7785
+    ],
+    "content/gameplay/europe/ship/cruiser/WSC301_Svea_1954/WSC301_Svea_1954.model": [
+      77.5725,
+      26.847,
+      -32.1615,
+      -75.778496
+    ],
+    "content/gameplay/france/ship/battleship/FSB013_Jean_Bart_1955/FSB013_Jean_Bart_1955.model": [
+      86.5965,
+      36.8655,
+      -41.055,
+      -101.4915
+    ],
+    "content/gameplay/usa/ship/cruiser/ASC025_Buffalo_1945/ASC025_Buffalo_1945.model": [
+      85.5765,
+      25.569,
+      -24.488998,
+      -91.303505
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD036_Benham_1939/ASD036_Benham_1939.model": [
+      40.9755,
+      16.9605,
+      -26.19,
+      -42.815998
+    ],
+    "content/gameplay/usa/ship/destroyer/ASD042_Gearing_1945/ASD042_Gearing_1945.model": [
+      46.7145,
+      18.863998,
+      -20.337,
+      -51.559498
+    ],
+    "content/gameplay/uk/ship/submarine/BSS301_Seal_1940/BSS301_Seal_1940.model": [
+      6.0
+    ],
+    "content/gameplay/panamerica/ship/cruiser/VSC010_Ignacio_Allende_1950/VSC010_Ignacio_Allende_1950.model": [
+      73.7625,
+      3.828,
+      -27.237,
+      -66.639
+    ],
+    "content/gameplay/germany/ship/destroyer/GSD029_Z42_1945/GSD029_Z42_1945.model": [
+      52.8555,
+      11.2155,
+      -18.0795,
+      -53.646
+    ],
+    "content/gameplay/germany/ship/cruiser/GSC309_Bremen_1945/GSC309_Bremen_1945.model": [
+      80.109,
+      39.9885,
+      -19.661999,
+      -91.434006
+    ],
+    "content/gameplay/spain/ship/cruiser/SSC011_Castilla_1944/SSC011_Castilla_1944.model": [
+      98.1525,
+      34.9095,
+      -39.191998,
+      -94.68
+    ],
+    "content/gameplay/japan/ship/cruiser/JSC027_Mitsumine_1945/JSC027_Mitsumine_1945.model": [
+      107.697,
+      24.8805,
+      -44.6325,
+      -103.3455
+    ],
+    "content/gameplay/usa/ship/battleship/ASB066_Kearsarge_1944/ASB066_Kearsarge_1944.model": [
+      114.5205,
+      39.912,
+      -51.5895,
+      -138.0615
+    ],
+    "content/gameplay/usa/ship/aircarrier/ASA031_United_States_1952/ASA031_United_States_1952.model": [
+      128.6445,
+      51.507,
+      -38.135998,
+      -118.71
+    ],
+    "content/gameplay/uk/ship/battleship/BSB009_Conqueror_1949/BSB009_Conqueror_1949.model": [
+      99.1575,
+      31.5195,
+      -22.968,
+      -106.641
+    ],
+    "content/gameplay/usa/ship/battleship/ASB017_Montana_1945/ASB017_Montana_1945.model": [
+      106.8585,
+      35.61,
+      -21.8925,
+      -109.34251
+    ],
+    "content/gameplay/japan/ship/battleship/JSB014_Musashi_1942/JSB014_Musashi_1942.model": [
+      88.1265,
+      11.943,
+      -28.2975,
+      -90.795
+    ],
+    "content/gameplay/usa/ship/submarine/ASS010_Balao_1947/ASS010_Balao_1947.model": [
+      14.0085
+    ]
+  }
+}

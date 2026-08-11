@@ -3864,8 +3864,8 @@ build = 10695045
 "spaces/s14_WW2_OP3/space.settings" = "af1b2c7a0f218b8e3003"
 
 [derived]
-"game_params.rkyv" = "a9a204ec437e428feb17"
-"game_params.rkyv.zst" = "f77720093cc83d8d59b2"
+"game_params.rkyv" = "1c72df9af6c367dd275f"
+"game_params.rkyv.zst" = "30c46a85e2728fd0f01a"
 "translations/cs/LC_MESSAGES/global.mo" = "526809110d7ac182cf18"
 "translations/de/LC_MESSAGES/global.mo" = "b7630ce022baa29d81aa"
 "translations/en/LC_MESSAGES/global.mo" = "48d39ba3571aacc696dd"

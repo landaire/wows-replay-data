@@ -1,0 +1,160 @@
+ for draw-performance-auto-tested
+	
+	this file is beeing used by:		
+		\tools\wows_ui_tools\auto_draw_perf_test\generate_elements_list.py
+-->
+	<elementList forceHideAll="false">
+		<element name="ubBinoculars" class="lesta.unbound2.UbElement" elementName="BinocularsBackground" url="crosshairs.swf" autoPerfTestGroup="binoculars"/>
+		<element name="fireScreenEffect" class="FullscreenFireEffectClip" url="fullscreen_effects.swf" autoPerfTestGroup="fullscreen_effect"/>
+
+		<element name="ubMarkersContainer" class="lesta.unbound2.UbElement" elementName="MarkersContainer" url="gui_slots.swf,scenario_markers.swf" autoPerfTestGroup="markers">
+			<properties hitTest = "true"/>
+		</element>
+
+		<element name="unboundPOIIndicators" class="lesta.unbound2.UbElement" elementName="POIIndicatorsContainer" autoPerfTestGroup="poi_indicators">
+			<properties hitTest = "false"/>
+		</element>
+
+		<element name="unboundShipStateBars" class="lesta.unbound2.UbElement" elementName="OwnShipHealth" autoPerfTestGroup="shipInfo">
+			<properties hitTest = "true"/>
+		</element>
+
+		<element name="ubIndicatorSpeed" class="lesta.unbound2.UbElement" elementName="SpeedControl" autoPerfTestGroup="indicator_speed">
+			<properties hitTest = "false"/>
+		</element>
+
+		<element name="battleProgress" class="BattleProgressClip" url="battle_stats.swf" autoPerfTestGroup="battle_progress"/>
+		<element name="unboundBattleStats" class="lesta.unbound2.UbElement" elementName="BattleStatsContainer" url="battle_stats.swf" autoPerfTestGroup="battle_progress">
+			<properties hitTest = "false"/>
+		</element>
+		
+		
+		<element name="logEvent" class="EventLog" url="central_feedback.swf" autoPerfTestGroup="danger_indicators">
+			<properties itemRendererName="[MessageListItemRendererForVictoryPointLogs,MessageListItemRendererForVictoryPointKillsLog,MessageListItemRendererForTeamkillEvent,MessageListItemRendererForThirdParty,MessageListItemRendererWithStatus]" antiSpam="true" blinkTimer="0" enabled="true" listItemRendererDethTime="3" listItemRendererLifeTime="12000" messageBufferLength="1" messageBufferOverflowDeathTime="1" scrollBarStep="1" scrollPosition="left" textDisplayFlow="bottom-up" tweenTime="0.3" tweenListItemRenderer="true" hasSubstitution="true" lineSpacing="0" width="600"/>
+		</element>
+		<element name="indicatorCollisionText" class="WarningCollisionText" url="central_feedback.swf" autoPerfTestGroup="danger_indicators"/>
+		<element name="smokeIndicator" class="SmokeIndicator" url="dangers.swf" autoPerfTestGroup="danger_indicators"/> <!-- load incorrect swf only for resources form dangers.swf-->
+
+		<element name="compass" class="lesta.unbound2.UbElement" elementName="CompassContainer" url="ship_doll.swf" autoPerfTestGroup="indicator_compass" enabled="true">
+			<properties hitTest = "false"/>
+		</element>
+
+		<element name="fpsPanel" class="lesta.unbound2.UbElement" elementName="FpsPanel" url="battle_stats.swf" autoPerfTestGroup="header_texts">
+			<properties hitTest = "false"/>
+		</element>
+
+		<element name="observedPlayerLabel" class="lesta.unbound2.UbElement" elementName="UbObservedPlayerLabel" autoPerfTestGroup="header_texts"/>
+
+
+		<element name="captureBase" class="CaptureBarIndicator" url="capture_bars.swf,capture_indicators.swf" autoPerfTestGroup="battle_progress"/>
+
+		<element name="repairIndicator" class="IndividualRepairIndicatorClip" url="capture_bars.swf" autoPerfTestGroup="battle_progress"/>
+		<element name="unboundIndividualProgress" class="lesta.unbound2.UbElement" elementName="IndividualProgressContainer" url="capture_bars.swf" autoPerfTestGroup="battle_progress">
+			<properties hitTest = "false"/>
+		</element>
+		
+		
+		<element name="dangerousStateIndicator" class="DangerousStateIndicatorClip" url="central_feedback.swf" autoPerfTestGroup="danger_indicators"/>
+		<element name="localWeatherIndicator" class="LocalWeatherIndicatorClip" url="central_feedback.swf" autoPerfTestGroup="danger_indicators"/>
+
+		<element name="crosshairFull" class="lesta.unbound2.UbElement" elementName="CrosshairContainer" url="crosshair_screen.swf,crosshair_info.swf,gun_marker.swf" autoPerfTestGroup="crosshair">
+			<properties hitTest = "false"/>
+		</element>
+
+		<element name="tacticalMapHelp" class="lesta.unbound2.UbElement" elementName="TacticalMapHelpElement" autoPerfTestGroup="tactical_map"/>
+
+		<element name="flyOffDamage" class="FlyOffDamageClip" url="flyoffdamage.swf" autoPerfTestGroup="flyoff_damage"/>
+		<element name="deathPanel" class="AfterDeathAttentionPanel" url="after_death_panel.swf" autoPerfTestGroup="header">
+			<properties hitTest = 'true'/>
+		</element>
+
+		<element name="tacticalMap" class="lesta.unbound2.UbElement" elementName="TacticalMapTextGridContainer" autoPerfTestGroup="tactical_map"/>
+
+		<element name="tasksContainer" class="flash.display.Sprite" url="task_manager.swf,task_progress_track.swf" autoPerfTestGroup="pve_progress">
+			<properties x='9' y='18' />
+		</element>
+
+		<element name="HUDbottomElements" class="lesta.unbound2.UbElement" elementName="HUDbottomElementsContainer" url="weapons_panel.swf" autoPerfTestGroup="weapons_panel">
+			<properties hitTest = "true"/>
+		</element>
+
+		<element name="ubCapturingIndicator" class="lesta.libs.unbound.UnboundElement" autoPerfTestGroup="battle_progress">
+			<properties rootElementId='CapturingIndicator' hitTest = "false"/>
+		</element>
+
+		<element name="mainHud" class="lesta.unbound2.UbElement" elementName="MainHud" url="main_hud.swf,central_feedback.swf,minimap.swf" autoPerfTestGroup="header">
+			<properties hitTest = "true"/>
+		</element>
+
+		<element name="ubMainHudPC" class="lesta.libs.unbound.UnboundElement" url="battle_stats.swf" autoPerfTestGroup="header">
+			<properties rootElementId='MainHUDPCContainer' hitTest = "true"/>
+		</element>
+
+		<element name="ubStatsPanel" class="lesta.libs.unbound.UnboundElement" url="battle_stats.swf" autoPerfTestGroup="header_texts">
+			<properties rootElementId='BattleStats' hitTest = "true"/>
+		</element>
+
+		<element name="ubExpectedAction" class="lesta.unbound2.UbElement" elementName="TutorialContextHintsContainer" autoPerfTestGroup="header_texts">
+			<properties hitTest = "false"/>
+		</element>
+
+		<element name="ubQuickCommandsPanel" class="lesta.unbound2.UbElement" elementName="ModalQuickCommandsFullscreenContainer" url="quick_commands.swf" autoPerfTestGroup="quick_commands">
+			<properties hitTest = "true"/>
+		</element>
+		<element name="ubQuickCommandsPanelMini" class="lesta.unbound2.UbElement" elementName="ModalWindowQuickCommandsSmallContainer" url="quick_commands.swf" autoPerfTestGroup="quick_commands">
+			<properties hitTest = "true"/>
+		</element>
+
+		<element name="ubEventIngameBattleResults" class="lesta.unbound2.UbElement" elementName="EventIngameBattleResultsContainer" autoPerfTestGroup="pve_progress">
+			<properties hitTest = "true"/>
+		</element>
+
+		<element name="ubHUDModalWindowsContainer" class="lesta.unbound2.UbElement" elementName="HUDModalWindowsContainer" url="main_hud.swf,central_feedback.swf,minimap.swf" autoPerfTestGroup="header">
+			<properties hitTest = "true"/>
+		</element>
+
+	</elementList>
+	
+	<controllers>
+		<controller class="lesta.dialogs.battle_window_controllers.IndicatorsController"
+					clips="logEvent,indicatorCollisionText,smokeIndicator,dangerousStateIndicator,localWeatherIndicator"/>
+
+		<controller class="lesta.dialogs.battle_window_controllers.BattleProgressController" clips="captureBase,battleProgress,repairIndicator"/>
+
+		<controller class="lesta.dialogs.battle_window_controllers.FlyOffMessageController" clips="flyOffDamage"/>      
+		<controller name="fullScreenEffectsController" class="lesta.dialogs.battle_window_controllers.FullScreenEffectsController" clips="fireScreenEffect"/>
+
+		<controller class="lesta.dialogs.battle_window_controllers.DeathPanelController" clips="deathPanel"/>
+		<controller class="lesta.dialogs.battle_window_controllers.BattleTasksController" clips="tasksContainer"/>
+		
+		<controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="ubCapturingIndicator"/>
+		<controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="ubMainHudPC"/>
+		<controller class="lesta.dialogs.battle_window_controllers.StatsPanelController" clips="ubStatsPanel"/>
+
+	</controllers>
+
+</battle_elements.xml>
+    dK>dÍ!      ‰PNG
+
+   IHDR   K   <   .iG“   tEXtSoftware Adobe ImageReadyqÉe<  $jIDATxÚ¼{	|U¶þ©^ª÷twº³ï!„l„}'AdpÁpÆ]ttpfžãWFEDñùÐÇf ‡ÙM –„„$d'tgéîô¾TwÿÏ­®êtGæ)ú´ ~]©®®º÷»ß9ç;çÞ¢B¡P?dkiia?»3ùŽÜ—œ#ŸüØsÕ5Í°qk%tÌÂsd†ð;JÈ~6ÿ« O	óg>èÇcg	„t~(²÷v”=â'Ç”P¹‡_'Çõéˆð†ás â¼/y6ùôûØsdëûÕ“WÕ_üˆ€#‰ ²;Ž Bþæ¿îb³6n©€ú¦N¼†üŽ¡@ Ÿ D.&ÀÄ	EÒ)b©JŠçúåêÔ$}Î´[%RUQ0Àô1~WkÇ¹6ãuõX øáx0érpÌK ™ EžML(ä0F€ê_ú¥ßøzèjûKýfíØ}
+Gf #(–5B2Êx?Ï(RCs|²ãœ>ß@‰×x‘§ážL	Diê¤ü4©*)[®I¿¯	E’œEi	ã¢Øçé¬Ýþ Ëjø²ËNÎ1ùj°ÍÐƒ@"	¾q³#8R<‘MG	Ÿ…Œg˜½ØFïÏÆ¬•«?ƒÌô$X|ýx˜<n$HèŽM¶æönØ¼­
+*O7†G;ÝplƒŠE@ OÉ¿f–L•<U,QNÀQ£ÃCH±¬C Øß <9F³“&åÎ¼£íÌçgñ¸Ö;ZÎ‰ú˜v!8jüHÇÝˆ»÷\Íª'žêâs(¥¼ÀßÚþïÁÕëÛð|íÏ–PDC—¡Þøï —ƒæ–ÂÜ)£@,Ãß·Ÿ€CÇk€g‚¤%¾G›R23„vð»=Éy³/Ó#)d ë‹Ñ>=!°,ˆòkàó]ö¸ÌÄ­Ž)jpÅ³fß»ä·J<—J˜*ûÅ¬1²™“f{ÎÕŸô×\¼¬¸gá­ôˆ¬[XÖ¡‰ŠóG,VÞ»ðZ”ÙÕð³˜!šÁyp>(Ì 
+ÁyŸxŽþJ¥.;-1wÆ=B±tì ©ñ]mrÑ#È,= |$0>žE‘ãP(èvZ:>ên8°ý™Äë4ÿ/•p ¥JË&JfNšAçfÏ¢hq:ËL†Ä{ÄE:åìÑo8íïò¤·êÜ>Ä ã'gé(é¤€ú! ô7I	¹3f(´éÐÄÐ$¨8¼&`¼íê„‘· B!Æ, Dñä><«8äžäïPÀOnl4·nék«<Æxõ$#PÄÄ¦!@Å QVúLJ"ÎbG_„~Šñ³ÀP"P³‘Ù$Ó,H<»4­P.¿ý¦¥Ã‚XÚ0óOË¬òGØHDœ)2)Üê¤Q÷&dO{«^HKS±ó!ŸËòµT¡›E	E¬½üÞ¾€ßÓfé®ùLT0_,SÏgÍ•o$˜>‡¹ýscÓá¯ƒ_ž$f,ÎÎ,TÜqý5ÂìŒY”B–74rœér „NI0‘‹Ø¼Ü!Ïôôxúå§‡³?-³¸"›ŠÑÄnsÛŒÝÚ´1sÑÔFR”@bµÈCË4åØh±€íD42Ù–˜3m, +1ügÀç<ì¶™êMÍG+‚ÿ<í$LÕŽœ¸Pxïì_
+rÓ§a§EsâõgfC‡Qßãy(î8¢·[ôêÙÊûî¼	cDÀz~2°8 ²Ò‹<Œ>éA»4î‘X>2ô·_¯@ Î@sÌ@Fó¾‰uÛdTÉˆE³crÛ›ìì9ú™…¨·F«S
+³ã&LYæºiD)Ðtx€pòìà4Ï®`Ìh™{Œ~éa^(²;»÷8ÿ!;9:3$¿ÇNý…£V¦NM‰K9OHËg¼®ÊËÕÿÐgM¼K,›ÎúbQ,àºßëhµjÞè¬ÞOJ?¢0>}ì5h¶¿ ÝõçÅÅ;®Í X±&$Ÿ&ÃÔ9û}4ÓÈ€P‚+šiÈãíüËûO£Ï:§Û¿æúQÌÂhBIðÃÜ‘ˆ»×ë2[’sgäXç¿ˆO-½9Ž6QÒœNâF7§½¯uswÃþÝruŠ&£äÆ‡Q–‹$ò^FxPC9&£†" ‘N2áT%¡&±ï§¢L,<œ<¡Ãš-	™÷`Å»T%‚Ôú³HÜr¦?Œ€QÎLK©"™æ:a/gÿKwív•.w´D©+Še…,K¹Ülžé‰à*V³fçEûöþQ¹^„A<ãHTdSk®lp±;Ú=‡+?t~þïíØ÷ŸO”â¦“Å%ËTI7ó „™ˆÑHl4ùôûMŒÛ~F,Wç¦æÏ]‡9¡×S¼ðÑ°•Åƒ/[åBüä|ça˜/âí“®à$0
+†Ùr8z}ç>q|ðéaÔ_çõ¿Ùqµý!`‘ß$á®	'ý´Œt–h-â›‚¡!V‘OÆï¬
+%…\¯P$ÓÒÚ¸ÅD4ÃÈua'O-ƒõúTp2ƒ‡)“×KÅ«ÇQ:ñ[-àÀ‹D8Þq,‹DB„¥Ï©}«ý½M[ƒfëy.ýéƒØñï»œ'LÒËo™?I˜–<ÊºjÍ3öDï%‘Û7 ¡Žø&ž]\)Åê²öœPé³KP,Ž"º‡~1i‚¦Ö*áò5øÔÈ4j4¹B¢Å‰1e•höðŒãÎÇ˜c0èc:{Ý_íß/ä«®­SýæÎ…½î¦Ý1à>pü,æ{áWO^hWã³òÕÏ<òœxdî­¦÷`v›¾ö]j­SÎ˜þ”¼Â(§[]1 BŒÃ˜Œg_6‰®_‘mõÊ…°Ã×;]¦+ë¦(	0ÄšaÑŽ«4j‡˜ ™RZ9*8h¯Å+PÉÇñìšm•æß½ôöýÔOÁ,lÁì0kÏcbGâéI¥™©I¢c›t¾”»‘¼Žb2¾^ÅÊ!cva†	@*¥á™‚‰0Çj‚UMgÁÉi©ˆ'ÿødštÄÜˆ*Î:ÌãÃ%<¯VŽRÑølƒ^;MyÇó$&¬3†=%áHäù–õO°¬î½G[ZM©€Ox¹ÑŽ>ø‡ØÂªw’Np9#y§/àAŠŸ½}–~r<=>>)-‡Éê„°DˆÈq@q$]‰*Ò–HeV–-–0|{ãŠÇýEâX*¼iq/Æ½#ûí
+mæb<Ö_³´\Å€´Bˆ6_. ÅÒH¢*ß1Q·‡3/*Ò0rLQâÿmªdsz™8R#[’\	Æ•Ã—Íuð¦±ü\@"‰p8I&² ¬½ü‘ç³b•U¦CþŒmK`Lr½ÐÅ±ÜÔQsç.î»¬Ëœx­J—3](Q–à Žx-§6YÑÿ}À"Ê|VÎ„ÅcWU!…XæÎH/öq‹Ñ7Qôu»"5`Â.Â¤ˆïŠò1	:Œ)È¢yßI>¿e‚É	©ð_ÕÐìsDU@¿-†ò?&`Le$4¬½!P2å	‚\víˆ)KJÅ´r&æ®"¾}B…f†6}L9¶§;:_üOf¨Ö¤”äˆ%ªk´l¢˜‘+÷AY1€!x(# Ñ`€53Šõ5Á(6	¸†Ç:ä´ÌDX÷ÜÝ¨—œH­žTY‰$ LK–È`Ó¤9ð@R—KÆFB–UË#çb@Æ†qÉë¬fq—HþN‰è"Lòg“ÂNØøâctiã–q–õ>Ëjî:{ÀíèÛE1¹‰ßeù·¤nÀ¬ÞÖâ'KïµÑ4Dƒ1Å;Ögp'{Ø<Ã	4ÑŸ$•OÜ 
+¹„­¬ÆT`ñzÇÃFœòÒìBØ8ºÒhÅy‘áXmf‘ÁaADGÖØâÈOY#õ³áî›-2r¢ZDËKr¦‘ õ}|{÷Å=!&=a?#NÆ$Õ*²ùA½ÃºK ‚¡Ëh-Þ'±Ù=ŸËFùª Çß.H¥RÎâ÷ûùH™N“J¥‘Éf‘F›ÆÏ‚y‚ø!ùÀÝO TŒŠ'ÏáÁãY'`”ê¨UÊš*%ŒH^÷E¬š‹ÀäST°ýÑŠÓVÿXv¿Ç^=pùÌZ¼qH$QN¤„¢\ÖÌðg%&þ1n$@xŽNØíŽäu¤AC%`Ó~Ä=Eqà¸&™}²ÏëL“ñsd–ˆœ#;9&`‘ÏKmÝðÚ;»àìßª`âQ;hÁfã"ntZÄÎ¡À”ÇM ´ú€/ŸñUh?¹’D’Ü”‘sf‘	ï#lýíU‡ünÛ¾p¸çdv -Eé´¶•Ý “¼ Cuó!sàãûéšŽ©º¡ªe¬hÀ«øóm¨½Ön‡ß¾ð	T×„'u[z@½¥&¹â`x¥”—Ä‘ó¦J7 ÝìbS,nàBŸÇð»Âe­ ëÇ„|?ìà*uÙdÞ É%øOÑ0­N¦•NOs­PO#¾‹rÜèé´4Û)â[Þ(›	O¹í—MlŽ]£H}–<9*ö÷Á 7±ÁÝ‹Üƒ7=žU]Flúg=Y‡×‰Ã>3!Â(‡Ã¶OÏ@ù´8jg§@ ¢Ù )–…nŒzß˜Ù¶ ÛºýîÁãè²0xMBÇ”|ŠF5Q‚’2¹g’>sòXSËÑ
+Ñ)mÌ]xÃ)¼pŒL¯s#˜Šl¨“4üáÁùðÄ‹ŸcØgbòC9ú¥žYqàOQÕÄ9“!÷âYÄÏ\·váóÕax6‡†ž†
+[/„¨pÅõØŸB|¼
+ö®ÿ„ðÒ¹k¾ WT˜Ë²K±ß`ñ[{+«H¢)–ª2qŸÂƒ ÓpgÏED~ÀØw™ñ9lø§—+™€Ÿ>nš6µäN!­˜Â›Nt‰ÿÄs!•RJE³!/'YRï||$2BÉI:X~ßLxÚÜ@¦žX?ž8¯yÓt„IÆ>+|¾ë,<VvÐQSaá†{Áí2ƒ\è€ëgÃéƒóµpãÍÓ`åS Ï8—Z°ÿ‰Ûàú·¶x]Ý5t»m‡­ËæŽK*X"Wèoˆ:'Ïú6ÁˆHDd>·í{óî¾ö“'¹Jª•+;oÊÒ"Z1n(G¸"Lâg_ˆ)üžKJ¹4Ÿh">z‘Ï9ÓGÃÙº^8^UÙ:xñ©…`#“Â&Çj#_D#ö:mðš™;ÝàPDRì9l8xý°dQ	üêî28¾\.?¬\q#ˆ<ýàqá«­FçN5Ãö~	‹ÿ‹ÕÈX¬Ê˜P†x+$ò|ÿo¿ÏnÙÛÛ~b¯ÛÚ]‡§;¤á
+>€É®GÄ5’8:~O
+ß˜5îAB1¯‰¯×qÄìB<~èž ¡ðè¯æ -Bï`ØÁsQ):bmýê:ˆLb˜ˆÆ!f!ˆTBÔ 5 ÷ß3n¹a"|°³LÆ~Xz]	èhüÎ/ff
+µZêê’¿®~rÞ›{OÃi—$¥E\oÑï’àB\‘$)	bÌµ¾º¦öO·W…<^Rç•jò<Xí6SÓ¶„¬ÉÓÂ‚.l‚Bà¢ú,GUàò>Z‰`¼F"&IÎ­Xz~
+#ßGò¸èâþ;WÝ³ƒ U~fMÏç²D€úh3ÝSù£F,)„8ôf)¤Žš*5'öAzzÑÄ;Úpga:„Ú{á¤±èÒ‚+/=bÛàÿ|¾Æ_‰L˜é°Ðw•hú:OWÄ§–6ˆ¤ŠVcPÃÖpÕPò§’á(†WÌÁÈk¢ _Fxód«™‚ØuQAÎOò;¡Ê;ïh_‚Ÿ›	îYT4Ô®o` ÇÜõÕ‚Ïí]R(ž4\Þ xñqùcgA{Ý1Ì7µìs:ºŒpï¨,`N_DÙÑ tÉÈ¡ºÑ[œÖ¤Çå XýÇo†þ¾6Lâ>®U'Â'7-ŽI¤Ûm-Û´ÉÅœ˜PÊ¥€")>!Ìp€¢ÙÆ–WiIŒ`Ä†„N…’Jã‡ë±0£‚¬Ÿ"€J„vXzw9|°«	Žì:]m&ølýRh½Ô^Ÿ”˜ý˜ºš@“œÏþNªTAþ˜rh<w4šÐ4·´Àò	E0S´/4Sœ!·»Ý×o94ÜûŽTù/¶T±šréSäF}‰›×YxKb»Í)úVÕÁÐÛr¼Rßƒ‰qJ´9ðã$A0^£èÅ?Áð…m<p[šá*£dÉžÅZËt«*EŠ(#e>/I"ù j©+B¬ÏröÀsÆ 37€ÁÐÆHU8Âÿ:/˜^’€Œ5cÎ€ÎÖ‹ì@$gŒb/¢¥ M-ÚÚbK7d¦'C'2,G%‚û]òËkŸ]ó¥£Û¸ƒ+¿8HDáˆ‹óïß2¾¿¦þlï½O|ˆ,³ûÞŸ˜Ére,XÜà× a»2>û¡áur^¹ã9Afº>™—<³x½ÄK4?_WWWõŠc'¬ûë)É„ÒéueRR:“LM±Aè¢/d†ÌP( Áaw¡øô‚†M¨QÙ+aoEë“¦iQ*tBA~t·^À@Ä@Bú(”.ÔvÐ¡öj¾`Ž˜$lTvrŠŸãWˆß8'_”–’°;ìþÚ‹g}fRð‘, ‘VÂ­y—"ŠVÛÄÌÍGäLL¿G„Š”ÿÊ>Ðú7Z¦ÉËÔ¨üôñò(¼ù‘EªÓh4žÂ­ò­·ÞªÆãÎ¼Â‚‘q,].HÖÏªî†K'Ñb—÷Wae/‰RŽÔ@Ù´b(S]—:á\ãeL?²`ÇÁ:(Ê»T´/µ°ëjkÀ\Ó*}6ëSCxÿE“ ¥þX k4ö‹^þÓŠßšmžÞÃU\5ZUO’lŸýýÍÿ
+š­ÇÈ9JÿñNRvúCv!Hq`y"D&,
+Ëã×vdŒ¾ùOE|žk°»Êf¬¯vXºÎ¤ç^²`Ñ£âDuiqI&ÜWTÂ:y·Ûméîî>yèÐ¡Êwß}·Æf³‘ù8“P(œˆ€Í±Êã—¯tÇE×¿ØŠ¨H
+«u…pìD3¬¨ÃûøÈó¨ï$hîâkŠÈÄœböô10cú4X÷Þ'PÛ< ¨ÄY9qý¬B˜Q¢geMnv:ê,-$¥eABêÖ$‰ðºlÐØP¤†j4Y†‰Å€\XòÈ³[P}®"þZ¿ñu_Â&÷ƒõNÉÔHA2??ˆYãK³!3U¯ÿkË@Oå·Õâ1Ì9ÒqtxÞ®{ŸèîoÐ¾úÇ•}
+÷1ãqª¦ñð†ê}>_;^G*Šv2]¶xñâ[V¬Xñp]³©äÈþó ˜¯äƒáBx­`jôP˜“
+Ý;Î`’¼óPòÔùæH0‘«Ó ³× _~uärünÅRxuíCc‡M®22RP/É€òX µ½FJ5>dšdj[qõ0ª`´6ž.žM¬;/wå¶	çÏžÂìÚw8gæ­ÿÕäcÐ*rréXþ0²4Â(>­‹0‹,ÓæÍjÄˆÄ »¢WÎÍÈ(õ/:O2¾¤ÜßÜaÚì¤Ð…»¹±±14jÔ¨)))c×­[wç¸qã­k®Z³Ò³àÜ<uLÅòñô¸33?âëøÆg÷›m˜´Â¶}5ÐÑ^úí²õ€Œ²Âc¿¹²³2aí†M0i\,¸nÔÖÖBÀkóªÄ^	1ob’*ÌGõI AçL‹¬¯í

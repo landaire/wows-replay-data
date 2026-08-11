@@ -3644,8 +3644,8 @@ build = 9251401
 "spaces/s11_D_day_2/space.settings" = "cefe8c38021a68db5eb4"
 
 [derived]
-"game_params.rkyv" = "7d5442ffd1c7d4a7b4bf"
-"game_params.rkyv.zst" = "37046b656d011ebd1498"
+"game_params.rkyv" = "01d81c308d34cb0f86d2"
+"game_params.rkyv.zst" = "7e0816504fd81823136d"
 "translations/cs/LC_MESSAGES/global.mo" = "4e95ab7100866eae7f6c"
 "translations/de/LC_MESSAGES/global.mo" = "3d56a4e431073e64e886"
 "translations/en/LC_MESSAGES/global.mo" = "409e6a4f4e43a523cbc4"
