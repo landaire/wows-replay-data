@@ -891,8 +891,8 @@ build = 303746
 "spaces/s06_Atoll/space.settings" = "2d6e99b3dfa9e3137893"
 
 [derived]
-"game_params.rkyv" = "891c24e82c6ddd2ff360"
-"game_params.rkyv.zst" = "65c1e3ae027275298d51"
+"game_params.rkyv" = "4c5fa2e3b0abdeea70f9"
+"game_params.rkyv.zst" = "6f10cb1cd054e6636093"
 "translations/be/LC_MESSAGES/global.mo" = "67b226763a3b0f090021"
 "translations/cs/LC_MESSAGES/global.mo" = "201544ffef567cc7af29"
 "translations/de/LC_MESSAGES/global.mo" = "c4748f07d47fd6868d59"

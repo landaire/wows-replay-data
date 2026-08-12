@@ -219,8 +219,8 @@ build = 313919
 "spaces/s07_Advance/minimap_water.png" = "3e417aca6f2975b8840d"
 
 [derived]
-"game_params.rkyv" = "e1b92da9a2d6fa3ba507"
-"game_params.rkyv.zst" = "3a37c764c6d54e6f78c0"
+"game_params.rkyv" = "7a414ef601ea2c4005e8"
+"game_params.rkyv.zst" = "247c24ea74d865ce6595"
 "translations/be/LC_MESSAGES/global.mo" = "eea3c8e0f7f44f98538a"
 "translations/cs/LC_MESSAGES/global.mo" = "3e474506dc557f8ab3d8"
 "translations/de/LC_MESSAGES/global.mo" = "6068521c0d681daa0195"
