@@ -228,8 +228,8 @@ build = 327674
 "spaces/s09_LePVE/minimap_water.png" = "378dbb9d05c1c8a9429a"
 
 [derived]
-"game_params.rkyv" = "1751c94a4161d0e8c886"
-"game_params.rkyv.zst" = "f94d4f9a66b9d14e6c20"
+"game_params.rkyv" = "fa31dde29ff6d1a27944"
+"game_params.rkyv.zst" = "9f701811a7524bb81a72"
 "translations/be/LC_MESSAGES/global.mo" = "e069d9ac586f06a7c153"
 "translations/cs/LC_MESSAGES/global.mo" = "3e582b6332ec798b459b"
 "translations/de/LC_MESSAGES/global.mo" = "72380418400c94763dd3"
