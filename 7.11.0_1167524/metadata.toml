@@ -1,5 +1,6 @@
 version = "0.7.11"
 build = 1167524
+materialized = true
 
 [files]
 "content/GameParams.data" = "fd753ec06fc666d0d1c9"
@@ -1239,8 +1240,8 @@ build = 1167524
 "spaces/s10_USS_CL/space.settings" = "b043b50b551909d36b89"
 
 [derived]
-"game_params.rkyv" = "ce559209c4436f1cb989"
-"game_params.rkyv.zst" = "99703a62f28fe2070f6d"
+"game_params.rkyv" = "d94bddd4a3e67e501b31"
+"game_params.rkyv.zst" = "4bca47c0aa53319db241"
 "translations/be/LC_MESSAGES/global.mo" = "df56c764a6c645cfee59"
 "translations/cs/LC_MESSAGES/global.mo" = "b2053735b8e8ab204e5b"
 "translations/de/LC_MESSAGES/global.mo" = "4be9f2a2fc3da6f3a503"

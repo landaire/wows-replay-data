@@ -1,5 +1,6 @@
 version = "0.8.5"
 build = 1631917
+materialized = true
 
 [files]
 "content/GameParams.data" = "f0674a55eb49e8bbb9d8"
@@ -1290,8 +1291,8 @@ build = 1631917
 "spaces/s10_USS_CL/space.settings" = "7637a96272ba651fe234"
 
 [derived]
-"game_params.rkyv" = "97410fc0b0d56305cdb2"
-"game_params.rkyv.zst" = "ff50f11bf18c32acccd5"
+"game_params.rkyv" = "00e7af93aeffe9284368"
+"game_params.rkyv.zst" = "6b463a48df9e0bbd21cf"
 "translations/be/LC_MESSAGES/global.mo" = "560e3af963d87956a960"
 "translations/cs/LC_MESSAGES/global.mo" = "957e543780d6960a3659"
 "translations/de/LC_MESSAGES/global.mo" = "ee03f2c3b39f32edb1da"

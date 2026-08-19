@@ -1,5 +1,6 @@
 version = "0.7.3"
 build = 329111
+materialized = true
 
 [files]
 "content/GameParams.data" = "31c386f3644b94103529"
@@ -1006,8 +1007,8 @@ build = 329111
 "spaces/s09_LePVE/space.settings" = "de2f30a621f88d43b7c9"
 
 [derived]
-"game_params.rkyv" = "7072b2ac57db1a9120a6"
-"game_params.rkyv.zst" = "f0f4d7982c5deabc5e86"
+"game_params.rkyv" = "67a366a4f65e60da2893"
+"game_params.rkyv.zst" = "1065d40314882409ce8b"
 "translations/be/LC_MESSAGES/global.mo" = "84ebd56ef1df1d4c762b"
 "translations/cs/LC_MESSAGES/global.mo" = "871ef29a28278074c1ea"
 "translations/de/LC_MESSAGES/global.mo" = "f6f2d4ae764ab3c468f7"

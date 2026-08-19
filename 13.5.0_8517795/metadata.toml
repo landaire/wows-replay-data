@@ -1,5 +1,6 @@
 version = "13.5.0"
 build = 8517795
+materialized = true
 
 [files]
 "content/GameParams.data" = "0438519ab5e513f6e75f"
@@ -3411,8 +3412,8 @@ build = 8517795
 "spaces/s11_D_day_2/space.settings" = "cefe8c38021a68db5eb4"
 
 [derived]
-"game_params.rkyv" = "93421487fb91c24401ff"
-"game_params.rkyv.zst" = "a89a8f4e98e326c12dd7"
+"game_params.rkyv" = "99750990ffaac824eec4"
+"game_params.rkyv.zst" = "53289d29763e6769356e"
 "translations/cs/LC_MESSAGES/global.mo" = "106c78ac31f76670c89d"
 "translations/de/LC_MESSAGES/global.mo" = "1a8878c6f9669f748e21"
 "translations/en/LC_MESSAGES/global.mo" = "095d70ec3156c0374b22"

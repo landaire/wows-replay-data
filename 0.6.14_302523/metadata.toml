@@ -1,5 +1,6 @@
 version = "0.6.14"
 build = 302523
+materialized = true
 
 [files]
 "content/GameParams.data" = "705a35b79b60ab7bd6e6"
@@ -891,8 +892,8 @@ build = 302523
 "spaces/s06_Atoll/space.settings" = "2d6e99b3dfa9e3137893"
 
 [derived]
-"game_params.rkyv" = "f4bfb20f2a783a3af8b1"
-"game_params.rkyv.zst" = "6602b14c3cbf82c2f137"
+"game_params.rkyv" = "9e7d7469af208c6ccadd"
+"game_params.rkyv.zst" = "3d00b9c7cb2904a71350"
 "translations/be/LC_MESSAGES/global.mo" = "67b226763a3b0f090021"
 "translations/cs/LC_MESSAGES/global.mo" = "1b3de423f92dd42a2452"
 "translations/de/LC_MESSAGES/global.mo" = "665f4792bcdb6f947b13"

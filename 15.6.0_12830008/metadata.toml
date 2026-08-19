@@ -1,5 +1,6 @@
 version = "15.6.0"
 build = 12830008
+materialized = true
 
 [files]
 "content/GameParams.data" = "a6276e6660cdae16764b"
@@ -4055,8 +4056,8 @@ build = 12830008
 "spaces/s14_WW2_OP3/space.settings" = "af1b2c7a0f218b8e3003"
 
 [derived]
-"game_params.rkyv" = "6b35b67cb62d3fd5a909"
-"game_params.rkyv.zst" = "303d77c42b8e790ea76d"
+"game_params.rkyv" = "80e5c1de4d396b45acdb"
+"game_params.rkyv.zst" = "a05b47971321668ba393"
 "translations/cs/LC_MESSAGES/global.mo" = "886f2573988255383ad3"
 "translations/de/LC_MESSAGES/global.mo" = "947f31bd6452bd038553"
 "translations/en/LC_MESSAGES/global.mo" = "1d3ef38d0f22eb36fd56"

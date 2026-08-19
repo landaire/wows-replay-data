@@ -1,5 +1,6 @@
 version = "0.6.13"
 build = 296659
+materialized = true
 
 [files]
 "content/GameParams.data" = "bd139aa064f916be50ca"
@@ -887,8 +888,8 @@ build = 296659
 "spaces/s03_Labyrinth/space.settings" = "4e40f6d2b4efbb215952"
 
 [derived]
-"game_params.rkyv" = "f1bbf14fa00a5fb19285"
-"game_params.rkyv.zst" = "2f82bbb7419d798d52e4"
+"game_params.rkyv" = "b581a3e2241015fa1c8c"
+"game_params.rkyv.zst" = "84a249bf7b7d506dd0d9"
 "translations/be/LC_MESSAGES/global.mo" = "d9bc32f50310f2bd6964"
 "translations/cs/LC_MESSAGES/global.mo" = "39fb2797a38c61ee280d"
 "translations/de/LC_MESSAGES/global.mo" = "93c15d2614e06fec8634"

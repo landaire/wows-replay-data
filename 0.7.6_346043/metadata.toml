@@ -1,5 +1,6 @@
 version = "0.7.6"
 build = 346043
+materialized = true
 
 [files]
 "content/GameParams.data" = "92cb574d3e72629d6e44"
@@ -257,8 +258,8 @@ build = 346043
 "spaces/s10_USS_CL/minimap_water.png" = "3e417aca6f2975b8840d"
 
 [derived]
-"game_params.rkyv" = "3549fededac07654a0ea"
-"game_params.rkyv.zst" = "ea68f23f50b3eb900a95"
+"game_params.rkyv" = "06b12517b9523ad9605a"
+"game_params.rkyv.zst" = "3bf4493bc2d66711e53b"
 "translations/be/LC_MESSAGES/global.mo" = "3073f560d36fd3830f2c"
 "translations/cs/LC_MESSAGES/global.mo" = "5d34e8d68d6e7e6dbce5"
 "translations/de/LC_MESSAGES/global.mo" = "e14d2495a71ea4e95431"

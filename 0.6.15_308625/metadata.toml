@@ -1,5 +1,6 @@
 version = "0.6.15"
 build = 308625
+materialized = true
 
 [files]
 "content/GameParams.data" = "29ee6f0aa8f912cbb763"
@@ -915,8 +916,8 @@ build = 308625
 "spaces/s07_Advance/space.settings" = "1891d7c16fd807ab9f23"
 
 [derived]
-"game_params.rkyv" = "73e8188e2299c32f7477"
-"game_params.rkyv.zst" = "a8ea08662aa06c0d436e"
+"game_params.rkyv" = "eaca920b59468f5175ba"
+"game_params.rkyv.zst" = "22b231427a8a5354dce5"
 "translations/be/LC_MESSAGES/global.mo" = "dc710a788e92fd9a01eb"
 "translations/cs/LC_MESSAGES/global.mo" = "6b144380be56335df83a"
 "translations/de/LC_MESSAGES/global.mo" = "94850c4ba26281afc753"

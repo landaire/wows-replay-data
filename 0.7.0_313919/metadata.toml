@@ -1,5 +1,6 @@
 version = "0.7.0"
 build = 313919
+materialized = true
 
 [files]
 "content/GameParams.data" = "ed9e31ebea4a6413c3ad"
@@ -219,8 +220,8 @@ build = 313919
 "spaces/s07_Advance/minimap_water.png" = "3e417aca6f2975b8840d"
 
 [derived]
-"game_params.rkyv" = "6b407e5d109186740fc4"
-"game_params.rkyv.zst" = "a9ebbb30cc56a7e8da9d"
+"game_params.rkyv" = "12b9deb953ef5ba1c42b"
+"game_params.rkyv.zst" = "d8cb75f787400c1164b1"
 "translations/be/LC_MESSAGES/global.mo" = "eea3c8e0f7f44f98538a"
 "translations/cs/LC_MESSAGES/global.mo" = "3e474506dc557f8ab3d8"
 "translations/de/LC_MESSAGES/global.mo" = "6068521c0d681daa0195"
