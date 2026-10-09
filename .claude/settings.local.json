@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(jj log:*)",
+      "Bash(ls -d */)",
+      "Bash(jj status:*)"
+    ]
+  }
+}

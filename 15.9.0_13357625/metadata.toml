@@ -4131,8 +4131,8 @@ materialized = true
 "spaces/s14_WW2_OP3/space.settings" = "af1b2c7a0f218b8e3003"
 
 [derived]
-"game_params.rkyv" = "d3d0ee703ca654a22b73"
-"game_params.rkyv.zst" = "3c3ecb1885b13f4cdc58"
+"game_params.rkyv" = "580275a3b477f4b8da93"
+"game_params.rkyv.zst" = "2b7023f6bce19f7829fa"
 "translations/cs/LC_MESSAGES/global.mo" = "3f479c542cc84a2a0cde"
 "translations/de/LC_MESSAGES/global.mo" = "03937058db2d774c0f27"
 "translations/en/LC_MESSAGES/global.mo" = "688863a8e8b4f406ccc9"
